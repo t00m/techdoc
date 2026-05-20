@@ -1,0 +1,2 @@
+# techdoc
+My tech notes
