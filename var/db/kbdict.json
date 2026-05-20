@@ -1,5 +1,60 @@
 {
     "document": {
+        "HELLO-WORLD.md": {
+            "Author": [
+                "Tom\u00e1s V\u00edrseda"
+            ],
+            "Category": [
+                "Note"
+            ],
+            "Date": [
+                "2026-05-20 00:00:00"
+            ],
+            "DocType": [
+                "Explanation"
+            ],
+            "Product": [
+                "KB4IT"
+            ],
+            "Tag": [
+                "github-pages",
+                "hello-world",
+                "kb4it",
+                "techdoc"
+            ],
+            "Title": [
+                "Hello world"
+            ],
+            "body_hash": "7391b989d7b7b3be236e467f2ff85b9397f1ed11c6989a88e06c07448157086de564a6a6357fd2e8db38bebb1431b8997707189a2d2ac4c30da2aad4788bc267",
+            "content": "/home/runner/work/techdoc/techdoc/source/HELLO-WORLD.md",
+            "keys": {
+                "Author": [
+                    "Tom\u00e1s V\u00edrseda"
+                ],
+                "Category": [
+                    "Note"
+                ],
+                "Date": [
+                    "2026-05-20"
+                ],
+                "DocType": [
+                    "Explanation"
+                ],
+                "Product": [
+                    "KB4IT"
+                ],
+                "Tag": [
+                    "techdoc",
+                    "kb4it",
+                    "github-pages",
+                    "hello-world"
+                ],
+                "Title": [
+                    "Hello world"
+                ]
+            },
+            "metadata_hash": "c4aa055e7c194e6a093c59c75009c67c57561585148b8983fee5eaaff6887d512b915a61e86c9f5921d9c46e7cd25201077c309ab73b79a5d4fc62c0cb641ee3"
+        },
         "about_app.md": {
             "SystemPage": [
                 "True"
@@ -41,10 +96,49 @@
     },
     "kb4it_version": "0.7.6+build.17",
     "metadata": {
+        "Author": {
+            "Tom\u00e1s V\u00edrseda": [
+                "HELLO-WORLD.md"
+            ]
+        },
+        "Category": {
+            "Note": [
+                "HELLO-WORLD.md"
+            ]
+        },
+        "Date": {
+            "2026-05-20 00:00:00": [
+                "HELLO-WORLD.md"
+            ]
+        },
+        "DocType": {
+            "Explanation": [
+                "HELLO-WORLD.md"
+            ]
+        },
+        "Product": {
+            "KB4IT": [
+                "HELLO-WORLD.md"
+            ]
+        },
         "SystemPage": {
             "True": [
                 "about_app.md",
                 "about_kb4it.md"
+            ]
+        },
+        "Tag": {
+            "github-pages": [
+                "HELLO-WORLD.md"
+            ],
+            "hello-world": [
+                "HELLO-WORLD.md"
+            ],
+            "kb4it": [
+                "HELLO-WORLD.md"
+            ],
+            "techdoc": [
+                "HELLO-WORLD.md"
             ]
         },
         "Title": {
@@ -53,6 +147,9 @@
             ],
             "About this app": [
                 "about_app.md"
+            ],
+            "Hello world": [
+                "HELLO-WORLD.md"
             ]
         }
     }
