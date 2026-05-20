@@ -1,0 +1,59 @@
+{
+    "document": {
+        "about_app.md": {
+            "SystemPage": [
+                "True"
+            ],
+            "Title": [
+                "About this app"
+            ],
+            "body_hash": "c8fc649fec6d1284b8dcaa7ebcbcfc0d04207d67571a93f201d333bc3615d4efddecf09414e22b0e89a7a7dcdf584153e07b6af56acd5f6f0befab0afc5e8f32",
+            "content": "/home/runner/work/techdoc/techdoc/source/about_app.md",
+            "keys": {
+                "SystemPage": [
+                    "True"
+                ],
+                "Title": [
+                    "About this app"
+                ]
+            },
+            "metadata_hash": "856ce8ddde31adb8cb51239511c88910b79e307bfdadc34e802ddd688c8f2d11d41b9a1635f22618384af5305fcda1ec8c6b961cf658ea12c32629654012a343"
+        },
+        "about_kb4it.md": {
+            "SystemPage": [
+                "True"
+            ],
+            "Title": [
+                "About KB4IT"
+            ],
+            "body_hash": "c799ae583cd77209df036d0a6583b232b572fc75ad63a06f90035bdfbd7c5009df5ce3bb8e10b5525d8b6d1b790d09ab4637e651553c42b6c9cc2f7170451318",
+            "content": "/home/runner/work/techdoc/techdoc/source/about_kb4it.md",
+            "keys": {
+                "SystemPage": [
+                    "True"
+                ],
+                "Title": [
+                    "About KB4IT"
+                ]
+            },
+            "metadata_hash": "0c6b45f7155497596425ef89c86e38abe27369dc735f408915f5d79ae0dc8ffc8fd83a83e9b8c0a3343a293e4b541a6fa179ef3c7ed57eb0303b8cfaf476869f"
+        }
+    },
+    "kb4it_version": "0.7.6+build.17",
+    "metadata": {
+        "SystemPage": {
+            "True": [
+                "about_app.md",
+                "about_kb4it.md"
+            ]
+        },
+        "Title": {
+            "About KB4IT": [
+                "about_kb4it.md"
+            ],
+            "About this app": [
+                "about_app.md"
+            ]
+        }
+    }
+}
