@@ -6,9 +6,9 @@ DocType: Explanation
 Tag: techdoc, kb4it, notes, github-pages
 ---
 
-# techdoc
+# t00m's tech notes
 
-Live demo of [KB4IT](https://github.com/t00m/KB4IT) using the **techdoc** theme.
+Live demo of [KB4IT](https://github.com/t00m/KB4IT) using the **techdoc** theme: <https://t00m.github.io/techdoc/index.html>
 
 ## Configuration
 
