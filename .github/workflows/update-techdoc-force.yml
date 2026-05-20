@@ -1,0 +1,52 @@
+name: update-techdoc-force-compilation
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'config/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.14"
+
+      - name: Clone KB4IT repository
+        run: git clone -b master https://github.com/t00m/KB4IT.git
+
+      - name: Install KB4IT
+        working-directory: ./KB4IT
+        run: uv tool install . --force
+
+      - name: Display current KB4IT version
+        run: kb4it -v
+
+      - name: Update techdoc
+        run: kb4it -L DEBUG build config/repo_force_mode.json
+
+      - name: Commit and push changes (if any)
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+          git add docs/
+          git add var/
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-update docs/ after KB4IT build [$(date -u)]"
+            git push
+          fi
