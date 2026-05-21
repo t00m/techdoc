@@ -1,5 +1,4 @@
 ---
-Author: Tomás Vírseda
 Category: Procedure
 Command: journalctl, cp, du, systemctl
 Date: 2024-05-14 12:00:00
