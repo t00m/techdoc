@@ -79,9 +79,6 @@
             "OS": [
                 "Linux"
             ],
-            "Priority": [
-                "Normal"
-            ],
             "Product": [
                 "Systemd"
             ],
@@ -93,6 +90,7 @@
             ],
             "Tag": [
                 "clear",
+                "journal",
                 "log",
                 "message",
                 "unit",
@@ -145,9 +143,6 @@
                 "OS": [
                     "Linux"
                 ],
-                "Priority": [
-                    "Normal"
-                ],
                 "Product": [
                     "Systemd"
                 ],
@@ -158,12 +153,12 @@
                     "Released"
                 ],
                 "Tag": [
+                    "journal",
                     "clear",
                     "log",
                     "message",
                     "vacuum",
-                    "unit",
-                    ""
+                    "unit"
                 ],
                 "Team": [
                     "Unix"
@@ -181,7 +176,7 @@
                     "linuxhandbook.com"
                 ]
             },
-            "metadata_hash": "f421acc0242e1003614f2e4ca3b9824130ee995c2ebf0ca28a9f90d6f1587647ed395aa201f97700c17d55335827ceca15947f4fab3a359e37afd2f6330c71cd"
+            "metadata_hash": "17d78f8acfddeb1f686d871149a753d07a8e7d881ef8cc61feef050a951a4276e3c044086b39cdffd84e488c60433cc2b8d5a8e8d77673186925bdd210244770"
         },
         "X11-SSH-FORWARDING.md": {
             "Category": [
@@ -490,7 +485,6 @@
         },
         "Priority": {
             "Normal": [
-                "LINUX-SYSTEMD-JOURNALCTL.md",
                 "X11-SSH-FORWARDING.md"
             ]
         },
@@ -563,6 +557,9 @@
             ],
             "graphical": [
                 "X11-SSH-FORWARDING.md"
+            ],
+            "journal": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
             "log": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
