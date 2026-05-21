@@ -84,6 +84,9 @@
                                                 <a class="uk-link-heading" href="EnvVar.html"><span class="">EnvVar</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Environment.html"><span class="">Environment</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Filename.html"><span class="">Filename</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
@@ -103,6 +106,9 @@
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Scope.html"><span class="">Scope</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Server.html"><span class="">Server</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Service.html"><span class="">Service</span></a>
@@ -208,9 +214,9 @@
 <div class="kb-key-header">
     <span class="kb-key-title">Filesystem</span>
     <div class="kb-key-meta">
-        <span>6 values</span>
+        <span>10 values</span>
         <span class="kb-meta-sep">&#183;</span>
-        <span>7 documents</span>
+        <span>12 documents</span>
     </div>
 </div>
 
@@ -224,22 +230,34 @@
     <li>
         <!-- WORDCLOUD.tpl :: START -->
 <div class="kb-cloud">
-    <a class="kb-cloud-item" style="--kb-weight: 1.0;" href="Filesystem_etc.html" uk-tooltip="2 documents">
+    <a class="kb-cloud-item" style="--kb-weight: 0.5;" href="Filesystem_dev.html" uk-tooltip="1 documents">
+        <span class="kb-cloud-word">/dev</span>
+    </a>
+    <a class="kb-cloud-item" style="--kb-weight: 1.0;" href="Filesystem_etc.html" uk-tooltip="3 documents">
         <span class="kb-cloud-word">/etc</span>
     </a>
-    <a class="kb-cloud-item" style="--kb-weight: 0.631;" href="Filesystem_etcssh.html" uk-tooltip="1 documents">
+    <a class="kb-cloud-item" style="--kb-weight: 0.5;" href="Filesystem_etcfstab.html" uk-tooltip="1 documents">
+        <span class="kb-cloud-word">/etc/fstab</span>
+    </a>
+    <a class="kb-cloud-item" style="--kb-weight: 0.5;" href="Filesystem_etcssh.html" uk-tooltip="1 documents">
         <span class="kb-cloud-word">/etc/ssh</span>
     </a>
-    <a class="kb-cloud-item" style="--kb-weight: 0.631;" href="Filesystem_etcsystemd.html" uk-tooltip="1 documents">
+    <a class="kb-cloud-item" style="--kb-weight: 0.5;" href="Filesystem_etcsystemd.html" uk-tooltip="1 documents">
         <span class="kb-cloud-word">/etc/systemd</span>
     </a>
-    <a class="kb-cloud-item" style="--kb-weight: 0.631;" href="Filesystem_var.html" uk-tooltip="1 documents">
+    <a class="kb-cloud-item" style="--kb-weight: 0.5;" href="Filesystem_intranet27.html" uk-tooltip="1 documents">
+        <span class="kb-cloud-word">/intranet27</span>
+    </a>
+    <a class="kb-cloud-item" style="--kb-weight: 0.5;" href="Filesystem_tmp.html" uk-tooltip="1 documents">
+        <span class="kb-cloud-word">/tmp</span>
+    </a>
+    <a class="kb-cloud-item" style="--kb-weight: 0.5;" href="Filesystem_var.html" uk-tooltip="1 documents">
         <span class="kb-cloud-word">/var</span>
     </a>
-    <a class="kb-cloud-item" style="--kb-weight: 0.631;" href="Filesystem_varlog.html" uk-tooltip="1 documents">
+    <a class="kb-cloud-item" style="--kb-weight: 0.5;" href="Filesystem_varlog.html" uk-tooltip="1 documents">
         <span class="kb-cloud-word">/var/log</span>
     </a>
-    <a class="kb-cloud-item" style="--kb-weight: 0.631;" href="Filesystem_varlogjournal.html" uk-tooltip="1 documents">
+    <a class="kb-cloud-item" style="--kb-weight: 0.5;" href="Filesystem_varlogjournal.html" uk-tooltip="1 documents">
         <span class="kb-cloud-word">/var/log/journal</span>
     </a>
 </div>
@@ -256,8 +274,16 @@
             </thead>
             <tbody>
                 <tr>
+                    <td><a class="uk-link-heading" href="Filesystem_dev.html">/dev</a></td>
+                    <td class="uk-width-small uk-text-right">1</td>
+                </tr>
+                <tr>
                     <td><a class="uk-link-heading" href="Filesystem_etc.html">/etc</a></td>
-                    <td class="uk-width-small uk-text-right">2</td>
+                    <td class="uk-width-small uk-text-right">3</td>
+                </tr>
+                <tr>
+                    <td><a class="uk-link-heading" href="Filesystem_etcfstab.html">/etc/fstab</a></td>
+                    <td class="uk-width-small uk-text-right">1</td>
                 </tr>
                 <tr>
                     <td><a class="uk-link-heading" href="Filesystem_etcssh.html">/etc/ssh</a></td>
@@ -265,6 +291,14 @@
                 </tr>
                 <tr>
                     <td><a class="uk-link-heading" href="Filesystem_etcsystemd.html">/etc/systemd</a></td>
+                    <td class="uk-width-small uk-text-right">1</td>
+                </tr>
+                <tr>
+                    <td><a class="uk-link-heading" href="Filesystem_intranet27.html">/intranet27</a></td>
+                    <td class="uk-width-small uk-text-right">1</td>
+                </tr>
+                <tr>
+                    <td><a class="uk-link-heading" href="Filesystem_tmp.html">/tmp</a></td>
                     <td class="uk-width-small uk-text-right">1</td>
                 </tr>
                 <tr>
@@ -285,9 +319,21 @@
     <li>
         <div class="uk-grid-small" uk-grid>
             <div class="uk-width-expand uk-text-bold" uk-leader>
+                <a class="uk-link-heading" href="Filesystem_dev.html">/dev</a>
+            </div>
+            <div>1</div>
+        </div>
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-expand uk-text-bold" uk-leader>
                 <a class="uk-link-heading" href="Filesystem_etc.html">/etc</a>
             </div>
-            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-expand uk-text-bold" uk-leader>
+                <a class="uk-link-heading" href="Filesystem_etcfstab.html">/etc/fstab</a>
+            </div>
+            <div>1</div>
         </div>
         <div class="uk-grid-small" uk-grid>
             <div class="uk-width-expand uk-text-bold" uk-leader>
@@ -298,6 +344,18 @@
         <div class="uk-grid-small" uk-grid>
             <div class="uk-width-expand uk-text-bold" uk-leader>
                 <a class="uk-link-heading" href="Filesystem_etcsystemd.html">/etc/systemd</a>
+            </div>
+            <div>1</div>
+        </div>
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-expand uk-text-bold" uk-leader>
+                <a class="uk-link-heading" href="Filesystem_intranet27.html">/intranet27</a>
+            </div>
+            <div>1</div>
+        </div>
+        <div class="uk-grid-small" uk-grid>
+            <div class="uk-width-expand uk-text-bold" uk-leader>
+                <a class="uk-link-heading" href="Filesystem_tmp.html">/tmp</a>
             </div>
             <div>1</div>
         </div>
@@ -329,7 +387,7 @@
 <!-- FOOTER :: START -->
 <div class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Thursday, May 21, 2026 at 09:26</span>
+    <span class="kb-footer-meta">Last updated Thursday, May 21, 2026 at 13:43</span>
 </div>
 <!-- FOOTER :: END -->
 </div>

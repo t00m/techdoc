@@ -178,6 +178,151 @@
             },
             "metadata_hash": "83ea659e5460e07120fcd9f9e540e644506558ca68d5e9ba2dcdc96a3793a90b55fff29a78d4eaec46b07069d97c426d73603389b77e28ca8c10f3643116388e"
         },
+        "SLES11-ZLINUX-DASD-PROVISIONING.md": {
+            "Category": [
+                "Procedure"
+            ],
+            "Command": [
+                "chown",
+                "cp",
+                "dasd_configure",
+                "dasdfmt",
+                "fdasd",
+                "ls",
+                "lsdasd",
+                "lvcreate",
+                "lvs",
+                "mkreiserfs",
+                "pvcreate",
+                "ssh",
+                "vgcreate",
+                "vgextend",
+                "vgs",
+                "vi"
+            ],
+            "Date": [
+                "2011-07-14 00:00:00"
+            ],
+            "DocType": [
+                "How-to guide"
+            ],
+            "Environment": [
+                "Production"
+            ],
+            "Filename": [
+                "fstab"
+            ],
+            "Filesystem": [
+                "/dev",
+                "/etc",
+                "/etc/fstab",
+                "/intranet27",
+                "/tmp"
+            ],
+            "OS": [
+                "Linux"
+            ],
+            "Product": [
+                "Domino",
+                "ReiserFS",
+                "SUSE Linux Enterprise Server 11",
+                "s390x"
+            ],
+            "Scope": [
+                "Infrastructure"
+            ],
+            "Server": [
+                "lxzlin01",
+                "lxzlin02"
+            ],
+            "Subsystem": [
+                "LVM"
+            ],
+            "Tag": [
+                "dasd"
+            ],
+            "Title": [
+                "IBM zLinux - DASD Provisioning and LVM Storage Setup for a New Domino Instance"
+            ],
+            "Topic": [
+                "Configuration",
+                "Installation"
+            ],
+            "body_hash": "7fbcdc7fa77c60a3d8f28bd1ff7bb0c469fe3f44e76ac2755461163ff89b116bac9c8d0f530905862458bf2cb045f60867bbf21623970018a2f91feec33a9400",
+            "content": "/home/runner/work/techdoc/techdoc/source/SLES11-ZLINUX-DASD-PROVISIONING.md",
+            "keys": {
+                "Category": [
+                    "Procedure"
+                ],
+                "Command": [
+                    "ssh",
+                    "vi",
+                    "chown",
+                    "ls",
+                    "lsdasd",
+                    "dasd_configure",
+                    "dasdfmt",
+                    "fdasd",
+                    "pvcreate",
+                    "vgs",
+                    "vgextend",
+                    "vgcreate",
+                    "lvcreate",
+                    "lvs",
+                    "mkreiserfs",
+                    "cp"
+                ],
+                "Date": [
+                    "2011-07-14"
+                ],
+                "DocType": [
+                    "How-to guide"
+                ],
+                "Environment": [
+                    "Production"
+                ],
+                "Filename": [
+                    "fstab"
+                ],
+                "Filesystem": [
+                    "/etc",
+                    "/etc/fstab",
+                    "/dev",
+                    "/tmp",
+                    "/intranet27"
+                ],
+                "OS": [
+                    "Linux"
+                ],
+                "Product": [
+                    "SUSE Linux Enterprise Server 11",
+                    "s390x",
+                    "Domino",
+                    "ReiserFS"
+                ],
+                "Scope": [
+                    "Infrastructure"
+                ],
+                "Server": [
+                    "lxzlin01",
+                    "lxzlin02"
+                ],
+                "Subsystem": [
+                    "LVM"
+                ],
+                "Tag": [
+                    "dasd"
+                ],
+                "Title": [
+                    "IBM zLinux - DASD Provisioning and LVM Storage Setup for a New Domino Instance"
+                ],
+                "Topic": [
+                    "Installation",
+                    "Configuration"
+                ]
+            },
+            "metadata_hash": "477b15af563079336488a4ee318e7de21143da2f3c9c900a8dbcadadf5a8bde756b329c50ebfdaa754ac92646b52a3de1a6d2e50057646dfc3135997478c4754"
+        },
         "X11-SSH-FORWARDING.md": {
             "Category": [
                 "Procedure"
@@ -384,12 +529,23 @@
             ],
             "Procedure": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
             ]
         },
         "Command": {
+            "chown": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "cp": [
-                "LINUX-SYSTEMD-JOURNALCTL.md"
+                "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "dasd_configure": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "dasdfmt": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "dnf": [
                 "X11-SSH-FORWARDING.md"
@@ -400,10 +556,32 @@
             "echo": [
                 "X11-SSH-FORWARDING.md"
             ],
+            "fdasd": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "journalctl": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
+            "ls": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "lsdasd": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "lvcreate": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "lvs": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "mkreiserfs": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "pvcreate": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "ssh": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
             ],
             "sudo": [
@@ -412,6 +590,18 @@
             "systemctl": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "X11-SSH-FORWARDING.md"
+            ],
+            "vgcreate": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "vgextend": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "vgs": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "vi": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "xauth": [
                 "X11-SSH-FORWARDING.md"
@@ -422,6 +612,9 @@
             ]
         },
         "Date": {
+            "2011-07-14 00:00:00": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "2024-05-14 12:00:00": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
@@ -437,6 +630,7 @@
                 "HELLO-WORLD.md"
             ],
             "How-to guide": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
             ],
             "Reference": [
@@ -448,7 +642,15 @@
                 "X11-SSH-FORWARDING.md"
             ]
         },
+        "Environment": {
+            "Production": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ]
+        },
         "Filename": {
+            "fstab": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "journald.conf": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
@@ -460,15 +662,28 @@
             ]
         },
         "Filesystem": {
+            "/dev": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "/etc": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
+            ],
+            "/etc/fstab": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "/etc/ssh": [
                 "X11-SSH-FORWARDING.md"
             ],
             "/etc/systemd": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "/intranet27": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "/tmp": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "/var": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
@@ -483,6 +698,7 @@
         "OS": {
             "Linux": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
             ],
             "Windows": [
@@ -495,6 +711,9 @@
             ]
         },
         "Product": {
+            "Domino": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "KB4IT": [
                 "HELLO-WORLD.md"
             ],
@@ -507,8 +726,17 @@
             "Putty": [
                 "X11-SSH-FORWARDING.md"
             ],
+            "ReiserFS": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "SUSE Linux Enterprise Server 11": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "Xming": [
                 "X11-SSH-FORWARDING.md"
+            ],
+            "s390x": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ]
         },
         "Protocol": {
@@ -520,9 +748,20 @@
             ]
         },
         "Scope": {
+            "Infrastructure": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "Unix Administration": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "X11-SSH-FORWARDING.md"
+            ]
+        },
+        "Server": {
+            "lxzlin01": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "lxzlin02": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ]
         },
         "Service": {
@@ -537,6 +776,9 @@
             ]
         },
         "Subsystem": {
+            "LVM": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
             "Systemd": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "X11-SSH-FORWARDING.md"
@@ -554,6 +796,9 @@
             ],
             "client": [
                 "X11-SSH-FORWARDING.md"
+            ],
+            "dasd": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "display": [
                 "X11-SSH-FORWARDING.md"
@@ -609,6 +854,9 @@
             ],
             "How to manage Systemd journal logs": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "IBM zLinux - DASD Provisioning and LVM Storage Setup for a New Domino Instance": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ]
         },
         "Topic": {
@@ -617,6 +865,7 @@
                 "X11-SSH-FORWARDING.md"
             ],
             "Configuration": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
             ],
             "Connectivity": [
@@ -624,6 +873,9 @@
             ],
             "Housekeeping": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "Installation": [
+                "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "Monitoring": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
