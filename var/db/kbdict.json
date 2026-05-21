@@ -17,10 +17,7 @@
                 "KB4IT"
             ],
             "Tag": [
-                "github-pages",
-                "hello-world",
-                "kb4it",
-                "techdoc"
+                "github-pages"
             ],
             "Title": [
                 "Hello world"
@@ -44,16 +41,13 @@
                     "KB4IT"
                 ],
                 "Tag": [
-                    "techdoc",
-                    "kb4it",
-                    "github-pages",
-                    "hello-world"
+                    "github-pages"
                 ],
                 "Title": [
                     "Hello world"
                 ]
             },
-            "metadata_hash": "c4aa055e7c194e6a093c59c75009c67c57561585148b8983fee5eaaff6887d512b915a61e86c9f5921d9c46e7cd25201077c309ab73b79a5d4fc62c0cb641ee3"
+            "metadata_hash": "2fb496bacaacd27d6f00645c61a0934927e8a5cd32d1f73396719b68196b00ca42eb9df264a318d4ea5e128f90e947befed468bf1e8397200c94111d6bdc28b9"
         },
         "LINUX-SYSTEMD-JOURNALCTL.md": {
             "Author": [
@@ -331,20 +325,11 @@
             "github-pages": [
                 "HELLO-WORLD.md"
             ],
-            "hello-world": [
-                "HELLO-WORLD.md"
-            ],
-            "kb4it": [
-                "HELLO-WORLD.md"
-            ],
             "log": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
             "message": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
-            ],
-            "techdoc": [
-                "HELLO-WORLD.md"
             ],
             "unit": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
