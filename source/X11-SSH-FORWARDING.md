@@ -12,6 +12,7 @@ Product: MobaXterm, OpenSSH, Putty, Xming
 Protocol: SSH, X11
 Scope: Unix Administration
 Service: sshd
+Subsystem: Systemd
 Status: Released
 Tag: forwarding, graphical, display, remote, secure, client
 Topic: Administration, Configuration, Connectivity
