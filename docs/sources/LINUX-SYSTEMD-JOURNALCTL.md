@@ -6,9 +6,9 @@ DocType: Reference
 Filename: journald.conf, journald.conf.back
 Filesystem: /etc, /var, /var/log, /etc/systemd, /var/log/journal
 OS: Linux
-Product: Systemd
 Scope: Unix Administration
 Status: Released
+Subsystem: Systemd
 Tag: journal, clear, log, message, vacuum, unit
 Team: Unix
 Topic: Administration, Monitoring, Troubleshooting, Housekeeping

@@ -79,14 +79,14 @@
             "OS": [
                 "Linux"
             ],
-            "Product": [
-                "Systemd"
-            ],
             "Scope": [
                 "Unix Administration"
             ],
             "Status": [
                 "Released"
+            ],
+            "Subsystem": [
+                "Systemd"
             ],
             "Tag": [
                 "clear",
@@ -143,14 +143,14 @@
                 "OS": [
                     "Linux"
                 ],
-                "Product": [
-                    "Systemd"
-                ],
                 "Scope": [
                     "Unix Administration"
                 ],
                 "Status": [
                     "Released"
+                ],
+                "Subsystem": [
+                    "Systemd"
                 ],
                 "Tag": [
                     "journal",
@@ -176,7 +176,7 @@
                     "linuxhandbook.com"
                 ]
             },
-            "metadata_hash": "17d78f8acfddeb1f686d871149a753d07a8e7d881ef8cc61feef050a951a4276e3c044086b39cdffd84e488c60433cc2b8d5a8e8d77673186925bdd210244770"
+            "metadata_hash": "83ea659e5460e07120fcd9f9e540e644506558ca68d5e9ba2dcdc96a3793a90b55fff29a78d4eaec46b07069d97c426d73603389b77e28ca8c10f3643116388e"
         },
         "X11-SSH-FORWARDING.md": {
             "Category": [
@@ -232,6 +232,9 @@
             ],
             "Status": [
                 "Released"
+            ],
+            "Subsystem": [
+                "Systemd"
             ],
             "Tag": [
                 "client",
@@ -307,6 +310,9 @@
                 "Status": [
                     "Released"
                 ],
+                "Subsystem": [
+                    "Systemd"
+                ],
                 "Tag": [
                     "forwarding",
                     "graphical",
@@ -324,7 +330,7 @@
                     "Connectivity"
                 ]
             },
-            "metadata_hash": "8e5e150e6cf6bc661350a943a605ee5864af812f248de3e1245248af79eab716abbbf11ca14e856f4ad76de13bc04e1555a1027263ec07367ff87b725ee5de70"
+            "metadata_hash": "c498cd4e50c2b71a863dac6a6a653fd20b3146566e53c39d26efa44bedc2e8041ff39c87399ed1af9c9ad1cac5699addaa747f9fc25e1f656efcacd1b0785a0b"
         },
         "about_app.md": {
             "SystemPage": [
@@ -501,9 +507,6 @@
             "Putty": [
                 "X11-SSH-FORWARDING.md"
             ],
-            "Systemd": [
-                "LINUX-SYSTEMD-JOURNALCTL.md"
-            ],
             "Xming": [
                 "X11-SSH-FORWARDING.md"
             ]
@@ -529,6 +532,12 @@
         },
         "Status": {
             "Released": [
+                "LINUX-SYSTEMD-JOURNALCTL.md",
+                "X11-SSH-FORWARDING.md"
+            ]
+        },
+        "Subsystem": {
+            "Systemd": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "X11-SSH-FORWARDING.md"
             ]
