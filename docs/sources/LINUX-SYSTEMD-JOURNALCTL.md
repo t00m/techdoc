@@ -5,7 +5,7 @@ Command: journalctl, cp, du, systemctl
 Date: 2024-05-14 12:00:00
 DocType: Reference
 Filename: journald.conf, journald.conf.back
-Filesystem: /etc/systemd, /var/log/journal
+Filesystem: /etc, /var, /var/log, /etc/systemd, /var/log/journal
 OS: Linux
 Priority: Normal
 Product: Systemd

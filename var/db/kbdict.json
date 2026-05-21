@@ -73,7 +73,10 @@
                 "journald.conf.back"
             ],
             "Filesystem": [
+                "/etc",
                 "/etc/systemd",
+                "/var",
+                "/var/log",
                 "/var/log/journal"
             ],
             "OS": [
@@ -139,6 +142,9 @@
                     "journald.conf.back"
                 ],
                 "Filesystem": [
+                    "/etc",
+                    "/var",
+                    "/var/log",
                     "/etc/systemd",
                     "/var/log/journal"
                 ],
@@ -181,7 +187,7 @@
                     "linuxhandbook.com"
                 ]
             },
-            "metadata_hash": "87977a6a4fd3b2a8643cfa32e5f350acb5e0e7934a24962db3c7692b55d20a87119e5c8481e5f03b16bd83530bc385f8308b61dda660662688748432294c136f"
+            "metadata_hash": "03cc7e541724889611d4f1329437a07e6fecf1fc66c781c5baf798b8a39940f603774d0ce96859ed58487677a884210cce5a0fa20a1ab1766d916c1a37733f2b"
         },
         "about_app.md": {
             "SystemPage": [
@@ -277,7 +283,16 @@
             ]
         },
         "Filesystem": {
+            "/etc": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
             "/etc/systemd": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "/var": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "/var/log": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
             "/var/log/journal": [
