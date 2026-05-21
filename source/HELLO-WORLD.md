@@ -4,7 +4,7 @@ Category: Note
 Date: 2026-05-20
 DocType: Explanation
 Product: KB4IT
-Tag: techdoc, kb4it, github-pages, hello-world
+Tag: github-pages
 ---
 
 # Hello world
