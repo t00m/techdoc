@@ -5,9 +5,9 @@
      DEBUG |   84 | KB4IT           | [CONTROLLER] GPATH_ROOT path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it
      DEBUG |   85 | KB4IT           | [CONTROLLER] LPATH_ROOT path=/home/runner/.kb4it
      DEBUG |  103 | KB4IT           | [CONTROLLER] PARAM name=action value=build
-     DEBUG |  103 | KB4IT           | [CONTROLLER] PARAM name=config value=config/repo_force_mode.json
+     DEBUG |  103 | KB4IT           | [CONTROLLER] PARAM name=config value=config/repo.json
      DEBUG |  103 | KB4IT           | [CONTROLLER] PARAM name=force value=False
-     DEBUG |  103 | KB4IT           | [CONTROLLER] PARAM name=log_level value=DEBUG
+     DEBUG |  103 | KB4IT           | [CONTROLLER] PARAM name=log_level value=INFO
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=DB
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Backend
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Frontend
@@ -16,17 +16,17 @@
      DEBUG |  165 | KB4IT           | [CONTROLLER] START version=0.7.6+build.17
      DEBUG |  166 | KB4IT           | [CONTROLLER] ACTION name=build
      DEBUG |   59 | Workflow        | [SERVICE] STARTED name=Workflow
-     DEBUG |   48 | Backend         | [BACKEND] CONFIG_FILE path=/home/runner/work/techdoc/techdoc/config/repo_force_mode.json
+     DEBUG |   48 | Backend         | [BACKEND] CONFIG_FILE path=/home/runner/work/techdoc/techdoc/config/repo.json
      DEBUG |   50 | Backend         | [BACKEND] CONFIG_LOADED
-     DEBUG |   87 | Backend         | [BACKEND] VAR_CLEARED path=/home/runner/work/techdoc/techdoc/var reason=force
      DEBUG |  101 | Backend         | [BACKEND] LOG_FILE path=/home/runner/work/techdoc/techdoc/var/log/kb4it.log
      DEBUG |   59 | Database        | [SERVICE] STARTED name=Database
      DEBUG |   59 | Builder         | [SERVICE] STARTED name=Builder
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Processor
-     DEBUG |  217 | Backend         | [BACKEND] KBDICT_ENTRIES n=2
+     DEBUG |  203 | Backend         | [BACKEND] KBDICT_LOAD path=/home/runner/work/techdoc/techdoc/var/db/kbdict.json
+     DEBUG |  217 | Backend         | [BACKEND] KBDICT_ENTRIES n=3
      DEBUG |   59 | Processor       | [SERVICE] STARTED name=Processor
      DEBUG |   59 | Backend         | [SERVICE] STARTED name=Backend
-      INFO |  128 | Workflow        | [WORKFLOW] BUILD theme=techdoc repo=KB4IT
+      INFO |  128 | Workflow        | [WORKFLOW] BUILD theme=techdoc repo=t00m's tech notes
       INFO |  130 | Workflow        | [WORKFLOW] STAGE n=1 name=check_environment
      DEBUG |   59 | Frontend        | [SERVICE] STARTED name=Frontend
      DEBUG |  254 | Backend         | [BACKEND] CHECKS_START
@@ -47,7 +47,7 @@
      DEBUG |   59 | Theme           | [SERVICE] STARTED name=Theme
      DEBUG |  132 | Frontend        | [FRONTEND] THEME_LOADED id=techdoc
      DEBUG |  286 | Backend         | [BACKEND] CHECKS_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0239s => Stage stage_01_check_environment
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0210s => Stage stage_01_check_environment
       INFO |  134 | Workflow        | [WORKFLOW] STAGE n=2 name=get_sources
      DEBUG |  291 | Backend         | [BACKEND] SOURCES_START
      DEBUG |  156 | Builder         | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_ABOUT_KB4IT.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_ABOUT_KB4IT.tpl'
@@ -55,11 +55,25 @@
      DEBUG |  153 | Builder         | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/md/PAGE_ABOUT_KB4IT.tpl
      DEBUG |  315 | Backend         | [BACKEND] ABOUT_KB4IT_CREATED
    WARNING |  322 | Backend         | [BACKEND] ABOUT_APP_CREATED
-     DEBUG |  336 | Backend         | [BACKEND] DOCS_FOUND n=2
+     DEBUG |  336 | Backend         | [BACKEND] DOCS_FOUND n=3
      DEBUG |  337 | Backend         | [BACKEND] SOURCES_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0039s => Stage stage_02_get_source_documents
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0036s => Stage stage_02_get_source_documents
       INFO |  138 | Workflow        | [WORKFLOW] STAGE n=3 name=process_sources
      DEBUG |  342 | Backend         | [BACKEND] EXTRACTION_START
+     DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=HELLO-WORLD.md valid=True reason=Success
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=HELLO-WORLD.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=Title value=Hello world
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=Author value=Tomás Vírseda
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=Category value=Note
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=Date value=2026-05-20 00:00:00
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=DocType value=Explanation
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=Product value=KB4IT
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=Tag value=techdoc
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=Tag value=kb4it
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=Tag value=github-pages
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=HELLO-WORLD.md key=Tag value=hello-world
+     DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=HELLO-WORLD.md body=7391b989d7b7b3be236e467f2ff85b9397f1ed11c6989a88e06c07448157086de564a6a6357fd2e8db38bebb1431b8997707189a2d2ac4c30da2aad4788bc267 meta=c4aa055e7c194e6a093c59c75009c67c57561585148b8983fee5eaaff6887d512b915a61e86c9f5921d9c46e7cd25201077c309ab73b79a5d4fc62c0cb641ee3
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=HELLO-WORLD.md resource=HELLO-WORLD.html
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=about_app.md valid=True reason=Success
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=about_app.md
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=about_app.md key=Title value=About this app
@@ -75,28 +89,151 @@
      DEBUG |  225 | Backend         | [BACKEND] KBDICT_SAVED path=/home/runner/work/techdoc/techdoc/var/db/kbdict.json
      DEBUG |  344 | Backend         | [BACKEND] EXTRACTION_END
      DEBUG |  345 | Backend         | [BACKEND] ANALYSIS_START
-     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_app.md body=True meta=True title=True not_cached=True compile=True
-     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_kb4it.md body=True meta=True title=True not_cached=True compile=True
-     DEBUG |  192 | Processor       | [PROCESSOR] KEYS_ALL count=0
+     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=HELLO-WORLD.md body=True meta=True title=True not_cached=True compile=True
+     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_app.md body=False meta=False title=False not_cached=False compile=False
+     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_kb4it.md body=False meta=False title=False not_cached=False compile=False
+     DEBUG |  192 | Processor       | [PROCESSOR] KEYS_ALL count=5
      DEBUG |  193 | Processor       | [PROCESSOR] KEYS_IGNORED count=2
-     DEBUG |  194 | Processor       | [PROCESSOR] KEYS_AVAILABLE count=0
-     DEBUG |  195 | Processor       | [PROCESSOR] FORCE_KV_PAIRS count=0
+     DEBUG |  194 | Processor       | [PROCESSOR] KEYS_AVAILABLE count=5
+     DEBUG |  195 | Processor       | [PROCESSOR] FORCE_KV_PAIRS count=8
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Author value=Tomás Vírseda compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Author compile=True
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Category value=Note compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Category compile=True
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=DocType value=Explanation compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=DocType compile=True
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=KB4IT compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Product compile=True
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=github-pages compile=True
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=hello-world compile=True
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=kb4it compile=True
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=techdoc compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Tag compile=True
      DEBUG |  347 | Backend         | [BACKEND] ANALYSIS_END
      DEBUG |  348 | Backend         | [BACKEND] TRANSFORMATION_START
      DEBUG |  353 | Processor       | [PROCESSOR] TRANSFORM_START
-     DEBUG |  382 | Processor       | [PROCESSOR] KEYS_TO_COMPILE n=0
-     DEBUG |  383 | Processor       | [PROCESSOR] KV_PAIRS_TO_COMPILE n=0
-     DEBUG |  384 | Processor       | [PROCESSOR] TARGET_DOCS n=2
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_KEY.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_KEY.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_KEY.tpl
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/WORDCLOUD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/WORDCLOUD.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/WORDCLOUD.tpl
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Author value=Tomás Vírseda count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Author.md resource=Author.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Author.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Author.md key=Title value=Author
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Author.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Author resource=Author
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Author.md resource=Author.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Category value=Note count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Category.md resource=Category.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Category.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Category.md key=Title value=Category
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Category.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Category resource=Category
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Category.md resource=Category.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Explanation count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType.md resource=DocType.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=DocType.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=DocType.md key=Title value=DocType
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=DocType.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=DocType resource=DocType
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType.md resource=DocType.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=KB4IT count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product.md resource=Product.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Product.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product.md key=Title value=Product
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Product resource=Product
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product.md resource=Product.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=github-pages count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=hello-world count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=kb4it count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=techdoc count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag.md resource=Tag.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag.md key=Title value=Tag
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Tag resource=Tag
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag.md resource=Tag.html
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_KEY_VALUE.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_KEY_VALUE.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_KEY_VALUE.tpl
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/LINK_DATATABLE.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/LINK_DATATABLE.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/LINK_DATATABLE.tpl
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE.tpl
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE_HEADER_ITEM.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE_HEADER_ITEM.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE_HEADER_ITEM.tpl
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE_BODY_ITEM.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE_BODY_ITEM.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE_BODY_ITEM.tpl
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Author_Tomás_Vírseda.md resource=Author_Tomás_Vírseda.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Author_Tomás_Vírseda.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Author_Tomás_Vírseda.md key=Title value=Author: Tomás Vírseda
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Author_Tomás_Vírseda.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Author_Tomás_Vírseda.md resource=Author_Tomás_Vírseda.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Category_Note.md resource=Category_Note.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Category_Note.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Category_Note.md key=Title value=Category: Note
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Category_Note.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Category_Note.md resource=Category_Note.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType_Explanation.md resource=DocType_Explanation.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=DocType_Explanation.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=DocType_Explanation.md key=Title value=DocType: Explanation
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=DocType_Explanation.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType_Explanation.md resource=DocType_Explanation.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_KB4IT.md resource=Product_KB4IT.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Product_KB4IT.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_KB4IT.md key=Title value=Product: KB4IT
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_KB4IT.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_KB4IT.md resource=Product_KB4IT.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_github-pages.md resource=Tag_github-pages.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag_github-pages.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_github-pages.md key=Title value=Tag: github-pages
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_github-pages.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_github-pages.md resource=Tag_github-pages.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_hello-world.md resource=Tag_hello-world.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag_hello-world.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_hello-world.md key=Title value=Tag: hello-world
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_hello-world.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_hello-world.md resource=Tag_hello-world.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_kb4it.md resource=Tag_kb4it.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag_kb4it.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_kb4it.md key=Title value=Tag: kb4it
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_kb4it.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_kb4it.md resource=Tag_kb4it.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_techdoc.md resource=Tag_techdoc.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag_techdoc.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_techdoc.md key=Title value=Tag: techdoc
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_techdoc.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_techdoc.md resource=Tag_techdoc.html
+     DEBUG |  382 | Processor       | [PROCESSOR] KEYS_TO_COMPILE n=5
+     DEBUG |  383 | Processor       | [PROCESSOR] KV_PAIRS_TO_COMPILE n=8
+     DEBUG |  384 | Processor       | [PROCESSOR] TARGET_DOCS n=16
      DEBUG |  385 | Processor       | [PROCESSOR] TRANSFORM_END
      DEBUG |  350 | Backend         | [BACKEND] TRANSFORMATION_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0026s => Stage stage_03_process_sources
-      INFO |  142 | Workflow        | [WORKFLOW] PLAN docs=2 keys=0 kv=0
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0240s => Stage stage_03_process_sources
+      INFO |  142 | Workflow        | [WORKFLOW] PLAN docs=1 keys=5 kv=8
       INFO |  148 | Workflow        | [WORKFLOW] STAGE n=4 name=process_theme
      DEBUG |  355 | Backend         | [BACKEND] THEME_START
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/EVENTCAL_PAGE_EVENTS_DAYS.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/EVENTCAL_PAGE_EVENTS_DAYS.tpl'
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/EVENTCAL_PAGE_EVENTS_DAYS.tpl
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/EVENTCAL_PAGE_EVENTS_MONTHS.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/EVENTCAL_PAGE_EVENTS_MONTHS.tpl'
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/EVENTCAL_PAGE_EVENTS_MONTHS.tpl
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260520.md resource=events_20260520.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=events_20260520.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_20260520.md key=Title value=Events on Wednesday, May 20, 2026
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_20260520.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260520.md resource=events_20260520.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202605.md resource=events_202605.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=events_202605.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_202605.md key=Title value=Events on May, 2026
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_202605.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202605.md resource=events_202605.html
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/EVENTCAL_PAGE_EVENTS_YEARS.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/EVENTCAL_PAGE_EVENTS_YEARS.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/EVENTCAL_PAGE_EVENTS_YEARS.tpl
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2026.md resource=events_2026.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=events_2026.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_2026.md key=Title value=Archive / 2026
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_2026.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2026.md resource=events_2026.html
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_EVENTS.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_EVENTS.tpl'
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_EVENTS.tpl
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events.md resource=events.html
@@ -107,6 +244,11 @@
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_PROPERTIES.tpl
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/KEY_MODAL_BUTTON.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/KEY_MODAL_BUTTON.tpl'
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/KEY_MODAL_BUTTON.tpl
+     DEBUG |  609 | Theme           | [THEME] KEY key=Author frequency=1
+     DEBUG |  609 | Theme           | [THEME] KEY key=Category frequency=1
+     DEBUG |  609 | Theme           | [THEME] KEY key=DocType frequency=1
+     DEBUG |  609 | Theme           | [THEME] KEY key=Product frequency=1
+     DEBUG |  609 | Theme           | [THEME] KEY key=Tag frequency=4
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=properties.md resource=properties.html
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=properties.md
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=properties.md key=Title value=Properties
@@ -119,15 +261,8 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=stats.md key=SystemPage value=Yes
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_BOOKMARKS.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_BOOKMARKS.tpl'
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_BOOKMARKS.tpl
+     DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=HELLO-WORLD.md bookmark= is_bookmarked=False
      DEBUG |  942 | Theme           | [THEME] BOOKMARKS_FOUND n=0
-     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/LINK_DATATABLE.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/LINK_DATATABLE.tpl'
-     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/LINK_DATATABLE.tpl
-     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE.tpl'
-     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE.tpl
-     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE_HEADER_ITEM.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE_HEADER_ITEM.tpl'
-     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE_HEADER_ITEM.tpl
-     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE_BODY_ITEM.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/DATATABLE_BODY_ITEM.tpl'
-     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE_BODY_ITEM.tpl
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=bookmarks.md
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=bookmarks.md key=Title value=Bookmarks
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=bookmarks.md key=SystemPage value=Yes
@@ -144,13 +279,12 @@
      DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Tutorial count=0
      DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=How-to guide count=0
      DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Reference count=0
-     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Explanation count=0
      DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Monitoring count=0
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_INDEX.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_INDEX.tpl'
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_INDEX.tpl
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=index.md resource=index.html
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=index.md
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=index.md key=Title value=KB4IT
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=index.md key=Title value=t00m's tech notes
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=index.md key=SystemPage value=Yes
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_ALL.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/PAGE_ALL.tpl'
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_ALL.tpl
@@ -169,50 +303,44 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=Title value=Help
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=SystemPage value=Yes
      DEBUG |  357 | Backend         | [BACKEND] THEME_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0354s => Stage stage_04_process_theme
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0278s => Stage stage_04_process_theme
       INFO |  151 | Workflow        | [WORKFLOW] STAGE n=5 name=compilation
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Compiler
      DEBUG |   59 | Compiler        | [SERVICE] STARTED name=Compiler
      DEBUG |   66 | Compiler        | [COMPILER] START
      DEBUG |   75 | Compiler        | [COMPILER] RESOURCES_COPIED
-     DEBUG |   79 | Compiler        | [COMPILER] TARGETS count=10
+     DEBUG |   79 | Compiler        | [COMPILER] TARGETS count=27
      DEBUG |   83 | Compiler        | [COMPILER] WORKERS n=2
-     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=about_app.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Author.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Author_Tomás_Vírseda.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Category.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Category_Note.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=DocType.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=DocType_Explanation.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=HELLO-WORLD.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Product.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Product_KB4IT.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag_github-pages.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag_hello-world.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag_kb4it.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag_techdoc.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=about_kb4it.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=add.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=all.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=bookmarks.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events_2026.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events_202605.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events_20260520.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=help.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=index.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=properties.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=stats.md format=md
      DEBUG |  111 | Compiler        | [COMPILER] COMPILATION_START
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=about_kb4it.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=about_app.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Author.md rc=True
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/HTML_HEADER_COMMON.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/HTML_HEADER_COMMON.tpl'
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Author_Tomás_Vírseda.md rc=True
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_COMMON.tpl
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/HTML_BODY.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/HTML_BODY.tpl'
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_BODY.tpl
@@ -328,10 +456,35 @@
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/HTML_TAG_IMG_NEW.tpl
      DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/SECTION_ACTIONS.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/SECTION_ACTIONS.tpl'
      DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/SECTION_ACTIONS.tpl
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=add.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=all.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=bookmarks.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Category.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Category_Note.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=DocType.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=DocType_Explanation.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Product.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Product_KB4IT.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_github-pages.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_hello-world.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_kb4it.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=HELLO-WORLD.md rc=True
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/HTML_HEADER_MENU_CONTENTS_ENABLED.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/HTML_HEADER_MENU_CONTENTS_ENABLED.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_MENU_CONTENTS_ENABLED.tpl
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/METADATA_SECTION.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/METADATA_SECTION.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_SECTION.tpl
+     DEBUG |  156 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/METADATA_VALUE_LINK.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/md/METADATA_VALUE_LINK.tpl'
+     DEBUG |  153 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_VALUE_LINK.tpl
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_techdoc.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
@@ -343,64 +496,133 @@
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=index.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=about_kb4it.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=add.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=all.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=bookmarks.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_2026.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_202605.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_20260520.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=help.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=index.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=properties.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=stats.md rc=True
-     DEBUG |  114 | Compiler        | [COMPILER] COMPILED n=10
+     DEBUG |  114 | Compiler        | [COMPILER] COMPILED n=26
      DEBUG |  117 | Compiler        | [COMPILER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0999s => Stage stage_05_compilation
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0992s => Stage stage_05_compilation
       INFO |  154 | Workflow        | [WORKFLOW] STAGE n=6 name=theme_post
       INFO |  157 | Workflow        | [WORKFLOW] STAGE n=7 name=deploy
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Deployer
      DEBUG |   59 | Deployer        | [SERVICE] STARTED name=Deployer
      DEBUG |   29 | Deployer        | [DEPLOYER] START
      DEBUG |   30 | Deployer        | [DEPLOYER] DEPLOY_BEGIN
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/HELLO-WORLD.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/about_app.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/about_kb4it.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  136 | Util            | 2 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
-     DEBUG |   71 | Deployer        | [DEPLOYER] SOURCES_TO_TARGET copied=2 deleted=0
+     DEBUG |  136 | Util            | 3 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
+     DEBUG |   71 | Deployer        | [DEPLOYER] SOURCES_TO_TARGET copied=3 deleted=0
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Author_Tomás_Vírseda.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category_Note.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_github-pages.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/DocType_Explanation.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_kb4it.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_github-pages.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/help.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/add.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/HELLO-WORLD.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Author_Tomás_Vírseda.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/bookmarks.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/help.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/index.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_202605.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/about_kb4it.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/HELLO-WORLD.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/properties.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_kb4it.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_2026.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_20260520.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/add.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_KB4IT.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/DocType.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_hello-world.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/all.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/stats.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/DocType.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/index.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/about_app.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/about_app.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_techdoc.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_2026.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Author.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Author.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/DocType_Explanation.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_techdoc.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_hello-world.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category_Note.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_202605.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/about_kb4it.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_20260520.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/stats.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/all.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/properties.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/bookmarks.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  136 | Util            | 20 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
-     DEBUG |   76 | Deployer        | [DEPLOYER] COPIED_ALL_TO_CACHE n=20
-     DEBUG |  105 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=10 deleted=0
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_KB4IT.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  136 | Util            | 52 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
+     DEBUG |   76 | Deployer        | [DEPLOYER] COPIED_ALL_TO_CACHE n=52
+     DEBUG |  105 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=27 deleted=0
      DEBUG |  124 | Deployer        | [DEPLOYER] COPIED_GLOBAL_RESOURCES
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Category.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_github-pages.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/DocType_Explanation.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_kb4it.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/help.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/HELLO-WORLD.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Author_Tomás_Vírseda.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/bookmarks.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/index.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_202605.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/about_kb4it.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/add.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/DocType.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_hello-world.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/all.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/stats.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_2026.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/about_app.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Author.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_techdoc.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Category_Note.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_20260520.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/properties.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  136 | Util            | 10 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_KB4IT.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  136 | Util            | 27 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
      DEBUG |  144 | Deployer        | [DEPLOYER] COPIED_HTML_BACK_TO_CACHE
      DEBUG |  154 | Deployer        | [DEPLOYER] CLEANUP
      DEBUG |   44 | Deployer        | [DEPLOYER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0931s => Stage stage_06_deploy
-      INFO |  170 | Workflow        | [WORKFLOW] SUMMARY docs_total=2 compiled=2 skipped=0 keys_compiled=0 kv_pages_compiled=0
-      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.26s
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.1381s => Stage stage_06_deploy
+      INFO |  170 | Workflow        | [WORKFLOW] SUMMARY docs_total=3 compiled=1 skipped=2 keys_compiled=5 kv_pages_compiled=8
+      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.32s
       INFO |  184 | Workflow        | [WORKFLOW] BUILD_COMPLETE
       INFO |  185 | Workflow        | [WORKFLOW] URL /home/runner/work/techdoc/techdoc/docs/index.html
       INFO |  186 | Workflow        | [WORKFLOW] LOG path=/home/runner/work/techdoc/techdoc/var/log/kb4it.log

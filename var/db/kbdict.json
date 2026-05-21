@@ -55,6 +55,140 @@
             },
             "metadata_hash": "c4aa055e7c194e6a093c59c75009c67c57561585148b8983fee5eaaff6887d512b915a61e86c9f5921d9c46e7cd25201077c309ab73b79a5d4fc62c0cb641ee3"
         },
+        "LINUX-SYSTEMD-JOURNALCTL.md": {
+            "Author": [
+                "Tom\u00e1s V\u00edrseda"
+            ],
+            "Category": [
+                "Procedure"
+            ],
+            "Command": [
+                "cp",
+                "du",
+                "journalctl",
+                "systemctl"
+            ],
+            "Date": [
+                "2024-05-14 12:00:00"
+            ],
+            "DocType": [
+                "Reference"
+            ],
+            "Filename": [
+                "journald.conf",
+                "journald.conf.back"
+            ],
+            "Filesystem": [
+                "/etc/systemd",
+                "/var/log/journal"
+            ],
+            "OS": [
+                "Linux"
+            ],
+            "Priority": [
+                "Normal"
+            ],
+            "Product": [
+                "Systemd"
+            ],
+            "Scope": [
+                "Unix Administration"
+            ],
+            "Status": [
+                "Released"
+            ],
+            "Tag": [
+                "clear",
+                "log",
+                "message",
+                "unit",
+                "vacuum"
+            ],
+            "Team": [
+                "Unix"
+            ],
+            "Title": [
+                "How to manage Systemd journal logs"
+            ],
+            "Topic": [
+                "Administration",
+                "Housekeeping",
+                "Monitoring",
+                "Troubleshooting"
+            ],
+            "Website": [
+                "linuxhandbook.com"
+            ],
+            "body_hash": "0fba35780249f5945e50ce6592321a092e5097d431e724c0d139a3955581bd6561b16d74275f654f4ea37556f8a5a78a3cf25e59287cb6a07e14aded2f83b97e",
+            "content": "/home/runner/work/techdoc/techdoc/source/LINUX-SYSTEMD-JOURNALCTL.md",
+            "keys": {
+                "Author": [
+                    "Tom\u00e1s V\u00edrseda"
+                ],
+                "Category": [
+                    "Procedure"
+                ],
+                "Command": [
+                    "journalctl",
+                    "cp",
+                    "du",
+                    "systemctl"
+                ],
+                "Date": [
+                    "2024-05-14 12:00:00"
+                ],
+                "DocType": [
+                    "Reference"
+                ],
+                "Filename": [
+                    "journald.conf",
+                    "journald.conf.back"
+                ],
+                "Filesystem": [
+                    "/etc/systemd",
+                    "/var/log/journal"
+                ],
+                "OS": [
+                    "Linux"
+                ],
+                "Priority": [
+                    "Normal"
+                ],
+                "Product": [
+                    "Systemd"
+                ],
+                "Scope": [
+                    "Unix Administration"
+                ],
+                "Status": [
+                    "Released"
+                ],
+                "Tag": [
+                    "clear",
+                    "log",
+                    "message",
+                    "vacuum",
+                    "unit",
+                    ""
+                ],
+                "Team": [
+                    "Unix"
+                ],
+                "Title": [
+                    "How to manage Systemd journal logs"
+                ],
+                "Topic": [
+                    "Administration",
+                    "Monitoring",
+                    "Troubleshooting",
+                    "Housekeeping"
+                ],
+                "Website": [
+                    "linuxhandbook.com"
+                ]
+            },
+            "metadata_hash": "87977a6a4fd3b2a8643cfa32e5f350acb5e0e7934a24962db3c7692b55d20a87119e5c8481e5f03b16bd83530bc385f8308b61dda660662688748432294c136f"
+        },
         "about_app.md": {
             "SystemPage": [
                 "True"
@@ -81,7 +215,7 @@
             "Title": [
                 "About KB4IT"
             ],
-            "body_hash": "c799ae583cd77209df036d0a6583b232b572fc75ad63a06f90035bdfbd7c5009df5ce3bb8e10b5525d8b6d1b790d09ab4637e651553c42b6c9cc2f7170451318",
+            "body_hash": "a85a6bf39e027a552252b3958ea7c37b9cd1c952ebef0eecf7f7424dafe65c6db2bc0d04a7aca9768942e8f3b71fb9a0346b2cc0986c5099b5f6a6237aa70cd3",
             "content": "/home/runner/work/techdoc/techdoc/source/about_kb4it.md",
             "keys": {
                 "SystemPage": [
@@ -94,19 +228,40 @@
             "metadata_hash": "0c6b45f7155497596425ef89c86e38abe27369dc735f408915f5d79ae0dc8ffc8fd83a83e9b8c0a3343a293e4b541a6fa179ef3c7ed57eb0303b8cfaf476869f"
         }
     },
-    "kb4it_version": "0.7.6+build.17",
+    "kb4it_version": "0.7.7+build.4",
     "metadata": {
         "Author": {
             "Tom\u00e1s V\u00edrseda": [
-                "HELLO-WORLD.md"
+                "HELLO-WORLD.md",
+                "LINUX-SYSTEMD-JOURNALCTL.md"
             ]
         },
         "Category": {
             "Note": [
                 "HELLO-WORLD.md"
+            ],
+            "Procedure": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "Command": {
+            "cp": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "du": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "journalctl": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "systemctl": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
             ]
         },
         "Date": {
+            "2024-05-14 12:00:00": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
             "2026-05-20 00:00:00": [
                 "HELLO-WORLD.md"
             ]
@@ -114,11 +269,53 @@
         "DocType": {
             "Explanation": [
                 "HELLO-WORLD.md"
+            ],
+            "Reference": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "Filename": {
+            "journald.conf": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "journald.conf.back": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "Filesystem": {
+            "/etc/systemd": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "/var/log/journal": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "OS": {
+            "Linux": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "Priority": {
+            "Normal": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
             ]
         },
         "Product": {
             "KB4IT": [
                 "HELLO-WORLD.md"
+            ],
+            "Systemd": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "Scope": {
+            "Unix Administration": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "Status": {
+            "Released": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
             ]
         },
         "SystemPage": {
@@ -128,6 +325,9 @@
             ]
         },
         "Tag": {
+            "clear": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
             "github-pages": [
                 "HELLO-WORLD.md"
             ],
@@ -137,8 +337,25 @@
             "kb4it": [
                 "HELLO-WORLD.md"
             ],
+            "log": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "message": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
             "techdoc": [
                 "HELLO-WORLD.md"
+            ],
+            "unit": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "vacuum": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "Team": {
+            "Unix": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
             ]
         },
         "Title": {
@@ -150,6 +367,28 @@
             ],
             "Hello world": [
                 "HELLO-WORLD.md"
+            ],
+            "How to manage Systemd journal logs": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "Topic": {
+            "Administration": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "Housekeeping": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "Monitoring": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "Troubleshooting": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
+            ]
+        },
+        "Website": {
+            "linuxhandbook.com": [
+                "LINUX-SYSTEMD-JOURNALCTL.md"
             ]
         }
     }
