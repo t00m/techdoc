@@ -1,5 +1,84 @@
 {
     "document": {
+        "BATCH-RENAME-SED.md": {
+            "Category": [
+                "Procedure"
+            ],
+            "Command": [
+                "find",
+                "grep",
+                "sed"
+            ],
+            "Date": [
+                "2026-04-16 00:00:00"
+            ],
+            "DocType": [
+                "How-to guide"
+            ],
+            "OS": [
+                "Linux"
+            ],
+            "Product": [
+                "KB4IT"
+            ],
+            "Scope": [
+                "Unix Administration"
+            ],
+            "Tag": [
+                "batch",
+                "in-place",
+                "rename",
+                "text"
+            ],
+            "Title": [
+                "Batch Rename Metadata Property Names with sed"
+            ],
+            "Topic": [
+                "Knowledge Management",
+                "Troubleshooting"
+            ],
+            "body_hash": "f30df30d09ef25f91816a34638b5d0e8e88cc47a731314d44d3d852e90b00e4f7cc40e4e7e528f05f64439e5fd6b40c91794d7c32d0cf8f0c6825fc0002d5e81",
+            "content": "/home/runner/work/techdoc/techdoc/source/BATCH-RENAME-SED.md",
+            "keys": {
+                "Category": [
+                    "Procedure"
+                ],
+                "Command": [
+                    "sed",
+                    "find",
+                    "grep"
+                ],
+                "Date": [
+                    "2026-04-16"
+                ],
+                "DocType": [
+                    "How-to guide"
+                ],
+                "OS": [
+                    "Linux"
+                ],
+                "Product": [
+                    "KB4IT"
+                ],
+                "Scope": [
+                    "Unix Administration"
+                ],
+                "Tag": [
+                    "batch",
+                    "rename",
+                    "in-place",
+                    "text"
+                ],
+                "Title": [
+                    "Batch Rename Metadata Property Names with sed"
+                ],
+                "Topic": [
+                    "Knowledge Management",
+                    "Troubleshooting"
+                ]
+            },
+            "metadata_hash": "b7e1ba183e3ef7acaba77d37f7fdc40506e3c63119116c9bcb60a64c1f6f4290d72b68625ea06125acc53aaacbc267d3fde0f6bf4b17055eff270165310cd34d"
+        },
         "HELLO-WORLD.md": {
             "Author": [
                 "Tom\u00e1s V\u00edrseda"
@@ -903,6 +982,7 @@
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Procedure": [
+                "BATCH-RENAME-SED.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
@@ -941,7 +1021,11 @@
             "fdasd": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "find": [
+                "BATCH-RENAME-SED.md"
+            ],
             "grep": [
+                "BATCH-RENAME-SED.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "journalctl": [
@@ -964,6 +1048,9 @@
             ],
             "pvcreate": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "sed": [
+                "BATCH-RENAME-SED.md"
             ],
             "sftp": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
@@ -1023,6 +1110,9 @@
             "2025-12-15 00:00:00": [
                 "X11-SSH-FORWARDING.md"
             ],
+            "2026-04-16 00:00:00": [
+                "BATCH-RENAME-SED.md"
+            ],
             "2026-04-28 00:00:00": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
@@ -1038,6 +1128,7 @@
                 "HELLO-WORLD.md"
             ],
             "How-to guide": [
+                "BATCH-RENAME-SED.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
@@ -1125,6 +1216,7 @@
         },
         "OS": {
             "Linux": [
+                "BATCH-RENAME-SED.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
@@ -1155,6 +1247,7 @@
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "KB4IT": [
+                "BATCH-RENAME-SED.md",
                 "HELLO-WORLD.md"
             ],
             "MobaXterm": [
@@ -1226,6 +1319,7 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "Unix Administration": [
+                "BATCH-RENAME-SED.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "X11-SSH-FORWARDING.md"
@@ -1374,6 +1468,9 @@
             "autoextend": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
+            "batch": [
+                "BATCH-RENAME-SED.md"
+            ],
             "clear": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
@@ -1410,6 +1507,9 @@
             "growth": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
+            "in-place": [
+                "BATCH-RENAME-SED.md"
+            ],
             "instance": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
@@ -1440,6 +1540,9 @@
             "remote": [
                 "X11-SSH-FORWARDING.md"
             ],
+            "rename": [
+                "BATCH-RENAME-SED.md"
+            ],
             "secure": [
                 "X11-SSH-FORWARDING.md"
             ],
@@ -1454,6 +1557,9 @@
             ],
             "tablespace": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ],
+            "text": [
+                "BATCH-RENAME-SED.md"
             ],
             "tracking": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
@@ -1485,6 +1591,9 @@
             ],
             "About this app": [
                 "about_app.md"
+            ],
+            "Batch Rename Metadata Property Names with sed": [
+                "BATCH-RENAME-SED.md"
             ],
             "Hello world": [
                 "HELLO-WORLD.md"
@@ -1529,6 +1638,9 @@
             "Installation": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "Knowledge Management": [
+                "BATCH-RENAME-SED.md"
+            ],
             "Maintenance": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
@@ -1546,6 +1658,7 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "Troubleshooting": [
+                "BATCH-RENAME-SED.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
