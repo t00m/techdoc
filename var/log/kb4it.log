@@ -47,16 +47,16 @@
      DEBUG |   59 | Theme           | [SERVICE] STARTED name=Theme
      DEBUG |  132 | Frontend        | [FRONTEND] THEME_LOADED id=techdoc
      DEBUG |  286 | Backend         | [BACKEND] CHECKS_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0207s => Stage stage_01_check_environment
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0165s => Stage stage_01_check_environment
       INFO |  134 | Workflow        | [WORKFLOW] STAGE n=2 name=get_sources
      DEBUG |  291 | Backend         | [BACKEND] SOURCES_START
      DEBUG |  154 | Builder         | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_ABOUT_KB4IT.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_ABOUT_KB4IT.tpl'
      DEBUG |  151 | Builder         | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/PAGE_ABOUT_KB4IT.tpl
      DEBUG |  315 | Backend         | [BACKEND] ABOUT_KB4IT_CREATED
    WARNING |  322 | Backend         | [BACKEND] ABOUT_APP_CREATED
-     DEBUG |  336 | Backend         | [BACKEND] DOCS_FOUND n=10
+     DEBUG |  336 | Backend         | [BACKEND] DOCS_FOUND n=11
      DEBUG |  337 | Backend         | [BACKEND] SOURCES_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0033s => Stage stage_02_get_source_documents
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0024s => Stage stage_02_get_source_documents
       INFO |  138 | Workflow        | [WORKFLOW] STAGE n=3 name=process_sources
      DEBUG |  342 | Backend         | [BACKEND] EXTRACTION_START
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=X11-SSH-FORWARDING.md valid=True reason=Success
@@ -210,6 +210,35 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Topic value=Troubleshooting
      DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=BATCH-RENAME-SED.md body=f30df30d09ef25f91816a34638b5d0e8e88cc47a731314d44d3d852e90b00e4f7cc40e4e7e528f05f64439e5fd6b40c91794d7c32d0cf8f0c6825fc0002d5e81 meta=192fc5d766ceaac9094ad6f4f6cdc999cf40dc867877a3a6ce0d70bfe93a75460c98a8620c9a6d956eeccb0959a63b77a79a9082d8aa59600cc09ad5a847bb2c
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=BATCH-RENAME-SED.md resource=BATCH-RENAME-SED.html
+     DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md valid=True reason=Success
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Title value=Apache compilation and installation in RedHat
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Author value=Tomás Vírseda
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Category value=Procedure
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=DocType value=How-to guide
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Scope value=Linux Administration
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Scope value=SAP Basis
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Topic value=Installation
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Tag value=apache
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Tag value=webserver
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Tag value=compilation
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Tag value=httpd
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Product value=SAP Content Server
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Product value=DMS
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Product value=Apache
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Product value=RHEL
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=User value=sapcs
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=OS value=Linux
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Command value=yum
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Command value=wget
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Command value=rpm
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Command value=make
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Command value=mkdir
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Command value=configure
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Command value=apachectl
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Date value=2019-10-07 00:00:00
+     DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md body=77fe9837ba570321657a22de289fa2ae1cdc682568173aa12d996b2075c7e5b01edad88451b9baa288f513fb1218719cf95190a313d86f614c0704c066f4b9f1 meta=de65f70010940eb7cf4512fd858cc650f9f056ad73cbe3defe9cbd4eb81c4ff4d985421e1eb438b980553eeeace4a0b88b6fb892e021f580fcc4c936a1200bed
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md resource=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.html
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=about_app.md valid=True reason=Success
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=about_app.md
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=about_app.md key=Title value=About this app
@@ -385,23 +414,26 @@
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SLES11-ZLINUX-DASD-PROVISIONING.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=HELLO-WORLD.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=BATCH-RENAME-SED.md body=False meta=False title=False not_cached=False compile=False
+     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md body=True meta=True title=True not_cached=True compile=True
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_app.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=KB4IT-WEBSITE-AUTOMATED-UPDATE.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_kb4it.md body=False meta=False title=False not_cached=False compile=False
-     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-ORA-SQL-QUERIES.md body=True meta=False title=False not_cached=False compile=True
+     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-ORA-SQL-QUERIES.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  192 | Processor       | [PROCESSOR] KEYS_ALL count=26
      DEBUG |  193 | Processor       | [PROCESSOR] KEYS_IGNORED count=2
      DEBUG |  194 | Processor       | [PROCESSOR] KEYS_AVAILABLE count=26
-     DEBUG |  195 | Processor       | [PROCESSOR] FORCE_KV_PAIRS count=0
+     DEBUG |  195 | Processor       | [PROCESSOR] FORCE_KV_PAIRS count=23
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Author value=Tomas Virseda compile=False
-     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Author value=Tomás Vírseda compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Author compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Author value=Tomás Vírseda compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Author compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Category value=Note compile=False
-     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Category value=Procedure compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Category compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Category value=Procedure compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Category compile=True
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=apachectl compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=cat compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=chown compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=configure compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=cp compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=crontab compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=dasd_configure compile=False
@@ -421,11 +453,14 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=lsdasd compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=lvcreate compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=lvs compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=make compile=True
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=mkdir compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=mkreiserfs compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=nice compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=nohup compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=pvcreate compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=python3 compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=rpm compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=sed compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=sftp compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=sqlplus compile=False
@@ -440,16 +475,18 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=vgextend compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=vgs compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=vi compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=wget compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=xauth compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=xterm compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Command compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Command value=yum compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Command compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Database value=Oracle compile=False
      DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Database compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=DocType value=Explanation compile=False
-     DEBUG |  339 | Processor       | [PROCESSOR] KV key=DocType value=How-to guide compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=DocType value=How-to guide compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=DocType value=Reference compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=DocType value=Tutorial compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=DocType compile=False
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=DocType compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=EnvVar value=$DISPLAY compile=False
      DEBUG |  342 | Processor       | [PROCESSOR] KEY key=EnvVar compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Environment value=Development compile=False
@@ -477,15 +514,17 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Filesystem value=/var/log/journal compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Filesystem value=~/.ssh compile=False
      DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Filesystem compile=False
-     DEBUG |  339 | Processor       | [PROCESSOR] KV key=OS value=Linux compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=OS value=Linux compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=OS value=Unix compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=OS value=Windows compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=OS compile=False
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=OS compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Priority value=Normal compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Priority value=Very high compile=False
      DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Priority compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=AIX compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=Apache compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=Crontab compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=DMS compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=Domino compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=GitLab compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=KB4IT compile=False
@@ -494,13 +533,14 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=OpenSSH compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=Putty compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=ReiserFS compile=False
-     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=RHEL compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=RHEL compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=s390x compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=SAP Content Server compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=SAP Netweaver compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=SQLPlus compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=SUSE Linux Enterprise Server 11 compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Product value=Xming compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Product compile=False
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Product compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Project value=Database Maintenance compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Project value=SAP Basis Maintenance compile=False
      DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Project compile=False
@@ -513,10 +553,11 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Database Administration compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Infrastructure compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Knowledge Management compile=False
-     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Linux Administration compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Linux Administration compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=SAP Administration compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=SAP Basis compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Unix Administration compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Scope compile=False
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Scope compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Server value=lxzlin01 compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Server value=lxzlin02 compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Server value=SAP-DEV compile=False
@@ -563,11 +604,13 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Table value=V$VERSION compile=False
      DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Table compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=agent compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=apache compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=autoextend compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=automation compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=batch compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=clear compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=client compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=compilation compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=daemon compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=dasd compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=datafile compile=False
@@ -579,6 +622,7 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=graphical compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=group compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=growth compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=httpd compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=in-place compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=instance compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=journal compile=False
@@ -603,7 +647,8 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=undo compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=unit compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=vacuum compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Tag compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Tag value=webserver compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Tag compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Team value=SAP compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Team value=SAP Basis compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Team value=Unix compile=False
@@ -614,7 +659,7 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Connectivity compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Documentation compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Housekeeping compile=False
-     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Installation compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Installation compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Knowledge Management compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Maintenance compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Migration compile=False
@@ -624,46 +669,271 @@
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Security compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=Troubleshooting compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Topic value=User compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Topic compile=False
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Topic compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=User value=oracle compile=False
-     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=User compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=User value=sapcs compile=True
+     DEBUG |  342 | Processor       | [PROCESSOR] KEY key=User compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Website value=linuxhandbook.com compile=False
      DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Website compile=False
      DEBUG |  347 | Backend         | [BACKEND] ANALYSIS_END
      DEBUG |  348 | Backend         | [BACKEND] TRANSFORMATION_START
      DEBUG |  353 | Processor       | [PROCESSOR] TRANSFORM_START
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_KEY.tpl
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/WORDCLOUD.tpl
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Author value=Tomas Virseda count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Author value=Tomás Vírseda count=2
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Author.md resource=Author.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Author.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Author.md key=Title value=Author
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Author.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Author resource=Author
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Author.md resource=Author.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Category value=Note count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Category value=Procedure count=7
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Category.md resource=Category.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Category.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Category.md key=Title value=Category
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Category.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Category resource=Category
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Category.md resource=Category.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=apachectl count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=cat count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=chown count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=configure count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=cp count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=crontab count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=dasd_configure count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=dasdfmt count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=date count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=dnf count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=du count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=echo count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=eval count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=fdasd count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=find count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=git count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=grep count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=journalctl count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=kb4it count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=ls count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=lsdasd count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=lvcreate count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=lvs count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=make count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=mkdir count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=mkreiserfs count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=nice count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=nohup count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=pvcreate count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=python3 count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=rpm count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=sed count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=sftp count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=sqlplus count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=ssh count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=ssh-add count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=ssh-agent count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=ssh-keygen count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=sshpass count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=sudo count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=systemctl count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=vgcreate count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=vgextend count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=vgs count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=vi count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=wget count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=xauth count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=xterm count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Command value=yum count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command.md resource=Command.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Command.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command.md key=Title value=Command
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Command resource=Command
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command.md resource=Command.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Database.md resource=Database.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Explanation count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=How-to guide count=5
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Reference count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Tutorial count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType.md resource=DocType.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=DocType.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=DocType.md key=Title value=DocType
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=DocType.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=DocType resource=DocType
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType.md resource=DocType.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=EnvVar.md resource=EnvVar.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Environment.md resource=Environment.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Filename.md resource=Filename.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Filesystem.md resource=Filesystem.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=OS value=Linux count=8
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=OS value=Unix count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=OS value=Windows count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=OS.md resource=OS.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=OS.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=OS.md key=Title value=OS
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=OS.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=OS resource=OS
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=OS.md resource=OS.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Priority.md resource=Priority.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=AIX count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=Apache count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=Crontab count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=DMS count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=Domino count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=GitLab count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=KB4IT count=3
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=Markdown count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=MobaXterm count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=OpenSSH count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=Putty count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=ReiserFS count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=RHEL count=3
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=s390x count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=SAP Content Server count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=SAP Netweaver count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=SQLPlus count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=SUSE Linux Enterprise Server 11 count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Product value=Xming count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product.md resource=Product.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Product.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product.md key=Title value=Product
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Product resource=Product
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product.md resource=Product.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Project.md resource=Project.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Protocol.md resource=Protocol.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Public.md resource=Public.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Database Administration count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Infrastructure count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Knowledge Management count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Linux Administration count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=SAP Administration count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=SAP Basis count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Unix Administration count=3
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope.md resource=Scope.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Scope.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Scope.md key=Title value=Scope
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Scope.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Scope resource=Scope
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope.md resource=Scope.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Server.md resource=Server.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Service.md resource=Service.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Status.md resource=Status.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Subsystem.md resource=Subsystem.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Table.md resource=Table.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=agent count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=apache count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=autoextend count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=automation count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=batch count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=clear count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=client count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=compilation count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=daemon count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=dasd count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=datafile count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=discovery count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=display count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=ed25519 count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=forwarding count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=github-pages count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=graphical count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=group count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=growth count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=httpd count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=in-place count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=instance count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=journal count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=key pair count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=locking count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=log count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=message count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=migration count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=query count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=redolog count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=remote count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=rename count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=repository count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=scripting count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=secure count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=segment count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=size count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=table count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=tablespace count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=text count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=tracking count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=undo count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=unit count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=vacuum count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Tag value=webserver count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag.md resource=Tag.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag.md key=Title value=Tag
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Tag resource=Tag
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag.md resource=Tag.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Team.md resource=Team.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Administration count=3
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Archiving count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Configuration count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Connectivity count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Documentation count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Housekeeping count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Installation count=2
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Knowledge Management count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Maintenance count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Migration count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Monitoring count=3
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Operation count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Performance count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Security count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Troubleshooting count=3
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=User count=1
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic.md resource=Topic.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Topic.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Topic.md key=Title value=Topic
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Topic.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=Topic resource=Topic
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic.md resource=Topic.html
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=User value=oracle count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=User value=sapcs count=1
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=User.md resource=User.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=User.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=User.md key=Title value=User
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=User.md key=SystemPage value=Yes
+     DEBUG |  900 | Theme           | [THEME] KEY_TARGET key=User resource=User
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=User.md resource=User.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Website.md resource=Website.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Author_Tomas_Virseda.md resource=Author_Tomas_Virseda.html
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_KEY_VALUE.tpl
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/LINK_DATATABLE.tpl
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE.tpl
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE_HEADER_ITEM.tpl
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE_BODY_ITEM.tpl
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Author_Tomás_Vírseda.md resource=Author_Tomás_Vírseda.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Author_Tomás_Vírseda.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Author_Tomás_Vírseda.md key=Title value=Author: Tomás Vírseda
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Author_Tomás_Vírseda.md key=SystemPage value=Yes
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Author_Tomás_Vírseda.md resource=Author_Tomás_Vírseda.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Category_Note.md resource=Category_Note.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Category_Procedure.md resource=Category_Procedure.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Category_Procedure.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Category_Procedure.md key=Title value=Category: Procedure
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Category_Procedure.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Category_Procedure.md resource=Category_Procedure.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_apachectl.md resource=Command_apachectl.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Command_apachectl.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_apachectl.md key=Title value=Command: apachectl
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_apachectl.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_apachectl.md resource=Command_apachectl.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_cat.md resource=Command_cat.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_chown.md resource=Command_chown.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_configure.md resource=Command_configure.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Command_configure.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_configure.md key=Title value=Command: configure
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_configure.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_configure.md resource=Command_configure.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_cp.md resource=Command_cp.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_crontab.md resource=Command_crontab.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_dasd_configure.md resource=Command_dasd_configure.html
@@ -683,11 +953,26 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_lsdasd.md resource=Command_lsdasd.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_lvcreate.md resource=Command_lvcreate.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_lvs.md resource=Command_lvs.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_make.md resource=Command_make.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Command_make.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_make.md key=Title value=Command: make
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_make.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_make.md resource=Command_make.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_mkdir.md resource=Command_mkdir.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Command_mkdir.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_mkdir.md key=Title value=Command: mkdir
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_mkdir.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_mkdir.md resource=Command_mkdir.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_mkreiserfs.md resource=Command_mkreiserfs.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_nice.md resource=Command_nice.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_nohup.md resource=Command_nohup.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_pvcreate.md resource=Command_pvcreate.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_python3.md resource=Command_python3.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_rpm.md resource=Command_rpm.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Command_rpm.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_rpm.md key=Title value=Command: rpm
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_rpm.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_rpm.md resource=Command_rpm.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_sed.md resource=Command_sed.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_sftp.md resource=Command_sftp.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_sqlplus.md resource=Command_sqlplus.html
@@ -702,10 +987,24 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_vgextend.md resource=Command_vgextend.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_vgs.md resource=Command_vgs.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_vi.md resource=Command_vi.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_wget.md resource=Command_wget.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Command_wget.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_wget.md key=Title value=Command: wget
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_wget.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_wget.md resource=Command_wget.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_xauth.md resource=Command_xauth.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_xterm.md resource=Command_xterm.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_yum.md resource=Command_yum.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Command_yum.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_yum.md key=Title value=Command: yum
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Command_yum.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Command_yum.md resource=Command_yum.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Database_Oracle.md resource=Database_Oracle.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType_Explanation.md resource=DocType_Explanation.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType_How-to_guide.md resource=DocType_How-to_guide.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=DocType_How-to_guide.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=DocType_How-to_guide.md key=Title value=DocType: How-to guide
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=DocType_How-to_guide.md key=SystemPage value=Yes
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType_How-to_guide.md resource=DocType_How-to_guide.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType_Reference.md resource=DocType_Reference.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=DocType_Tutorial.md resource=DocType_Tutorial.html
@@ -733,12 +1032,26 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Filesystem_varlogjournal.md resource=Filesystem_varlogjournal.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Filesystem_.ssh.md resource=Filesystem_.ssh.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=OS_Linux.md resource=OS_Linux.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=OS_Linux.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=OS_Linux.md key=Title value=OS: Linux
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=OS_Linux.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=OS_Linux.md resource=OS_Linux.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=OS_Unix.md resource=OS_Unix.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=OS_Windows.md resource=OS_Windows.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Priority_Normal.md resource=Priority_Normal.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Priority_Very_high.md resource=Priority_Very_high.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_AIX.md resource=Product_AIX.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_Apache.md resource=Product_Apache.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Product_Apache.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_Apache.md key=Title value=Product: Apache
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_Apache.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_Apache.md resource=Product_Apache.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_Crontab.md resource=Product_Crontab.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_DMS.md resource=Product_DMS.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Product_DMS.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_DMS.md key=Title value=Product: DMS
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_DMS.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_DMS.md resource=Product_DMS.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_Domino.md resource=Product_Domino.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_GitLab.md resource=Product_GitLab.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_KB4IT.md resource=Product_KB4IT.html
@@ -748,7 +1061,16 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_Putty.md resource=Product_Putty.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_ReiserFS.md resource=Product_ReiserFS.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_RHEL.md resource=Product_RHEL.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Product_RHEL.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_RHEL.md key=Title value=Product: RHEL
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_RHEL.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_RHEL.md resource=Product_RHEL.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_s390x.md resource=Product_s390x.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_SAP_Content_Server.md resource=Product_SAP_Content_Server.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Product_SAP_Content_Server.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_SAP_Content_Server.md key=Title value=Product: SAP Content Server
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Product_SAP_Content_Server.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_SAP_Content_Server.md resource=Product_SAP_Content_Server.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_SAP_Netweaver.md resource=Product_SAP_Netweaver.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_SQLPlus.md resource=Product_SQLPlus.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Product_SUSE_Linux_Enterprise_Server_11.md resource=Product_SUSE_Linux_Enterprise_Server_11.html
@@ -763,7 +1085,16 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Infrastructure.md resource=Scope_Infrastructure.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Knowledge_Management.md resource=Scope_Knowledge_Management.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Linux_Administration.md resource=Scope_Linux_Administration.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Scope_Linux_Administration.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Scope_Linux_Administration.md key=Title value=Scope: Linux Administration
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Scope_Linux_Administration.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Linux_Administration.md resource=Scope_Linux_Administration.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_SAP_Administration.md resource=Scope_SAP_Administration.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_SAP_Basis.md resource=Scope_SAP_Basis.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Scope_SAP_Basis.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Scope_SAP_Basis.md key=Title value=Scope: SAP Basis
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Scope_SAP_Basis.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_SAP_Basis.md resource=Scope_SAP_Basis.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Unix_Administration.md resource=Scope_Unix_Administration.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Server_lxzlin01.md resource=Server_lxzlin01.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Server_lxzlin02.md resource=Server_lxzlin02.html
@@ -806,11 +1137,21 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Table_VSESSION_CONNECT_INFO.md resource=Table_VSESSION_CONNECT_INFO.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Table_VVERSION.md resource=Table_VVERSION.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_agent.md resource=Tag_agent.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_apache.md resource=Tag_apache.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag_apache.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_apache.md key=Title value=Tag: apache
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_apache.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_apache.md resource=Tag_apache.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_autoextend.md resource=Tag_autoextend.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_automation.md resource=Tag_automation.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_batch.md resource=Tag_batch.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_clear.md resource=Tag_clear.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_client.md resource=Tag_client.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_compilation.md resource=Tag_compilation.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag_compilation.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_compilation.md key=Title value=Tag: compilation
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_compilation.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_compilation.md resource=Tag_compilation.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_daemon.md resource=Tag_daemon.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_dasd.md resource=Tag_dasd.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_datafile.md resource=Tag_datafile.html
@@ -822,6 +1163,11 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_graphical.md resource=Tag_graphical.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_group.md resource=Tag_group.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_growth.md resource=Tag_growth.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_httpd.md resource=Tag_httpd.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag_httpd.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_httpd.md key=Title value=Tag: httpd
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_httpd.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_httpd.md resource=Tag_httpd.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_in-place.md resource=Tag_in-place.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_instance.md resource=Tag_instance.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_journal.md resource=Tag_journal.html
@@ -846,6 +1192,11 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_undo.md resource=Tag_undo.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_unit.md resource=Tag_unit.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_vacuum.md resource=Tag_vacuum.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_webserver.md resource=Tag_webserver.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Tag_webserver.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_webserver.md key=Title value=Tag: webserver
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Tag_webserver.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Tag_webserver.md resource=Tag_webserver.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Team_SAP.md resource=Team_SAP.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Team_SAP_Basis.md resource=Team_SAP_Basis.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Team_Unix.md resource=Team_Unix.html
@@ -855,6 +1206,10 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic_Connectivity.md resource=Topic_Connectivity.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic_Documentation.md resource=Topic_Documentation.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic_Housekeeping.md resource=Topic_Housekeeping.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic_Installation.md resource=Topic_Installation.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Topic_Installation.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Topic_Installation.md key=Title value=Topic: Installation
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Topic_Installation.md key=SystemPage value=Yes
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic_Installation.md resource=Topic_Installation.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic_Knowledge_Management.md resource=Topic_Knowledge_Management.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic_Maintenance.md resource=Topic_Maintenance.html
@@ -866,14 +1221,19 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic_Troubleshooting.md resource=Topic_Troubleshooting.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Topic_User.md resource=Topic_User.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=User_oracle.md resource=User_oracle.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=User_sapcs.md resource=User_sapcs.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=User_sapcs.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=User_sapcs.md key=Title value=User: sapcs
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=User_sapcs.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=User_sapcs.md resource=User_sapcs.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Website_linuxhandbook.com.md resource=Website_linuxhandbook.com.html
-     DEBUG |  382 | Processor       | [PROCESSOR] KEYS_TO_COMPILE n=0
-     DEBUG |  383 | Processor       | [PROCESSOR] KV_PAIRS_TO_COMPILE n=0
-     DEBUG |  384 | Processor       | [PROCESSOR] TARGET_DOCS n=245
+     DEBUG |  382 | Processor       | [PROCESSOR] KEYS_TO_COMPILE n=10
+     DEBUG |  383 | Processor       | [PROCESSOR] KV_PAIRS_TO_COMPILE n=23
+     DEBUG |  384 | Processor       | [PROCESSOR] TARGET_DOCS n=262
      DEBUG |  385 | Processor       | [PROCESSOR] TRANSFORM_END
      DEBUG |  350 | Backend         | [BACKEND] TRANSFORMATION_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0321s => Stage stage_03_process_sources
-      INFO |  142 | Workflow        | [WORKFLOW] PLAN docs=1 keys=0 kv=0
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0417s => Stage stage_03_process_sources
+      INFO |  142 | Workflow        | [WORKFLOW] PLAN docs=1 keys=10 kv=23
       INFO |  148 | Workflow        | [WORKFLOW] STAGE n=4 name=process_theme
      DEBUG |  355 | Backend         | [BACKEND] THEME_START
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/EVENTCAL_PAGE_EVENTS_DAYS.tpl
@@ -882,14 +1242,7 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260522.md resource=events_20260522.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260520 resource=events_20260520.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260520.md resource=events_20260520.html
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/LINK_DATATABLE.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE_HEADER_ITEM.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DATATABLE_BODY_ITEM.tpl
-     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260506.md resource=events_20260506.html
-     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=events_20260506.md
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_20260506.md key=Title value=Events on Wednesday, May 06, 2026
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_20260506.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260506 resource=events_20260506.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260506.md resource=events_20260506.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260428 resource=events_20260428.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20260428.md resource=events_20260428.html
@@ -899,12 +1252,14 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20251215.md resource=events_20251215.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20240514 resource=events_20240514.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20240514.md resource=events_20240514.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20191007.md resource=events_20191007.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=events_20191007.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_20191007.md key=Title value=Events on Monday, October 07, 2019
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_20191007.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20191007.md resource=events_20191007.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20110714 resource=events_20110714.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_20110714.md resource=events_20110714.html
-     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202605.md resource=events_202605.html
-     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=events_202605.md
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_202605.md key=Title value=Events on May, 2026
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_202605.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202605 resource=events_202605.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202605.md resource=events_202605.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202604 resource=events_202604.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202604.md resource=events_202604.html
@@ -912,18 +1267,25 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202512.md resource=events_202512.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202405 resource=events_202405.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_202405.md resource=events_202405.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_201910.md resource=events_201910.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=events_201910.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_201910.md key=Title value=Events on October, 2019
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_201910.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_201910.md resource=events_201910.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_201107 resource=events_201107.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_201107.md resource=events_201107.html
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/EVENTCAL_PAGE_EVENTS_YEARS.tpl
-     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2026.md resource=events_2026.html
-     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=events_2026.md
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_2026.md key=Title value=Archive / 2026
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_2026.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2026 resource=events_2026.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2026.md resource=events_2026.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2025 resource=events_2025.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2025.md resource=events_2025.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2024 resource=events_2024.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2024.md resource=events_2024.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2019.md resource=events_2019.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=events_2019.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_2019.md key=Title value=Archive / 2019
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events_2019.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2019.md resource=events_2019.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2011 resource=events_2011.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=events_2011.md resource=events_2011.html
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_EVENTS.tpl
@@ -933,10 +1295,9 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=events.md key=SystemPage value=Yes
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_PROPERTIES.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/KEY_MODAL_BUTTON.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/WORDCLOUD.tpl
      DEBUG |  609 | Theme           | [THEME] KEY key=Author frequency=2
      DEBUG |  609 | Theme           | [THEME] KEY key=Category frequency=2
-     DEBUG |  609 | Theme           | [THEME] KEY key=Command frequency=42
+     DEBUG |  609 | Theme           | [THEME] KEY key=Command frequency=49
      DEBUG |  609 | Theme           | [THEME] KEY key=Database frequency=1
      DEBUG |  609 | Theme           | [THEME] KEY key=DocType frequency=4
      DEBUG |  609 | Theme           | [THEME] KEY key=Environment frequency=3
@@ -945,20 +1306,20 @@
      DEBUG |  609 | Theme           | [THEME] KEY key=Filesystem frequency=15
      DEBUG |  609 | Theme           | [THEME] KEY key=OS frequency=3
      DEBUG |  609 | Theme           | [THEME] KEY key=Priority frequency=2
-     DEBUG |  609 | Theme           | [THEME] KEY key=Product frequency=16
+     DEBUG |  609 | Theme           | [THEME] KEY key=Product frequency=19
      DEBUG |  609 | Theme           | [THEME] KEY key=Project frequency=2
      DEBUG |  609 | Theme           | [THEME] KEY key=Protocol frequency=3
      DEBUG |  609 | Theme           | [THEME] KEY key=Public frequency=1
-     DEBUG |  609 | Theme           | [THEME] KEY key=Scope frequency=6
+     DEBUG |  609 | Theme           | [THEME] KEY key=Scope frequency=7
      DEBUG |  609 | Theme           | [THEME] KEY key=Server frequency=7
      DEBUG |  609 | Theme           | [THEME] KEY key=Service frequency=1
      DEBUG |  609 | Theme           | [THEME] KEY key=Status frequency=1
      DEBUG |  609 | Theme           | [THEME] KEY key=Subsystem frequency=2
      DEBUG |  609 | Theme           | [THEME] KEY key=Table frequency=29
-     DEBUG |  609 | Theme           | [THEME] KEY key=Tag frequency=41
+     DEBUG |  609 | Theme           | [THEME] KEY key=Tag frequency=45
      DEBUG |  609 | Theme           | [THEME] KEY key=Team frequency=3
      DEBUG |  609 | Theme           | [THEME] KEY key=Topic frequency=16
-     DEBUG |  609 | Theme           | [THEME] KEY key=User frequency=1
+     DEBUG |  609 | Theme           | [THEME] KEY key=User frequency=2
      DEBUG |  609 | Theme           | [THEME] KEY key=Website frequency=1
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=properties.md resource=properties.html
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=properties.md
@@ -977,6 +1338,7 @@
      DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=BATCH-RENAME-SED.md bookmark= is_bookmarked=False
      DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=X11-SSH-FORWARDING.md bookmark= is_bookmarked=False
      DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=LINUX-SYSTEMD-JOURNALCTL.md bookmark= is_bookmarked=False
+     DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md bookmark= is_bookmarked=False
      DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=SLES11-ZLINUX-DASD-PROVISIONING.md bookmark= is_bookmarked=False
      DEBUG |  942 | Theme           | [THEME] BOOKMARKS_FOUND n=0
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=bookmarks.md
@@ -991,11 +1353,6 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=add.md key=SystemPage value=Yes
      DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Category value=Change count=0
      DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Category value=Incident count=0
-     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Tutorial count=1
-     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=How-to guide count=4
-     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Reference count=2
-     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=DocType value=Explanation count=1
-     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Topic value=Monitoring count=3
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_INDEX.tpl
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=index.md resource=index.html
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=index.md
@@ -1016,53 +1373,64 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=Title value=Help
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=SystemPage value=Yes
      DEBUG |  357 | Backend         | [BACKEND] THEME_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0421s => Stage stage_04_process_theme
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0265s => Stage stage_04_process_theme
       INFO |  151 | Workflow        | [WORKFLOW] STAGE n=5 name=compilation
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Compiler
      DEBUG |   59 | Compiler        | [SERVICE] STARTED name=Compiler
      DEBUG |   66 | Compiler        | [COMPILER] START
      DEBUG |   75 | Compiler        | [COMPILER] RESOURCES_COPIED
-     DEBUG |   79 | Compiler        | [COMPILER] TARGETS count=270
+     DEBUG |   79 | Compiler        | [COMPILER] TARGETS count=290
      DEBUG |   83 | Compiler        | [COMPILER] WORKERS n=2
-     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=SAP-BC-ORA-SQL-QUERIES.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Author.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Author_Tomás_Vírseda.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Category.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Category_Procedure.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Command.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Command_apachectl.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Command_configure.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Command_make.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Command_mkdir.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Command_rpm.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Command_wget.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Command_yum.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=DocType.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=DocType_How-to_guide.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=OS.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=OS_Linux.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Product.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Product_Apache.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Product_DMS.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Product_RHEL.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Product_SAP_Content_Server.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Scope.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Scope_Linux_Administration.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Scope_SAP_Basis.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag_apache.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag_compilation.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag_httpd.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag_webserver.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Topic.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Topic_Installation.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=User.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=User_sapcs.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=about_kb4it.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=add.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=all.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=bookmarks.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events.md format=md
-     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events_2026.md format=md
-     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events_202605.md format=md
-     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events_20260506.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events_2019.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events_201910.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=events_20191007.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=help.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=index.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=properties.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=stats.md format=md
      DEBUG |  111 | Compiler        | [COMPILER] COMPILATION_START
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=about_kb4it.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Author.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Author_Tomás_Vírseda.md rc=True
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_COMMON.tpl
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-ORA-SQL-QUERIES.md rc=True
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_BODY.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_FOOTER.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TOC_LI.tpl
@@ -1074,14 +1442,11 @@
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_A_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_A_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_A_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_A_NEW.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_MENU_CONTENTS_ENABLED.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_SECTION.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TOC_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TOC_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_TOC_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TOC_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT1_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT1_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_SECT1_MD.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_VALUE_LINK.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT1_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT2_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT2_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_SECT2_MD.tpl
@@ -1147,13 +1512,52 @@
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_IMG_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_IMG_NEW.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/SECTION_ACTIONS.tpl
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=add.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=all.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=bookmarks.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_2026.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_202605.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_20260506.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Category.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Category_Procedure.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command_apachectl.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command_configure.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command_make.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command_mkdir.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command_rpm.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command_wget.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command_yum.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=DocType.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=DocType_How-to_guide.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=OS.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=OS_Linux.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Product.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Product_Apache.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Product_DMS.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Product_RHEL.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Product_SAP_Content_Server.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope_Linux_Administration.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope_SAP_Basis.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_apache.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_compilation.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md rc=True
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_MENU_CONTENTS_ENABLED.tpl
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_httpd.md rc=True
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_SECTION.tpl
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_VALUE_LINK.tpl
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_webserver.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Topic.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Topic_Installation.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=User.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=User_sapcs.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
@@ -1165,13 +1569,32 @@
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=about_kb4it.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=add.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=all.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=bookmarks.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_2019.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_201910.md rc=True
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_20191007.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=help.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=index.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=properties.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=stats.md rc=True
-     DEBUG |  114 | Compiler        | [COMPILER] COMPILED n=13
+     DEBUG |  114 | Compiler        | [COMPILER] COMPILED n=46
      DEBUG |  117 | Compiler        | [COMPILER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.1250s => Stage stage_05_compilation
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0959s => Stage stage_05_compilation
       INFO |  154 | Workflow        | [WORKFLOW] STAGE n=6 name=theme_post
       INFO |  157 | Workflow        | [WORKFLOW] STAGE n=7 name=deploy
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Deployer
@@ -1183,42 +1606,109 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/SLES11-ZLINUX-DASD-PROVISIONING.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/HELLO-WORLD.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/BATCH-RENAME-SED.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/about_app.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/KB4IT-WEBSITE-AUTOMATED-UPDATE.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/about_kb4it.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/SAP-BC-ORA-SQL-QUERIES.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  136 | Util            | 10 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
-     DEBUG |   71 | Deployer        | [DEPLOYER] SOURCES_TO_TARGET copied=10 deleted=0
+     DEBUG |  136 | Util            | 11 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
+     DEBUG |   71 | Deployer        | [DEPLOYER] SOURCES_TO_TARGET copied=11 deleted=0
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/User.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/OS_Linux.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Scope_Linux_Administration.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Author_Tomás_Vírseda.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_yum.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category_Procedure.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_RHEL.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_apachectl.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/help.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/OS_Linux.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/add.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Author_Tomás_Vírseda.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/bookmarks.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/help.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Topic_Installation.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/index.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_202605.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_2019.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/about_kb4it.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_make.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_apache.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/User_sapcs.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Scope.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_configure.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_rpm.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/properties.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_2026.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_mkdir.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Topic.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Scope_Linux_Administration.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_20191007.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Topic_Installation.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_SAP_Content_Server.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_apache.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_httpd.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/add.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/DocType.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Scope.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/OS.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_20191007.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/all.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_20260506.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category_Procedure.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_webserver.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_mkdir.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Topic.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/stats.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/DocType.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/index.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_2026.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_20260506.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_202605.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_201910.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_httpd.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_compilation.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_Apache.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_make.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Author.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_wget.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_2019.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_yum.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_201910.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_compilation.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Author.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Scope_SAP_Basis.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Scope_SAP_Basis.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/User.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_SAP_Content_Server.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_apachectl.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/User_sapcs.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/about_kb4it.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_Apache.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/DocType_How-to_guide.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/stats.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/SAP-BC-ORA-SQL-QUERIES.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/all.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/SAP-BC-ORA-SQL-QUERIES.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_DMS.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_wget.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_configure.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_DMS.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_webserver.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/properties.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/bookmarks.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  136 | Util            | 26 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
-     DEBUG |   76 | Deployer        | [DEPLOYER] COPIED_ALL_TO_CACHE n=26
-     DEBUG |  105 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=270 deleted=0
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/OS.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_rpm.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_RHEL.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/DocType_How-to_guide.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  136 | Util            | 92 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
+     DEBUG |   76 | Deployer        | [DEPLOYER] COPIED_ALL_TO_CACHE n=92
+     DEBUG |  105 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=290 deleted=0
      DEBUG |  124 | Deployer        | [DEPLOYER] COPIED_GLOBAL_RESOURCES
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_VDATABASE.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Server_SAP-PRD.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1242,6 +1732,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_dasd_configure.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_remote.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Subsystem_LVM.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_yum.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_vgextend.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_2011.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Category_Procedure.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1288,6 +1779,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Subsystem.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Environment_Quality.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Environment_Development.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_cp.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Topic_Installation.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_DBA_TEMP_FREE_SPACE.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1302,10 +1794,12 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_Putty.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Priority_Normal.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_202605.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_2019.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_message.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_redolog.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/about_kb4it.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Topic_Documentation.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_make.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_vgcreate.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Server_VENDOR-SFTP-UAT.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1322,6 +1816,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_lvs.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filename_fstab.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_forwarding.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_20191007.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_instance.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Protocol.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Service.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1329,8 +1824,11 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Topic_Knowledge_Management.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Server.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/X11-SSH-FORWARDING.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_SAP_Content_Server.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filesystem_varlog.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_key_pair.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_apache.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_httpd.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_sqlplus.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filesystem_proc.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_group.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1358,8 +1856,10 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Topic_Configuration.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_201107.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_mkreiserfs.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_webserver.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_VINSTANCE.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_DBA_OBJECTS.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_mkdir.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_sftp.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Topic.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_ssh-agent.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1380,6 +1880,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_fdasd.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_daemon.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_2026.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_Apache.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_migration.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Priority.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_20260506.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1402,13 +1903,16 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_ls.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filesystem_etcsystemd.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filesystem.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_201910.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_du.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Project_Database_Maintenance.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Public_True.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_compilation.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Author.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_in-place.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_USR02.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_dasdfmt.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Scope_SAP_Basis.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Topic_Operation.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filesystem_etc.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Team_Unix.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1417,9 +1921,11 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_ssh.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_scripting.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Topic_User.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_apachectl.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_DBA_SEGMENTS.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_repository.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_SAP_Netweaver.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/User_sapcs.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_automation.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_OpenSSH.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Server_SAP-DEV.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1457,11 +1963,14 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_journal.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_xterm.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filesystem_tmp.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_wget.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_python3.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_configure.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filesystem_var.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/BATCH-RENAME-SED.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_SQLPlus.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_DMS.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Author_Tomas_Virseda.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_SYS.V_TEMP_EXTENT_POOL.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_undo.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1483,6 +1992,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_DBA_INDEXES.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_grep.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/OS.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command_rpm.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Protocol_X11.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Environment.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_20260428.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1490,13 +2000,13 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_DBA_FREE_SPACE.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_KB4IT.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Service_sshd.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  136 | Util            | 270 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
+     DEBUG |  136 | Util            | 290 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
      DEBUG |  144 | Deployer        | [DEPLOYER] COPIED_HTML_BACK_TO_CACHE
      DEBUG |  154 | Deployer        | [DEPLOYER] CLEANUP
      DEBUG |   44 | Deployer        | [DEPLOYER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.2029s => Stage stage_06_deploy
-      INFO |  170 | Workflow        | [WORKFLOW] SUMMARY docs_total=10 compiled=1 skipped=9 keys_compiled=0 kv_pages_compiled=0
-      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.43s
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.5664s => Stage stage_06_deploy
+      INFO |  170 | Workflow        | [WORKFLOW] SUMMARY docs_total=11 compiled=1 skipped=10 keys_compiled=10 kv_pages_compiled=23
+      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.75s
       INFO |  184 | Workflow        | [WORKFLOW] BUILD_COMPLETE
       INFO |  185 | Workflow        | [WORKFLOW] URL /home/runner/work/techdoc/techdoc/docs/index.html
       INFO |  186 | Workflow        | [WORKFLOW] LOG path=/home/runner/work/techdoc/techdoc/var/log/kb4it.log

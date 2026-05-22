@@ -382,6 +382,112 @@
             },
             "metadata_hash": "83ea659e5460e07120fcd9f9e540e644506558ca68d5e9ba2dcdc96a3793a90b55fff29a78d4eaec46b07069d97c426d73603389b77e28ca8c10f3643116388e"
         },
+        "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md": {
+            "Author": [
+                "Tom\u00e1s V\u00edrseda"
+            ],
+            "Category": [
+                "Procedure"
+            ],
+            "Command": [
+                "apachectl",
+                "configure",
+                "make",
+                "mkdir",
+                "rpm",
+                "wget",
+                "yum"
+            ],
+            "Date": [
+                "2019-10-07 00:00:00"
+            ],
+            "DocType": [
+                "How-to guide"
+            ],
+            "OS": [
+                "Linux"
+            ],
+            "Product": [
+                "Apache",
+                "DMS",
+                "RHEL",
+                "SAP Content Server"
+            ],
+            "Scope": [
+                "Linux Administration",
+                "SAP Basis"
+            ],
+            "Tag": [
+                "apache",
+                "compilation",
+                "httpd",
+                "webserver"
+            ],
+            "Title": [
+                "Apache compilation and installation in RedHat"
+            ],
+            "Topic": [
+                "Installation"
+            ],
+            "User": [
+                "sapcs"
+            ],
+            "body_hash": "77fe9837ba570321657a22de289fa2ae1cdc682568173aa12d996b2075c7e5b01edad88451b9baa288f513fb1218719cf95190a313d86f614c0704c066f4b9f1",
+            "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
+            "keys": {
+                "Author": [
+                    "Tom\u00e1s V\u00edrseda"
+                ],
+                "Category": [
+                    "Procedure"
+                ],
+                "Command": [
+                    "yum",
+                    "wget",
+                    "rpm",
+                    "make",
+                    "mkdir",
+                    "configure",
+                    "apachectl",
+                    ""
+                ],
+                "Date": [
+                    "2019-10-07"
+                ],
+                "DocType": [
+                    "How-to guide"
+                ],
+                "OS": [
+                    "Linux"
+                ],
+                "Product": [
+                    "SAP Content Server",
+                    "DMS",
+                    "Apache",
+                    "RHEL"
+                ],
+                "Scope": [
+                    "Linux Administration",
+                    "SAP Basis"
+                ],
+                "Tag": [
+                    "apache",
+                    "webserver",
+                    "compilation",
+                    "httpd"
+                ],
+                "Title": [
+                    "Apache compilation and installation in RedHat"
+                ],
+                "Topic": [
+                    "Installation"
+                ],
+                "User": [
+                    "sapcs"
+                ]
+            },
+            "metadata_hash": "de65f70010940eb7cf4512fd858cc650f9f056ad73cbe3defe9cbd4eb81c4ff4d985421e1eb438b980553eeeace4a0b88b6fb892e021f580fcc4c936a1200bed"
+        },
         "SAP-BC-ORA-SQL-QUERIES.md": {
             "Category": [
                 "Note"
@@ -1101,7 +1207,8 @@
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "Tom\u00e1s V\u00edrseda": [
-                "HELLO-WORLD.md"
+                "HELLO-WORLD.md",
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ]
         },
         "Category": {
@@ -1113,17 +1220,24 @@
                 "BATCH-RENAME-SED.md",
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
             ]
         },
         "Command": {
+            "apachectl": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
+            ],
             "cat": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "chown": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "configure": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "cp": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
@@ -1184,6 +1298,12 @@
             "lvs": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "make": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
+            ],
+            "mkdir": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
+            ],
             "mkreiserfs": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
@@ -1198,6 +1318,9 @@
             ],
             "python3": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
+            "rpm": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "sed": [
                 "BATCH-RENAME-SED.md"
@@ -1243,12 +1366,18 @@
             "vi": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "wget": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
+            ],
             "xauth": [
                 "X11-SSH-FORWARDING.md"
             ],
             "xterm": [
                 "X11-SSH-FORWARDING.md",
                 "X11-SSH-FORWARDING.md"
+            ],
+            "yum": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ]
         },
         "Database": {
@@ -1259,6 +1388,9 @@
         "Date": {
             "2011-07-14 00:00:00": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "2019-10-07 00:00:00": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "2024-05-14 12:00:00": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
@@ -1288,6 +1420,7 @@
             ],
             "How-to guide": [
                 "BATCH-RENAME-SED.md",
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
@@ -1389,6 +1522,7 @@
                 "BATCH-RENAME-SED.md",
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
@@ -1414,8 +1548,14 @@
             "AIX": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
+            "Apache": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
+            ],
             "Crontab": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
+            "DMS": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "Domino": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
@@ -1442,11 +1582,15 @@
                 "X11-SSH-FORWARDING.md"
             ],
             "RHEL": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "ReiserFS": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "SAP Content Server": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "SAP Netweaver": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
@@ -1501,10 +1645,14 @@
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "Linux Administration": [
-                "BATCH-RENAME-SED.md"
+                "BATCH-RENAME-SED.md",
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "SAP Administration": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
+            ],
+            "SAP Basis": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "Unix Administration": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
@@ -1655,6 +1803,9 @@
             "agent": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
+            "apache": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
+            ],
             "autoextend": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
@@ -1669,6 +1820,9 @@
             ],
             "client": [
                 "X11-SSH-FORWARDING.md"
+            ],
+            "compilation": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "daemon": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
@@ -1702,6 +1856,9 @@
             ],
             "growth": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ],
+            "httpd": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "in-place": [
                 "BATCH-RENAME-SED.md"
@@ -1774,6 +1931,9 @@
             ],
             "vacuum": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "webserver": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ]
         },
         "Team": {
@@ -1793,6 +1953,9 @@
             ],
             "About this app": [
                 "about_app.md"
+            ],
+            "Apache compilation and installation in RedHat": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "Batch rename with sed": [
                 "BATCH-RENAME-SED.md"
@@ -1844,6 +2007,7 @@
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Installation": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "Knowledge Management": [
@@ -1881,6 +2045,9 @@
         "User": {
             "oracle": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ],
+            "sapcs": [
+                "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ]
         },
         "Website": {
