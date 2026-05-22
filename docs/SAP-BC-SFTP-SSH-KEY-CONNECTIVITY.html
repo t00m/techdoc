@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>t00m's tech notes - Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="KB4IT 0.7.7+build.4">
+    <meta name="description" content="KB4IT document">
+    <meta name="author" content="KB4IT by t00mlabs.net">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/screen.css">
+    <script src="resources/themes/techdoc/framework/Highlight/highlight.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit.min.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit-icons.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery-3.5.1.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/dataTables.uikit.min.js"></script>
+    <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            $('.kb4it-datatable:not([data-dt-init])').each(function() {
+                $(this).attr('data-dt-init', '1').DataTable({
+                    dom: '<"kbfilter"flrtip>',
+                    serverSide: false,
+                    ordering: true,
+                    searching: true,
+                    deferRender:    true,
+                    autoWidth:      false,
+                    scrollY:        'calc(100vh - 200px)',
+                    scrollCollapse: false,
+                    scroller:       false,
+                    stateSave: false,
+                    paging:   false,
+                    info:     true,
+                    order: [[ 0, "desc" ]]
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<!-- Template version 0.7.7+build.4 -->
+<div class="uk-background-muted uk-height-viewport">
+<div id="container-1" class="uk-container uk-container-center noprint">
+    <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
+        <nav class="uk-navbar-container uk-border-rounded uk-card-hover uk-box-shadow-large" style="background-color: white;" uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="" width="24px" height="24px">
+                        </a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="add.html"><span uk-icon="plus-circle"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Add document</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="events.html"><span uk-icon="calendar"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Events</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="bookmarks.html"><span uk-icon="bookmark"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Bookmarks</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="properties.html"><span uk-icon="database"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Properties</span></a>
+                                    <div class="uk-navbar-dropdown" uk-dropdown="pos: right-top">
+                                        <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-small uk-column-1-2">
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Category.html"><span class="">Category</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Command.html"><span class="">Command</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="DocType.html"><span class="">DocType</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="EnvVar.html"><span class="">EnvVar</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Environment.html"><span class="">Environment</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filename.html"><span class="">Filename</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filesystem.html"><span class="">Filesystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="OS.html"><span class="">OS</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Priority.html"><span class="">Priority</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Product.html"><span class="">Product</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Protocol.html"><span class="">Protocol</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Scope.html"><span class="">Scope</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Server.html"><span class="">Server</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Service.html"><span class="">Service</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Status.html"><span class="">Status</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Subsystem.html"><span class="">Subsystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Tag.html"><span class="">Tag</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Team.html"><span class="">Team</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Topic.html"><span class="">Topic</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Website.html"><span class="">Website</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="stats.html"><span uk-icon="list"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Stats</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="uk-navbar-nav noprint">
+                    <!-- MENU CONTENTS :: START -->
+                    <!-- Template SECTION_ACTIONS.tpl :: START -->
+        <!-- Edit Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Edit document">
+            <a class="uk-link-heading" href="https://github.com/t00m/techdoc/edit/main/source/SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md" target="_blank"><span uk-icon="pencil"></span></a>
+        </li>
+        <!-- Edit Button :: END -->
+        <!-- Metadata Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Document properties">
+            <a class="uk-link-heading" href="#modal-metadata" uk-toggle><span class="uk-link-heading" uk-icon="icon: hashtag; ratio: 1.0;"></span></a>
+            <div id="modal-metadata" class="uk-modal-full" uk-modal>
+                <div class="uk-modal-dialog uk-height-viewport">
+                    <button class="uk-modal-close-full uk-close-large uk-background-muted" type="button" uk-close></button>
+                    <div class="uk-grid-collapse uk-child-width-expand@s uk-flex-middle" uk-grid>
+                        <div class="uk-padding-large uk-background-muted">
+                            <div class="uk-text-lead uk-text-center uk-text-primary">Metadata</div>
+                            <div class="" style="border: 1px solid transparent;">
+<ul class="kb-metadata-list">
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Category.html">Category</a></strong>: <a class="kb-meta-val" href="Category_Procedure.html">Procedure</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Command.html">Command</a></strong>: <a class="kb-meta-val" href="Command_sftp.html">sftp</a>
+<a class="kb-meta-val" href="Command_ssh-keygen.html">ssh-keygen</a>
+<a class="kb-meta-val" href="Command_sshpass.html">sshpass</a>
+<a class="kb-meta-val" href="Command_grep.html">grep</a>
+<a class="kb-meta-val" href="Command_cat.html">cat</a>
+<a class="kb-meta-val" href="Command_date.html">date</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_How-to_guide.html">How-to guide</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Environment.html">Environment</a></strong>: <a class="kb-meta-val" href="Environment_Development.html">Development</a>
+<a class="kb-meta-val" href="Environment_Quality.html">Quality</a>
+<a class="kb-meta-val" href="Environment_Production.html">Production</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Filesystem.html">Filesystem</a></strong>: <a class="kb-meta-val" href="Filesystem_.ssh.html">~/.ssh</a>
+<a class="kb-meta-val" href="Filesystem_usrsap.html">/usr/sap</a>
+<a class="kb-meta-val" href="Filesystem_etc.html">/etc</a>
+<a class="kb-meta-val" href="Filesystem_etcssh.html">/etc/ssh</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="OS.html">OS</a></strong>: <a class="kb-meta-val" href="OS_Linux.html">Linux</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Priority.html">Priority</a></strong>: <a class="kb-meta-val" href="Priority_Very_high.html">Very high</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Product.html">Product</a></strong>: <a class="kb-meta-val" href="Product_OpenSSH.html">OpenSSH</a>
+<a class="kb-meta-val" href="Product_RHEL.html">RHEL</a>
+<a class="kb-meta-val" href="Product_SAP_Netweaver.html">SAP Netweaver</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Protocol.html">Protocol</a></strong>: <a class="kb-meta-val" href="Protocol_SFTP.html">SFTP</a>
+<a class="kb-meta-val" href="Protocol_SSH.html">SSH</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Scope.html">Scope</a></strong>: <a class="kb-meta-val" href="Scope_Unix_Administration.html">Unix Administration</a>
+<a class="kb-meta-val" href="Scope_SAP_Administration.html">SAP Administration</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Server.html">Server</a></strong>: <a class="kb-meta-val" href="Server_SAP-PRD.html">SAP-PRD</a>
+<a class="kb-meta-val" href="Server_SAP-QUA.html">SAP-QUA</a>
+<a class="kb-meta-val" href="Server_SAP-DEV.html">SAP-DEV</a>
+<a class="kb-meta-val" href="Server_VENDOR-SFTP-PRD.html">VENDOR-SFTP-PRD</a>
+<a class="kb-meta-val" href="Server_VENDOR-SFTP-UAT.html">VENDOR-SFTP-UAT</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Tag.html">Tag</a></strong>: <a class="kb-meta-val" href="Tag_ed25519.html">ed25519</a>
+<a class="kb-meta-val" href="Tag_key_pair.html">key pair</a>
+<a class="kb-meta-val" href="Tag_migration.html">migration</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Team.html">Team</a></strong>: <a class="kb-meta-val" href="Team_SAP_Basis.html">SAP Basis</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Topic.html">Topic</a></strong>: <a class="kb-meta-val" href="Topic_Connectivity.html">Connectivity</a>
+<a class="kb-meta-val" href="Topic_Migration.html">Migration</a>
+<a class="kb-meta-val" href="Topic_Security.html">Security</a>
+<a class="kb-meta-val" href="Topic_Troubleshooting.html">Troubleshooting</a>
+
+</li>
+</ul>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Metadata Button :: END -->
+        <!-- View Markdown Source Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Document source">
+            <a class="uk-link-heading" href="#modal-full-source" uk-toggle><span class="uk-link-heading" uk-icon="icon: code; ratio: 1.0;"></span></a>
+            <div id="modal-full-source" class="uk-modal-full" uk-modal>
+                <div class="uk-modal-dialog uk-height-viewport">
+                    <button class="uk-modal-close-full uk-close-large uk-background-muted" type="button" uk-close></button>
+                    <div class="uk-grid-collapse uk-child-width-expand@s uk-flex-middle" uk-grid>
+                        <div class="uk-padding-large uk-background-muted">
+                            <div class="uk-text-lead uk-text-center uk-text-danger">Source</div>
+                            <div class="uk-text-lead">SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md&#160;<a onclick="copyToClipboard()" class="uk-icon-link uk-margin-small-right uk-link-toggle" uk-icon="icon: copy; ratio: 1.0" uk-tooltip="title: Copy to clipboard"></a>
+</div>
+                            <div class=""><textarea id="source-code" class="uk-width-1-1 uk-height-viewport">---
+Category: Procedure
+Command: sftp, ssh-keygen, sshpass, grep, cat, date
+Date: 2026-04-28
+DocType: How-to guide
+Environment: Development, Quality, Production
+Filesystem: ~/.ssh, /usr/sap, /etc, /etc/ssh
+OS: Linux
+Priority: Very high
+Product: OpenSSH, RHEL, SAP Netweaver
+Protocol: SFTP, SSH
+Scope: Unix Administration, SAP Administration
+Server: SAP-PRD, SAP-QUA, SAP-DEV, VENDOR-SFTP-PRD, VENDOR-SFTP-UAT
+Tag: ed25519, key pair, migration
+Team: SAP Basis
+Topic: Connectivity, Migration, Security, Troubleshooting
+---
+
+# Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems
+
+## Overview
+
+This document describes how to establish and validate SFTP connectivity from the SAP Payroll
+systems to the vendor SFTP server using SSH key-based authentication. It covers key generation,
+testing procedures, and known outcomes across environments (Development/DEV, Quality/QUA,
+Production/PRD), with emphasis on the transition from password-based authentication to the
+recommended ED25519 key method.
+
+&gt; **NOTE:** Password-based SFTP authentication via `sshpass` is **obsolete** and must not be
+&gt; used in production. It is documented here only for historical reference and as a baseline
+&gt; for initial connectivity tests.
+
+---
+
+## Prerequisites
+
+- SSH client (`OpenSSH 8.0+`) installed on the SAP host.
+- The SAP OS user for the target environment (`devadm`, `quaadm`, or `prdadm`) must have
+  write access to `~/.ssh/`.
+- The vendor must have registered and activated the public key on their SFTP server before
+  key-based authentication can succeed.
+- The vendor SFTP server hostkey must be present in `~/.ssh/known_hosts`
+  (auto-added on first successful connection, or added manually).
+---
+
+## Environments and Connection Parameters
+
+| Environment | SAP System | SAP Host | OS User | SFTP Server | SFTP Username |
+|---|---|---|---|---|---|
+| Development | DEV | SAP-DEV | devadm | VENDOR-SFTP-UAT | ftpuser-uat@vendor-domain |
+| Quality | QUA | SAP-QUA | quaadm | VENDOR-SFTP-UAT | ftpuser-uat@vendor-domain |
+| Production | PRD | SAP-PRD | prdadm | VENDOR-SFTP-PRD | ftpuser-prd@vendor-domain |
+
+---
+
+## Key Pairs Reference
+
+| Environment | Algorithm | Key file (private) | Fingerprint |
+|---|---|---|---|
+| UAT (RSA) | RSA 4096 | `~/.ssh/id_acme-ssh_key-uat` | `SHA256:QLVAYE8vilDQKM56FU0Tho8S4C+MaKpAXqthlnM1yCA` |
+| PRD (RSA) | RSA 4096 | `~/.ssh/id_acme-ssh_key-prd` | `SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0` |
+| UAT (ED25519) | ED25519 256 | `~/.ssh/ssh_key_uat` | `SHA256:Z6iykBXNvtP84njBNILg1p3LZrxnGOhmwQ6+IYF/kDA` |
+| PRD (ED25519) | ED25519 256 | `~/.ssh/id_acme-ssh_key-prod` | `SHA256:TYcA2jIghuLWBiClrq1bqStoMAdfeH8UwPWc0DSm1QM` |
+
+&gt; **NOTE:** Vendor SFTP server host key fingerprint (RSA):
+&gt; `SHA256:LZUIVXeQXBtUqpcCGNRYzqrL5Jr5TB7gjgFza6Mm9gA`
+
+---
+
+## Procedure
+
+### Step 1 - Generate a new SSH key pair (ED25519, recommended)
+
+ED25519 is the algorithm recommended by the Unix/infrastructure team. It provides stronger
+security than RSA with a shorter key length, and is supported by OpenSSH 8.0+.
+
+```bash
+ssh-keygen -t ed25519 -a 100
+```
+
+Example session (on SAP-DEV as devadm):
+
+```
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/devadm/.ssh/id_ed25519): /home/devadm/.ssh/ssh_key_uat
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/devadm/.ssh/ssh_key_uat.
+Your public key has been saved in /home/devadm/.ssh/ssh_key_uat.pub.
+The key fingerprint is:
+SHA256:Z6iykBXNvtP84njBNILg1p3LZrxnGOhmwQ6+IYF/kDA devadm@SAP-DEV
+```
+
+Verify the generated key:
+
+```bash
+ssh-keygen -lf ~/.ssh/ssh_key_uat.pub
+```
+
+Expected output:
+
+```
+256 SHA256:Z6iykBXNvtP84njBNILg1p3LZrxnGOhmwQ6+IYF/kDA devadm@SAP-DEV (ED25519)
+```
+
+&gt; **NOTE:** Use `-a 100` (key derivation rounds) to strengthen the key against brute-force
+&gt; attacks on the passphrase, if a passphrase is set.
+
+---
+
+### Step 2 - Send the public key to the vendor
+
+After generation, send the **public key file** (`*.pub`) to the vendor contact, and request
+it be registered on the SFTP server for the corresponding environment and username.
+
+Do not proceed to connection testing until the vendor confirms the key has been activated.
+
+---
+
+### Step 3 - Verify key fingerprints match
+
+Before and after key deployment, verify that both private and public key fingerprints are identical:
+
+```bash
+# Private key fingerprint
+ssh-keygen -lf ~/.ssh/id_acme-ssh_key-prod
+
+# Public key fingerprint
+ssh-keygen -lf ~/.ssh/id_acme-ssh_key-prod.pub
+```
+
+Both commands must return the **same SHA256 fingerprint**. A mismatch indicates a key file
+integrity problem.
+
+---
+
+### Step 4 - Create a connection test script
+
+Create a minimal test script for each environment. The `-v` flag enables verbose debug output,
+which is essential for diagnosing authentication failures.
+
+**UAT test script** (run as `devadm` on SAP-DEV):
+
+```bash
+#!/usr/bin/bash
+FTPUSR=ftpuser-uat@vendor-domain
+FTPSRV=VENDOR-SFTP-UAT
+FTPKEY="$HOME/.ssh/ssh_key_uat"
+sftp -v -i $FTPKEY $FTPUSR@$FTPSRV
+```
+
+**PRD test script** (run as `prdadm` on SAP-PRD):
+
+```bash
+#!/usr/bin/bash
+FTPUSR=ftpuser-prd@vendor-domain
+FTPSRV=VENDOR-SFTP-PRD
+FTPKEY="$HOME/.ssh/id_acme-ssh_key-prod"
+sftp -v -i $FTPKEY $FTPUSR@$FTPSRV
+```
+
+Run the test with a timestamp to record when connectivity was validated:
+
+```bash
+date &amp;&amp; ./test_ssh_key.sh
+```
+
+---
+
+### Step 5 - Interpret the verbose output
+
+#### Successful key-based authentication
+
+The following lines in the verbose output confirm success:
+
+```
+debug1: Offering public key: &lt;keyfile&gt; &lt;algorithm&gt; &lt;fingerprint&gt; explicit
+debug1: Server accepts key: &lt;keyfile&gt; &lt;algorithm&gt; &lt;fingerprint&gt; explicit
+debug1: Authentication succeeded (publickey).
+Authenticated to VENDOR-SFTP-PRD (IP-PRD:22).
+Connected to VENDOR-SFTP-PRD.
+```
+
+Full successful session example (RSA PRD key, SAP-PRD):
+
+```
+debug1: Will attempt key: /home/prdadm/.ssh/id_acme-ssh_key-prd RSA SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0 explicit
+debug1: Offering public key: /home/prdadm/.ssh/id_acme-ssh_key-prd RSA SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0 explicit
+debug1: Server accepts key: /home/prdadm/.ssh/id_acme-ssh_key-prd RSA SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0 explicit
+debug1: Authentication succeeded (publickey).
+Authenticated to VENDOR-SFTP-PRD (IP-PRD:22).
+Connected to VENDOR-SFTP-PRD.
+```
+
+#### Failed key-based authentication (key not yet registered by vendor)
+
+If the vendor has not yet registered the public key, the server will decline it and fall through
+to keyboard-interactive (password prompt):
+
+```
+debug1: Offering public key: /home/prdadm/.ssh/id_acme-ssh_key-prod ED25519 SHA256:TYcA2jIghuLWBiClrq1bqStoMAdfeH8UwPWc0DSm1QM explicit
+debug1: Authentications that can continue: password,keyboard-interactive,publickey
+debug1: Next authentication method: keyboard-interactive
+Password authentication
+Password:
+```
+
+This is **not** an SSH client error - the client offered the key correctly. The server
+simply rejected it, meaning the public key is not yet registered or is registered under a
+different username. **Do not enter a password.** Interrupt the session (`Ctrl+C`) and
+follow up with the vendor.
+
+---
+
+### Step 6 - (Historical) Password-based authentication via sshpass
+
+&gt; **WARNING:** This method is **obsolete** and **not recommended** for production use.
+&gt; It is retained here for historical reference only.
+
+Initial connectivity tests were performed using `sshpass` before SSH key pairs were exchanged.
+
+```bash
+#!/usr/bin/bash
+FTPUSR=ftpuser-uat@vendor-domain
+FTPSRV=VENDOR-SFTP-UAT
+FTPPAS=XXXXXXXXXXXXXXXXXXXX
+LOG=$HOME/sftp-test.log
+
+echo "$(date '+%d.%m.%Y - %H:%M:%S') =&gt; Attempting connection" &gt;&gt; $LOG
+sshpass -p $FTPPAS sftp -v $FTPUSR@$FTPSRV &lt;&lt; EOF &gt;&gt; $LOG 2&gt;&amp;1
+EOF
+```
+
+Successful output (filtered):
+
+```
+Password authentication
+Authenticated to VENDOR-SFTP-UAT (IP-UAT:22).
+Connected to VENDOR-SFTP-UAT.
+```
+
+---
+
+## Verification
+
+After a successful connection, confirm the following from the verbose output:
+
+| Check | Expected value |
+|---|---|
+| KEX algorithm | `ecdh-sha2-nistp256` |
+| Host key algorithm | `rsa-sha2-512` |
+| Cipher (both directions) | `aes256-ctr` |
+| MAC | `hmac-sha2-256-etm@openssh.com` |
+| Authentication method | `publickey` |
+| Server host key fingerprint | `SHA256:LZUIVXeQXBtUqpcCGNRYzqrL5Jr5TB7gjgFza6Mm9gA` |
+
+---
+
+## Troubleshooting
+
+| Symptom | Likely cause | Action |
+|---|---|---|
+| Server declines key, prompts for password | Public key not yet registered by vendor | Contact vendor; provide correct public key and username |
+| `Host key verification failed` | `known_hosts` entry changed or missing | Clear stale entry: `ssh-keygen -R VENDOR-SFTP-PRD`; reconnect to re-add |
+| `no match: APACHE-SSHD-2.5.1` | Debug message about unknown server banner | Informational only; does not affect connectivity |
+| `Warning: Permanently added the RSA host key for IP address` | IP added to `known_hosts` after hostname already present | Normal behaviour; not an error |
+| Fingerprint mismatch between private and public key | Wrong key file pair | Re-run `ssh-keygen -lf` on both files; regenerate if needed |
+
+---
+
+## Key Algorithm Comparison
+
+| Algorithm | Key size | `ssh-keygen` command | Notes |
+|---|---|---|---|
+| RSA | 3072&#8211;4096 bit | `ssh-keygen -t rsa -b 4096` | Widely supported; larger key size required |
+| ED25519 | 256 bit (fixed) | `ssh-keygen -t ed25519 -a 100` | **Recommended**; modern, compact, strong |
+
+&gt; ED25519 is the standard going forward.
+</textarea></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- View Source Button :: END -->
+        <!-- Print Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+            <a class="uk-link-heading" href="javascript:window.print()"><span uk-icon="icon: print; ratio: 1.0;"></span></a>
+        </li>
+        <!-- Print Button :: END -->
+<!-- Template SECTION_ACTIONS.tpl :: END -->
+
+
+
+                    <!-- MENU CONTENTS :: END -->
+                </ul>
+            </div>
+            <div class="uk-navbar-center">
+                <!-- DOCUMENT TITLE :: START -->
+                <ul class="uk-navbar-nav">
+                    <li class="uk-card uk-card-small uk-padding-small uk-padding-remove-vertical">
+                        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+                            <div class="uk-card uk-card-small">
+                                <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems</span></a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+<ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#prerequisites">Prerequisites</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#environments-and-connection-parameters">Environments and Connection Parameters</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#key-pairs-reference">Key Pairs Reference</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#procedure">Procedure</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-1-generate-a-new-ssh-key-pair-ed25519-recommended">Step 1 - Generate a new SSH key pair (ED25519, recommended)</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-2-send-the-public-key-to-the-vendor">Step 2 - Send the public key to the vendor</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-3-verify-key-fingerprints-match">Step 3 - Verify key fingerprints match</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-4-create-a-connection-test-script">Step 4 - Create a connection test script</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#step-5-interpret-the-verbose-output">Step 5 - Interpret the verbose output</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#successful-key-based-authentication">Successful key-based authentication</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#failed-key-based-authentication-key-not-yet-registered-by-vendor">Failed key-based authentication (key not yet registered by vendor)</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-6-historical-password-based-authentication-via-sshpass">Step 6 - (Historical) Password-based authentication via sshpass</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#verification">Verification</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#troubleshooting">Troubleshooting</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#key-algorithm-comparison">Key Algorithm Comparison</a></li>
+</ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- DOCUMENT TITLE :: END -->
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
+                    </li>
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="#"><span uk-icon="info"></span></a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_app.html"><span class="uk-padding-none">About this app</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="help.html"><span class="uk-padding-none">Help</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_kb4it.html"><span class="uk-padding-none">About KB4IT</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="uk-container uk-container-center">
+    <div id="container-2" class="uk-container uk-container-center uk-flex uk-flex-center uk-hidden">
+        <span class="uk-text-lead">Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems</span>
+    </div>
+<!-- Template HTML_BODY_DOC.tpl :: START -->
+
+<!-- Print-only document header (hidden on screen) -->
+<div class="kb-print-header">
+    <h1 class="kb-print-doc-title">Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems</h1>
+</div>
+
+<!-- Inline collapsible TOC -->
+<details id="kb-toc-inline" open class="kb-toc-panel">
+    <summary class="kb-toc-summary">Table of Contents</summary>
+    <nav class="kb-toc-nav">
+        <ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#prerequisites">Prerequisites</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#environments-and-connection-parameters">Environments and Connection Parameters</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#key-pairs-reference">Key Pairs Reference</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#procedure">Procedure</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-1-generate-a-new-ssh-key-pair-ed25519-recommended">Step 1 - Generate a new SSH key pair (ED25519, recommended)</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-2-send-the-public-key-to-the-vendor">Step 2 - Send the public key to the vendor</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-3-verify-key-fingerprints-match">Step 3 - Verify key fingerprints match</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-4-create-a-connection-test-script">Step 4 - Create a connection test script</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#step-5-interpret-the-verbose-output">Step 5 - Interpret the verbose output</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#successful-key-based-authentication">Successful key-based authentication</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#failed-key-based-authentication-key-not-yet-registered-by-vendor">Failed key-based authentication (key not yet registered by vendor)</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-6-historical-password-based-authentication-via-sshpass">Step 6 - (Historical) Password-based authentication via sshpass</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#verification">Verification</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#troubleshooting">Troubleshooting</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#key-algorithm-comparison">Key Algorithm Comparison</a></li>
+</ul>
+    </nav>
+</details>
+
+    <!-- This is the nav containing the toggling elements -->
+    <ul class="uk-flex uk-flex-center uk-tab noprint uk-hidden" uk-switcher>
+        <li><a href="#">Document</a></li>
+    </ul>
+    <!-- This is the container of the content items -->
+    <ul class="uk-switcher uk-margin">
+        <li class="uk-active"><div class="kb-content kb-content-md">
+<div hidden>
+<div id="toctitle">Contents</div>
+<ul class="sectlevel1">
+<li><a class="" target="" href="#overview">Overview</a></li>
+<li><a class="" target="" href="#prerequisites">Prerequisites</a></li>
+<li><a class="" target="" href="#environments-and-connection-parameters">Environments and Connection Parameters</a></li>
+<li><a class="" target="" href="#key-pairs-reference">Key Pairs Reference</a></li>
+<li>
+<a class="" target="" href="#procedure">Procedure</a><ul>
+<li><a class="" target="" href="#step-1-generate-a-new-ssh-key-pair-ed25519-recommended">Step 1 - Generate a new SSH key pair (ED25519, recommended)</a></li>
+<li><a class="" target="" href="#step-2-send-the-public-key-to-the-vendor">Step 2 - Send the public key to the vendor</a></li>
+<li><a class="" target="" href="#step-3-verify-key-fingerprints-match">Step 3 - Verify key fingerprints match</a></li>
+<li><a class="" target="" href="#step-4-create-a-connection-test-script">Step 4 - Create a connection test script</a></li>
+<li>
+<a class="" target="" href="#step-5-interpret-the-verbose-output">Step 5 - Interpret the verbose output</a><ul>
+<li><a class="" target="" href="#successful-key-based-authentication">Successful key-based authentication</a></li>
+<li><a class="" target="" href="#failed-key-based-authentication-key-not-yet-registered-by-vendor">Failed key-based authentication (key not yet registered by vendor)</a></li>
+</ul>
+</li>
+<li><a class="" target="" href="#step-6-historical-password-based-authentication-via-sshpass">Step 6 - (Historical) Password-based authentication via sshpass</a></li>
+</ul>
+</li>
+<li><a class="" target="" href="#verification">Verification</a></li>
+<li><a class="" target="" href="#troubleshooting">Troubleshooting</a></li>
+<li><a class="" target="" href="#key-algorithm-comparison">Key Algorithm Comparison</a></li>
+</ul>
+</div>
+
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="overview">Overview</h2>
+<div class="kb-section-body uk-container">
+<p>This document describes how to establish and validate SFTP connectivity from the SAP Payroll
+systems to the vendor SFTP server using SSH key-based authentication. It covers key generation,
+testing procedures, and known outcomes across environments (Development/DEV, Quality/QUA,
+Production/PRD), with emphasis on the transition from password-based authentication to the
+recommended ED25519 key method.</p>
+<blockquote>
+<p><strong>NOTE:</strong> Password-based SFTP authentication via <code>sshpass</code> is <strong>obsolete</strong> and must not be
+used in production. It is documented here only for historical reference and as a baseline
+for initial connectivity tests.</p>
+</blockquote>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="prerequisites">Prerequisites</h2>
+<div class="kb-section-body uk-container">
+<ul>
+<li>SSH client (<code>OpenSSH 8.0+</code>) installed on the SAP host.</li>
+<li>The SAP OS user for the target environment (<code>devadm</code>, <code>quaadm</code>, or <code>prdadm</code>) must have
+  write access to <code>~/.ssh/</code>.</li>
+<li>The vendor must have registered and activated the public key on their SFTP server before
+  key-based authentication can succeed.</li>
+<li>The vendor SFTP server hostkey must be present in <code>~/.ssh/known_hosts</code>
+  (auto-added on first successful connection, or added manually).</li>
+</ul>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="environments-and-connection-parameters">Environments and Connection Parameters</h2>
+<div class="kb-section-body uk-container">
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>SAP System</th>
+<th>SAP Host</th>
+<th>OS User</th>
+<th>SFTP Server</th>
+<th>SFTP Username</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development</td>
+<td>DEV</td>
+<td>SAP-DEV</td>
+<td>devadm</td>
+<td>VENDOR-SFTP-UAT</td>
+<td>ftpuser-uat@vendor-domain</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>QUA</td>
+<td>SAP-QUA</td>
+<td>quaadm</td>
+<td>VENDOR-SFTP-UAT</td>
+<td>ftpuser-uat@vendor-domain</td>
+</tr>
+<tr>
+<td>Production</td>
+<td>PRD</td>
+<td>SAP-PRD</td>
+<td>prdadm</td>
+<td>VENDOR-SFTP-PRD</td>
+<td>ftpuser-prd@vendor-domain</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="key-pairs-reference">Key Pairs Reference</h2>
+<div class="kb-section-body uk-container">
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>Algorithm</th>
+<th>Key file (private)</th>
+<th>Fingerprint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UAT (RSA)</td>
+<td>RSA 4096</td>
+<td><code>~/.ssh/id_acme-ssh_key-uat</code></td>
+<td><code>SHA256:QLVAYE8vilDQKM56FU0Tho8S4C+MaKpAXqthlnM1yCA</code></td>
+</tr>
+<tr>
+<td>PRD (RSA)</td>
+<td>RSA 4096</td>
+<td><code>~/.ssh/id_acme-ssh_key-prd</code></td>
+<td><code>SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0</code></td>
+</tr>
+<tr>
+<td>UAT (ED25519)</td>
+<td>ED25519 256</td>
+<td><code>~/.ssh/ssh_key_uat</code></td>
+<td><code>SHA256:Z6iykBXNvtP84njBNILg1p3LZrxnGOhmwQ6+IYF/kDA</code></td>
+</tr>
+<tr>
+<td>PRD (ED25519)</td>
+<td>ED25519 256</td>
+<td><code>~/.ssh/id_acme-ssh_key-prod</code></td>
+<td><code>SHA256:TYcA2jIghuLWBiClrq1bqStoMAdfeH8UwPWc0DSm1QM</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>NOTE:</strong> Vendor SFTP server host key fingerprint (RSA):
+<code>SHA256:LZUIVXeQXBtUqpcCGNRYzqrL5Jr5TB7gjgFza6Mm9gA</code></p>
+</blockquote>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="procedure">Procedure</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="step-1-generate-a-new-ssh-key-pair-ed25519-recommended">Step 1 - Generate a new SSH key pair (ED25519, recommended)</h3>
+<div class="kb-section-body uk-container">
+<p>ED25519 is the algorithm recommended by the Unix/infrastructure team. It provides stronger
+security than RSA with a shorter key length, and is supported by OpenSSH 8.0+.</p>
+<pre><code class="language-bash">ssh-keygen -t ed25519 -a 100
+</code></pre>
+<p>Example session (on SAP-DEV as devadm):</p>
+<pre><code>Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/devadm/.ssh/id_ed25519): /home/devadm/.ssh/ssh_key_uat
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/devadm/.ssh/ssh_key_uat.
+Your public key has been saved in /home/devadm/.ssh/ssh_key_uat.pub.
+The key fingerprint is:
+SHA256:Z6iykBXNvtP84njBNILg1p3LZrxnGOhmwQ6+IYF/kDA devadm@SAP-DEV
+</code></pre>
+<p>Verify the generated key:</p>
+<pre><code class="language-bash">ssh-keygen -lf ~/.ssh/ssh_key_uat.pub
+</code></pre>
+<p>Expected output:</p>
+<pre><code>256 SHA256:Z6iykBXNvtP84njBNILg1p3LZrxnGOhmwQ6+IYF/kDA devadm@SAP-DEV (ED25519)
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> Use <code>-a 100</code> (key derivation rounds) to strengthen the key against brute-force
+attacks on the passphrase, if a passphrase is set.</p>
+</blockquote>
+<hr>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="step-2-send-the-public-key-to-the-vendor">Step 2 - Send the public key to the vendor</h3>
+<div class="kb-section-body uk-container">
+<p>After generation, send the <strong>public key file</strong> (<code>*.pub</code>) to the vendor contact, and request
+it be registered on the SFTP server for the corresponding environment and username.</p>
+<p>Do not proceed to connection testing until the vendor confirms the key has been activated.</p>
+<hr>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="step-3-verify-key-fingerprints-match">Step 3 - Verify key fingerprints match</h3>
+<div class="kb-section-body uk-container">
+<p>Before and after key deployment, verify that both private and public key fingerprints are identical:</p>
+<pre><code class="language-bash"># Private key fingerprint
+ssh-keygen -lf ~/.ssh/id_acme-ssh_key-prod
+
+# Public key fingerprint
+ssh-keygen -lf ~/.ssh/id_acme-ssh_key-prod.pub
+</code></pre>
+<p>Both commands must return the <strong>same SHA256 fingerprint</strong>. A mismatch indicates a key file
+integrity problem.</p>
+<hr>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="step-4-create-a-connection-test-script">Step 4 - Create a connection test script</h3>
+<div class="kb-section-body uk-container">
+<p>Create a minimal test script for each environment. The <code>-v</code> flag enables verbose debug output,
+which is essential for diagnosing authentication failures.</p>
+<p><strong>UAT test script</strong> (run as <code>devadm</code> on SAP-DEV):</p>
+<pre><code class="language-bash">#!/usr/bin/bash
+FTPUSR=ftpuser-uat@vendor-domain
+FTPSRV=VENDOR-SFTP-UAT
+FTPKEY="$HOME/.ssh/ssh_key_uat"
+sftp -v -i $FTPKEY $FTPUSR@$FTPSRV
+</code></pre>
+<p><strong>PRD test script</strong> (run as <code>prdadm</code> on SAP-PRD):</p>
+<pre><code class="language-bash">#!/usr/bin/bash
+FTPUSR=ftpuser-prd@vendor-domain
+FTPSRV=VENDOR-SFTP-PRD
+FTPKEY="$HOME/.ssh/id_acme-ssh_key-prod"
+sftp -v -i $FTPKEY $FTPUSR@$FTPSRV
+</code></pre>
+<p>Run the test with a timestamp to record when connectivity was validated:</p>
+<pre><code class="language-bash">date &amp;&amp; ./test_ssh_key.sh
+</code></pre>
+<hr>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="step-5-interpret-the-verbose-output">Step 5 - Interpret the verbose output</h3>
+<div class="kb-section-body uk-container">
+<div class="kb-sect3 sect3 uk-border-rounded uk-padding-small">
+<h4 class="kb-h4" id="successful-key-based-authentication">Successful key-based authentication</h4>
+<div class="kb-section-body uk-container">
+<p>The following lines in the verbose output confirm success:</p>
+<pre><code>debug1: Offering public key: &lt;keyfile&gt; &lt;algorithm&gt; &lt;fingerprint&gt; explicit
+debug1: Server accepts key: &lt;keyfile&gt; &lt;algorithm&gt; &lt;fingerprint&gt; explicit
+debug1: Authentication succeeded (publickey).
+Authenticated to VENDOR-SFTP-PRD (IP-PRD:22).
+Connected to VENDOR-SFTP-PRD.
+</code></pre>
+<p>Full successful session example (RSA PRD key, SAP-PRD):</p>
+<pre><code>debug1: Will attempt key: /home/prdadm/.ssh/id_acme-ssh_key-prd RSA SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0 explicit
+debug1: Offering public key: /home/prdadm/.ssh/id_acme-ssh_key-prd RSA SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0 explicit
+debug1: Server accepts key: /home/prdadm/.ssh/id_acme-ssh_key-prd RSA SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0 explicit
+debug1: Authentication succeeded (publickey).
+Authenticated to VENDOR-SFTP-PRD (IP-PRD:22).
+Connected to VENDOR-SFTP-PRD.
+</code></pre>
+</div>
+</div>
+<div class="kb-sect3 sect3 uk-border-rounded uk-padding-small">
+<h4 class="kb-h4" id="failed-key-based-authentication-key-not-yet-registered-by-vendor">Failed key-based authentication (key not yet registered by vendor)</h4>
+<div class="kb-section-body uk-container">
+<p>If the vendor has not yet registered the public key, the server will decline it and fall through
+to keyboard-interactive (password prompt):</p>
+<pre><code>debug1: Offering public key: /home/prdadm/.ssh/id_acme-ssh_key-prod ED25519 SHA256:TYcA2jIghuLWBiClrq1bqStoMAdfeH8UwPWc0DSm1QM explicit
+debug1: Authentications that can continue: password,keyboard-interactive,publickey
+debug1: Next authentication method: keyboard-interactive
+Password authentication
+Password:
+</code></pre>
+<p>This is <strong>not</strong> an SSH client error - the client offered the key correctly. The server
+simply rejected it, meaning the public key is not yet registered or is registered under a
+different username. <strong>Do not enter a password.</strong> Interrupt the session (<code>Ctrl+C</code>) and
+follow up with the vendor.</p>
+<hr>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="step-6-historical-password-based-authentication-via-sshpass">Step 6 - (Historical) Password-based authentication via sshpass</h3>
+<div class="kb-section-body uk-container">
+<blockquote>
+<p><strong>WARNING:</strong> This method is <strong>obsolete</strong> and <strong>not recommended</strong> for production use.
+It is retained here for historical reference only.</p>
+</blockquote>
+<p>Initial connectivity tests were performed using <code>sshpass</code> before SSH key pairs were exchanged.</p>
+<pre><code class="language-bash">#!/usr/bin/bash
+FTPUSR=ftpuser-uat@vendor-domain
+FTPSRV=VENDOR-SFTP-UAT
+FTPPAS=XXXXXXXXXXXXXXXXXXXX
+LOG=$HOME/sftp-test.log
+
+echo "$(date '+%d.%m.%Y - %H:%M:%S') =&gt; Attempting connection" &gt;&gt; $LOG
+sshpass -p $FTPPAS sftp -v $FTPUSR@$FTPSRV &lt;&lt; EOF &gt;&gt; $LOG 2&gt;&amp;1
+EOF
+</code></pre>
+<p>Successful output (filtered):</p>
+<pre><code>Password authentication
+Authenticated to VENDOR-SFTP-UAT (IP-UAT:22).
+Connected to VENDOR-SFTP-UAT.
+</code></pre>
+<hr>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="verification">Verification</h2>
+<div class="kb-section-body uk-container">
+<p>After a successful connection, confirm the following from the verbose output:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Expected value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEX algorithm</td>
+<td><code>ecdh-sha2-nistp256</code></td>
+</tr>
+<tr>
+<td>Host key algorithm</td>
+<td><code>rsa-sha2-512</code></td>
+</tr>
+<tr>
+<td>Cipher (both directions)</td>
+<td><code>aes256-ctr</code></td>
+</tr>
+<tr>
+<td>MAC</td>
+<td><code>hmac-sha2-256-etm@openssh.com</code></td>
+</tr>
+<tr>
+<td>Authentication method</td>
+<td><code>publickey</code></td>
+</tr>
+<tr>
+<td>Server host key fingerprint</td>
+<td><code>SHA256:LZUIVXeQXBtUqpcCGNRYzqrL5Jr5TB7gjgFza6Mm9gA</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="troubleshooting">Troubleshooting</h2>
+<div class="kb-section-body uk-container">
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server declines key, prompts for password</td>
+<td>Public key not yet registered by vendor</td>
+<td>Contact vendor; provide correct public key and username</td>
+</tr>
+<tr>
+<td><code>Host key verification failed</code></td>
+<td>
+<code>known_hosts</code> entry changed or missing</td>
+<td>Clear stale entry: <code>ssh-keygen -R VENDOR-SFTP-PRD</code>; reconnect to re-add</td>
+</tr>
+<tr>
+<td><code>no match: APACHE-SSHD-2.5.1</code></td>
+<td>Debug message about unknown server banner</td>
+<td>Informational only; does not affect connectivity</td>
+</tr>
+<tr>
+<td><code>Warning: Permanently added the RSA host key for IP address</code></td>
+<td>IP added to <code>known_hosts</code> after hostname already present</td>
+<td>Normal behaviour; not an error</td>
+</tr>
+<tr>
+<td>Fingerprint mismatch between private and public key</td>
+<td>Wrong key file pair</td>
+<td>Re-run <code>ssh-keygen -lf</code> on both files; regenerate if needed</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="key-algorithm-comparison">Key Algorithm Comparison</h2>
+<div class="kb-section-body uk-container">
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Key size</th>
+<th>
+<code>ssh-keygen</code> command</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RSA</td>
+<td>3072&#8211;4096 bit</td>
+<td><code>ssh-keygen -t rsa -b 4096</code></td>
+<td>Widely supported; larger key size required</td>
+</tr>
+<tr>
+<td>ED25519</td>
+<td>256 bit (fixed)</td>
+<td><code>ssh-keygen -t ed25519 -a 100</code></td>
+<td>
+<strong>Recommended</strong>; modern, compact, strong</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>ED25519 is the standard going forward.</p>
+</blockquote>
+</div>
+</div>
+</div></li>
+    </ul>
+
+<!-- Document properties section at bottom (collapsed by default on screen) -->
+<div class="kb-sect1 kb-sect1-collapsed uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+    <h2 class="kb-h2">Document Properties</h2>
+    <div class="kb-section-body uk-container">
+        <ul class="kb-metadata-list">
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Category.html">Category</a></strong>: <a class="kb-meta-val" href="Category_Procedure.html">Procedure</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Command.html">Command</a></strong>: <a class="kb-meta-val" href="Command_sftp.html">sftp</a>
+<a class="kb-meta-val" href="Command_ssh-keygen.html">ssh-keygen</a>
+<a class="kb-meta-val" href="Command_sshpass.html">sshpass</a>
+<a class="kb-meta-val" href="Command_grep.html">grep</a>
+<a class="kb-meta-val" href="Command_cat.html">cat</a>
+<a class="kb-meta-val" href="Command_date.html">date</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_How-to_guide.html">How-to guide</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Environment.html">Environment</a></strong>: <a class="kb-meta-val" href="Environment_Development.html">Development</a>
+<a class="kb-meta-val" href="Environment_Quality.html">Quality</a>
+<a class="kb-meta-val" href="Environment_Production.html">Production</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Filesystem.html">Filesystem</a></strong>: <a class="kb-meta-val" href="Filesystem_.ssh.html">~/.ssh</a>
+<a class="kb-meta-val" href="Filesystem_usrsap.html">/usr/sap</a>
+<a class="kb-meta-val" href="Filesystem_etc.html">/etc</a>
+<a class="kb-meta-val" href="Filesystem_etcssh.html">/etc/ssh</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="OS.html">OS</a></strong>: <a class="kb-meta-val" href="OS_Linux.html">Linux</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Priority.html">Priority</a></strong>: <a class="kb-meta-val" href="Priority_Very_high.html">Very high</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Product.html">Product</a></strong>: <a class="kb-meta-val" href="Product_OpenSSH.html">OpenSSH</a>
+<a class="kb-meta-val" href="Product_RHEL.html">RHEL</a>
+<a class="kb-meta-val" href="Product_SAP_Netweaver.html">SAP Netweaver</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Protocol.html">Protocol</a></strong>: <a class="kb-meta-val" href="Protocol_SFTP.html">SFTP</a>
+<a class="kb-meta-val" href="Protocol_SSH.html">SSH</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Scope.html">Scope</a></strong>: <a class="kb-meta-val" href="Scope_Unix_Administration.html">Unix Administration</a>
+<a class="kb-meta-val" href="Scope_SAP_Administration.html">SAP Administration</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Server.html">Server</a></strong>: <a class="kb-meta-val" href="Server_SAP-PRD.html">SAP-PRD</a>
+<a class="kb-meta-val" href="Server_SAP-QUA.html">SAP-QUA</a>
+<a class="kb-meta-val" href="Server_SAP-DEV.html">SAP-DEV</a>
+<a class="kb-meta-val" href="Server_VENDOR-SFTP-PRD.html">VENDOR-SFTP-PRD</a>
+<a class="kb-meta-val" href="Server_VENDOR-SFTP-UAT.html">VENDOR-SFTP-UAT</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Tag.html">Tag</a></strong>: <a class="kb-meta-val" href="Tag_ed25519.html">ed25519</a>
+<a class="kb-meta-val" href="Tag_key_pair.html">key pair</a>
+<a class="kb-meta-val" href="Tag_migration.html">migration</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Team.html">Team</a></strong>: <a class="kb-meta-val" href="Team_SAP_Basis.html">SAP Basis</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Topic.html">Topic</a></strong>: <a class="kb-meta-val" href="Topic_Connectivity.html">Connectivity</a>
+<a class="kb-meta-val" href="Topic_Migration.html">Migration</a>
+<a class="kb-meta-val" href="Topic_Security.html">Security</a>
+<a class="kb-meta-val" href="Topic_Troubleshooting.html">Troubleshooting</a>
+
+</li>
+</ul>
+
+    </div>
+</div>
+
+<!-- Template HTML_BODY_DOC.tpl :: END -->
+<!-- FOOTER :: START -->
+<div class="kb-footer">
+    <a class="kb-footer-top" href="#">&#8593; Back to top</a>
+    <span class="kb-footer-meta">Last updated Friday, May 22, 2026 at 08:38</span>
+</div>
+<!-- FOOTER :: END -->
+</div>
+<!-- /uk-container -->
+</div>
+<!-- /uk-background-muted -->
+<!-- CONTENTS (Document) :: END -->
+<script>hljs.highlightAll();</script>
+<script>
+var input = document.getElementById("text_filter");
+var filter = document.getElementById("filter");
+
+input.addEventListener( "keyup", function(event)
+{
+    if ( input.value == "" )
+    {
+        filter.setAttribute( "uk-filter-control", "" );
+    }
+
+    else
+    {
+        filter.setAttribute( "uk-filter-control", "filter:[data-title*=" + JSON.stringify(input.value) + "i]" );
+    }
+
+    filter.click();
+});
+</script>
+<script>
+function copyToClipboard() {
+  var el = document.getElementById("source-code");
+  el.select();
+  el.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(el.value).catch(function() {
+    document.execCommand("copy");
+  });
+  UIkit.notification({message: "Source copied to clipboard", status: "success", timeout: 2000});
+}
+</script>
+<script>
+(function() {
+    var content = document.querySelector('.kb-content');
+    if (!content) return;
+    var sects = Array.from(content.querySelectorAll(':scope > .kb-sect1'));
+    if (!sects.length) return;
+
+    var acc = document.createElement('div');
+    acc.setAttribute('uk-accordion', '');
+    sects[0].parentNode.insertBefore(acc, sects[0]);
+    sects.forEach(function(s) {
+        s.classList.add('uk-open');
+        acc.appendChild(s);
+    });
+
+    UIkit.accordion(acc, {
+        targets: '> .kb-sect1',
+        toggle: '> h2',
+        content: '> .kb-section-body',
+        multiple: true,
+        animation: true,
+        duration: 200
+    });
+})();
+</script>
+<!-- GRID LAYOUT :: END -->
+</body>
+</html>
