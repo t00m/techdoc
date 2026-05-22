@@ -16,7 +16,7 @@ Team: SAP Basis
 Topic: Connectivity, Migration, Security, Troubleshooting
 ---
 
-# Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems
+# SFTP Connectivity - SSH Key Authentication
 
 ## Overview
 
