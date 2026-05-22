@@ -47,7 +47,7 @@
      DEBUG |   59 | Theme           | [SERVICE] STARTED name=Theme
      DEBUG |  132 | Frontend        | [FRONTEND] THEME_LOADED id=techdoc
      DEBUG |  286 | Backend         | [BACKEND] CHECKS_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0209s => Stage stage_01_check_environment
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0221s => Stage stage_01_check_environment
       INFO |  134 | Workflow        | [WORKFLOW] STAGE n=2 name=get_sources
      DEBUG |  291 | Backend         | [BACKEND] SOURCES_START
      DEBUG |  154 | Builder         | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_ABOUT_KB4IT.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_ABOUT_KB4IT.tpl'
@@ -56,7 +56,7 @@
    WARNING |  322 | Backend         | [BACKEND] ABOUT_APP_CREATED
      DEBUG |  336 | Backend         | [BACKEND] DOCS_FOUND n=9
      DEBUG |  337 | Backend         | [BACKEND] SOURCES_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0033s => Stage stage_02_get_source_documents
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0032s => Stage stage_02_get_source_documents
       INFO |  138 | Workflow        | [WORKFLOW] STAGE n=3 name=process_sources
      DEBUG |  342 | Backend         | [BACKEND] EXTRACTION_START
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=X11-SSH-FORWARDING.md valid=True reason=Success
@@ -192,7 +192,7 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=HELLO-WORLD.md resource=HELLO-WORLD.html
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=BATCH-RENAME-SED.md valid=True reason=Success
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=BATCH-RENAME-SED.md
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Title value=Batch Rename Metadata Property Names with sed
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Title value=Batch rename with sed
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Category value=Procedure
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Command value=sed
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Command value=find
@@ -201,14 +201,14 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=DocType value=How-to guide
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=OS value=Linux
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Product value=KB4IT
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Scope value=Unix Administration
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Scope value=Linux Administration
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Tag value=batch
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Tag value=rename
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Tag value=in-place
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Tag value=text
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Topic value=Knowledge Management
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=BATCH-RENAME-SED.md key=Topic value=Troubleshooting
-     DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=BATCH-RENAME-SED.md body=f30df30d09ef25f91816a34638b5d0e8e88cc47a731314d44d3d852e90b00e4f7cc40e4e7e528f05f64439e5fd6b40c91794d7c32d0cf8f0c6825fc0002d5e81 meta=b7e1ba183e3ef7acaba77d37f7fdc40506e3c63119116c9bcb60a64c1f6f4290d72b68625ea06125acc53aaacbc267d3fde0f6bf4b17055eff270165310cd34d
+     DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=BATCH-RENAME-SED.md body=f30df30d09ef25f91816a34638b5d0e8e88cc47a731314d44d3d852e90b00e4f7cc40e4e7e528f05f64439e5fd6b40c91794d7c32d0cf8f0c6825fc0002d5e81 meta=192fc5d766ceaac9094ad6f4f6cdc999cf40dc867877a3a6ce0d70bfe93a75460c98a8620c9a6d956eeccb0959a63b77a79a9082d8aa59600cc09ad5a847bb2c
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=BATCH-RENAME-SED.md resource=BATCH-RENAME-SED.html
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=about_app.md valid=True reason=Success
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=about_app.md
@@ -347,7 +347,7 @@
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=LINUX-SYSTEMD-JOURNALCTL.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SLES11-ZLINUX-DASD-PROVISIONING.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=HELLO-WORLD.md body=False meta=False title=False not_cached=False compile=False
-     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=BATCH-RENAME-SED.md body=True meta=True title=True not_cached=True compile=True
+     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=BATCH-RENAME-SED.md body=False meta=True title=True not_cached=False compile=True
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_app.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_kb4it.md body=False meta=False title=False not_cached=False compile=False
@@ -458,6 +458,7 @@
      DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Public compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Database Administration compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Infrastructure compile=False
+     DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Linux Administration compile=True
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=SAP Administration compile=False
      DEBUG |  339 | Processor       | [PROCESSOR] KV key=Scope value=Unix Administration compile=True
      DEBUG |  342 | Processor       | [PROCESSOR] KEY key=Scope compile=True
@@ -667,8 +668,9 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Public.md resource=Public.html
      DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Database Administration count=1
      DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Infrastructure count=1
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Linux Administration count=1
      DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=SAP Administration count=1
-     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Unix Administration count=4
+     DEBUG |  268 | Database        | [DATABASE] KV_SEARCH key=Scope value=Unix Administration count=3
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope.md resource=Scope.html
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Scope.md
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Scope.md key=Title value=Scope
@@ -865,6 +867,11 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Public_True.md resource=Public_True.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Database_Administration.md resource=Scope_Database_Administration.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Infrastructure.md resource=Scope_Infrastructure.html
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Linux_Administration.md resource=Scope_Linux_Administration.html
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Scope_Linux_Administration.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Scope_Linux_Administration.md key=Title value=Scope: Linux Administration
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=Scope_Linux_Administration.md key=SystemPage value=Yes
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Linux_Administration.md resource=Scope_Linux_Administration.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_SAP_Administration.md resource=Scope_SAP_Administration.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Scope_Unix_Administration.md resource=Scope_Unix_Administration.html
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=Scope_Unix_Administration.md
@@ -991,12 +998,12 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=User_oracle.md resource=User_oracle.html
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=Website_linuxhandbook.com.md resource=Website_linuxhandbook.com.html
      DEBUG |  382 | Processor       | [PROCESSOR] KEYS_TO_COMPILE n=8
-     DEBUG |  383 | Processor       | [PROCESSOR] KV_PAIRS_TO_COMPILE n=14
-     DEBUG |  384 | Processor       | [PROCESSOR] TARGET_DOCS n=219
+     DEBUG |  383 | Processor       | [PROCESSOR] KV_PAIRS_TO_COMPILE n=15
+     DEBUG |  384 | Processor       | [PROCESSOR] TARGET_DOCS n=220
      DEBUG |  385 | Processor       | [PROCESSOR] TRANSFORM_END
      DEBUG |  350 | Backend         | [BACKEND] TRANSFORMATION_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0570s => Stage stage_03_process_sources
-      INFO |  142 | Workflow        | [WORKFLOW] PLAN docs=1 keys=8 kv=14
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0464s => Stage stage_03_process_sources
+      INFO |  142 | Workflow        | [WORKFLOW] PLAN docs=1 keys=8 kv=15
       INFO |  148 | Workflow        | [WORKFLOW] STAGE n=4 name=process_theme
      DEBUG |  355 | Backend         | [BACKEND] THEME_START
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/EVENTCAL_PAGE_EVENTS_DAYS.tpl
@@ -1065,7 +1072,7 @@
      DEBUG |  609 | Theme           | [THEME] KEY key=Project frequency=2
      DEBUG |  609 | Theme           | [THEME] KEY key=Protocol frequency=3
      DEBUG |  609 | Theme           | [THEME] KEY key=Public frequency=1
-     DEBUG |  609 | Theme           | [THEME] KEY key=Scope frequency=4
+     DEBUG |  609 | Theme           | [THEME] KEY key=Scope frequency=5
      DEBUG |  609 | Theme           | [THEME] KEY key=Server frequency=7
      DEBUG |  609 | Theme           | [THEME] KEY key=Service frequency=1
      DEBUG |  609 | Theme           | [THEME] KEY key=Status frequency=1
@@ -1127,13 +1134,13 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=Title value=Help
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=SystemPage value=Yes
      DEBUG |  357 | Backend         | [BACKEND] THEME_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0365s => Stage stage_04_process_theme
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0330s => Stage stage_04_process_theme
       INFO |  151 | Workflow        | [WORKFLOW] STAGE n=5 name=compilation
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Compiler
      DEBUG |   59 | Compiler        | [SERVICE] STARTED name=Compiler
      DEBUG |   66 | Compiler        | [COMPILER] START
      DEBUG |   75 | Compiler        | [COMPILER] RESOURCES_COPIED
-     DEBUG |   79 | Compiler        | [COMPILER] TARGETS count=243
+     DEBUG |   79 | Compiler        | [COMPILER] TARGETS count=244
      DEBUG |   83 | Compiler        | [COMPILER] WORKERS n=2
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=BATCH-RENAME-SED.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Category.md format=md
@@ -1149,6 +1156,7 @@
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Product.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Product_KB4IT.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Scope.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Scope_Linux_Administration.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Scope_Unix_Administration.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag_batch.md format=md
@@ -1202,73 +1210,73 @@
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECTIONBODY_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECTIONBODY_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_SECTIONBODY_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECTIONBODY_NEW.tpl
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_PRE_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_PRE_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_PRE_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_PRE_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_H2_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_H2_MD.tpl'
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_H2_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_H2_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_H3_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_H3_MD.tpl'
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_H3_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_H3_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_H4_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_H4_MD.tpl'
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_H4_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_H4_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TABLE_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TABLE_MD.tpl'
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_TABLE_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TABLE_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TABLE_KB4IT_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TABLE_KB4IT_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_TABLE_KB4IT_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TABLE_KB4IT_NEW.tpl
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_NOTE_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_NOTE_MD.tpl'
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_ICON_NOTE_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_NOTE_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_TIP_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_TIP_MD.tpl'
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_ICON_TIP_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_TIP_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_IMPORTANT_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_IMPORTANT_MD.tpl'
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_ICON_IMPORTANT_MD.tpl
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_IMPORTANT_NEW.tpl
+     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_CAUTION_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_CAUTION_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_ICON_CAUTION_MD.tpl
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=BATCH-RENAME-SED.md rc=True
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_CAUTION_NEW.tpl
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_WARNING_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_WARNING_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_ICON_WARNING_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_ICON_WARNING_NEW.tpl
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_MENU_CONTENTS_ENABLED.tpl
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_SECTION.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_IMPORTANT_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_IMPORTANT_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_IMPORTANT_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_IMPORTANT_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_CAUTION_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_CAUTION_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_CAUTION_MD.tpl
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_VALUE_LINK.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_CAUTION_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_NOTE_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_NOTE_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_NOTE_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_NOTE_NEW.tpl
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_TIP_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_TIP_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_TIP_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_TIP_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_WARNING_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_WARNING_MD.tpl'
-     DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_ADMONITION_WARNING_MD.tpl
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=BATCH-RENAME-SED.md rc=True
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_ADMONITION_WARNING_NEW.tpl
      DEBUG |  154 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_IMG_MD.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_IMG_MD.tpl'
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_IMG_MD.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_IMG_NEW.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/SECTION_ACTIONS.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_MENU_CONTENTS_ENABLED.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_SECTION.tpl
-     DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_VALUE_LINK.tpl
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Category_Procedure.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Command_find.md rc=True
@@ -1281,11 +1289,12 @@
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Product.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Product_KB4IT.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope_Linux_Administration.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope_Unix_Administration.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_batch.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_in-place.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_rename.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_in-place.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_text.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Topic.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Topic_Knowledge_Management.md rc=True
@@ -1324,9 +1333,9 @@
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=index.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=properties.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=stats.md rc=True
-     DEBUG |  114 | Compiler        | [COMPILER] COMPILED n=35
+     DEBUG |  114 | Compiler        | [COMPILER] COMPILED n=36
      DEBUG |  117 | Compiler        | [COMPILER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.1246s => Stage stage_05_compilation
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.1284s => Stage stage_05_compilation
       INFO |  154 | Workflow        | [WORKFLOW] STAGE n=6 name=theme_post
       INFO |  157 | Workflow        | [WORKFLOW] STAGE n=7 name=deploy
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Deployer
@@ -1346,6 +1355,7 @@
      DEBUG |   71 | Deployer        | [DEPLOYER] SOURCES_TO_TARGET copied=9 deleted=0
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/OS_Linux.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Scope_Linux_Administration.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category_Procedure.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1368,6 +1378,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_20260416.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_2026.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Topic.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Scope_Linux_Administration.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_batch.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Topic_Troubleshooting.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/BATCH-RENAME-SED.md to /home/runner/work/techdoc/techdoc/var/cache
@@ -1414,9 +1425,9 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_KB4IT.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  136 | Util            | 70 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
-     DEBUG |   76 | Deployer        | [DEPLOYER] COPIED_ALL_TO_CACHE n=70
-     DEBUG |  105 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=243 deleted=0
+     DEBUG |  136 | Util            | 72 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
+     DEBUG |   76 | Deployer        | [DEPLOYER] COPIED_ALL_TO_CACHE n=72
+     DEBUG |  105 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=244 deleted=0
      DEBUG |  124 | Deployer        | [DEPLOYER] COPIED_GLOBAL_RESOURCES
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_VDATABASE.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Server_SAP-PRD.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1431,6 +1442,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_ReiserFS.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_DATABASE_PROPERTIES.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_Xming.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Scope_Linux_Administration.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filename_journald.conf.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Protocol_SFTP.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_AIX.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1661,13 +1673,13 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_DBA_FREE_SPACE.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_KB4IT.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Service_sshd.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  136 | Util            | 243 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
+     DEBUG |  136 | Util            | 244 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
      DEBUG |  144 | Deployer        | [DEPLOYER] COPIED_HTML_BACK_TO_CACHE
      DEBUG |  154 | Deployer        | [DEPLOYER] CLEANUP
      DEBUG |   44 | Deployer        | [DEPLOYER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.1984s => Stage stage_06_deploy
-      INFO |  170 | Workflow        | [WORKFLOW] SUMMARY docs_total=9 compiled=1 skipped=8 keys_compiled=8 kv_pages_compiled=14
-      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.44s
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.1835s => Stage stage_06_deploy
+      INFO |  170 | Workflow        | [WORKFLOW] SUMMARY docs_total=9 compiled=1 skipped=8 keys_compiled=8 kv_pages_compiled=15
+      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.42s
       INFO |  184 | Workflow        | [WORKFLOW] BUILD_COMPLETE
       INFO |  185 | Workflow        | [WORKFLOW] URL /home/runner/work/techdoc/techdoc/docs/index.html
       INFO |  186 | Workflow        | [WORKFLOW] LOG path=/home/runner/work/techdoc/techdoc/var/log/kb4it.log

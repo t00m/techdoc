@@ -22,7 +22,7 @@
                 "KB4IT"
             ],
             "Scope": [
-                "Unix Administration"
+                "Linux Administration"
             ],
             "Tag": [
                 "batch",
@@ -31,7 +31,7 @@
                 "text"
             ],
             "Title": [
-                "Batch Rename Metadata Property Names with sed"
+                "Batch rename with sed"
             ],
             "Topic": [
                 "Knowledge Management",
@@ -61,7 +61,7 @@
                     "KB4IT"
                 ],
                 "Scope": [
-                    "Unix Administration"
+                    "Linux Administration"
                 ],
                 "Tag": [
                     "batch",
@@ -70,14 +70,14 @@
                     "text"
                 ],
                 "Title": [
-                    "Batch Rename Metadata Property Names with sed"
+                    "Batch rename with sed"
                 ],
                 "Topic": [
                     "Knowledge Management",
                     "Troubleshooting"
                 ]
             },
-            "metadata_hash": "b7e1ba183e3ef7acaba77d37f7fdc40506e3c63119116c9bcb60a64c1f6f4290d72b68625ea06125acc53aaacbc267d3fde0f6bf4b17055eff270165310cd34d"
+            "metadata_hash": "192fc5d766ceaac9094ad6f4f6cdc999cf40dc867877a3a6ce0d70bfe93a75460c98a8620c9a6d956eeccb0959a63b77a79a9082d8aa59600cc09ad5a847bb2c"
         },
         "HELLO-WORLD.md": {
             "Author": [
@@ -1315,11 +1315,13 @@
             "Infrastructure": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "Linux Administration": [
+                "BATCH-RENAME-SED.md"
+            ],
             "SAP Administration": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "Unix Administration": [
-                "BATCH-RENAME-SED.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "X11-SSH-FORWARDING.md"
@@ -1592,7 +1594,7 @@
             "About this app": [
                 "about_app.md"
             ],
-            "Batch Rename Metadata Property Names with sed": [
+            "Batch rename with sed": [
                 "BATCH-RENAME-SED.md"
             ],
             "Hello world": [
