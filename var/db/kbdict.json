@@ -128,6 +128,131 @@
             },
             "metadata_hash": "2fb496bacaacd27d6f00645c61a0934927e8a5cd32d1f73396719b68196b00ca42eb9df264a318d4ea5e128f90e947befed468bf1e8397200c94111d6bdc28b9"
         },
+        "KB4IT-WEBSITE-AUTOMATED-UPDATE.md": {
+            "Author": [
+                "Tomas Virseda"
+            ],
+            "Category": [
+                "Procedure"
+            ],
+            "Command": [
+                "crontab",
+                "eval",
+                "git",
+                "kb4it",
+                "nice",
+                "nohup",
+                "python3",
+                "ssh-add",
+                "ssh-agent"
+            ],
+            "Date": [
+                "2026-05-22 00:00:00"
+            ],
+            "DocType": [
+                "Tutorial"
+            ],
+            "Filesystem": [
+                "/home",
+                "/proc",
+                "/tmp",
+                "/var/log"
+            ],
+            "OS": [
+                "Linux"
+            ],
+            "Product": [
+                "Crontab",
+                "GitLab",
+                "KB4IT",
+                "Markdown"
+            ],
+            "Protocol": [
+                "SSH"
+            ],
+            "Scope": [
+                "Knowledge Management"
+            ],
+            "Tag": [
+                "agent",
+                "automation",
+                "daemon",
+                "repository",
+                "scripting"
+            ],
+            "Title": [
+                "Keeping a KB4IT Website Up-to-Date Automatically"
+            ],
+            "Topic": [
+                "Documentation",
+                "Monitoring",
+                "Operation"
+            ],
+            "body_hash": "ab51b3d0cdafa3323802a615868888b472d967abe1d1fee1e4dd80124e2910f07d2e883a5b19766cd56db5c52253482b5aac3c78c6b86510ab1db53fc3f614fc",
+            "content": "/home/runner/work/techdoc/techdoc/source/KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
+            "keys": {
+                "Author": [
+                    "Tomas Virseda"
+                ],
+                "Category": [
+                    "Procedure"
+                ],
+                "Command": [
+                    "crontab",
+                    "git",
+                    "kb4it",
+                    "nice",
+                    "nohup",
+                    "python3",
+                    "ssh-add",
+                    "ssh-agent",
+                    "eval"
+                ],
+                "Date": [
+                    "2026-05-22"
+                ],
+                "DocType": [
+                    "Tutorial"
+                ],
+                "Filesystem": [
+                    "/home",
+                    "/proc",
+                    "/tmp",
+                    "/var/log"
+                ],
+                "OS": [
+                    "Linux"
+                ],
+                "Product": [
+                    "GitLab",
+                    "Markdown",
+                    "KB4IT",
+                    "Crontab"
+                ],
+                "Protocol": [
+                    "SSH"
+                ],
+                "Scope": [
+                    "Knowledge Management"
+                ],
+                "Tag": [
+                    "automation",
+                    "daemon",
+                    "agent",
+                    "repository",
+                    "scripting"
+                ],
+                "Title": [
+                    "Keeping a KB4IT Website Up-to-Date Automatically"
+                ],
+                "Topic": [
+                    "Documentation",
+                    "Monitoring",
+                    "Operation"
+                ]
+            },
+            "metadata_hash": "3ab4a6fcda2e350f4877c5f34113b37b23ace3072a4e2c0167e05d9c3e5b5b15dff602311fafb579e73c4f188943482d084a81dae237ef70783d60c3d309f613"
+        },
         "LINUX-SYSTEMD-JOURNALCTL.md": {
             "Category": [
                 "Procedure"
@@ -972,6 +1097,9 @@
     "kb4it_version": "0.7.7+build.4",
     "metadata": {
         "Author": {
+            "Tomas Virseda": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "Tom\u00e1s V\u00edrseda": [
                 "HELLO-WORLD.md"
             ]
@@ -983,6 +1111,7 @@
             ],
             "Procedure": [
                 "BATCH-RENAME-SED.md",
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
@@ -999,6 +1128,9 @@
             "cp": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "crontab": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "dasd_configure": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
@@ -1018,11 +1150,17 @@
             "echo": [
                 "X11-SSH-FORWARDING.md"
             ],
+            "eval": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "fdasd": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "find": [
                 "BATCH-RENAME-SED.md"
+            ],
+            "git": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "grep": [
                 "BATCH-RENAME-SED.md",
@@ -1030,6 +1168,9 @@
             ],
             "journalctl": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
+            ],
+            "kb4it": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "ls": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
@@ -1046,8 +1187,17 @@
             "mkreiserfs": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "nice": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
+            "nohup": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "pvcreate": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "python3": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "sed": [
                 "BATCH-RENAME-SED.md"
@@ -1061,6 +1211,12 @@
             "ssh": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
+            ],
+            "ssh-add": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
+            "ssh-agent": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "ssh-keygen": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
@@ -1121,6 +1277,9 @@
             ],
             "2026-05-20 00:00:00": [
                 "HELLO-WORLD.md"
+            ],
+            "2026-05-22 00:00:00": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ]
         },
         "DocType": {
@@ -1136,6 +1295,9 @@
             "Reference": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ],
+            "Tutorial": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ]
         },
         "EnvVar": {
@@ -1189,13 +1351,20 @@
             "/etc/systemd": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
+            "/home": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "/intranet27": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "/oracle": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
+            "/proc": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "/tmp": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "/usr/sap": [
@@ -1205,6 +1374,7 @@
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
             "/var/log": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
             "/var/log/journal": [
@@ -1217,6 +1387,7 @@
         "OS": {
             "Linux": [
                 "BATCH-RENAME-SED.md",
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
@@ -1243,12 +1414,22 @@
             "AIX": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
+            "Crontab": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "Domino": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "GitLab": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "KB4IT": [
                 "BATCH-RENAME-SED.md",
-                "HELLO-WORLD.md"
+                "HELLO-WORLD.md",
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
+            "Markdown": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "MobaXterm": [
                 "X11-SSH-FORWARDING.md"
@@ -1296,6 +1477,7 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "SSH": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "X11-SSH-FORWARDING.md"
             ],
@@ -1314,6 +1496,9 @@
             ],
             "Infrastructure": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "Knowledge Management": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "Linux Administration": [
                 "BATCH-RENAME-SED.md"
@@ -1467,8 +1652,14 @@
             ]
         },
         "Tag": {
+            "agent": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "autoextend": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ],
+            "automation": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "batch": [
                 "BATCH-RENAME-SED.md"
@@ -1478,6 +1669,9 @@
             ],
             "client": [
                 "X11-SSH-FORWARDING.md"
+            ],
+            "daemon": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "dasd": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
@@ -1545,6 +1739,12 @@
             "rename": [
                 "BATCH-RENAME-SED.md"
             ],
+            "repository": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
+            "scripting": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "secure": [
                 "X11-SSH-FORWARDING.md"
             ],
@@ -1609,6 +1809,9 @@
             "IBM zLinux - DASD Provisioning and LVM Storage Setup for a New Domino Instance": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "Keeping a KB4IT Website Up-to-Date Automatically": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "SFTP Connectivity - SSH Key Authentication": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
@@ -1633,6 +1836,9 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "X11-SSH-FORWARDING.md"
             ],
+            "Documentation": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
             "Housekeeping": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
@@ -1650,8 +1856,12 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "Monitoring": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ],
+            "Operation": [
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "Performance": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
