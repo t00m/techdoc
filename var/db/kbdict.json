@@ -242,7 +242,7 @@
                 "SAP Basis"
             ],
             "Title": [
-                "Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems"
+                "SFTP Connectivity - SSH Key Authentication"
             ],
             "Topic": [
                 "Connectivity",
@@ -316,7 +316,7 @@
                     "SAP Basis"
                 ],
                 "Title": [
-                    "Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems"
+                    "SFTP Connectivity - SSH Key Authentication"
                 ],
                 "Topic": [
                     "Connectivity",
@@ -325,7 +325,7 @@
                     "Troubleshooting"
                 ]
             },
-            "metadata_hash": "1fa1dccb5daabb3bef9f564972bd27510cc9a8fd228bcba2cf8e0f9adf3a0c2d4fabaf32a21a772164f6908efcdaf65e71e983680aebfc6b290aab2e1df7a8ed"
+            "metadata_hash": "cba921211a387cdfbb184dfc2826ada2f02023c8bc87eac3a5171361456fdf8992f3f2d8f672f7cfd3dc3908ed5f786dc954405d3cd0e81418b4b07851a4c29f"
         },
         "SLES11-ZLINUX-DASD-PROVISIONING.md": {
             "Category": [
@@ -1091,7 +1091,7 @@
             "IBM zLinux - DASD Provisioning and LVM Storage Setup for a New Domino Instance": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
-            "Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems": [
+            "SFTP Connectivity - SSH Key Authentication": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ]
         },
