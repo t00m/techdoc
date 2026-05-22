@@ -266,7 +266,7 @@ Order By 1
 
 Get freespace:
 
-```
+```sql
 SQL> select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
 
     TBSIZE       FREE
@@ -276,7 +276,7 @@ SQL> select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free fr
 
 Get properties:
 
-```
+```sql
 SQL>  column property_name format a25;
 SQL> column property_value format a15;
 SQL> SELECT property_name, property_value as value from database_properties WHERE property_name='DEFAULT_TEMP_TABLESPACE';
@@ -288,7 +288,7 @@ DEFAULT_TEMP_TABLESPACE   PSAPTEMP
 
 Get details:
 
-```
+```sql
 SQL> set linesize 150
 SQL> column tablespace format a25;
 SQL> column filename format a45;
@@ -312,7 +312,7 @@ PSAPTEMP                  /oracle/SDB/sapdata1/temp_6/temp.data6             200
 
 1. Create a new temporary tablespace:
 
-   ```
+   ```sql
    $ mkdir /oracle/SDB/sapdata1/temp_0/
    sql> CREATE TEMPORARY TABLESPACE "PSAPTEMP123" TEMPFILE '/oracle/SDB/sapdata1/temp_0/temp.data123' SIZE 100M REUSE AUTOEXTEND OFF;
    ```
@@ -328,7 +328,7 @@ PSAPTEMP                  /oracle/SDB/sapdata1/temp_6/temp.data6             200
    ```
 4. Create another one like the original
 
-   ```
+   ```sql
    sql> create temporary tablespace PSAPTEMP tempfile '/oracle/SDB/sapdata1/temp_1/temp.data1' size 1000M autoextend on next 100M maxsize 32000M;
    sql> ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_2/temp.data2' size 1000M autoextend on next 100M maxsize 32000M;
    sql> ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_3/temp.data3' size 1000M autoextend on next 100M maxsize 32000M;

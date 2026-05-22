@@ -583,7 +583,7 @@ Order By 1
 
 Get freespace:
 
-```
+```sql
 SQL&gt; select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
 
     TBSIZE       FREE
@@ -593,7 +593,7 @@ SQL&gt; select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free
 
 Get properties:
 
-```
+```sql
 SQL&gt;  column property_name format a25;
 SQL&gt; column property_value format a15;
 SQL&gt; SELECT property_name, property_value as value from database_properties WHERE property_name='DEFAULT_TEMP_TABLESPACE';
@@ -605,7 +605,7 @@ DEFAULT_TEMP_TABLESPACE   PSAPTEMP
 
 Get details:
 
-```
+```sql
 SQL&gt; set linesize 150
 SQL&gt; column tablespace format a25;
 SQL&gt; column filename format a45;
@@ -629,7 +629,7 @@ PSAPTEMP                  /oracle/SDB/sapdata1/temp_6/temp.data6             200
 
 1. Create a new temporary tablespace:
 
-   ```
+   ```sql
    $ mkdir /oracle/SDB/sapdata1/temp_0/
    sql&gt; CREATE TEMPORARY TABLESPACE "PSAPTEMP123" TEMPFILE '/oracle/SDB/sapdata1/temp_0/temp.data123' SIZE 100M REUSE AUTOEXTEND OFF;
    ```
@@ -645,7 +645,7 @@ PSAPTEMP                  /oracle/SDB/sapdata1/temp_6/temp.data6             200
    ```
 4. Create another one like the original
 
-   ```
+   ```sql
    sql&gt; create temporary tablespace PSAPTEMP tempfile '/oracle/SDB/sapdata1/temp_1/temp.data1' size 1000M autoextend on next 100M maxsize 32000M;
    sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_2/temp.data2' size 1000M autoextend on next 100M maxsize 32000M;
    sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_3/temp.data3' size 1000M autoextend on next 100M maxsize 32000M;
@@ -2157,14 +2157,14 @@ Order By 1
 <h3 class="kb-h3" id="psaptemp">PSAPTEMP</h3>
 <div class="kb-section-body uk-container">
 <p>Get freespace:</p>
-<pre><code>SQL&gt; select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
+<pre><code class="language-sql">SQL&gt; select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
 
     TBSIZE       FREE
 ---------- ----------
     172000      48290
 </code></pre>
 <p>Get properties:</p>
-<pre><code>SQL&gt;  column property_name format a25;
+<pre><code class="language-sql">SQL&gt;  column property_name format a25;
 SQL&gt; column property_value format a15;
 SQL&gt; SELECT property_name, property_value as value from database_properties WHERE property_name='DEFAULT_TEMP_TABLESPACE';
 
@@ -2173,7 +2173,7 @@ PROPERTY_NAME             VALUE
 DEFAULT_TEMP_TABLESPACE   PSAPTEMP
 </code></pre>
 <p>Get details:</p>
-<pre><code>SQL&gt; set linesize 150
+<pre><code class="language-sql">SQL&gt; set linesize 150
 SQL&gt; column tablespace format a25;
 SQL&gt; column filename format a45;
 SQL&gt; SELECT tablespace_name as tablespace, file_name as filename, bytes/1024/1024 as MB, status from dba_temp_files;
@@ -2195,14 +2195,16 @@ PSAPTEMP                  /oracle/SDB/sapdata1/temp_6/temp.data6             200
 <ol>
 <li>Create a new temporary tablespace:</li>
 </ol>
-<p><code>$ mkdir /oracle/SDB/sapdata1/temp_0/
+<p><code>sql
+   $ mkdir /oracle/SDB/sapdata1/temp_0/
    sql&gt; CREATE TEMPORARY TABLESPACE "PSAPTEMP123" TEMPFILE '/oracle/SDB/sapdata1/temp_0/temp.data123' SIZE 100M REUSE AUTOEXTEND OFF;</code>
 2. Make it default:</p>
 <p><code>ALTER DATABASE DEFAULT TEMPORARY TABLESPACE PSAPTEMP123;</code>
 3. Drop the old one</p>
 <p><code>DROP TABLESPACE PSAPTEMP INCLUDING CONTENTS;</code>
 4. Create another one like the original</p>
-<p><code>sql&gt; create temporary tablespace PSAPTEMP tempfile '/oracle/SDB/sapdata1/temp_1/temp.data1' size 1000M autoextend on next 100M maxsize 32000M;
+<p><code>sql
+   sql&gt; create temporary tablespace PSAPTEMP tempfile '/oracle/SDB/sapdata1/temp_1/temp.data1' size 1000M autoextend on next 100M maxsize 32000M;
    sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_2/temp.data2' size 1000M autoextend on next 100M maxsize 32000M;
    sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_3/temp.data3' size 1000M autoextend on next 100M maxsize 32000M;
    sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_4/temp.data4' size 1000M autoextend on next 100M maxsize 32000M;
@@ -3157,7 +3159,7 @@ ORDER BY owner, table_name;
 <!-- FOOTER :: START -->
 <div class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Friday, May 22, 2026 at 09:21</span>
+    <span class="kb-footer-meta">Last updated Friday, May 22, 2026 at 15:02</span>
 </div>
 <!-- FOOTER :: END -->
 </div>
