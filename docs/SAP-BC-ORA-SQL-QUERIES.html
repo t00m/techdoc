@@ -1,0 +1,3226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>t00m's tech notes - Useful Oracle queries for SAP Basis Administrators</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="KB4IT 0.7.7+build.4">
+    <meta name="description" content="KB4IT document">
+    <meta name="author" content="KB4IT by t00mlabs.net">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/screen.css">
+    <script src="resources/themes/techdoc/framework/Highlight/highlight.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit.min.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit-icons.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery-3.5.1.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/dataTables.uikit.min.js"></script>
+    <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            $('.kb4it-datatable:not([data-dt-init])').each(function() {
+                $(this).attr('data-dt-init', '1').DataTable({
+                    dom: '<"kbfilter"flrtip>',
+                    serverSide: false,
+                    ordering: true,
+                    searching: true,
+                    deferRender:    true,
+                    autoWidth:      false,
+                    scrollY:        'calc(100vh - 200px)',
+                    scrollCollapse: false,
+                    scroller:       false,
+                    stateSave: false,
+                    paging:   false,
+                    info:     true,
+                    order: [[ 0, "desc" ]]
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<!-- Template version 0.7.7+build.4 -->
+<div class="uk-background-muted uk-height-viewport">
+<div id="container-1" class="uk-container uk-container-center noprint">
+    <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
+        <nav class="uk-navbar-container uk-border-rounded uk-card-hover uk-box-shadow-large" style="background-color: white;" uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="" width="24px" height="24px">
+                        </a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="add.html"><span uk-icon="plus-circle"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Add document</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="events.html"><span uk-icon="calendar"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Events</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="bookmarks.html"><span uk-icon="bookmark"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Bookmarks</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="properties.html"><span uk-icon="database"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Properties</span></a>
+                                    <div class="uk-navbar-dropdown" uk-dropdown="pos: right-top">
+                                        <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-small uk-column-1-2">
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Category.html"><span class="">Category</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Command.html"><span class="">Command</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Database.html"><span class="">Database</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="DocType.html"><span class="">DocType</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="EnvVar.html"><span class="">EnvVar</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Environment.html"><span class="">Environment</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filename.html"><span class="">Filename</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filesystem.html"><span class="">Filesystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="OS.html"><span class="">OS</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Priority.html"><span class="">Priority</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Product.html"><span class="">Product</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Project.html"><span class="">Project</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Protocol.html"><span class="">Protocol</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Public.html"><span class="">Public</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Scope.html"><span class="">Scope</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Server.html"><span class="">Server</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Service.html"><span class="">Service</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Status.html"><span class="">Status</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Subsystem.html"><span class="">Subsystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Table.html"><span class="">Table</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Tag.html"><span class="">Tag</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Team.html"><span class="">Team</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Topic.html"><span class="">Topic</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="User.html"><span class="">User</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Website.html"><span class="">Website</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="stats.html"><span uk-icon="list"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Stats</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="uk-navbar-nav noprint">
+                    <!-- MENU CONTENTS :: START -->
+                    <!-- Template SECTION_ACTIONS.tpl :: START -->
+        <!-- Edit Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Edit document">
+            <a class="uk-link-heading" href="https://github.com/t00m/techdoc/edit/main/source/SAP-BC-ORA-SQL-QUERIES.md" target="_blank"><span uk-icon="pencil"></span></a>
+        </li>
+        <!-- Edit Button :: END -->
+        <!-- Metadata Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Document properties">
+            <a class="uk-link-heading" href="#modal-metadata" uk-toggle><span class="uk-link-heading" uk-icon="icon: hashtag; ratio: 1.0;"></span></a>
+            <div id="modal-metadata" class="uk-modal-full" uk-modal>
+                <div class="uk-modal-dialog uk-height-viewport">
+                    <button class="uk-modal-close-full uk-close-large uk-background-muted" type="button" uk-close></button>
+                    <div class="uk-grid-collapse uk-child-width-expand@s uk-flex-middle" uk-grid>
+                        <div class="uk-padding-large uk-background-muted">
+                            <div class="uk-text-lead uk-text-center uk-text-primary">Metadata</div>
+                            <div class="" style="border: 1px solid transparent;">
+<ul class="kb-metadata-list">
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Category.html">Category</a></strong>: <a class="kb-meta-val" href="Category_Note.html">Note</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Command.html">Command</a></strong>: <a class="kb-meta-val" href="Command_sqlplus.html">sqlplus</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Database.html">Database</a></strong>: <a class="kb-meta-val" href="Database_Oracle.html">Oracle</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_Reference.html">Reference</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Filesystem.html">Filesystem</a></strong>: <a class="kb-meta-val" href="Filesystem_oracle.html">/oracle</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="OS.html">OS</a></strong>: <a class="kb-meta-val" href="OS_Linux.html">Linux</a>
+<a class="kb-meta-val" href="OS_Unix.html">Unix</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Priority.html">Priority</a></strong>: <a class="kb-meta-val" href="Priority_Normal.html">Normal</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Product.html">Product</a></strong>: <a class="kb-meta-val" href="Product_AIX.html">AIX</a>
+<a class="kb-meta-val" href="Product_SQLPlus.html">SQLPlus</a>
+<a class="kb-meta-val" href="Product_RHEL.html">RHEL</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Project.html">Project</a></strong>: <a class="kb-meta-val" href="Project_SAP_Basis_Maintenance.html">SAP Basis Maintenance</a>
+<a class="kb-meta-val" href="Project_Database_Maintenance.html">Database Maintenance</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Public.html">Public</a></strong>: <a class="kb-meta-val" href="Public_True.html">True</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Scope.html">Scope</a></strong>: <a class="kb-meta-val" href="Scope_Database_Administration.html">Database Administration</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Status.html">Status</a></strong>: <a class="kb-meta-val" href="Status_Released.html">Released</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Table.html">Table</a></strong>: <a class="kb-meta-val" href="Table_ALL_TABLES.html">ALL_TABLES</a>
+<a class="kb-meta-val" href="Table_DATABASE_PROPERTIES.html">DATABASE_PROPERTIES</a>
+<a class="kb-meta-val" href="Table_DBA_DATA_FILES.html">DBA_DATA_FILES</a>
+<a class="kb-meta-val" href="Table_DBA_FREE_SPACE.html">DBA_FREE_SPACE</a>
+<a class="kb-meta-val" href="Table_DBA_HIST_SEG_STAT.html">DBA_HIST_SEG_STAT</a>
+<a class="kb-meta-val" href="Table_DBA_HIST_SNAPSHOT.html">DBA_HIST_SNAPSHOT</a>
+<a class="kb-meta-val" href="Table_DBA_INDEXES.html">DBA_INDEXES</a>
+<a class="kb-meta-val" href="Table_DBA_OBJECTS.html">DBA_OBJECTS</a>
+<a class="kb-meta-val" href="Table_DBA_REGISTRY.html">DBA_REGISTRY</a>
+<a class="kb-meta-val" href="Table_DBA_SEGMENTS.html">DBA_SEGMENTS</a>
+<a class="kb-meta-val" href="Table_DBA_TABLES.html">DBA_TABLES</a>
+<a class="kb-meta-val" href="Table_DBA_TABLESPACES.html">DBA_TABLESPACES</a>
+<a class="kb-meta-val" href="Table_DBA_TEMP_FILES.html">DBA_TEMP_FILES</a>
+<a class="kb-meta-val" href="Table_DBA_TEMP_FREE_SPACE.html">DBA_TEMP_FREE_SPACE</a>
+<a class="kb-meta-val" href="Table_DBA_USERS.html">DBA_USERS</a>
+<a class="kb-meta-val" href="Table_RSSTATMANREQMAP.html">RSSTATMANREQMAP</a>
+<a class="kb-meta-val" href="Table_SYS.V_TEMP_EXTENT_POOL.html">SYS.V_$TEMP_EXTENT_POOL</a>
+<a class="kb-meta-val" href="Table_SYS.V_TEMP_SPACE_HEADER.html">SYS.V_$TEMP_SPACE_HEADER</a>
+<a class="kb-meta-val" href="Table_T000.html">T000</a>
+<a class="kb-meta-val" href="Table_USER_SEGMENTS.html">USER_SEGMENTS</a>
+<a class="kb-meta-val" href="Table_USR02.html">USR02</a>
+<a class="kb-meta-val" href="Table_VDATABASE.html">V$DATABASE</a>
+<a class="kb-meta-val" href="Table_VDATAFILE.html">V$DATAFILE</a>
+<a class="kb-meta-val" href="Table_VINSTANCE.html">V$INSTANCE</a>
+<a class="kb-meta-val" href="Table_VLOG.html">V$LOG</a>
+<a class="kb-meta-val" href="Table_VLOGFILE.html">V$LOGFILE</a>
+<a class="kb-meta-val" href="Table_VPARAMETER.html">V$PARAMETER</a>
+<a class="kb-meta-val" href="Table_VSESSION_CONNECT_INFO.html">V$SESSION_CONNECT_INFO</a>
+<a class="kb-meta-val" href="Table_VVERSION.html">V$VERSION</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Tag.html">Tag</a></strong>: <a class="kb-meta-val" href="Tag_autoextend.html">autoextend</a>
+<a class="kb-meta-val" href="Tag_datafile.html">datafile</a>
+<a class="kb-meta-val" href="Tag_discovery.html">discovery</a>
+<a class="kb-meta-val" href="Tag_growth.html">growth</a>
+<a class="kb-meta-val" href="Tag_tracking.html">tracking</a>
+<a class="kb-meta-val" href="Tag_locking.html">locking</a>
+<a class="kb-meta-val" href="Tag_segment.html">segment</a>
+<a class="kb-meta-val" href="Tag_undo.html">undo</a>
+<a class="kb-meta-val" href="Tag_group.html">group</a>
+<a class="kb-meta-val" href="Tag_instance.html">instance</a>
+<a class="kb-meta-val" href="Tag_query.html">query</a>
+<a class="kb-meta-val" href="Tag_redolog.html">redolog</a>
+<a class="kb-meta-val" href="Tag_size.html">size</a>
+<a class="kb-meta-val" href="Tag_table.html">table</a>
+<a class="kb-meta-val" href="Tag_tablespace.html">tablespace</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Team.html">Team</a></strong>: <a class="kb-meta-val" href="Team_SAP.html">SAP</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Topic.html">Topic</a></strong>: <a class="kb-meta-val" href="Topic_Administration.html">Administration</a>
+<a class="kb-meta-val" href="Topic_Archiving.html">Archiving</a>
+<a class="kb-meta-val" href="Topic_Housekeeping.html">Housekeeping</a>
+<a class="kb-meta-val" href="Topic_Maintenance.html">Maintenance</a>
+<a class="kb-meta-val" href="Topic_Monitoring.html">Monitoring</a>
+<a class="kb-meta-val" href="Topic_Performance.html">Performance</a>
+<a class="kb-meta-val" href="Topic_User.html">User</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="User.html">User</a></strong>: <a class="kb-meta-val" href="User_oracle.html">oracle</a>
+
+</li>
+</ul>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Metadata Button :: END -->
+        <!-- View Markdown Source Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Document source">
+            <a class="uk-link-heading" href="#modal-full-source" uk-toggle><span class="uk-link-heading" uk-icon="icon: code; ratio: 1.0;"></span></a>
+            <div id="modal-full-source" class="uk-modal-full" uk-modal>
+                <div class="uk-modal-dialog uk-height-viewport">
+                    <button class="uk-modal-close-full uk-close-large uk-background-muted" type="button" uk-close></button>
+                    <div class="uk-grid-collapse uk-child-width-expand@s uk-flex-middle" uk-grid>
+                        <div class="uk-padding-large uk-background-muted">
+                            <div class="uk-text-lead uk-text-center uk-text-danger">Source</div>
+                            <div class="uk-text-lead">SAP-BC-ORA-SQL-QUERIES.md&#160;<a onclick="copyToClipboard()" class="uk-icon-link uk-margin-small-right uk-link-toggle" uk-icon="icon: copy; ratio: 1.0" uk-tooltip="title: Copy to clipboard"></a>
+</div>
+                            <div class=""><textarea id="source-code" class="uk-width-1-1 uk-height-viewport">---
+Category: Note
+Command: sqlplus
+Database: Oracle
+Date: 2026-05-06
+DocType: Reference
+Filesystem: /oracle
+OS: Linux, Unix
+Priority: Normal
+Product: AIX, SQLPlus, RHEL
+Project: SAP Basis Maintenance, Database Maintenance
+Public: Yes
+Scope: Database Administration
+Status: Released
+Table: ALL_TABLES, DATABASE_PROPERTIES, DBA_DATA_FILES, DBA_FREE_SPACE, DBA_HIST_SEG_STAT, DBA_HIST_SNAPSHOT, DBA_INDEXES, DBA_OBJECTS, DBA_REGISTRY, DBA_SEGMENTS, DBA_TABLES, DBA_TABLESPACES, DBA_TEMP_FILES, DBA_TEMP_FREE_SPACE, DBA_USERS, RSSTATMANREQMAP, SYS.V_$TEMP_EXTENT_POOL, SYS.V_$TEMP_SPACE_HEADER, T000, USER_SEGMENTS, USR02, V$DATABASE, V$DATAFILE, V$INSTANCE, V$LOG, V$LOGFILE, V$PARAMETER, V$SESSION_CONNECT_INFO, V$VERSION
+Tag: autoextend, datafile, discovery, growth, tracking, locking, segment, undo, group, instance, query, redolog, size, table, tablespace
+Team: SAP
+Topic: Administration, Archiving, Housekeeping, Maintenance, Monitoring, Performance, User
+User: oracle
+---
+
+# Useful Oracle queries for SAP Basis Administrators
+
+## Overview
+
+This is a comprehensive reference of SQL*Plus queries for SAP Basis Administrators working with Oracle databases. It covers database administration tasks including instance and database monitoring, tablespace and datafile management, table and index analysis, user and security management, and growth trend analysis using Oracle&#8217;s Automatic Workload Repository (AWR).
+
+All queries should work in any Oracle 10g+ instance with SAP schema (`SAPSR3` owner). Queries use standard Oracle data dictionary views and dynamic performance views.
+
+*DBSID* is `SDB`.
+
+## Prerequisites and Setup
+
+* SQL*Plus access to Oracle database with DBA or monitoring privileges
+* Knowledge of basic SQL syntax and Oracle object naming conventions
+* AWR enabled (for historical segment statistics queries)
+* SAP tables populated (for SAP-specific queries)
+
+## Configuration
+
+Before running queries, apply these SQL*Plus settings to control output formatting:
+
+```sql
+SET LINESIZE 32767
+SET WRAP OFF
+SET PAGESIZE 100
+SET LINESIZE 150
+SPOOL &lt;filename&gt;    -- Optional: redirect output to file
+-- ... run queries ...
+SPOOL OFF
+```
+
+For detailed formatting options, see the [SQL*Plus User&#8217;s Guide and Reference](http://docs.oracle.com/cd/B19306_01/server.102/b14357/ch12040.htm).
+
+### Common Format Variables
+
+These column formatting statements are used throughout this guide:
+
+```sql
+COL SEGMENT_NAME FORMAT A20
+COL SEGMENT_TYPE FORMAT A15
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+COL TABLESPACE_NAME FORMAT A32
+COL OWNER FORMAT A15
+COL OBJECT_NAME FORMAT A36
+COL TABLE_NAME FORMAT A30
+COL USERNAME FORMAT A15
+COL ACCOUNT_STATUS FORMAT A10
+COL AUTHENTICATION_TYPE FORMAT A15
+```
+
+## Database
+
+### Show Oracle Database version
+
+```sql
+SELECT
+FROM v$version;
+```
+
+**Output**
+
+```
+BANNER
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 &#8211; 64bit Production
+PL/SQL Release 11.2.0.3.0 &#8211; Production CORE    11.2.0.3.0      Production
+TNS for IBM/AIX RISC System/6000: Version 11.2.0.3.0 &#8211; Production
+NLSRTL Version 11.2.0.3.0 &#8211; Production
+```
+
+### Show database details
+
+```sql
+SELECT NAME, LOG_MODE, OPEN_MODE, DATABASE_ROLE, PLATFORM_NAME
+FROM  v$database;
+```
+
+**Output**
+
+```
+NAME LOG_MODE     OPEN_MODE   DATABASE_ROLE PLATFORM_NAME
+SDB  NOARCHIVELOG READ WRITE  PRIMARY       AIX-Based Systems (64-bit)
+```
+
+### Show database size
+
+```sql
+SELECT SUM(BYTES)/1024/1024/1024 AS "DBSIZE(GB)"
+FROM dba_data_files;
+```
+
+**Output**
+
+```
+DBSIZE(GB)
+5312.59766
+```
+
+### Show Oracle Instant Client Version
+
+```sql
+SELECT DISTINCT client_version
+FROM v$session_connect_info
+WHERE sid = sys_context('userenv', 'sid');
+```
+
+**Output**
+
+```
+CLIENT_VERSION
+11.2.0.3.0
+```
+
+For a list of all possibilities to check and identify Oracle Instant Client Version check this [document](http://scn.sap.com/docs/DOC-61410).
+
+#### Installed components in Database
+```sql
+SELECT comp_name, version, status
+FROM dba_registry;
+```
+
+## Instance
+
+### Show database instance details
+
+```sql
+SELECT INSTANCE_NAME, HOST_NAME, VERSION, STARTUP_TIME, STATUS, INSTANCE_ROLE
+FROM v$instance;
+```
+
+**Output**
+
+```
+INSTANCE_NAME HOST_NAME VERSION    STARTUP_TIME STATUS INSTANCE_ROLE
+SDB           SAPSERVER 11.2.0.3.0 26-MAR-15    OPEN   PRIMARY_INSTANCE
+```
+
+### Monitor instance status of oracle
+
+```sql
+SELECT host_name, status
+FROM v$instance;
+```
+
+### DB Schema for SDB
+```sql
+SELECT OWNER
+FROM DBA_TABLES WHERE TABLE_NAME = 'T000';
+```
+
+**Output**
+
+```
+OWNER
+SAPSR3
+```
+
+## Tablespaces
+
+### Show tablespaces details
+
+```sql
+SELECT TABLESPACE_NAME, STATUS, CONTENTS, SEGMENT_SPACE_MANAGEMENT
+FROM dba_tablespaces;
+```
+
+**Output**
+
+```
+TABLESPACE_NAME                STATUS    CONTENTS  SEGMEN
+SYSTEM                         ONLINE    PERMANENT MANUAL
+PSAPUNDO                       ONLINE    UNDO      MANUAL
+SYSAUX                         ONLINE    PERMANENT AUTO
+PSAPTEMP                       ONLINE    TEMPORARY MANUAL
+PSAPSR3                        ONLINE    PERMANENT AUTO
+PSAPSR3USR                     ONLINE    PERMANENT AUTO
+TOOLS                          ONLINE    PERMANENT AUTO
+PSAPSR3731                     ONLINE    PERMANENT AUTO
+```
+
+### List of datafiles for tablespace
+
+```sql
+SELECT file_name
+FROM dba_data_files
+WHERE tablespace_name='&lt;TABLESPACE_NAME&gt;';
+```
+
+### Find tables being used by tablespace
+
+```sql
+SELECT table_name
+FROM dba_tables
+WHERE tablespace_name='PSAPSR37XX';
+```
+
+### Check autoextend
+
+```sql
+SELECT TABLESPACE_NAME,SEGMENT_SPACE_MANAGEMENT
+FROM dba_tablespaces;
+```
+
+### Check what is the retention period for PSAPUNDO tablespace
+
+```sql
+SELECT name "retention",value/60 "minutes"
+FROM v$parameter
+WHERE name like '%undo_retention%';
+```
+
+### Get total, used and free space for tablespaces
+
+```sql
+set pages 49999 lin 120
+col tablespace_name for a32 tru
+col "Total GB"  for 999,999.9
+col "GB Used"   for 999,999.9
+col "GB Free"   for 99,999.9
+col "Pct Free"  for 999.9
+col "Pct Used"  for 999.9
+comp sum of "Total GB"  on report
+comp sum of "GB Used"   on report
+comp sum of "GB Free"   on report
+break on report
+
+Select A.Tablespace_Name, B.Total/1024/1024/1024 "Total GB",
+       (B.Total-a.Total_Free)/1024/1024/1024 "GB Used",
+       A.Total_Free/1024/1024/1024 "GB Free",
+       (A.Total_Free/B.Total) * 100 "Pct Free",
+       ((B.Total-A.Total_Free)/B.Total) * 100 "Pct Used"
+  From (Select Tablespace_Name, Sum(Bytes) Total_Free
+          From Sys.Dba_Free_Space
+         Group By Tablespace_Name     ) A
+     , (Select Tablespace_Name, Sum(Bytes) Total
+          From Sys.Dba_Data_Files
+         Group By Tablespace_Name     ) B
+Where A.Tablespace_Name = B.Tablespace_Name
+Order By 1
+/
+```
+
+### PSAPTEMP
+
+Get freespace:
+
+```
+SQL&gt; select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
+
+    TBSIZE       FREE
+---------- ----------
+    172000      48290
+```
+
+Get properties:
+
+```
+SQL&gt;  column property_name format a25;
+SQL&gt; column property_value format a15;
+SQL&gt; SELECT property_name, property_value as value from database_properties WHERE property_name='DEFAULT_TEMP_TABLESPACE';
+
+PROPERTY_NAME             VALUE
+------------------------- ---------------
+DEFAULT_TEMP_TABLESPACE   PSAPTEMP
+```
+
+Get details:
+
+```
+SQL&gt; set linesize 150
+SQL&gt; column tablespace format a25;
+SQL&gt; column filename format a45;
+SQL&gt; SELECT tablespace_name as tablespace, file_name as filename, bytes/1024/1024 as MB, status from dba_temp_files;
+
+TABLESPACE                FILENAME                                              MB STATUS
+------------------------- --------------------------------------------- ---------- -------
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_4/temp.data4             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_8/temp.data8             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_9/temp.data9             32000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_7/temp.data7             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_2/temp.data2             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_5/temp.data5             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_3/temp.data3             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_6/temp.data6             20000 ONLINE
+
+8 rows selected.
+```
+
+**Recreate**:
+
+1. Create a new temporary tablespace:
+
+   ```
+   $ mkdir /oracle/SDB/sapdata1/temp_0/
+   sql&gt; CREATE TEMPORARY TABLESPACE "PSAPTEMP123" TEMPFILE '/oracle/SDB/sapdata1/temp_0/temp.data123' SIZE 100M REUSE AUTOEXTEND OFF;
+   ```
+2. Make it default:
+
+   ```
+   ALTER DATABASE DEFAULT TEMPORARY TABLESPACE PSAPTEMP123;
+   ```
+3. Drop the old one
+
+   ```
+   DROP TABLESPACE PSAPTEMP INCLUDING CONTENTS;
+   ```
+4. Create another one like the original
+
+   ```
+   sql&gt; create temporary tablespace PSAPTEMP tempfile '/oracle/SDB/sapdata1/temp_1/temp.data1' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_2/temp.data2' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_3/temp.data3' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_4/temp.data4' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_5/temp.data5' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_6/temp.data6' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_7/temp.data7' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_8/temp.data8' size 1000M autoextend on next 100M maxsize 32000M;
+   ```
+5. Make it default:
+
+   ```
+   ALTER DATABASE DEFAULT TEMPORARY TABLESPACE PSAPTEMP
+   ```
+6. Drop the first temporary tablespace
+
+   ```
+   DROP TABLESPACE PSAPTEMP123 INCLUDING CONTENTS;
+   ```
+
+If _ERROR ORA-60100: dropping temporary tablespace with tablespace ID number (tsn) 3 is blocked due to sort segments_, apply the following [solution](https://support.oracle.com/knowledge/Oracle%20Database%20Products/2696984_1.html):
+
+```
+shutdown immediate
+startup;
+DROP TABLESPACE PSAPTEMP INCLUDING CONTENTS;
+```
+
+Check PSAPTEMP freespace:
+
+```
+select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
+```
+
+List datafiles in PSAPTEMP:
+
+```
+set linesize 150
+column tablespace format a25;
+column filename format a45;
+SELECT tablespace_name as tablespace, file_name as filename, bytes/1024/1024 as MB, status from dba_temp_files;
+```
+
+## Tables
+
+### Get table size
+
+```sql
+select segment_name,sum(bytes)/1024/1024/1024 GB from dba_segments where segment_type='TABLE' and segment_name=upper('&amp;TABLE_NAME') group by segment_name;
+```
+
+## Users
+
+### Show database users
+
+```sql
+SET PAGESIZE 100;
+COLUMN USERNAME FORMAT A25;
+COLUMN ACCOUNT_STATUS FORMAT A10;
+COLUMN AUTHENTICATION_TYPE FORMAT A15;
+SELECT USERNAME, ACCOUNT_STATUS, AUTHENTICATION_TYPE FROM dba_users;
+```
+
+**Output**
+
+```
+USERNAME                       ACCOUNT_STATUS                   AUTHENTI
+SAPSR3                         OPEN                             PASSWORD
+SYSTEM                         OPEN                             PASSWORD
+SYS                            OPEN                             PASSWORD
+OPS$SAPSERVICESAP              OPEN                             EXTERNAL
+OPS$ORASAP                     OPEN                             EXTERNAL
+```
+
+### To see all user who were locked by the system admin
+
+```sql
+SELECT bname
+FROM &lt;schema-name&gt;.USR02
+WHERE uflag='64' and mandt='&lt;client-id&gt;';
+```
+
+### List of users
+
+```sql
+COLUMN USERNAME FORMAT A15;
+COLUMN LAST_LOGIN FORMAT A50;
+COLUMN ACCOUNT_STATUS FORMAT A10;
+SELECT USERNAME, ACCOUNT_STATUS, LAST_LOGIN FROM DBA_USERS WHERE LAST_LOGIN IS NOT NULL ORDER BY LAST_LOGIN DESC;
+
+USERNAME        ACCOUNT_ST LAST_LOGIN
+--------------- ---------- --------------------------------------------------
+SAPSR3          OPEN       20-NOV-23 09.15.58.000000000 AM +01:00
+DBSNMP          OPEN       20-NOV-23 09.04.31.000000000 AM +01:00
+ETLSAP          OPEN       20-NOV-23 05.03.38.000000000 AM +01:00
+OPS$ORABWD      OPEN       20-NOV-23 04.00.50.000000000 AM +01:00
+OPS$ORACLE      OPEN       19-NOV-23 07.00.45.000000000 AM +01:00
+SYSTEM          OPEN       13-NOV-23 01.41.19.000000000 PM +01:00
+OPS$BWDADM      OPEN       15-JUL-23 07.04.01.000000000 PM +01:00
+
+7 rows selected.
+```
+
+### (Un)lock user account
+
+```sql
+ALTER USER &lt;USERNAME&gt; ACCOUNT LOCK;
+```
+
+```sql
+ALTER USER &lt;USERNAME&gt; ACCOUNT UNLOCK;
+```
+
+### Create user
+
+```sql
+CREATE USER &lt;USERNAME&gt; IDENTIFIED BY &lt;PASSWORD&gt; [PROFILE &lt;PROFILE_NAME&gt;]
+```
+
+### Delete SAP* user (or another user)
+
+First we check if user exists:
+
+```sql
+SELECT MANDT, BNAME
+FROM &lt;DB_SCHEMA&gt;.USR02
+WHERE MANDT = 'XXX' AND BNAME = 'SAP*';
+```
+
+Then delete it:
+
+```sql
+DELETE
+FROM &lt;DB_SCHEMA&gt;.USR02
+WHERE MANDT = 'XXX' AND BNAME = 'SAP*';
+```
+
+### Password complexity
+
+Execute script sap_utlpwdmg.sql from SAP Note 1522952 in SQL Plus:
+
+```sql
+@sap_utlpwdmg.sql
+```
+
+### Activate complexity in profiles:
+
+```sql
+ALTER PROFILE DEFAULT LIMIT PASSWORD_VERIFY_FUNCTION verify_function_sap;
+ALTER PROFILE SAPUPROF LIMIT PASSWORD_VERIFY_FUNCTION verify_function_sap;
+```
+
+### Deativate complexity in profiles:
+
+```sql
+ALTER PROFILE DEFAULT LIMIT PASSWORD_VERIFY_FUNCTION NULL;
+ALTER PROFILE SAPUPROF LIMIT PASSWORD_VERIFY_FUNCTION NULL;
+```
+
+## Datafiles
+
+### Check datafiles
+
+```sql
+SELECT FILE#, STATUS, ENABLED
+FROM  v$datafile;
+```
+
+**Output**
+
+```
+     FILE# STATUS  ENABLED
+       375 ONLINE  READ WRITE
+       376 ONLINE  READ WRITE
+       377 ONLINE  READ WRITE
+       378 ONLINE  READ WRITE
+       379 ONLINE  READ WRITE
+       380 ONLINE  READ WRITE
+```
+
+### List of datafiles
+
+```sql
+SELECT FILE_NAME AS Datafile, BYTES/1024/1024 AS "Size(MB)"
+FROM DBA_DATA_FILES
+WHERE TABLESPACE_NAME LIKE '%&lt;TABLESPACE_NAME&gt;%';
+```
+
+**Output**
+
+```
+Datafile                                          Size(MB)
+[&#8230;]
+/oracle/SDB/sapdata9/sr3731_3/sr3731.data3           20000
+/oracle/SDB/sapdata9/sr3731_4/sr3731.data4           20000
+/oracle/SDB/sapdata9/sr3731_5/sr3731.data5           20000
+/oracle/SDB/sapdata9/sr3731_6/sr3731.data6           20000
+/oracle/SDB/sapdata9/sr3731_7/sr3731.data7            3500
+/oracle/SDB/sapdata5/sr3_348/sr3.data348             31744
+```
+
+### Resize datafile until size
+
+```sql
+ALTER DATABASE DATAFILE '&lt;PATH_TO_DATAFILE&gt;' RESIZE &lt;SIZE&gt;M;
+```
+
+## Redologs
+
+### List of redologs groups and files belonging to each group
+
+```sql
+SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT a.group#, a.member, b.bytes/1024/1024 AS "SIZE(MB)"
+FROM v$logfile a, v$log b
+WHERE a.group# = b.group#;
+
+```
+
+**Output**
+
+```
+    GROUP# MEMBER                                          SIZE(MB)
+---------- --------------------------------------------- ----------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf                   200
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf                   200
+         2 /oracle/SDB/origlogB/log_g12m1.dbf                   200
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf                   200
+         3 /oracle/SDB/origlogA/log_g13m1.dbf                   200
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf                   200
+         4 /oracle/SDB/origlogB/log_g14m1.dbf                   200
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf                   200
+
+8 rows selected.
+```
+
+### Active Redolog groups
+
+```sql
+SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER STATUS A20;
+SELECT group#, status
+FROM v$log;
+```
+
+**Output:**
+
+```
+    GROUP# STATUS
+---------- ----------------
+         1 INACTIVE
+         2 INACTIVE
+         3 CURRENT
+         4 INACTIVE
+```
+
+### Check the online redolog files details
+
+```sql
+SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT l.group#,f.member,l.archived,l.bytes/1024/1024  AS "SIZE(MB)",l.status,f.type
+FROM v$log l, v$logfile f
+WHERE l.group# = f.group#;
+```
+
+**Output:**
+
+```
+    GROUP# MEMBER                                   ARC      BYTES STATUS           TYPE
+---------- ---------------------------------------- --- ---------- ---------------- -------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/origlogB/log_g12m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         3 /oracle/SDB/origlogA/log_g13m1.dbf       NO   194.43711 CURRENT          ONLINE
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf       NO   194.43711 CURRENT          ONLINE
+         4 /oracle/SDB/origlogB/log_g14m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf       YES  194.43711 INACTIVE         ONLINE
+
+8 rows selected.
+```
+
+## Redologs
+
+### List of redologs groups and files belonging to each group
+
+```sql
+SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT a.group#, a.member, b.bytes/1024/1024 AS "SIZE(MB)"
+FROM v$logfile a, v$log b
+WHERE a.group# = b.group#;
+
+```
+
+**Output**
+
+```
+    GROUP# MEMBER                                          SIZE(MB)
+---------- --------------------------------------------- ----------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf                   200
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf                   200
+         2 /oracle/SDB/origlogB/log_g12m1.dbf                   200
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf                   200
+         3 /oracle/SDB/origlogA/log_g13m1.dbf                   200
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf                   200
+         4 /oracle/SDB/origlogB/log_g14m1.dbf                   200
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf                   200
+
+8 rows selected.
+```
+
+### Active Redolog groups
+
+```sql
+SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER STATUS A20;
+SELECT group#, status
+FROM v$log;
+```
+
+**Output:**
+
+```
+    GROUP# STATUS
+---------- ----------------
+         1 INACTIVE
+         2 INACTIVE
+         3 CURRENT
+         4 INACTIVE
+```
+
+### Check the online redolog files details
+
+```sql
+SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT l.group#,f.member,l.archived,l.bytes/1024/1024  AS "SIZE(MB)",l.status,f.type
+FROM v$log l, v$logfile f
+WHERE l.group# = f.group#;
+```
+
+**Output:**
+
+```
+    GROUP# MEMBER                                   ARC      BYTES STATUS           TYPE
+---------- ---------------------------------------- --- ---------- ---------------- -------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/origlogB/log_g12m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         3 /oracle/SDB/origlogA/log_g13m1.dbf       NO   194.43711 CURRENT          ONLINE
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf       NO   194.43711 CURRENT          ONLINE
+         4 /oracle/SDB/origlogB/log_g14m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf       YES  194.43711 INACTIVE         ONLINE
+
+8 rows selected.
+```
+
+## Table Size Analysis
+
+This section covers queries for analyzing individual table and index sizes in the SAP schema.
+
+### Get single table size
+
+Query the total allocated space (in GB) for a specific table:
+
+```sql
+SELECT segment_name,
+       SUM(bytes)/1024/1024/1024 AS GB
+FROM dba_segments
+WHERE segment_type = 'TABLE'
+  AND segment_name = UPPER('&amp;TABLE_NAME')
+GROUP BY segment_name;
+```
+
+**Parameters**
+
+* `&amp;TABLE_NAME` &#8212; table name (case-insensitive; will be converted to uppercase)
+
+**Example**
+
+To find the size of `RSSTATMANREQMAP`:
+
+```sql
+SELECT segment_name,
+       SUM(bytes)/1024/1024/1024 AS GB
+FROM dba_segments
+WHERE segment_type = 'TABLE'
+  AND segment_name = UPPER('RSSTATMANREQMAP')
+GROUP BY segment_name;
+```
+
+### Get table size from USER_SEGMENTS
+
+If you are logged in as the table owner, query `USER_SEGMENTS` instead of `DBA_SEGMENTS`:
+
+```sql
+SELECT segment_name,
+       SUM(bytes)/1024/1024/1024 AS GB
+FROM user_segments
+WHERE segment_type = 'TABLE'
+  AND segment_name = UPPER('SAPSR3.RSSTATMANREQMAP')
+GROUP BY segment_name;
+```
+
+
+### Size multiple specific tables with their indexes
+
+When you need to size a specific set of tables by name:
+
+```sql
+COL SEGMENT_NAME FORMAT A20
+COL SEGMENT_TYPE FORMAT A15
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+SET LINESIZE 200
+SET PAGESIZE 100
+
+SELECT 
+    segment_name,
+    segment_type,
+    ROUND(bytes/1024, 2) AS size_kb,
+    ROUND(bytes/1024/1024, 2) AS size_mb,
+    ROUND(bytes/1024/1024/1024, 2) AS size_gb
+FROM dba_segments
+WHERE owner = 'SAPSR3'
+AND (
+    (segment_name IN ('&lt;TABLE_1&gt;', '&lt;TABLE_2&gt;') AND segment_type = 'TABLE')
+    OR 
+    (segment_name IN (
+        SELECT index_name 
+        FROM dba_indexes 
+        WHERE table_owner = 'SAPSR3' 
+        AND table_name IN ('&lt;TABLE_1&gt;', '&lt;TABLE_2&gt;')
+    ) AND segment_type LIKE 'INDEX%')
+)
+ORDER BY segment_type, bytes DESC;
+```
+
+**Parameters**
+
+* Modify the list in `segment_name IN (...)` to match your target tables.
+* Results are ordered by type and size (largest first).
+
+## Segment Growth and Historical Analysis
+
+This section provides queries using Oracle&#8217;s Automatic Workload Repository (AWR) to track segment growth over time.
+
+&gt; **&#10071; IMPORTANT**\
+AWR must be enabled and retention set appropriately. Growth queries require at least two snapshots spanning your target time period.
+
+### Table size over last 30 days
+
+Query historical segment usage data to see how a table grew:
+
+```sql
+SELECT 
+    snap_id,
+    TO_CHAR(begin_interval_time, 'YYYY-MM-DD') AS snap_date,
+    tablespace_name,
+    object_name,
+    SUM(space_used_total) / 1024 / 1024 AS size_mb
+FROM 
+    dba_hist_seg_stat ss
+    JOIN dba_hist_snapshot sn ON ss.snap_id = sn.snap_id
+WHERE 
+    object_name LIKE '%&lt;PATTERN&gt;%'
+    AND owner = 'SAPSR3'
+GROUP BY 
+    snap_id, begin_interval_time, tablespace_name, object_name
+ORDER BY 
+    snap_date;
+```
+
+### Detailed growth tracking with object types
+
+This query provides object type classification and is filtered to a specific date range:
+
+```sql
+COL SNAP_DATE FORMAT A10
+COL OBJECT_NAME FORMAT A30
+COL OBJECT_TYPE FORMAT A15
+COL OWNER FORMAT A6
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+SELECT 
+    TO_CHAR(sn.begin_interval_time, 'YYYY-MM-DD') AS snap_date,
+    o.owner,
+    o.object_name,
+    o.object_type,
+    SUM(ss.space_used_total) / 1024 / 1024 AS size_mb
+FROM 
+    dba_hist_seg_stat ss
+    JOIN dba_hist_snapshot sn ON ss.snap_id = sn.snap_id 
+      AND ss.dbid = sn.dbid
+    JOIN dba_objects o ON ss.obj# = o.object_id
+WHERE 
+    o.object_name LIKE '&lt;TABLE_1&gt;'
+    AND o.owner = 'SAPSR3'
+    AND o.object_type LIKE '%TABLE%'
+    AND sn.begin_interval_time &gt;= TRUNC(SYSDATE) - 30
+    AND sn.begin_interval_time &lt; TRUNC(SYSDATE) + 1
+GROUP BY 
+    TO_CHAR(sn.begin_interval_time, 'YYYY-MM-DD'),
+    o.owner,    
+    o.object_name,
+    o.object_type
+ORDER BY 
+    snap_date;
+```
+
+**Notes**
+
+* Change `TRUNC(SYSDATE) - 30` to adjust the lookback window.
+* Include `object_type` to distinguish tables from their associated objects.
+
+### Daily space delta (growth rate) with current total size
+
+This advanced query shows the daily space delta for objects and correlates it with their current total size in `dba_segments`:
+
+```sql
+COLUMN owner                  FORMAT A16
+COLUMN object_name            FORMAT A36
+COLUMN start_day              FORMAT A11
+COLUMN block_increase_mbytes  FORMAT 999,999,999.99
+COLUMN total_size_mb          FORMAT 999,999,999.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+SPOOL CHANGES.txt 
+
+SELECT
+    obj.owner,
+    obj.object_name,
+    obj.object_type,
+    TO_CHAR(sn.begin_interval_time, 'RRRR-MON-DD') AS start_day,
+    SUM(a.space_used_delta) / 1024 / 1024 AS block_increase_mbytes,
+
+    /* Current total size from DBA_SEGMENTS (MB) */
+    (
+        SELECT SUM(s.bytes) / 1024 / 1024
+        FROM dba_segments s
+        WHERE s.owner = obj.owner
+          AND (
+                s.segment_name = obj.object_name
+             OR s.segment_name IN (
+                    SELECT i.index_name
+                    FROM dba_indexes i
+                    WHERE i.table_owner = obj.owner
+                      AND i.table_name  = obj.object_name
+                )
+          )
+    ) AS total_size_mb
+
+FROM
+    dba_hist_seg_stat   a,
+    dba_hist_snapshot   sn,
+    dba_objects         obj
+WHERE
+    sn.snap_id = a.snap_id
+    AND a.instance_number = sn.instance_number
+    AND obj.object_id = a.obj#
+    AND obj.object_type LIKE '%TABLE%'
+    AND obj.owner NOT IN ('SYS','SYSTEM')
+    AND sn.end_interval_time BETWEEN
+        TO_TIMESTAMP('17-JAN-2026','DD-MON-RRRR')
+        AND TO_TIMESTAMP('21-JAN-2026','DD-MON-RRRR')
+GROUP BY
+    obj.owner,
+    obj.object_name,
+    obj.object_type,
+    TO_CHAR(sn.begin_interval_time,'RRRR-MON-DD')
+ORDER BY
+    obj.object_name,
+    start_day
+/
+
+SPOOL OFF
+```
+
+**Parameters**
+
+* `TO_TIMESTAMP('17-JAN-2026', 'DD-MON-RRRR')` &#8212; start of date range (adjust as needed)
+* `TO_TIMESTAMP('21-JAN-2026', 'DD-MON-RRRR')` &#8212; end of date range (adjust as needed)
+
+**Output Interpretation**
+
+* `block_increase_mbytes` &#8212; daily growth (positive = growing, negative = shrinking)
+* `total_size_mb` &#8212; current size from live dictionary (snapshot of today&#8217;s allocation)
+
+### Simplified daily growth without current size lookup
+
+For better performance, use this simplified version without the correlated subquery:
+
+```sql
+COL SNAP_DATE FORMAT A10
+COL OBJECT_NAME FORMAT A30
+COL OBJECT_TYPE FORMAT A15
+COL OWNER FORMAT A6
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+COLUMN owner FORMAT A16
+COLUMN object_name FORMAT A36
+COLUMN start_day FORMAT A11
+COLUMN block_increase_mbytes FORMAT 999,999,999.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+SPOOL CHANGES.txt 
+
+SELECT   
+    obj.object_name, 
+    obj.object_type,
+    TO_CHAR(sn.BEGIN_INTERVAL_TIME,'RRRR-MON-DD') AS start_day,
+    SUM(a.SPACE_USED_DELTA) / 1024 / 1024 AS block_increase_mbytes
+FROM     
+    dba_hist_seg_stat a,
+    dba_hist_snapshot sn,
+    dba_objects obj
+WHERE    
+    sn.snap_id = a.snap_id
+    AND a.instance_number = sn.instance_number
+    AND obj.object_id = a.obj#
+    AND obj.object_type LIKE '%TABLE%'
+    AND obj.owner NOT IN ('SYS','SYSTEM') 
+    AND sn.end_interval_time BETWEEN 
+        TO_TIMESTAMP('17-JAN-2026','DD-MON-RRRR')
+        AND TO_TIMESTAMP('21-JAN-2026','DD-MON-RRRR')
+GROUP BY 
+    obj.owner, obj.object_name, obj.object_type,
+    TO_CHAR(sn.BEGIN_INTERVAL_TIME,'RRRR-MON-DD')
+ORDER BY 
+    obj.object_name, start_day
+/
+
+SPOOL OFF
+```
+
+**Notes**
+
+* Much faster than the correlated subquery version.
+* Use when you only need daily growth rates, not current total size.
+
+## SAP Queries
+
+### System in upgrade &#8212; enable imports
+
+When the system is marked as being in upgrade and you need to enable imports:
+
+```sql
+UPDATE SAPSR3.uvers SET PUTSTATUS='+';
+COMMIT;
+```
+
+**&#9888;&#65039; WARNING**\
+Only execute this if you intend to allow imports during a system upgrade.
+
+### BRBACKUP error &#8212; clear lock
+
+If BRBACKUP reports it is currently running or was killed:
+
+**Error message**
+
+```
+BR0051I BRBACKUP 6.40 (43)
+BR0055I Start of database backup: bebchpaa.anf 2014-01-16 01.00.34
+BR0484I BRBACKUP log file: /oracle/SDB/sapbackup/bebchpaa.anf
+BR0071E BRBACKUP currently running or was killed
+BR0072I Please delete file /oracle/SDB/sapbackup/.lock.brb if BRBACKUP was killed
+BR0073E Setting of BRBACKUP lock failed
+BR0056I End of database backup: bebchpaa.anf 2014-01-16 07.00.04
+BR0280I BRBACKUP time stamp: 2009-07-26 07.00.05
+BR0054I BRBACKUP terminated with errors
+```
+
+Connect to database:
+
+```bash
+sqlplus /nolog
+SQL&gt; connect /as sysdba
+```
+
+End backup:
+
+```sql
+ALTER DATABASE END BACKUP;
+```
+
+Then check if the lock file exists and delete it. If not found, run the backup again.
+
+## Instance Management
+
+### Show instance startup time
+
+Query when the current instance was started:
+
+```sql
+SELECT instance_name, 
+       TO_CHAR(startup_time, 'mm/dd/yyyy hh24:mi:ss') AS startup_time 
+FROM v$instance;
+```
+
+**Output**
+
+```
+INSTANCE_NAME STARTUP_TIME
+------------- ---------------------
+SDB           01/26/2026 14:23:45
+```
+
+## Tablespace Capacity and Free Space
+
+This section provides comprehensive queries for monitoring tablespace allocation, usage, and capacity.
+
+### Detailed tablespace usage (permanent and temporary)
+
+This complex query provides a unified view of both permanent and temporary tablespace usage:
+
+```sql
+SET LINESIZE 150
+
+SELECT a.tablespace_name AS "Tablespace Name",
+       ROUND(a.bytes_alloc / 1024 / 1024) AS "Allocated (MB)",
+       ROUND(NVL(b.bytes_free, 0) / 1024 / 1024) AS "Free (MB)",
+       ROUND((a.bytes_alloc - NVL(b.bytes_free, 0)) / 1024 / 1024) AS "Used (MB)",
+       ROUND((NVL(b.bytes_free, 0) / a.bytes_alloc) * 100) AS "% Free",
+       100 - ROUND((NVL(b.bytes_free, 0) / a.bytes_alloc) * 100) AS "% Used",
+       ROUND(maxbytes / 1024 / 1024) AS "Max. Bytes (MB)"
+FROM (
+    SELECT f.tablespace_name,
+           SUM(f.bytes) bytes_alloc,
+           SUM(DECODE(f.autoextensible, 'YES', f.maxbytes, 'NO', f.bytes)) maxbytes
+    FROM dba_data_files f
+    GROUP BY tablespace_name
+) a,
+(
+    SELECT f.tablespace_name,
+           SUM(f.bytes) bytes_free
+    FROM dba_free_space f
+    GROUP BY tablespace_name
+) b
+WHERE a.tablespace_name = b.tablespace_name(+)
+UNION ALL
+SELECT h.tablespace_name AS tablespace_name,
+       ROUND(SUM(h.bytes_free + h.bytes_used) / 1048576) megs_alloc,
+       ROUND(SUM((h.bytes_free + h.bytes_used) - NVL(p.bytes_used, 0)) / 1048576) megs_free,
+       ROUND(SUM(NVL(p.bytes_used, 0)) / 1048576) megs_used,
+       ROUND((SUM((h.bytes_free + h.bytes_used) - NVL(p.bytes_used, 0)) / 
+              SUM(h.bytes_used + h.bytes_free)) * 100) Pct_Free, 
+       100 - ROUND((SUM((h.bytes_free + h.bytes_used) - NVL(p.bytes_used, 0)) / 
+                    SUM(h.bytes_used + h.bytes_free)) * 100) pct_used,
+       ROUND(SUM(f.maxbytes) / 1048576) max
+FROM sys.v_$TEMP_SPACE_HEADER h, 
+     sys.v_$Temp_extent_pool p,
+     dba_temp_files f
+WHERE p.file_id(+) = h.file_id
+  AND p.tablespace_name(+) = h.tablespace_name
+  AND f.file_id = h.file_id
+  AND f.tablespace_name = h.tablespace_name
+GROUP BY h.tablespace_name
+ORDER BY 1;
+```
+
+**Output**
+
+This query returns one row per tablespace showing allocation, usage, and capacity.
+
+**Notes**
+
+* Permanent tablespaces are retrieved from `dba_data_files` and `dba_free_space`.
+* Temporary tablespaces are retrieved from dynamic performance views (`v_$TEMP_SPACE_HEADER`, `v_$Temp_extent_pool`).
+* The `UNION ALL` combines both types for a complete picture.
+* `% Free` approaching zero indicates potential space issues.
+
+## Discovery Queries
+
+### Find tables matching a name pattern
+
+Search for all tables matching a pattern across all owners:
+
+```sql
+SET PAGESIZE 10000
+COL OWNER FORMAT A15
+COL TABLE_NAME FORMAT A30
+COL TABLESPACE_NAME FORMAT A20
+COL STATUS FORMAT A10
+
+SELECT owner, table_name, tablespace_name, status
+FROM all_tables
+WHERE table_name LIKE 'PNR%'
+ORDER BY owner, table_name;
+```
+
+**Parameters**
+
+* `LIKE 'PNR%'` &#8212; adjust pattern as needed (% = wildcard)
+
+**Output**
+
+Lists all tables starting with "PNR" sorted by owner and table name.
+</textarea></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- View Source Button :: END -->
+        <!-- Print Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+            <a class="uk-link-heading" href="javascript:window.print()"><span uk-icon="icon: print; ratio: 1.0;"></span></a>
+        </li>
+        <!-- Print Button :: END -->
+<!-- Template SECTION_ACTIONS.tpl :: END -->
+
+
+
+                    <!-- MENU CONTENTS :: END -->
+                </ul>
+            </div>
+            <div class="uk-navbar-center">
+                <!-- DOCUMENT TITLE :: START -->
+                <ul class="uk-navbar-nav">
+                    <li class="uk-card uk-card-small uk-padding-small uk-padding-remove-vertical">
+                        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+                            <div class="uk-card uk-card-small">
+                                <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">Useful Oracle queries for SAP Basis Administrators</span></a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+<ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#prerequisites-and-setup">Prerequisites and Setup</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#configuration">Configuration</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#common-format-variables">Common Format Variables</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#database">Database</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-oracle-database-version">Show Oracle Database version</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-database-details">Show database details</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-database-size">Show database size</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#show-oracle-instant-client-version">Show Oracle Instant Client Version</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#installed-components-in-database">Installed components in Database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#instance">Instance</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-database-instance-details">Show database instance details</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#monitor-instance-status-of-oracle">Monitor instance status of oracle</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#db-schema-for-sdb">DB Schema for SDB</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#tablespaces">Tablespaces</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-tablespaces-details">Show tablespaces details</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-datafiles-for-tablespace">List of datafiles for tablespace</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#find-tables-being-used-by-tablespace">Find tables being used by tablespace</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-autoextend">Check autoextend</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-what-is-the-retention-period-for-psapundo-tablespace">Check what is the retention period for PSAPUNDO tablespace</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#get-total-used-and-free-space-for-tablespaces">Get total, used and free space for tablespaces</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#psaptemp">PSAPTEMP</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#tables">Tables</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#get-table-size">Get table size</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#users">Users</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-database-users">Show database users</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#to-see-all-user-who-were-locked-by-the-system-admin">To see all user who were locked by the system admin</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-users">List of users</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#unlock-user-account">(Un)lock user account</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#create-user">Create user</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#delete-sap-user-or-another-user">Delete SAP* user (or another user)</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#password-complexity">Password complexity</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#activate-complexity-in-profiles">Activate complexity in profiles:</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#deativate-complexity-in-profiles">Deativate complexity in profiles:</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#datafiles">Datafiles</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-datafiles">Check datafiles</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-datafiles">List of datafiles</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#resize-datafile-until-size">Resize datafile until size</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#redologs">Redologs</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-redologs-groups-and-files-belonging-to-each-group">List of redologs groups and files belonging to each group</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#active-redolog-groups">Active Redolog groups</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-the-online-redolog-files-details">Check the online redolog files details</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#redologs_1">Redologs</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-redologs-groups-and-files-belonging-to-each-group_1">List of redologs groups and files belonging to each group</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#active-redolog-groups_1">Active Redolog groups</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-the-online-redolog-files-details_1">Check the online redolog files details</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#table-size-analysis">Table Size Analysis</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#get-single-table-size">Get single table size</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#get-table-size-from-user_segments">Get table size from USER_SEGMENTS</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#size-multiple-specific-tables-with-their-indexes">Size multiple specific tables with their indexes</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#segment-growth-and-historical-analysis">Segment Growth and Historical Analysis</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#table-size-over-last-30-days">Table size over last 30 days</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#detailed-growth-tracking-with-object-types">Detailed growth tracking with object types</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#daily-space-delta-growth-rate-with-current-total-size">Daily space delta (growth rate) with current total size</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#simplified-daily-growth-without-current-size-lookup">Simplified daily growth without current size lookup</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#sap-queries">SAP Queries</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#system-in-upgrade-enable-imports">System in upgrade &#8212; enable imports</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#brbackup-error-clear-lock">BRBACKUP error &#8212; clear lock</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#instance-management">Instance Management</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-instance-startup-time">Show instance startup time</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#tablespace-capacity-and-free-space">Tablespace Capacity and Free Space</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#detailed-tablespace-usage-permanent-and-temporary">Detailed tablespace usage (permanent and temporary)</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#discovery-queries">Discovery Queries</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#find-tables-matching-a-name-pattern">Find tables matching a name pattern</a></li>
+</ul>
+</li>
+</ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- DOCUMENT TITLE :: END -->
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
+                    </li>
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="#"><span uk-icon="info"></span></a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_app.html"><span class="uk-padding-none">About this app</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="help.html"><span class="uk-padding-none">Help</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_kb4it.html"><span class="uk-padding-none">About KB4IT</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="uk-container uk-container-center">
+    <div id="container-2" class="uk-container uk-container-center uk-flex uk-flex-center uk-hidden">
+        <span class="uk-text-lead">Useful Oracle queries for SAP Basis Administrators</span>
+    </div>
+<!-- Template HTML_BODY_DOC.tpl :: START -->
+
+<!-- Print-only document header (hidden on screen) -->
+<div class="kb-print-header">
+    <h1 class="kb-print-doc-title">Useful Oracle queries for SAP Basis Administrators</h1>
+</div>
+
+<!-- Inline collapsible TOC -->
+<details id="kb-toc-inline" open class="kb-toc-panel">
+    <summary class="kb-toc-summary">Table of Contents</summary>
+    <nav class="kb-toc-nav">
+        <ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#prerequisites-and-setup">Prerequisites and Setup</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#configuration">Configuration</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#common-format-variables">Common Format Variables</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#database">Database</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-oracle-database-version">Show Oracle Database version</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-database-details">Show database details</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-database-size">Show database size</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#show-oracle-instant-client-version">Show Oracle Instant Client Version</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#installed-components-in-database">Installed components in Database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#instance">Instance</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-database-instance-details">Show database instance details</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#monitor-instance-status-of-oracle">Monitor instance status of oracle</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#db-schema-for-sdb">DB Schema for SDB</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#tablespaces">Tablespaces</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-tablespaces-details">Show tablespaces details</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-datafiles-for-tablespace">List of datafiles for tablespace</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#find-tables-being-used-by-tablespace">Find tables being used by tablespace</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-autoextend">Check autoextend</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-what-is-the-retention-period-for-psapundo-tablespace">Check what is the retention period for PSAPUNDO tablespace</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#get-total-used-and-free-space-for-tablespaces">Get total, used and free space for tablespaces</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#psaptemp">PSAPTEMP</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#tables">Tables</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#get-table-size">Get table size</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#users">Users</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-database-users">Show database users</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#to-see-all-user-who-were-locked-by-the-system-admin">To see all user who were locked by the system admin</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-users">List of users</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#unlock-user-account">(Un)lock user account</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#create-user">Create user</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#delete-sap-user-or-another-user">Delete SAP* user (or another user)</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#password-complexity">Password complexity</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#activate-complexity-in-profiles">Activate complexity in profiles:</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#deativate-complexity-in-profiles">Deativate complexity in profiles:</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#datafiles">Datafiles</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-datafiles">Check datafiles</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-datafiles">List of datafiles</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#resize-datafile-until-size">Resize datafile until size</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#redologs">Redologs</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-redologs-groups-and-files-belonging-to-each-group">List of redologs groups and files belonging to each group</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#active-redolog-groups">Active Redolog groups</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-the-online-redolog-files-details">Check the online redolog files details</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#redologs_1">Redologs</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#list-of-redologs-groups-and-files-belonging-to-each-group_1">List of redologs groups and files belonging to each group</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#active-redolog-groups_1">Active Redolog groups</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-the-online-redolog-files-details_1">Check the online redolog files details</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#table-size-analysis">Table Size Analysis</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#get-single-table-size">Get single table size</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#get-table-size-from-user_segments">Get table size from USER_SEGMENTS</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#size-multiple-specific-tables-with-their-indexes">Size multiple specific tables with their indexes</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#segment-growth-and-historical-analysis">Segment Growth and Historical Analysis</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#table-size-over-last-30-days">Table size over last 30 days</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#detailed-growth-tracking-with-object-types">Detailed growth tracking with object types</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#daily-space-delta-growth-rate-with-current-total-size">Daily space delta (growth rate) with current total size</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#simplified-daily-growth-without-current-size-lookup">Simplified daily growth without current size lookup</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#sap-queries">SAP Queries</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#system-in-upgrade-enable-imports">System in upgrade &#8212; enable imports</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#brbackup-error-clear-lock">BRBACKUP error &#8212; clear lock</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#instance-management">Instance Management</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#show-instance-startup-time">Show instance startup time</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#tablespace-capacity-and-free-space">Tablespace Capacity and Free Space</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#detailed-tablespace-usage-permanent-and-temporary">Detailed tablespace usage (permanent and temporary)</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#discovery-queries">Discovery Queries</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#find-tables-matching-a-name-pattern">Find tables matching a name pattern</a></li>
+</ul>
+</li>
+</ul>
+    </nav>
+</details>
+
+    <!-- This is the nav containing the toggling elements -->
+    <ul class="uk-flex uk-flex-center uk-tab noprint uk-hidden" uk-switcher>
+        <li><a href="#">Document</a></li>
+    </ul>
+    <!-- This is the container of the content items -->
+    <ul class="uk-switcher uk-margin">
+        <li class="uk-active"><div class="kb-content kb-content-md">
+<div hidden>
+<div id="toctitle">Contents</div>
+<ul class="sectlevel1">
+<li><a class="" target="" href="#overview">Overview</a></li>
+<li><a class="" target="" href="#prerequisites-and-setup">Prerequisites and Setup</a></li>
+<li>
+<a class="" target="" href="#configuration">Configuration</a><ul>
+<li><a class="" target="" href="#common-format-variables">Common Format Variables</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#database">Database</a><ul>
+<li><a class="" target="" href="#show-oracle-database-version">Show Oracle Database version</a></li>
+<li><a class="" target="" href="#show-database-details">Show database details</a></li>
+<li><a class="" target="" href="#show-database-size">Show database size</a></li>
+<li>
+<a class="" target="" href="#show-oracle-instant-client-version">Show Oracle Instant Client Version</a><ul>
+<li><a class="" target="" href="#installed-components-in-database">Installed components in Database</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#instance">Instance</a><ul>
+<li><a class="" target="" href="#show-database-instance-details">Show database instance details</a></li>
+<li><a class="" target="" href="#monitor-instance-status-of-oracle">Monitor instance status of oracle</a></li>
+<li><a class="" target="" href="#db-schema-for-sdb">DB Schema for SDB</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#tablespaces">Tablespaces</a><ul>
+<li><a class="" target="" href="#show-tablespaces-details">Show tablespaces details</a></li>
+<li><a class="" target="" href="#list-of-datafiles-for-tablespace">List of datafiles for tablespace</a></li>
+<li><a class="" target="" href="#find-tables-being-used-by-tablespace">Find tables being used by tablespace</a></li>
+<li><a class="" target="" href="#check-autoextend">Check autoextend</a></li>
+<li><a class="" target="" href="#check-what-is-the-retention-period-for-psapundo-tablespace">Check what is the retention period for PSAPUNDO tablespace</a></li>
+<li><a class="" target="" href="#get-total-used-and-free-space-for-tablespaces">Get total, used and free space for tablespaces</a></li>
+<li><a class="" target="" href="#psaptemp">PSAPTEMP</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#tables">Tables</a><ul>
+<li><a class="" target="" href="#get-table-size">Get table size</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#users">Users</a><ul>
+<li><a class="" target="" href="#show-database-users">Show database users</a></li>
+<li><a class="" target="" href="#to-see-all-user-who-were-locked-by-the-system-admin">To see all user who were locked by the system admin</a></li>
+<li><a class="" target="" href="#list-of-users">List of users</a></li>
+<li><a class="" target="" href="#unlock-user-account">(Un)lock user account</a></li>
+<li><a class="" target="" href="#create-user">Create user</a></li>
+<li><a class="" target="" href="#delete-sap-user-or-another-user">Delete SAP* user (or another user)</a></li>
+<li><a class="" target="" href="#password-complexity">Password complexity</a></li>
+<li><a class="" target="" href="#activate-complexity-in-profiles">Activate complexity in profiles:</a></li>
+<li><a class="" target="" href="#deativate-complexity-in-profiles">Deativate complexity in profiles:</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#datafiles">Datafiles</a><ul>
+<li><a class="" target="" href="#check-datafiles">Check datafiles</a></li>
+<li><a class="" target="" href="#list-of-datafiles">List of datafiles</a></li>
+<li><a class="" target="" href="#resize-datafile-until-size">Resize datafile until size</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#redologs">Redologs</a><ul>
+<li><a class="" target="" href="#list-of-redologs-groups-and-files-belonging-to-each-group">List of redologs groups and files belonging to each group</a></li>
+<li><a class="" target="" href="#active-redolog-groups">Active Redolog groups</a></li>
+<li><a class="" target="" href="#check-the-online-redolog-files-details">Check the online redolog files details</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#redologs_1">Redologs</a><ul>
+<li><a class="" target="" href="#list-of-redologs-groups-and-files-belonging-to-each-group_1">List of redologs groups and files belonging to each group</a></li>
+<li><a class="" target="" href="#active-redolog-groups_1">Active Redolog groups</a></li>
+<li><a class="" target="" href="#check-the-online-redolog-files-details_1">Check the online redolog files details</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#table-size-analysis">Table Size Analysis</a><ul>
+<li><a class="" target="" href="#get-single-table-size">Get single table size</a></li>
+<li><a class="" target="" href="#get-table-size-from-user_segments">Get table size from USER_SEGMENTS</a></li>
+<li><a class="" target="" href="#size-multiple-specific-tables-with-their-indexes">Size multiple specific tables with their indexes</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#segment-growth-and-historical-analysis">Segment Growth and Historical Analysis</a><ul>
+<li><a class="" target="" href="#table-size-over-last-30-days">Table size over last 30 days</a></li>
+<li><a class="" target="" href="#detailed-growth-tracking-with-object-types">Detailed growth tracking with object types</a></li>
+<li><a class="" target="" href="#daily-space-delta-growth-rate-with-current-total-size">Daily space delta (growth rate) with current total size</a></li>
+<li><a class="" target="" href="#simplified-daily-growth-without-current-size-lookup">Simplified daily growth without current size lookup</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#sap-queries">SAP Queries</a><ul>
+<li><a class="" target="" href="#system-in-upgrade-enable-imports">System in upgrade &#8212; enable imports</a></li>
+<li><a class="" target="" href="#brbackup-error-clear-lock">BRBACKUP error &#8212; clear lock</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#instance-management">Instance Management</a><ul>
+<li><a class="" target="" href="#show-instance-startup-time">Show instance startup time</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#tablespace-capacity-and-free-space">Tablespace Capacity and Free Space</a><ul>
+<li><a class="" target="" href="#detailed-tablespace-usage-permanent-and-temporary">Detailed tablespace usage (permanent and temporary)</a></li>
+</ul>
+</li>
+<li>
+<a class="" target="" href="#discovery-queries">Discovery Queries</a><ul>
+<li><a class="" target="" href="#find-tables-matching-a-name-pattern">Find tables matching a name pattern</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="overview">Overview</h2>
+<div class="kb-section-body uk-container">
+<p>This is a comprehensive reference of SQL*Plus queries for SAP Basis Administrators working with Oracle databases. It covers database administration tasks including instance and database monitoring, tablespace and datafile management, table and index analysis, user and security management, and growth trend analysis using Oracle&#8217;s Automatic Workload Repository (AWR).</p>
+<p>All queries should work in any Oracle 10g+ instance with SAP schema (<code>SAPSR3</code> owner). Queries use standard Oracle data dictionary views and dynamic performance views.</p>
+<p><em>DBSID</em> is <code>SDB</code>.</p>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="prerequisites-and-setup">Prerequisites and Setup</h2>
+<div class="kb-section-body uk-container">
+<ul>
+<li>SQL*Plus access to Oracle database with DBA or monitoring privileges</li>
+<li>Knowledge of basic SQL syntax and Oracle object naming conventions</li>
+<li>AWR enabled (for historical segment statistics queries)</li>
+<li>SAP tables populated (for SAP-specific queries)</li>
+</ul>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="configuration">Configuration</h2>
+<div class="kb-section-body uk-container">
+<p>Before running queries, apply these SQL*Plus settings to control output formatting:</p>
+<pre><code class="language-sql">SET LINESIZE 32767
+SET WRAP OFF
+SET PAGESIZE 100
+SET LINESIZE 150
+SPOOL &lt;filename&gt;    -- Optional: redirect output to file
+-- ... run queries ...
+SPOOL OFF
+</code></pre>
+<p>For detailed formatting options, see the <a class="" target="" href="http://docs.oracle.com/cd/B19306_01/server.102/b14357/ch12040.htm">SQL*Plus User&#8217;s Guide and Reference</a>.</p>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="common-format-variables">Common Format Variables</h3>
+<div class="kb-section-body uk-container">
+<p>These column formatting statements are used throughout this guide:</p>
+<pre><code class="language-sql">COL SEGMENT_NAME FORMAT A20
+COL SEGMENT_TYPE FORMAT A15
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+COL TABLESPACE_NAME FORMAT A32
+COL OWNER FORMAT A15
+COL OBJECT_NAME FORMAT A36
+COL TABLE_NAME FORMAT A30
+COL USERNAME FORMAT A15
+COL ACCOUNT_STATUS FORMAT A10
+COL AUTHENTICATION_TYPE FORMAT A15
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="database">Database</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="show-oracle-database-version">Show Oracle Database version</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT
+FROM v$version;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>BANNER
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 &#8211; 64bit Production
+PL/SQL Release 11.2.0.3.0 &#8211; Production CORE    11.2.0.3.0      Production
+TNS for IBM/AIX RISC System/6000: Version 11.2.0.3.0 &#8211; Production
+NLSRTL Version 11.2.0.3.0 &#8211; Production
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="show-database-details">Show database details</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT NAME, LOG_MODE, OPEN_MODE, DATABASE_ROLE, PLATFORM_NAME
+FROM  v$database;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>NAME LOG_MODE     OPEN_MODE   DATABASE_ROLE PLATFORM_NAME
+SDB  NOARCHIVELOG READ WRITE  PRIMARY       AIX-Based Systems (64-bit)
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="show-database-size">Show database size</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT SUM(BYTES)/1024/1024/1024 AS "DBSIZE(GB)"
+FROM dba_data_files;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>DBSIZE(GB)
+5312.59766
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="show-oracle-instant-client-version">Show Oracle Instant Client Version</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT DISTINCT client_version
+FROM v$session_connect_info
+WHERE sid = sys_context('userenv', 'sid');
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>CLIENT_VERSION
+11.2.0.3.0
+</code></pre>
+<p>For a list of all possibilities to check and identify Oracle Instant Client Version check this <a class="" target="" href="http://scn.sap.com/docs/DOC-61410">document</a>.</p>
+<div class="kb-sect3 sect3 uk-border-rounded uk-padding-small">
+<h4 class="kb-h4" id="installed-components-in-database">Installed components in Database</h4>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT comp_name, version, status
+FROM dba_registry;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="instance">Instance</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="show-database-instance-details">Show database instance details</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT INSTANCE_NAME, HOST_NAME, VERSION, STARTUP_TIME, STATUS, INSTANCE_ROLE
+FROM v$instance;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>INSTANCE_NAME HOST_NAME VERSION    STARTUP_TIME STATUS INSTANCE_ROLE
+SDB           SAPSERVER 11.2.0.3.0 26-MAR-15    OPEN   PRIMARY_INSTANCE
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="monitor-instance-status-of-oracle">Monitor instance status of oracle</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT host_name, status
+FROM v$instance;
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="db-schema-for-sdb">DB Schema for SDB</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT OWNER
+FROM DBA_TABLES WHERE TABLE_NAME = 'T000';
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>OWNER
+SAPSR3
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="tablespaces">Tablespaces</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="show-tablespaces-details">Show tablespaces details</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT TABLESPACE_NAME, STATUS, CONTENTS, SEGMENT_SPACE_MANAGEMENT
+FROM dba_tablespaces;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>TABLESPACE_NAME                STATUS    CONTENTS  SEGMEN
+SYSTEM                         ONLINE    PERMANENT MANUAL
+PSAPUNDO                       ONLINE    UNDO      MANUAL
+SYSAUX                         ONLINE    PERMANENT AUTO
+PSAPTEMP                       ONLINE    TEMPORARY MANUAL
+PSAPSR3                        ONLINE    PERMANENT AUTO
+PSAPSR3USR                     ONLINE    PERMANENT AUTO
+TOOLS                          ONLINE    PERMANENT AUTO
+PSAPSR3731                     ONLINE    PERMANENT AUTO
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="list-of-datafiles-for-tablespace">List of datafiles for tablespace</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT file_name
+FROM dba_data_files
+WHERE tablespace_name='&lt;TABLESPACE_NAME&gt;';
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="find-tables-being-used-by-tablespace">Find tables being used by tablespace</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT table_name
+FROM dba_tables
+WHERE tablespace_name='PSAPSR37XX';
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-autoextend">Check autoextend</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT TABLESPACE_NAME,SEGMENT_SPACE_MANAGEMENT
+FROM dba_tablespaces;
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-what-is-the-retention-period-for-psapundo-tablespace">Check what is the retention period for PSAPUNDO tablespace</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT name "retention",value/60 "minutes"
+FROM v$parameter
+WHERE name like '%undo_retention%';
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="get-total-used-and-free-space-for-tablespaces">Get total, used and free space for tablespaces</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">set pages 49999 lin 120
+col tablespace_name for a32 tru
+col "Total GB"  for 999,999.9
+col "GB Used"   for 999,999.9
+col "GB Free"   for 99,999.9
+col "Pct Free"  for 999.9
+col "Pct Used"  for 999.9
+comp sum of "Total GB"  on report
+comp sum of "GB Used"   on report
+comp sum of "GB Free"   on report
+break on report
+
+Select A.Tablespace_Name, B.Total/1024/1024/1024 "Total GB",
+       (B.Total-a.Total_Free)/1024/1024/1024 "GB Used",
+       A.Total_Free/1024/1024/1024 "GB Free",
+       (A.Total_Free/B.Total) * 100 "Pct Free",
+       ((B.Total-A.Total_Free)/B.Total) * 100 "Pct Used"
+  From (Select Tablespace_Name, Sum(Bytes) Total_Free
+          From Sys.Dba_Free_Space
+         Group By Tablespace_Name     ) A
+     , (Select Tablespace_Name, Sum(Bytes) Total
+          From Sys.Dba_Data_Files
+         Group By Tablespace_Name     ) B
+Where A.Tablespace_Name = B.Tablespace_Name
+Order By 1
+/
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="psaptemp">PSAPTEMP</h3>
+<div class="kb-section-body uk-container">
+<p>Get freespace:</p>
+<pre><code>SQL&gt; select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
+
+    TBSIZE       FREE
+---------- ----------
+    172000      48290
+</code></pre>
+<p>Get properties:</p>
+<pre><code>SQL&gt;  column property_name format a25;
+SQL&gt; column property_value format a15;
+SQL&gt; SELECT property_name, property_value as value from database_properties WHERE property_name='DEFAULT_TEMP_TABLESPACE';
+
+PROPERTY_NAME             VALUE
+------------------------- ---------------
+DEFAULT_TEMP_TABLESPACE   PSAPTEMP
+</code></pre>
+<p>Get details:</p>
+<pre><code>SQL&gt; set linesize 150
+SQL&gt; column tablespace format a25;
+SQL&gt; column filename format a45;
+SQL&gt; SELECT tablespace_name as tablespace, file_name as filename, bytes/1024/1024 as MB, status from dba_temp_files;
+
+TABLESPACE                FILENAME                                              MB STATUS
+------------------------- --------------------------------------------- ---------- -------
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_4/temp.data4             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_8/temp.data8             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_9/temp.data9             32000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_7/temp.data7             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_2/temp.data2             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_5/temp.data5             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_3/temp.data3             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_6/temp.data6             20000 ONLINE
+
+8 rows selected.
+</code></pre>
+<p><strong>Recreate</strong>:</p>
+<ol>
+<li>Create a new temporary tablespace:</li>
+</ol>
+<p><code>$ mkdir /oracle/SDB/sapdata1/temp_0/
+   sql&gt; CREATE TEMPORARY TABLESPACE "PSAPTEMP123" TEMPFILE '/oracle/SDB/sapdata1/temp_0/temp.data123' SIZE 100M REUSE AUTOEXTEND OFF;</code>
+2. Make it default:</p>
+<p><code>ALTER DATABASE DEFAULT TEMPORARY TABLESPACE PSAPTEMP123;</code>
+3. Drop the old one</p>
+<p><code>DROP TABLESPACE PSAPTEMP INCLUDING CONTENTS;</code>
+4. Create another one like the original</p>
+<p><code>sql&gt; create temporary tablespace PSAPTEMP tempfile '/oracle/SDB/sapdata1/temp_1/temp.data1' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_2/temp.data2' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_3/temp.data3' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_4/temp.data4' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_5/temp.data5' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_6/temp.data6' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_7/temp.data7' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_8/temp.data8' size 1000M autoextend on next 100M maxsize 32000M;</code>
+5. Make it default:</p>
+<p><code>ALTER DATABASE DEFAULT TEMPORARY TABLESPACE PSAPTEMP</code>
+6. Drop the first temporary tablespace</p>
+<p><code>DROP TABLESPACE PSAPTEMP123 INCLUDING CONTENTS;</code></p>
+<p>If <em>ERROR ORA-60100: dropping temporary tablespace with tablespace ID number (tsn) 3 is blocked due to sort segments</em>, apply the following <a class="" target="" href="https://support.oracle.com/knowledge/Oracle%20Database%20Products/2696984_1.html">solution</a>:</p>
+<pre><code>shutdown immediate
+startup;
+DROP TABLESPACE PSAPTEMP INCLUDING CONTENTS;
+</code></pre>
+<p>Check PSAPTEMP freespace:</p>
+<pre><code>select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
+</code></pre>
+<p>List datafiles in PSAPTEMP:</p>
+<pre><code>set linesize 150
+column tablespace format a25;
+column filename format a45;
+SELECT tablespace_name as tablespace, file_name as filename, bytes/1024/1024 as MB, status from dba_temp_files;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="tables">Tables</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="get-table-size">Get table size</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">select segment_name,sum(bytes)/1024/1024/1024 GB from dba_segments where segment_type='TABLE' and segment_name=upper('&amp;TABLE_NAME') group by segment_name;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="users">Users</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="show-database-users">Show database users</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SET PAGESIZE 100;
+COLUMN USERNAME FORMAT A25;
+COLUMN ACCOUNT_STATUS FORMAT A10;
+COLUMN AUTHENTICATION_TYPE FORMAT A15;
+SELECT USERNAME, ACCOUNT_STATUS, AUTHENTICATION_TYPE FROM dba_users;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>USERNAME                       ACCOUNT_STATUS                   AUTHENTI
+SAPSR3                         OPEN                             PASSWORD
+SYSTEM                         OPEN                             PASSWORD
+SYS                            OPEN                             PASSWORD
+OPS$SAPSERVICESAP              OPEN                             EXTERNAL
+OPS$ORASAP                     OPEN                             EXTERNAL
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="to-see-all-user-who-were-locked-by-the-system-admin">To see all user who were locked by the system admin</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT bname
+FROM &lt;schema-name&gt;.USR02
+WHERE uflag='64' and mandt='&lt;client-id&gt;';
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="list-of-users">List of users</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">COLUMN USERNAME FORMAT A15;
+COLUMN LAST_LOGIN FORMAT A50;
+COLUMN ACCOUNT_STATUS FORMAT A10;
+SELECT USERNAME, ACCOUNT_STATUS, LAST_LOGIN FROM DBA_USERS WHERE LAST_LOGIN IS NOT NULL ORDER BY LAST_LOGIN DESC;
+
+USERNAME        ACCOUNT_ST LAST_LOGIN
+--------------- ---------- --------------------------------------------------
+SAPSR3          OPEN       20-NOV-23 09.15.58.000000000 AM +01:00
+DBSNMP          OPEN       20-NOV-23 09.04.31.000000000 AM +01:00
+ETLSAP          OPEN       20-NOV-23 05.03.38.000000000 AM +01:00
+OPS$ORABWD      OPEN       20-NOV-23 04.00.50.000000000 AM +01:00
+OPS$ORACLE      OPEN       19-NOV-23 07.00.45.000000000 AM +01:00
+SYSTEM          OPEN       13-NOV-23 01.41.19.000000000 PM +01:00
+OPS$BWDADM      OPEN       15-JUL-23 07.04.01.000000000 PM +01:00
+
+7 rows selected.
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="unlock-user-account">(Un)lock user account</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">ALTER USER &lt;USERNAME&gt; ACCOUNT LOCK;
+</code></pre>
+<pre><code class="language-sql">ALTER USER &lt;USERNAME&gt; ACCOUNT UNLOCK;
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="create-user">Create user</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">CREATE USER &lt;USERNAME&gt; IDENTIFIED BY &lt;PASSWORD&gt; [PROFILE &lt;PROFILE_NAME&gt;]
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="delete-sap-user-or-another-user">Delete SAP* user (or another user)</h3>
+<div class="kb-section-body uk-container">
+<p>First we check if user exists:</p>
+<pre><code class="language-sql">SELECT MANDT, BNAME
+FROM &lt;DB_SCHEMA&gt;.USR02
+WHERE MANDT = 'XXX' AND BNAME = 'SAP*';
+</code></pre>
+<p>Then delete it:</p>
+<pre><code class="language-sql">DELETE
+FROM &lt;DB_SCHEMA&gt;.USR02
+WHERE MANDT = 'XXX' AND BNAME = 'SAP*';
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="password-complexity">Password complexity</h3>
+<div class="kb-section-body uk-container">
+<p>Execute script sap_utlpwdmg.sql from SAP Note 1522952 in SQL Plus:</p>
+<pre><code class="language-sql">@sap_utlpwdmg.sql
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="activate-complexity-in-profiles">Activate complexity in profiles:</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">ALTER PROFILE DEFAULT LIMIT PASSWORD_VERIFY_FUNCTION verify_function_sap;
+ALTER PROFILE SAPUPROF LIMIT PASSWORD_VERIFY_FUNCTION verify_function_sap;
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="deativate-complexity-in-profiles">Deativate complexity in profiles:</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">ALTER PROFILE DEFAULT LIMIT PASSWORD_VERIFY_FUNCTION NULL;
+ALTER PROFILE SAPUPROF LIMIT PASSWORD_VERIFY_FUNCTION NULL;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="datafiles">Datafiles</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-datafiles">Check datafiles</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT FILE#, STATUS, ENABLED
+FROM  v$datafile;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>     FILE# STATUS  ENABLED
+       375 ONLINE  READ WRITE
+       376 ONLINE  READ WRITE
+       377 ONLINE  READ WRITE
+       378 ONLINE  READ WRITE
+       379 ONLINE  READ WRITE
+       380 ONLINE  READ WRITE
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="list-of-datafiles">List of datafiles</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SELECT FILE_NAME AS Datafile, BYTES/1024/1024 AS "Size(MB)"
+FROM DBA_DATA_FILES
+WHERE TABLESPACE_NAME LIKE '%&lt;TABLESPACE_NAME&gt;%';
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>Datafile                                          Size(MB)
+[&#8230;]
+/oracle/SDB/sapdata9/sr3731_3/sr3731.data3           20000
+/oracle/SDB/sapdata9/sr3731_4/sr3731.data4           20000
+/oracle/SDB/sapdata9/sr3731_5/sr3731.data5           20000
+/oracle/SDB/sapdata9/sr3731_6/sr3731.data6           20000
+/oracle/SDB/sapdata9/sr3731_7/sr3731.data7            3500
+/oracle/SDB/sapdata5/sr3_348/sr3.data348             31744
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="resize-datafile-until-size">Resize datafile until size</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">ALTER DATABASE DATAFILE '&lt;PATH_TO_DATAFILE&gt;' RESIZE &lt;SIZE&gt;M;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="redologs">Redologs</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="list-of-redologs-groups-and-files-belonging-to-each-group">List of redologs groups and files belonging to each group</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT a.group#, a.member, b.bytes/1024/1024 AS "SIZE(MB)"
+FROM v$logfile a, v$log b
+WHERE a.group# = b.group#;
+
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>    GROUP# MEMBER                                          SIZE(MB)
+---------- --------------------------------------------- ----------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf                   200
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf                   200
+         2 /oracle/SDB/origlogB/log_g12m1.dbf                   200
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf                   200
+         3 /oracle/SDB/origlogA/log_g13m1.dbf                   200
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf                   200
+         4 /oracle/SDB/origlogB/log_g14m1.dbf                   200
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf                   200
+
+8 rows selected.
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="active-redolog-groups">Active Redolog groups</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER STATUS A20;
+SELECT group#, status
+FROM v$log;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>    GROUP# STATUS
+---------- ----------------
+         1 INACTIVE
+         2 INACTIVE
+         3 CURRENT
+         4 INACTIVE
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-the-online-redolog-files-details">Check the online redolog files details</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT l.group#,f.member,l.archived,l.bytes/1024/1024  AS "SIZE(MB)",l.status,f.type
+FROM v$log l, v$logfile f
+WHERE l.group# = f.group#;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>    GROUP# MEMBER                                   ARC      BYTES STATUS           TYPE
+---------- ---------------------------------------- --- ---------- ---------------- -------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/origlogB/log_g12m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         3 /oracle/SDB/origlogA/log_g13m1.dbf       NO   194.43711 CURRENT          ONLINE
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf       NO   194.43711 CURRENT          ONLINE
+         4 /oracle/SDB/origlogB/log_g14m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf       YES  194.43711 INACTIVE         ONLINE
+
+8 rows selected.
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="redologs_1">Redologs</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="list-of-redologs-groups-and-files-belonging-to-each-group_1">List of redologs groups and files belonging to each group</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT a.group#, a.member, b.bytes/1024/1024 AS "SIZE(MB)"
+FROM v$logfile a, v$log b
+WHERE a.group# = b.group#;
+
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>    GROUP# MEMBER                                          SIZE(MB)
+---------- --------------------------------------------- ----------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf                   200
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf                   200
+         2 /oracle/SDB/origlogB/log_g12m1.dbf                   200
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf                   200
+         3 /oracle/SDB/origlogA/log_g13m1.dbf                   200
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf                   200
+         4 /oracle/SDB/origlogB/log_g14m1.dbf                   200
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf                   200
+
+8 rows selected.
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="active-redolog-groups_1">Active Redolog groups</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER STATUS A20;
+SELECT group#, status
+FROM v$log;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>    GROUP# STATUS
+---------- ----------------
+         1 INACTIVE
+         2 INACTIVE
+         3 CURRENT
+         4 INACTIVE
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-the-online-redolog-files-details_1">Check the online redolog files details</h3>
+<div class="kb-section-body uk-container">
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT l.group#,f.member,l.archived,l.bytes/1024/1024  AS "SIZE(MB)",l.status,f.type
+FROM v$log l, v$logfile f
+WHERE l.group# = f.group#;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>    GROUP# MEMBER                                   ARC      BYTES STATUS           TYPE
+---------- ---------------------------------------- --- ---------- ---------------- -------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/origlogB/log_g12m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         3 /oracle/SDB/origlogA/log_g13m1.dbf       NO   194.43711 CURRENT          ONLINE
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf       NO   194.43711 CURRENT          ONLINE
+         4 /oracle/SDB/origlogB/log_g14m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf       YES  194.43711 INACTIVE         ONLINE
+
+8 rows selected.
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="table-size-analysis">Table Size Analysis</h2>
+<div class="kb-section-body uk-container">
+<p>This section covers queries for analyzing individual table and index sizes in the SAP schema.</p>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="get-single-table-size">Get single table size</h3>
+<div class="kb-section-body uk-container">
+<p>Query the total allocated space (in GB) for a specific table:</p>
+<pre><code class="language-sql">SELECT segment_name,
+       SUM(bytes)/1024/1024/1024 AS GB
+FROM dba_segments
+WHERE segment_type = 'TABLE'
+  AND segment_name = UPPER('&amp;TABLE_NAME')
+GROUP BY segment_name;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<code>&amp;TABLE_NAME</code> &#8212; table name (case-insensitive; will be converted to uppercase)</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>To find the size of <code>RSSTATMANREQMAP</code>:</p>
+<pre><code class="language-sql">SELECT segment_name,
+       SUM(bytes)/1024/1024/1024 AS GB
+FROM dba_segments
+WHERE segment_type = 'TABLE'
+  AND segment_name = UPPER('RSSTATMANREQMAP')
+GROUP BY segment_name;
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="get-table-size-from-user_segments">Get table size from USER_SEGMENTS</h3>
+<div class="kb-section-body uk-container">
+<p>If you are logged in as the table owner, query <code>USER_SEGMENTS</code> instead of <code>DBA_SEGMENTS</code>:</p>
+<pre><code class="language-sql">SELECT segment_name,
+       SUM(bytes)/1024/1024/1024 AS GB
+FROM user_segments
+WHERE segment_type = 'TABLE'
+  AND segment_name = UPPER('SAPSR3.RSSTATMANREQMAP')
+GROUP BY segment_name;
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="size-multiple-specific-tables-with-their-indexes">Size multiple specific tables with their indexes</h3>
+<div class="kb-section-body uk-container">
+<p>When you need to size a specific set of tables by name:</p>
+<pre><code class="language-sql">COL SEGMENT_NAME FORMAT A20
+COL SEGMENT_TYPE FORMAT A15
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+SET LINESIZE 200
+SET PAGESIZE 100
+
+SELECT 
+    segment_name,
+    segment_type,
+    ROUND(bytes/1024, 2) AS size_kb,
+    ROUND(bytes/1024/1024, 2) AS size_mb,
+    ROUND(bytes/1024/1024/1024, 2) AS size_gb
+FROM dba_segments
+WHERE owner = 'SAPSR3'
+AND (
+    (segment_name IN ('&lt;TABLE_1&gt;', '&lt;TABLE_2&gt;') AND segment_type = 'TABLE')
+    OR 
+    (segment_name IN (
+        SELECT index_name 
+        FROM dba_indexes 
+        WHERE table_owner = 'SAPSR3' 
+        AND table_name IN ('&lt;TABLE_1&gt;', '&lt;TABLE_2&gt;')
+    ) AND segment_type LIKE 'INDEX%')
+)
+ORDER BY segment_type, bytes DESC;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>Modify the list in <code>segment_name IN (...)</code> to match your target tables.</li>
+<li>Results are ordered by type and size (largest first).</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="segment-growth-and-historical-analysis">Segment Growth and Historical Analysis</h2>
+<div class="kb-section-body uk-container">
+<p>This section provides queries using Oracle&#8217;s Automatic Workload Repository (AWR) to track segment growth over time.</p>
+<blockquote>
+<p><strong>&#10071; IMPORTANT</strong>\
+AWR must be enabled and retention set appropriately. Growth queries require at least two snapshots spanning your target time period.</p>
+</blockquote>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="table-size-over-last-30-days">Table size over last 30 days</h3>
+<div class="kb-section-body uk-container">
+<p>Query historical segment usage data to see how a table grew:</p>
+<pre><code class="language-sql">SELECT 
+    snap_id,
+    TO_CHAR(begin_interval_time, 'YYYY-MM-DD') AS snap_date,
+    tablespace_name,
+    object_name,
+    SUM(space_used_total) / 1024 / 1024 AS size_mb
+FROM 
+    dba_hist_seg_stat ss
+    JOIN dba_hist_snapshot sn ON ss.snap_id = sn.snap_id
+WHERE 
+    object_name LIKE '%&lt;PATTERN&gt;%'
+    AND owner = 'SAPSR3'
+GROUP BY 
+    snap_id, begin_interval_time, tablespace_name, object_name
+ORDER BY 
+    snap_date;
+</code></pre>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="detailed-growth-tracking-with-object-types">Detailed growth tracking with object types</h3>
+<div class="kb-section-body uk-container">
+<p>This query provides object type classification and is filtered to a specific date range:</p>
+<pre><code class="language-sql">COL SNAP_DATE FORMAT A10
+COL OBJECT_NAME FORMAT A30
+COL OBJECT_TYPE FORMAT A15
+COL OWNER FORMAT A6
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+SELECT 
+    TO_CHAR(sn.begin_interval_time, 'YYYY-MM-DD') AS snap_date,
+    o.owner,
+    o.object_name,
+    o.object_type,
+    SUM(ss.space_used_total) / 1024 / 1024 AS size_mb
+FROM 
+    dba_hist_seg_stat ss
+    JOIN dba_hist_snapshot sn ON ss.snap_id = sn.snap_id 
+      AND ss.dbid = sn.dbid
+    JOIN dba_objects o ON ss.obj# = o.object_id
+WHERE 
+    o.object_name LIKE '&lt;TABLE_1&gt;'
+    AND o.owner = 'SAPSR3'
+    AND o.object_type LIKE '%TABLE%'
+    AND sn.begin_interval_time &gt;= TRUNC(SYSDATE) - 30
+    AND sn.begin_interval_time &lt; TRUNC(SYSDATE) + 1
+GROUP BY 
+    TO_CHAR(sn.begin_interval_time, 'YYYY-MM-DD'),
+    o.owner,    
+    o.object_name,
+    o.object_type
+ORDER BY 
+    snap_date;
+</code></pre>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Change <code>TRUNC(SYSDATE) - 30</code> to adjust the lookback window.</li>
+<li>Include <code>object_type</code> to distinguish tables from their associated objects.</li>
+</ul>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="daily-space-delta-growth-rate-with-current-total-size">Daily space delta (growth rate) with current total size</h3>
+<div class="kb-section-body uk-container">
+<p>This advanced query shows the daily space delta for objects and correlates it with their current total size in <code>dba_segments</code>:</p>
+<pre><code class="language-sql">COLUMN owner                  FORMAT A16
+COLUMN object_name            FORMAT A36
+COLUMN start_day              FORMAT A11
+COLUMN block_increase_mbytes  FORMAT 999,999,999.99
+COLUMN total_size_mb          FORMAT 999,999,999.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+SPOOL CHANGES.txt 
+
+SELECT
+    obj.owner,
+    obj.object_name,
+    obj.object_type,
+    TO_CHAR(sn.begin_interval_time, 'RRRR-MON-DD') AS start_day,
+    SUM(a.space_used_delta) / 1024 / 1024 AS block_increase_mbytes,
+
+    /* Current total size from DBA_SEGMENTS (MB) */
+    (
+        SELECT SUM(s.bytes) / 1024 / 1024
+        FROM dba_segments s
+        WHERE s.owner = obj.owner
+          AND (
+                s.segment_name = obj.object_name
+             OR s.segment_name IN (
+                    SELECT i.index_name
+                    FROM dba_indexes i
+                    WHERE i.table_owner = obj.owner
+                      AND i.table_name  = obj.object_name
+                )
+          )
+    ) AS total_size_mb
+
+FROM
+    dba_hist_seg_stat   a,
+    dba_hist_snapshot   sn,
+    dba_objects         obj
+WHERE
+    sn.snap_id = a.snap_id
+    AND a.instance_number = sn.instance_number
+    AND obj.object_id = a.obj#
+    AND obj.object_type LIKE '%TABLE%'
+    AND obj.owner NOT IN ('SYS','SYSTEM')
+    AND sn.end_interval_time BETWEEN
+        TO_TIMESTAMP('17-JAN-2026','DD-MON-RRRR')
+        AND TO_TIMESTAMP('21-JAN-2026','DD-MON-RRRR')
+GROUP BY
+    obj.owner,
+    obj.object_name,
+    obj.object_type,
+    TO_CHAR(sn.begin_interval_time,'RRRR-MON-DD')
+ORDER BY
+    obj.object_name,
+    start_day
+/
+
+SPOOL OFF
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<code>TO_TIMESTAMP('17-JAN-2026', 'DD-MON-RRRR')</code> &#8212; start of date range (adjust as needed)</li>
+<li>
+<code>TO_TIMESTAMP('21-JAN-2026', 'DD-MON-RRRR')</code> &#8212; end of date range (adjust as needed)</li>
+</ul>
+<p><strong>Output Interpretation</strong></p>
+<ul>
+<li>
+<code>block_increase_mbytes</code> &#8212; daily growth (positive = growing, negative = shrinking)</li>
+<li>
+<code>total_size_mb</code> &#8212; current size from live dictionary (snapshot of today&#8217;s allocation)</li>
+</ul>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="simplified-daily-growth-without-current-size-lookup">Simplified daily growth without current size lookup</h3>
+<div class="kb-section-body uk-container">
+<p>For better performance, use this simplified version without the correlated subquery:</p>
+<pre><code class="language-sql">COL SNAP_DATE FORMAT A10
+COL OBJECT_NAME FORMAT A30
+COL OBJECT_TYPE FORMAT A15
+COL OWNER FORMAT A6
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+COLUMN owner FORMAT A16
+COLUMN object_name FORMAT A36
+COLUMN start_day FORMAT A11
+COLUMN block_increase_mbytes FORMAT 999,999,999.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+SPOOL CHANGES.txt 
+
+SELECT   
+    obj.object_name, 
+    obj.object_type,
+    TO_CHAR(sn.BEGIN_INTERVAL_TIME,'RRRR-MON-DD') AS start_day,
+    SUM(a.SPACE_USED_DELTA) / 1024 / 1024 AS block_increase_mbytes
+FROM     
+    dba_hist_seg_stat a,
+    dba_hist_snapshot sn,
+    dba_objects obj
+WHERE    
+    sn.snap_id = a.snap_id
+    AND a.instance_number = sn.instance_number
+    AND obj.object_id = a.obj#
+    AND obj.object_type LIKE '%TABLE%'
+    AND obj.owner NOT IN ('SYS','SYSTEM') 
+    AND sn.end_interval_time BETWEEN 
+        TO_TIMESTAMP('17-JAN-2026','DD-MON-RRRR')
+        AND TO_TIMESTAMP('21-JAN-2026','DD-MON-RRRR')
+GROUP BY 
+    obj.owner, obj.object_name, obj.object_type,
+    TO_CHAR(sn.BEGIN_INTERVAL_TIME,'RRRR-MON-DD')
+ORDER BY 
+    obj.object_name, start_day
+/
+
+SPOOL OFF
+</code></pre>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Much faster than the correlated subquery version.</li>
+<li>Use when you only need daily growth rates, not current total size.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="sap-queries">SAP Queries</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="system-in-upgrade-enable-imports">System in upgrade &#8212; enable imports</h3>
+<div class="kb-section-body uk-container">
+<p>When the system is marked as being in upgrade and you need to enable imports:</p>
+<pre><code class="language-sql">UPDATE SAPSR3.uvers SET PUTSTATUS='+';
+COMMIT;
+</code></pre>
+<p><strong>&#9888;&#65039; WARNING</strong>\
+Only execute this if you intend to allow imports during a system upgrade.</p>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="brbackup-error-clear-lock">BRBACKUP error &#8212; clear lock</h3>
+<div class="kb-section-body uk-container">
+<p>If BRBACKUP reports it is currently running or was killed:</p>
+<p><strong>Error message</strong></p>
+<pre><code>BR0051I BRBACKUP 6.40 (43)
+BR0055I Start of database backup: bebchpaa.anf 2014-01-16 01.00.34
+BR0484I BRBACKUP log file: /oracle/SDB/sapbackup/bebchpaa.anf
+BR0071E BRBACKUP currently running or was killed
+BR0072I Please delete file /oracle/SDB/sapbackup/.lock.brb if BRBACKUP was killed
+BR0073E Setting of BRBACKUP lock failed
+BR0056I End of database backup: bebchpaa.anf 2014-01-16 07.00.04
+BR0280I BRBACKUP time stamp: 2009-07-26 07.00.05
+BR0054I BRBACKUP terminated with errors
+</code></pre>
+<p>Connect to database:</p>
+<pre><code class="language-bash">sqlplus /nolog
+SQL&gt; connect /as sysdba
+</code></pre>
+<p>End backup:</p>
+<pre><code class="language-sql">ALTER DATABASE END BACKUP;
+</code></pre>
+<p>Then check if the lock file exists and delete it. If not found, run the backup again.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="instance-management">Instance Management</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="show-instance-startup-time">Show instance startup time</h3>
+<div class="kb-section-body uk-container">
+<p>Query when the current instance was started:</p>
+<pre><code class="language-sql">SELECT instance_name, 
+       TO_CHAR(startup_time, 'mm/dd/yyyy hh24:mi:ss') AS startup_time 
+FROM v$instance;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>INSTANCE_NAME STARTUP_TIME
+------------- ---------------------
+SDB           01/26/2026 14:23:45
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="tablespace-capacity-and-free-space">Tablespace Capacity and Free Space</h2>
+<div class="kb-section-body uk-container">
+<p>This section provides comprehensive queries for monitoring tablespace allocation, usage, and capacity.</p>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="detailed-tablespace-usage-permanent-and-temporary">Detailed tablespace usage (permanent and temporary)</h3>
+<div class="kb-section-body uk-container">
+<p>This complex query provides a unified view of both permanent and temporary tablespace usage:</p>
+<pre><code class="language-sql">SET LINESIZE 150
+
+SELECT a.tablespace_name AS "Tablespace Name",
+       ROUND(a.bytes_alloc / 1024 / 1024) AS "Allocated (MB)",
+       ROUND(NVL(b.bytes_free, 0) / 1024 / 1024) AS "Free (MB)",
+       ROUND((a.bytes_alloc - NVL(b.bytes_free, 0)) / 1024 / 1024) AS "Used (MB)",
+       ROUND((NVL(b.bytes_free, 0) / a.bytes_alloc) * 100) AS "% Free",
+       100 - ROUND((NVL(b.bytes_free, 0) / a.bytes_alloc) * 100) AS "% Used",
+       ROUND(maxbytes / 1024 / 1024) AS "Max. Bytes (MB)"
+FROM (
+    SELECT f.tablespace_name,
+           SUM(f.bytes) bytes_alloc,
+           SUM(DECODE(f.autoextensible, 'YES', f.maxbytes, 'NO', f.bytes)) maxbytes
+    FROM dba_data_files f
+    GROUP BY tablespace_name
+) a,
+(
+    SELECT f.tablespace_name,
+           SUM(f.bytes) bytes_free
+    FROM dba_free_space f
+    GROUP BY tablespace_name
+) b
+WHERE a.tablespace_name = b.tablespace_name(+)
+UNION ALL
+SELECT h.tablespace_name AS tablespace_name,
+       ROUND(SUM(h.bytes_free + h.bytes_used) / 1048576) megs_alloc,
+       ROUND(SUM((h.bytes_free + h.bytes_used) - NVL(p.bytes_used, 0)) / 1048576) megs_free,
+       ROUND(SUM(NVL(p.bytes_used, 0)) / 1048576) megs_used,
+       ROUND((SUM((h.bytes_free + h.bytes_used) - NVL(p.bytes_used, 0)) / 
+              SUM(h.bytes_used + h.bytes_free)) * 100) Pct_Free, 
+       100 - ROUND((SUM((h.bytes_free + h.bytes_used) - NVL(p.bytes_used, 0)) / 
+                    SUM(h.bytes_used + h.bytes_free)) * 100) pct_used,
+       ROUND(SUM(f.maxbytes) / 1048576) max
+FROM sys.v_$TEMP_SPACE_HEADER h, 
+     sys.v_$Temp_extent_pool p,
+     dba_temp_files f
+WHERE p.file_id(+) = h.file_id
+  AND p.tablespace_name(+) = h.tablespace_name
+  AND f.file_id = h.file_id
+  AND f.tablespace_name = h.tablespace_name
+GROUP BY h.tablespace_name
+ORDER BY 1;
+</code></pre>
+<p><strong>Output</strong></p>
+<p>This query returns one row per tablespace showing allocation, usage, and capacity.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Permanent tablespaces are retrieved from <code>dba_data_files</code> and <code>dba_free_space</code>.</li>
+<li>Temporary tablespaces are retrieved from dynamic performance views (<code>v_$TEMP_SPACE_HEADER</code>, <code>v_$Temp_extent_pool</code>).</li>
+<li>The <code>UNION ALL</code> combines both types for a complete picture.</li>
+<li>
+<code>% Free</code> approaching zero indicates potential space issues.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="discovery-queries">Discovery Queries</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="find-tables-matching-a-name-pattern">Find tables matching a name pattern</h3>
+<div class="kb-section-body uk-container">
+<p>Search for all tables matching a pattern across all owners:</p>
+<pre><code class="language-sql">SET PAGESIZE 10000
+COL OWNER FORMAT A15
+COL TABLE_NAME FORMAT A30
+COL TABLESPACE_NAME FORMAT A20
+COL STATUS FORMAT A10
+
+SELECT owner, table_name, tablespace_name, status
+FROM all_tables
+WHERE table_name LIKE 'PNR%'
+ORDER BY owner, table_name;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>
+<code>LIKE 'PNR%'</code> &#8212; adjust pattern as needed (% = wildcard)</li>
+</ul>
+<p><strong>Output</strong></p>
+<p>Lists all tables starting with "PNR" sorted by owner and table name.</p>
+</div>
+</div>
+</div>
+</div>
+</div></li>
+    </ul>
+
+<!-- Document properties section at bottom (collapsed by default on screen) -->
+<div class="kb-sect1 kb-sect1-collapsed uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+    <h2 class="kb-h2">Document Properties</h2>
+    <div class="kb-section-body uk-container">
+        <ul class="kb-metadata-list">
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Category.html">Category</a></strong>: <a class="kb-meta-val" href="Category_Note.html">Note</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Command.html">Command</a></strong>: <a class="kb-meta-val" href="Command_sqlplus.html">sqlplus</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Database.html">Database</a></strong>: <a class="kb-meta-val" href="Database_Oracle.html">Oracle</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_Reference.html">Reference</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Filesystem.html">Filesystem</a></strong>: <a class="kb-meta-val" href="Filesystem_oracle.html">/oracle</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="OS.html">OS</a></strong>: <a class="kb-meta-val" href="OS_Linux.html">Linux</a>
+<a class="kb-meta-val" href="OS_Unix.html">Unix</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Priority.html">Priority</a></strong>: <a class="kb-meta-val" href="Priority_Normal.html">Normal</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Product.html">Product</a></strong>: <a class="kb-meta-val" href="Product_AIX.html">AIX</a>
+<a class="kb-meta-val" href="Product_SQLPlus.html">SQLPlus</a>
+<a class="kb-meta-val" href="Product_RHEL.html">RHEL</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Project.html">Project</a></strong>: <a class="kb-meta-val" href="Project_SAP_Basis_Maintenance.html">SAP Basis Maintenance</a>
+<a class="kb-meta-val" href="Project_Database_Maintenance.html">Database Maintenance</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Public.html">Public</a></strong>: <a class="kb-meta-val" href="Public_True.html">True</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Scope.html">Scope</a></strong>: <a class="kb-meta-val" href="Scope_Database_Administration.html">Database Administration</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Status.html">Status</a></strong>: <a class="kb-meta-val" href="Status_Released.html">Released</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Table.html">Table</a></strong>: <a class="kb-meta-val" href="Table_ALL_TABLES.html">ALL_TABLES</a>
+<a class="kb-meta-val" href="Table_DATABASE_PROPERTIES.html">DATABASE_PROPERTIES</a>
+<a class="kb-meta-val" href="Table_DBA_DATA_FILES.html">DBA_DATA_FILES</a>
+<a class="kb-meta-val" href="Table_DBA_FREE_SPACE.html">DBA_FREE_SPACE</a>
+<a class="kb-meta-val" href="Table_DBA_HIST_SEG_STAT.html">DBA_HIST_SEG_STAT</a>
+<a class="kb-meta-val" href="Table_DBA_HIST_SNAPSHOT.html">DBA_HIST_SNAPSHOT</a>
+<a class="kb-meta-val" href="Table_DBA_INDEXES.html">DBA_INDEXES</a>
+<a class="kb-meta-val" href="Table_DBA_OBJECTS.html">DBA_OBJECTS</a>
+<a class="kb-meta-val" href="Table_DBA_REGISTRY.html">DBA_REGISTRY</a>
+<a class="kb-meta-val" href="Table_DBA_SEGMENTS.html">DBA_SEGMENTS</a>
+<a class="kb-meta-val" href="Table_DBA_TABLES.html">DBA_TABLES</a>
+<a class="kb-meta-val" href="Table_DBA_TABLESPACES.html">DBA_TABLESPACES</a>
+<a class="kb-meta-val" href="Table_DBA_TEMP_FILES.html">DBA_TEMP_FILES</a>
+<a class="kb-meta-val" href="Table_DBA_TEMP_FREE_SPACE.html">DBA_TEMP_FREE_SPACE</a>
+<a class="kb-meta-val" href="Table_DBA_USERS.html">DBA_USERS</a>
+<a class="kb-meta-val" href="Table_RSSTATMANREQMAP.html">RSSTATMANREQMAP</a>
+<a class="kb-meta-val" href="Table_SYS.V_TEMP_EXTENT_POOL.html">SYS.V_$TEMP_EXTENT_POOL</a>
+<a class="kb-meta-val" href="Table_SYS.V_TEMP_SPACE_HEADER.html">SYS.V_$TEMP_SPACE_HEADER</a>
+<a class="kb-meta-val" href="Table_T000.html">T000</a>
+<a class="kb-meta-val" href="Table_USER_SEGMENTS.html">USER_SEGMENTS</a>
+<a class="kb-meta-val" href="Table_USR02.html">USR02</a>
+<a class="kb-meta-val" href="Table_VDATABASE.html">V$DATABASE</a>
+<a class="kb-meta-val" href="Table_VDATAFILE.html">V$DATAFILE</a>
+<a class="kb-meta-val" href="Table_VINSTANCE.html">V$INSTANCE</a>
+<a class="kb-meta-val" href="Table_VLOG.html">V$LOG</a>
+<a class="kb-meta-val" href="Table_VLOGFILE.html">V$LOGFILE</a>
+<a class="kb-meta-val" href="Table_VPARAMETER.html">V$PARAMETER</a>
+<a class="kb-meta-val" href="Table_VSESSION_CONNECT_INFO.html">V$SESSION_CONNECT_INFO</a>
+<a class="kb-meta-val" href="Table_VVERSION.html">V$VERSION</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Tag.html">Tag</a></strong>: <a class="kb-meta-val" href="Tag_autoextend.html">autoextend</a>
+<a class="kb-meta-val" href="Tag_datafile.html">datafile</a>
+<a class="kb-meta-val" href="Tag_discovery.html">discovery</a>
+<a class="kb-meta-val" href="Tag_growth.html">growth</a>
+<a class="kb-meta-val" href="Tag_tracking.html">tracking</a>
+<a class="kb-meta-val" href="Tag_locking.html">locking</a>
+<a class="kb-meta-val" href="Tag_segment.html">segment</a>
+<a class="kb-meta-val" href="Tag_undo.html">undo</a>
+<a class="kb-meta-val" href="Tag_group.html">group</a>
+<a class="kb-meta-val" href="Tag_instance.html">instance</a>
+<a class="kb-meta-val" href="Tag_query.html">query</a>
+<a class="kb-meta-val" href="Tag_redolog.html">redolog</a>
+<a class="kb-meta-val" href="Tag_size.html">size</a>
+<a class="kb-meta-val" href="Tag_table.html">table</a>
+<a class="kb-meta-val" href="Tag_tablespace.html">tablespace</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Team.html">Team</a></strong>: <a class="kb-meta-val" href="Team_SAP.html">SAP</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Topic.html">Topic</a></strong>: <a class="kb-meta-val" href="Topic_Administration.html">Administration</a>
+<a class="kb-meta-val" href="Topic_Archiving.html">Archiving</a>
+<a class="kb-meta-val" href="Topic_Housekeeping.html">Housekeeping</a>
+<a class="kb-meta-val" href="Topic_Maintenance.html">Maintenance</a>
+<a class="kb-meta-val" href="Topic_Monitoring.html">Monitoring</a>
+<a class="kb-meta-val" href="Topic_Performance.html">Performance</a>
+<a class="kb-meta-val" href="Topic_User.html">User</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="User.html">User</a></strong>: <a class="kb-meta-val" href="User_oracle.html">oracle</a>
+
+</li>
+</ul>
+
+    </div>
+</div>
+
+<!-- Template HTML_BODY_DOC.tpl :: END -->
+<!-- FOOTER :: START -->
+<div class="kb-footer">
+    <a class="kb-footer-top" href="#">&#8593; Back to top</a>
+    <span class="kb-footer-meta">Last updated Friday, May 22, 2026 at 09:21</span>
+</div>
+<!-- FOOTER :: END -->
+</div>
+<!-- /uk-container -->
+</div>
+<!-- /uk-background-muted -->
+<!-- CONTENTS (Document) :: END -->
+<script>hljs.highlightAll();</script>
+<script>
+var input = document.getElementById("text_filter");
+var filter = document.getElementById("filter");
+
+input.addEventListener( "keyup", function(event)
+{
+    if ( input.value == "" )
+    {
+        filter.setAttribute( "uk-filter-control", "" );
+    }
+
+    else
+    {
+        filter.setAttribute( "uk-filter-control", "filter:[data-title*=" + JSON.stringify(input.value) + "i]" );
+    }
+
+    filter.click();
+});
+</script>
+<script>
+function copyToClipboard() {
+  var el = document.getElementById("source-code");
+  el.select();
+  el.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(el.value).catch(function() {
+    document.execCommand("copy");
+  });
+  UIkit.notification({message: "Source copied to clipboard", status: "success", timeout: 2000});
+}
+</script>
+<script>
+(function() {
+    var content = document.querySelector('.kb-content');
+    if (!content) return;
+    var sects = Array.from(content.querySelectorAll(':scope > .kb-sect1'));
+    if (!sects.length) return;
+
+    var acc = document.createElement('div');
+    acc.setAttribute('uk-accordion', '');
+    sects[0].parentNode.insertBefore(acc, sects[0]);
+    sects.forEach(function(s) {
+        s.classList.add('uk-open');
+        acc.appendChild(s);
+    });
+
+    UIkit.accordion(acc, {
+        targets: '> .kb-sect1',
+        toggle: '> h2',
+        content: '> .kb-section-body',
+        multiple: true,
+        animation: true,
+        duration: 200
+    });
+})();
+</script>
+<!-- GRID LAYOUT :: END -->
+</body>
+</html>

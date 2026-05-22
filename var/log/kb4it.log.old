@@ -47,7 +47,7 @@
      DEBUG |   59 | Theme           | [SERVICE] STARTED name=Theme
      DEBUG |  132 | Frontend        | [FRONTEND] THEME_LOADED id=techdoc
      DEBUG |  286 | Backend         | [BACKEND] CHECKS_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0229s => Stage stage_01_check_environment
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0227s => Stage stage_01_check_environment
       INFO |  134 | Workflow        | [WORKFLOW] STAGE n=2 name=get_sources
      DEBUG |  291 | Backend         | [BACKEND] SOURCES_START
      DEBUG |  154 | Builder         | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_ABOUT_KB4IT.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_ABOUT_KB4IT.tpl'
@@ -56,7 +56,7 @@
    WARNING |  322 | Backend         | [BACKEND] ABOUT_APP_CREATED
      DEBUG |  336 | Backend         | [BACKEND] DOCS_FOUND n=7
      DEBUG |  337 | Backend         | [BACKEND] SOURCES_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0033s => Stage stage_02_get_source_documents
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0036s => Stage stage_02_get_source_documents
       INFO |  138 | Workflow        | [WORKFLOW] STAGE n=3 name=process_sources
      DEBUG |  342 | Backend         | [BACKEND] EXTRACTION_START
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=X11-SSH-FORWARDING.md valid=True reason=Success
@@ -198,7 +198,7 @@
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=about_app.md resource=about_app.html
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md valid=True reason=Success
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md key=Title value=Vendor SFTP Connectivity - SSH Key Authentication for SAP Systems
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md key=Title value=SFTP Connectivity - SSH Key Authentication
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md key=Category value=Procedure
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md key=Command value=sftp
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md key=Command value=ssh-keygen
@@ -237,7 +237,7 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md key=Topic value=Migration
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md key=Topic value=Security
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md key=Topic value=Troubleshooting
-     DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md body=dd1c758981a3167eacd554987539f0602aae1e5f92a7eabfae0323c184b099b68eec968f5b62f08a89b88d2652b4e566de26fcec46ce11b60654ee0b9fe0257b meta=1fa1dccb5daabb3bef9f564972bd27510cc9a8fd228bcba2cf8e0f9adf3a0c2d4fabaf32a21a772164f6908efcdaf65e71e983680aebfc6b290aab2e1df7a8ed
+     DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md body=dd1c758981a3167eacd554987539f0602aae1e5f92a7eabfae0323c184b099b68eec968f5b62f08a89b88d2652b4e566de26fcec46ce11b60654ee0b9fe0257b meta=cba921211a387cdfbb184dfc2826ada2f02023c8bc87eac3a5171361456fdf8992f3f2d8f672f7cfd3dc3908ed5f786dc954405d3cd0e81418b4b07851a4c29f
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md resource=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.html
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=about_kb4it.md valid=True reason=Success
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=about_kb4it.md
@@ -253,7 +253,7 @@
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SLES11-ZLINUX-DASD-PROVISIONING.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=HELLO-WORLD.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_app.md body=False meta=False title=False not_cached=False compile=False
-     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md body=True meta=True title=True not_cached=True compile=True
+     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md body=False meta=True title=True not_cached=False compile=True
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_kb4it.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  192 | Processor       | [PROCESSOR] KEYS_ALL count=21
      DEBUG |  193 | Processor       | [PROCESSOR] KEYS_IGNORED count=2
@@ -874,7 +874,7 @@
      DEBUG |  384 | Processor       | [PROCESSOR] TARGET_DOCS n=145
      DEBUG |  385 | Processor       | [PROCESSOR] TRANSFORM_END
      DEBUG |  350 | Backend         | [BACKEND] TRANSFORMATION_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0487s => Stage stage_03_process_sources
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0541s => Stage stage_03_process_sources
       INFO |  142 | Workflow        | [WORKFLOW] PLAN docs=1 keys=14 kv=37
       INFO |  148 | Workflow        | [WORKFLOW] STAGE n=4 name=process_theme
      DEBUG |  355 | Backend         | [BACKEND] THEME_START
@@ -995,7 +995,7 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=Title value=Help
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=SystemPage value=Yes
      DEBUG |  357 | Backend         | [BACKEND] THEME_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0325s => Stage stage_04_process_theme
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0344s => Stage stage_04_process_theme
       INFO |  151 | Workflow        | [WORKFLOW] STAGE n=5 name=compilation
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Compiler
      DEBUG |   59 | Compiler        | [SERVICE] STARTED name=Compiler
@@ -1068,8 +1068,8 @@
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=properties.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=stats.md format=md
      DEBUG |  111 | Compiler        | [COMPILER] COMPILATION_START
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Category.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Category_Procedure.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Category.md rc=True
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_COMMON.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_BODY.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_FOOTER.tpl
@@ -1183,25 +1183,25 @@
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Protocol_SSH.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope_SAP_Administration.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope_Unix_Administration.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope_Unix_Administration.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Server.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Server.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Server_SAP-DEV.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Server_SAP-DEV.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Server_SAP-PRD.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md rc=True
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_MENU_CONTENTS_ENABLED.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_SECTION.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_VALUE_LINK.tpl
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Server_SAP-PRD.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Server_SAP-QUA.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Server_VENDOR-SFTP-PRD.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Server_VENDOR-SFTP-UAT.md rc=True
@@ -1252,7 +1252,7 @@
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=stats.md rc=True
      DEBUG |  114 | Compiler        | [COMPILER] COMPILED n=64
      DEBUG |  117 | Compiler        | [COMPILER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.1563s => Stage stage_05_compilation
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.1548s => Stage stage_05_compilation
       INFO |  154 | Workflow        | [WORKFLOW] STAGE n=6 name=theme_post
       INFO |  157 | Workflow        | [WORKFLOW] STAGE n=7 name=deploy
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Deployer
@@ -1571,9 +1571,9 @@
      DEBUG |  144 | Deployer        | [DEPLOYER] COPIED_HTML_BACK_TO_CACHE
      DEBUG |  154 | Deployer        | [DEPLOYER] CLEANUP
      DEBUG |   44 | Deployer        | [DEPLOYER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.1849s => Stage stage_06_deploy
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.1976s => Stage stage_06_deploy
       INFO |  170 | Workflow        | [WORKFLOW] SUMMARY docs_total=7 compiled=1 skipped=6 keys_compiled=14 kv_pages_compiled=37
-      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.45s
+      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.47s
       INFO |  184 | Workflow        | [WORKFLOW] BUILD_COMPLETE
       INFO |  185 | Workflow        | [WORKFLOW] URL /home/runner/work/techdoc/techdoc/docs/index.html
       INFO |  186 | Workflow        | [WORKFLOW] LOG path=/home/runner/work/techdoc/techdoc/var/log/kb4it.log
