@@ -5,12 +5,12 @@ Date: 2026-04-16
 DocType: How-to guide
 OS: Linux
 Product: KB4IT
-Scope: Unix Administration
+Scope: Linux Administration
 Tag: batch, rename, in-place, text
 Topic: Knowledge Management, Troubleshooting
 ---
 
-# Batch Rename Metadata Property Names with sed
+# Batch rename with sed
 
 ## Goal
 
