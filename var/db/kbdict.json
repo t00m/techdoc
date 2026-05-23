@@ -488,6 +488,145 @@
             },
             "metadata_hash": "de65f70010940eb7cf4512fd858cc650f9f056ad73cbe3defe9cbd4eb81c4ff4d985421e1eb438b980553eeeace4a0b88b6fb892e021f580fcc4c936a1200bed"
         },
+        "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md": {
+            "Author": [
+                "Tom\u00e1s V\u00edrseda"
+            ],
+            "Category": [
+                "Report"
+            ],
+            "Date": [
+                "2026-05-23 00:00:00"
+            ],
+            "DocType": [
+                "Reference"
+            ],
+            "OS": [
+                "Linux"
+            ],
+            "Product": [
+                "SAP GUI",
+                "SAP Netweaver"
+            ],
+            "Protocol": [
+                "CPIC",
+                "FTP",
+                "HTTP",
+                "HTTPS",
+                "LCOM",
+                "NNTP",
+                "RFC",
+                "SMTP"
+            ],
+            "Scope": [
+                "Database Administration",
+                "SAP Basis"
+            ],
+            "Tag": [
+                "bottleneck",
+                "buffer",
+                "memory",
+                "network",
+                "response time",
+                "slow",
+                "wait time",
+                "work process",
+                "workload"
+            ],
+            "Title": [
+                "ST03: SAP Workload Analysis"
+            ],
+            "Topic": [
+                "Analysis",
+                "Monitoring",
+                "Performance",
+                "Troubleshooting"
+            ],
+            "Transaction": [
+                "DB02",
+                "DB04",
+                "RZ04",
+                "RZ10",
+                "RZ11",
+                "SM12",
+                "SM13",
+                "SM50",
+                "ST02",
+                "ST05",
+                "ST06"
+            ],
+            "body_hash": "07252c0f77d444ff3ea8d455633f93d50bcba22d4b65bd46bf124a57e3233b8dcc0c1876c1c925306e4649458ec6c052b17b2f833695ab650764eacc0fc710ce",
+            "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
+            "keys": {
+                "Author": [
+                    "Tom\u00e1s V\u00edrseda"
+                ],
+                "Category": [
+                    "Report"
+                ],
+                "Date": [
+                    "2026-05-23"
+                ],
+                "DocType": [
+                    "Reference"
+                ],
+                "OS": [
+                    "Linux"
+                ],
+                "Product": [
+                    "SAP Netweaver",
+                    "SAP GUI"
+                ],
+                "Protocol": [
+                    "HTTP",
+                    "HTTPS",
+                    "NNTP",
+                    "SMTP",
+                    "FTP",
+                    "RFC",
+                    "CPIC",
+                    "LCOM"
+                ],
+                "Scope": [
+                    "Database Administration",
+                    "SAP Basis"
+                ],
+                "Tag": [
+                    "workload",
+                    "response time",
+                    "wait time",
+                    "work process",
+                    "memory",
+                    "bottleneck",
+                    "buffer",
+                    "network",
+                    "slow"
+                ],
+                "Title": [
+                    "ST03: SAP Workload Analysis"
+                ],
+                "Topic": [
+                    "Monitoring",
+                    "Performance",
+                    "Analysis",
+                    "Troubleshooting"
+                ],
+                "Transaction": [
+                    "SM50",
+                    "SM13",
+                    "SM12",
+                    "RZ04",
+                    "RZ10",
+                    "RZ11",
+                    "ST02",
+                    "ST06",
+                    "DB02",
+                    "DB04",
+                    "ST05"
+                ]
+            },
+            "metadata_hash": "4fdd6cc9a777bdbeb6317832ff09867b80880412e833ae34b12a424374ff0e11e47154922533f0b7f17a8ba4ead33fad881e41d886c982015e74f23b00f5e83d"
+        },
         "SAP-BC-ORA-SQL-QUERIES.md": {
             "Category": [
                 "Note"
@@ -1308,6 +1447,7 @@
             "Tom\u00e1s V\u00edrseda": [
                 "HELLO-WORLD.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ]
         },
@@ -1325,6 +1465,9 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
+            ],
+            "Report": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
             ]
         },
         "Command": {
@@ -1521,6 +1664,9 @@
             ],
             "2026-05-22 00:00:00": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
+            "2026-05-23 00:00:00": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
             ]
         },
         "DocType": {
@@ -1536,6 +1682,7 @@
             ],
             "Reference": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Tutorial": [
@@ -1636,6 +1783,7 @@
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
@@ -1712,10 +1860,14 @@
             "SAP Content Server": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
+            "SAP GUI": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
             "SAP JVM": [
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "SAP Netweaver": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "SQLPlus": [
@@ -1740,8 +1892,32 @@
             ]
         },
         "Protocol": {
+            "CPIC": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "FTP": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "HTTP": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "HTTPS": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "LCOM": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "NNTP": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "RFC": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
             "SFTP": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
+            ],
+            "SMTP": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
             ],
             "SSH": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
@@ -1763,6 +1939,7 @@
         },
         "Scope": {
             "Database Administration": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Infrastructure": [
@@ -1780,6 +1957,7 @@
             ],
             "SAP Basis": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "Unix Administration": [
@@ -1943,6 +2121,12 @@
             "batch": [
                 "BATCH-RENAME-SED.md"
             ],
+            "bottleneck": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "buffer": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
             "certificate": [
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
@@ -2012,11 +2196,17 @@
             "log": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
+            "memory": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
             "message": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
             "migration": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
+            ],
+            "network": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
             ],
             "pkcs12": [
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
@@ -2036,6 +2226,9 @@
             "repository": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
+            "response time": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
             "scripting": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
@@ -2047,6 +2240,9 @@
             ],
             "size": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ],
+            "slow": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
             ],
             "table": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
@@ -2069,8 +2265,17 @@
             "vacuum": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
+            "wait time": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
             "webserver": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
+            ],
+            "work process": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "workload": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
             ]
         },
         "Team": {
@@ -2118,6 +2323,9 @@
             "SFTP Connectivity - SSH Key Authentication": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
+            "ST03: SAP Workload Analysis": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
             "Useful Oracle queries for SAP Basis Administrators": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ]
@@ -2127,6 +2335,9 @@
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "X11-SSH-FORWARDING.md"
+            ],
+            "Analysis": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
             ],
             "Archiving": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
@@ -2162,12 +2373,14 @@
             "Monitoring": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Operation": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "Performance": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Security": [
@@ -2177,10 +2390,46 @@
             "Troubleshooting": [
                 "BATCH-RENAME-SED.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "User": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ]
+        },
+        "Transaction": {
+            "DB02": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "DB04": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "RZ04": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "RZ10": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "RZ11": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "SM12": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "SM13": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "SM50": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "ST02": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "ST05": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "ST06": [
+                "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
             ]
         },
         "User": {
