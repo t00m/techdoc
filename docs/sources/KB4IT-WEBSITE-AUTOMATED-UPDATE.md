@@ -1,5 +1,5 @@
 ---
-Author: Tomas Virseda
+Author: Tomás Vírseda
 Category: Procedure
 Command: crontab, git, kb4it, nice, nohup, python3, ssh-add, ssh-agent, eval
 Date: 2026-05-22

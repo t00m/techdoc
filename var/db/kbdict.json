@@ -130,7 +130,7 @@
         },
         "KB4IT-WEBSITE-AUTOMATED-UPDATE.md": {
             "Author": [
-                "Tomas Virseda"
+                "Tom\u00e1s V\u00edrseda"
             ],
             "Category": [
                 "Procedure"
@@ -192,7 +192,7 @@
             "content": "/home/runner/work/techdoc/techdoc/source/KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
             "keys": {
                 "Author": [
-                    "Tomas Virseda"
+                    "Tom\u00e1s V\u00edrseda"
                 ],
                 "Category": [
                     "Procedure"
@@ -251,7 +251,7 @@
                     "Operation"
                 ]
             },
-            "metadata_hash": "3ab4a6fcda2e350f4877c5f34113b37b23ace3072a4e2c0167e05d9c3e5b5b15dff602311fafb579e73c4f188943482d084a81dae237ef70783d60c3d309f613"
+            "metadata_hash": "a2f8f14b88a82c65572cf85060c6adaac2b0b1bf4e3da9826103b18b59af09839a1514a444f9982c7d21b08cc2d364fa7141603ce062a47c7c452e503ca0d502"
         },
         "LINUX-SYSTEMD-JOURNALCTL.md": {
             "Category": [
@@ -1441,11 +1441,9 @@
     "kb4it_version": "0.7.7+build.4",
     "metadata": {
         "Author": {
-            "Tomas Virseda": [
-                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
-            ],
             "Tom\u00e1s V\u00edrseda": [
                 "HELLO-WORLD.md",
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
