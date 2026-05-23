@@ -47,7 +47,7 @@
      DEBUG |   59 | Theme           | [SERVICE] STARTED name=Theme
      DEBUG |  132 | Frontend        | [FRONTEND] THEME_LOADED id=techdoc
      DEBUG |  286 | Backend         | [BACKEND] CHECKS_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0210s => Stage stage_01_check_environment
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0212s => Stage stage_01_check_environment
       INFO |  134 | Workflow        | [WORKFLOW] STAGE n=2 name=get_sources
      DEBUG |  291 | Backend         | [BACKEND] SOURCES_START
      DEBUG |  154 | Builder         | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_ABOUT_KB4IT.tpl reason=[Errno 2] No such file or directory: '/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/PAGE_ABOUT_KB4IT.tpl'
@@ -56,7 +56,7 @@
    WARNING |  322 | Backend         | [BACKEND] ABOUT_APP_CREATED
      DEBUG |  336 | Backend         | [BACKEND] DOCS_FOUND n=12
      DEBUG |  337 | Backend         | [BACKEND] SOURCES_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0034s => Stage stage_02_get_source_documents
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0030s => Stage stage_02_get_source_documents
       INFO |  138 | Workflow        | [WORKFLOW] STAGE n=3 name=process_sources
      DEBUG |  342 | Backend         | [BACKEND] EXTRACTION_START
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=X11-SSH-FORWARDING.md valid=True reason=Success
@@ -239,30 +239,30 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md key=Date value=2019-10-07 00:00:00
      DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md body=77fe9837ba570321657a22de289fa2ae1cdc682568173aa12d996b2075c7e5b01edad88451b9baa288f513fb1218719cf95190a313d86f614c0704c066f4b9f1 meta=de65f70010940eb7cf4512fd858cc650f9f056ad73cbe3defe9cbd4eb81c4ff4d985421e1eb438b980553eeeace4a0b88b6fb892e021f580fcc4c936a1200bed
      DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md resource=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.html
-     DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md valid=True reason=Success
-     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Title value=Generate Keystore and Certificate for SAP BO BI4.0
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Author value=Tomás Vírseda
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Category value=Procedure
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Command value=find
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Command value=grep
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Command value=java
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Date value=2014-05-22 00:00:00
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=DocType value=Tutorial
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Filesystem value=/usr/sap/BO2
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=OS value=Unix
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Product value=SAP BusinessObjects BI
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Product value=SAP JVM
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Product value=OpenSSL
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Protocol value=SSH
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Protocol value=SSL
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Scope value=SAP Basis
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Tag value=certificate
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Tag value=keystore
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Tag value=pkcs12
-     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Topic value=Security
-     DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md body=ba2d530a3e9091b662a4fd5d478e1fe745be197478f3537b52e264a6e494c85cfff7cc436bfcc627fa8402619600f4a60bb3f02fc1695a1e93c2bac2011f93e6 meta=1835ad81b6f69570c9ee926203be9c8933b6996268c2b665293d15d88467b06e95741050cb3eb9fb8a82a878b399001004eb4f224b250a0ffe639c17a274d058
-     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md resource=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.html
+     DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md valid=True reason=Success
+     DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Title value=Generate Keystore and Certificate for SAP BO BI4.0
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Author value=Tomás Vírseda
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Category value=Procedure
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Command value=find
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Command value=grep
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Command value=java
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Date value=2014-05-22 00:00:00
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=DocType value=Tutorial
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Filesystem value=/usr/sap/BO2
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=OS value=Unix
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Product value=SAP BusinessObjects BI
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Product value=SAP JVM
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Product value=OpenSSL
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Protocol value=SSH
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Protocol value=SSL
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Scope value=SAP Basis
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Tag value=certificate
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Tag value=keystore
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Tag value=pkcs12
+     DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md key=Topic value=Security
+     DEBUG |  139 | Processor       | [PROCESSOR] HASH doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md body=ba2d530a3e9091b662a4fd5d478e1fe745be197478f3537b52e264a6e494c85cfff7cc436bfcc627fa8402619600f4a60bb3f02fc1695a1e93c2bac2011f93e6 meta=1835ad81b6f69570c9ee926203be9c8933b6996268c2b665293d15d88467b06e95741050cb3eb9fb8a82a878b399001004eb4f224b250a0ffe639c17a274d058
+     DEBUG |  230 | Backend         | [BACKEND] ADD_TARGET doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md resource=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.html
      DEBUG |   85 | Processor       | [PROCESSOR] DOC_VALID doc=about_app.md valid=True reason=Success
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=about_app.md
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=about_app.md key=Title value=About this app
@@ -439,7 +439,7 @@
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=HELLO-WORLD.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=BATCH-RENAME-SED.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md body=False meta=False title=False not_cached=False compile=False
-     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md body=True meta=True title=True not_cached=True compile=True
+     DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md body=True meta=True title=True not_cached=True compile=True
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=about_app.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md body=False meta=False title=False not_cached=False compile=False
      DEBUG |  296 | Processor       | [PROCESSOR] ANALYZE doc=KB4IT-WEBSITE-AUTOMATED-UPDATE.md body=False meta=False title=False not_cached=False compile=False
@@ -1285,7 +1285,7 @@
      DEBUG |  384 | Processor       | [PROCESSOR] TARGET_DOCS n=272
      DEBUG |  385 | Processor       | [PROCESSOR] TRANSFORM_END
      DEBUG |  350 | Backend         | [BACKEND] TRANSFORMATION_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0618s => Stage stage_03_process_sources
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0553s => Stage stage_03_process_sources
       INFO |  142 | Workflow        | [WORKFLOW] PLAN docs=1 keys=11 kv=18
       INFO |  148 | Workflow        | [WORKFLOW] STAGE n=4 name=process_theme
      DEBUG |  355 | Backend         | [BACKEND] THEME_START
@@ -1398,7 +1398,7 @@
      DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=X11-SSH-FORWARDING.md bookmark= is_bookmarked=False
      DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=LINUX-SYSTEMD-JOURNALCTL.md bookmark= is_bookmarked=False
      DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md bookmark= is_bookmarked=False
-     DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md bookmark= is_bookmarked=False
+     DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md bookmark= is_bookmarked=False
      DEBUG |  938 | Theme           | [THEME] BOOKMARK_CHECK doc=SLES11-ZLINUX-DASD-PROVISIONING.md bookmark= is_bookmarked=False
      DEBUG |  942 | Theme           | [THEME] BOOKMARKS_FOUND n=0
      DEBUG |   69 | Database        | [DATABASE] DOC_ADD doc=bookmarks.md
@@ -1433,7 +1433,7 @@
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=Title value=Help
      DEBUG |   80 | Database        | [DATABASE] KV_ADD doc=help.md key=SystemPage value=Yes
      DEBUG |  357 | Backend         | [BACKEND] THEME_END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.0392s => Stage stage_04_process_theme
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.0345s => Stage stage_04_process_theme
       INFO |  151 | Workflow        | [WORKFLOW] STAGE n=5 name=compilation
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Compiler
      DEBUG |   59 | Compiler        | [SERVICE] STARTED name=Compiler
@@ -1462,7 +1462,7 @@
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Protocol.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Protocol_SSH.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Protocol_SSL.md format=md
-     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md format=md
+     DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Scope.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Scope_SAP_Basis.md format=md
      DEBUG |  104 | Compiler        | [COMPILER] QUEUE doc=Tag.md format=md
@@ -1589,24 +1589,24 @@
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Protocol_SSL.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Scope_SAP_Basis.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_certificate.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_keystore.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_certificate.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_keystore.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_pkcs12.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md rc=True
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_MENU_CONTENTS_ENABLED.tpl
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_SECTION.tpl
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Tag_pkcs12.md rc=True
      DEBUG |  151 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/METADATA_VALUE_LINK.tpl
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Topic.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=Topic_Security.md rc=True
@@ -1628,7 +1628,6 @@
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_2014.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_201405.md rc=True
-      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_20140522.md rc=True
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
@@ -1641,12 +1640,13 @@
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
      DEBUG |  182 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=help.md rc=True
+      INFO |  172 | Compiler        | [COMPILER] COMPILED doc=events_20140522.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=index.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=properties.md rc=True
       INFO |  172 | Compiler        | [COMPILER] COMPILED doc=stats.md rc=True
      DEBUG |  114 | Compiler        | [COMPILER] COMPILED n=42
      DEBUG |  117 | Compiler        | [COMPILER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.1383s => Stage stage_05_compilation
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.1271s => Stage stage_05_compilation
       INFO |  154 | Workflow        | [WORKFLOW] STAGE n=6 name=theme_post
       INFO |  157 | Workflow        | [WORKFLOW] STAGE n=7 name=deploy
      DEBUG |  146 | KB4IT           | [CONTROLLER] SERVICE_REGISTER name=Deployer
@@ -1659,14 +1659,15 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/HELLO-WORLD.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/BATCH-RENAME-SED.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/about_app.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/KB4IT-WEBSITE-AUTOMATED-UPDATE.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/about_kb4it.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/source/SAP-BC-ORA-SQL-QUERIES.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  136 | Util            | 12 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
-     DEBUG |   71 | Deployer        | [DEPLOYER] SOURCES_TO_TARGET copied=12 deleted=0
+     DEBUG |   70 | Deployer        | [DEPLOYER] STALE_SOURCE_DELETED file=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md
+     DEBUG |   71 | Deployer        | [DEPLOYER] SOURCES_TO_TARGET copied=12 deleted=1
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Product_SAP_JVM.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Filesystem_usrsapBO2.md to /home/runner/work/techdoc/techdoc/var/cache
@@ -1690,6 +1691,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/about_kb4it.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Scope.md to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/properties.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/events_20140522.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_keystore.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1708,6 +1710,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Protocol_SSL.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/OS.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/all.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Category_Procedure.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Topic.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/stats.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1715,7 +1718,6 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/index.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag_pkcs12.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/DocType_Tutorial.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_java.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Protocol_SSH.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Author.md to /home/runner/work/techdoc/techdoc/var/cache
@@ -1739,7 +1741,6 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_find.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Filesystem_usrsapBO2.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/properties.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command_grep.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Command.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/bookmarks.md to /home/runner/work/techdoc/techdoc/var/cache
@@ -1753,7 +1754,8 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/var/tmp/Tag.md to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  136 | Util            | 84 documents copied to '/home/runner/work/techdoc/techdoc/var/cache'
      DEBUG |   76 | Deployer        | [DEPLOYER] COPIED_ALL_TO_CACHE n=84
-     DEBUG |  105 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=303 deleted=0
+     DEBUG |  103 | Deployer        | [DEPLOYER] STALE_HTML_DELETED file=SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.html
+     DEBUG |  105 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=303 deleted=1
      DEBUG |  124 | Deployer        | [DEPLOYER] COPIED_GLOBAL_RESOURCES
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_VDATABASE.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Server_SAP-PRD.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -1852,6 +1854,7 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Server_VENDOR-SFTP-UAT.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_20260522.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Tag_query.html to /home/runner/work/techdoc/techdoc/var/cache
+     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_20251215.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_SYS.V_TEMP_SPACE_HEADER.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/KB4IT-WEBSITE-AUTOMATED-UPDATE.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -2037,7 +2040,6 @@
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Table_VSESSION_CONNECT_INFO.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Product_s390x.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/properties.html to /home/runner/work/techdoc/techdoc/var/cache
-     DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/events_202405.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Filesystem_varlogjournal.html to /home/runner/work/techdoc/techdoc/var/cache
      DEBUG |  133 | Util            | Copied /home/runner/work/techdoc/techdoc/docs/Command.html to /home/runner/work/techdoc/techdoc/var/cache
@@ -2062,9 +2064,9 @@
      DEBUG |  144 | Deployer        | [DEPLOYER] COPIED_HTML_BACK_TO_CACHE
      DEBUG |  154 | Deployer        | [DEPLOYER] CLEANUP
      DEBUG |   44 | Deployer        | [DEPLOYER] END
-     DEBUG |   90 | Util            | [PERFORMANCE] 0.2250s => Stage stage_06_deploy
+     DEBUG |   90 | Util            | [PERFORMANCE] 0.1883s => Stage stage_06_deploy
       INFO |  170 | Workflow        | [WORKFLOW] SUMMARY docs_total=12 compiled=1 skipped=11 keys_compiled=11 kv_pages_compiled=18
-      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.49s
+      INFO |  178 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=0.43s
       INFO |  184 | Workflow        | [WORKFLOW] BUILD_COMPLETE
       INFO |  185 | Workflow        | [WORKFLOW] URL /home/runner/work/techdoc/techdoc/docs/index.html
       INFO |  186 | Workflow        | [WORKFLOW] LOG path=/home/runner/work/techdoc/techdoc/var/log/kb4it.log

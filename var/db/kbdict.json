@@ -713,6 +713,105 @@
             },
             "metadata_hash": "cb4f6612a4b25bae9112449114aba5b040ab0577fa67af5e1e28e6c428f7b52a9637e3140e62edc86a1912828c1a6ef4402d87248b233fa2753e614940b24d76"
         },
+        "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md": {
+            "Author": [
+                "Tom\u00e1s V\u00edrseda"
+            ],
+            "Category": [
+                "Procedure"
+            ],
+            "Command": [
+                "find",
+                "grep",
+                "java"
+            ],
+            "Date": [
+                "2014-05-22 00:00:00"
+            ],
+            "DocType": [
+                "Tutorial"
+            ],
+            "Filesystem": [
+                "/usr/sap/BO2"
+            ],
+            "OS": [
+                "Unix"
+            ],
+            "Product": [
+                "OpenSSL",
+                "SAP BusinessObjects BI",
+                "SAP JVM"
+            ],
+            "Protocol": [
+                "SSH",
+                "SSL"
+            ],
+            "Scope": [
+                "SAP Basis"
+            ],
+            "Tag": [
+                "certificate",
+                "keystore",
+                "pkcs12"
+            ],
+            "Title": [
+                "Generate Keystore and Certificate for SAP BO BI4.0"
+            ],
+            "Topic": [
+                "Security"
+            ],
+            "body_hash": "ba2d530a3e9091b662a4fd5d478e1fe745be197478f3537b52e264a6e494c85cfff7cc436bfcc627fa8402619600f4a60bb3f02fc1695a1e93c2bac2011f93e6",
+            "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
+            "keys": {
+                "Author": [
+                    "Tom\u00e1s V\u00edrseda"
+                ],
+                "Category": [
+                    "Procedure"
+                ],
+                "Command": [
+                    "find",
+                    "grep",
+                    "java"
+                ],
+                "Date": [
+                    "2014-05-22"
+                ],
+                "DocType": [
+                    "Tutorial"
+                ],
+                "Filesystem": [
+                    "/usr/sap/BO2"
+                ],
+                "OS": [
+                    "Unix"
+                ],
+                "Product": [
+                    "SAP BusinessObjects BI",
+                    "SAP JVM",
+                    "OpenSSL"
+                ],
+                "Protocol": [
+                    "SSH",
+                    "SSL"
+                ],
+                "Scope": [
+                    "SAP Basis"
+                ],
+                "Tag": [
+                    "certificate",
+                    "keystore",
+                    "pkcs12"
+                ],
+                "Title": [
+                    "Generate Keystore and Certificate for SAP BO BI4.0"
+                ],
+                "Topic": [
+                    "Security"
+                ]
+            },
+            "metadata_hash": "1835ad81b6f69570c9ee926203be9c8933b6996268c2b665293d15d88467b06e95741050cb3eb9fb8a82a878b399001004eb4f224b250a0ffe639c17a274d058"
+        },
         "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md": {
             "Category": [
                 "Procedure"
@@ -861,105 +960,6 @@
                 ]
             },
             "metadata_hash": "cba921211a387cdfbb184dfc2826ada2f02023c8bc87eac3a5171361456fdf8992f3f2d8f672f7cfd3dc3908ed5f786dc954405d3cd0e81418b4b07851a4c29f"
-        },
-        "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md": {
-            "Author": [
-                "Tom\u00e1s V\u00edrseda"
-            ],
-            "Category": [
-                "Procedure"
-            ],
-            "Command": [
-                "find",
-                "grep",
-                "java"
-            ],
-            "Date": [
-                "2014-05-22 00:00:00"
-            ],
-            "DocType": [
-                "Tutorial"
-            ],
-            "Filesystem": [
-                "/usr/sap/BO2"
-            ],
-            "OS": [
-                "Unix"
-            ],
-            "Product": [
-                "OpenSSL",
-                "SAP BusinessObjects BI",
-                "SAP JVM"
-            ],
-            "Protocol": [
-                "SSH",
-                "SSL"
-            ],
-            "Scope": [
-                "SAP Basis"
-            ],
-            "Tag": [
-                "certificate",
-                "keystore",
-                "pkcs12"
-            ],
-            "Title": [
-                "Generate Keystore and Certificate for SAP BO BI4.0"
-            ],
-            "Topic": [
-                "Security"
-            ],
-            "body_hash": "ba2d530a3e9091b662a4fd5d478e1fe745be197478f3537b52e264a6e494c85cfff7cc436bfcc627fa8402619600f4a60bb3f02fc1695a1e93c2bac2011f93e6",
-            "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
-            "keys": {
-                "Author": [
-                    "Tom\u00e1s V\u00edrseda"
-                ],
-                "Category": [
-                    "Procedure"
-                ],
-                "Command": [
-                    "find",
-                    "grep",
-                    "java"
-                ],
-                "Date": [
-                    "2014-05-22"
-                ],
-                "DocType": [
-                    "Tutorial"
-                ],
-                "Filesystem": [
-                    "/usr/sap/BO2"
-                ],
-                "OS": [
-                    "Unix"
-                ],
-                "Product": [
-                    "SAP BusinessObjects BI",
-                    "SAP JVM",
-                    "OpenSSL"
-                ],
-                "Protocol": [
-                    "SSH",
-                    "SSL"
-                ],
-                "Scope": [
-                    "SAP Basis"
-                ],
-                "Tag": [
-                    "certificate",
-                    "keystore",
-                    "pkcs12"
-                ],
-                "Title": [
-                    "Generate Keystore and Certificate for SAP BO BI4.0"
-                ],
-                "Topic": [
-                    "Security"
-                ]
-            },
-            "metadata_hash": "1835ad81b6f69570c9ee926203be9c8933b6996268c2b665293d15d88467b06e95741050cb3eb9fb8a82a878b399001004eb4f224b250a0ffe639c17a274d058"
         },
         "SLES11-ZLINUX-DASD-PROVISIONING.md": {
             "Category": [
@@ -1308,7 +1308,7 @@
             "Tom\u00e1s V\u00edrseda": [
                 "HELLO-WORLD.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ]
         },
         "Category": {
@@ -1321,8 +1321,8 @@
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
             ]
@@ -1373,18 +1373,18 @@
             ],
             "find": [
                 "BATCH-RENAME-SED.md",
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "git": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "grep": [
                 "BATCH-RENAME-SED.md",
-                "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
+                "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "java": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "journalctl": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
@@ -1496,7 +1496,7 @@
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "2014-05-22 00:00:00": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "2019-10-07 00:00:00": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
@@ -1540,7 +1540,7 @@
             ],
             "Tutorial": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ]
         },
         "EnvVar": {
@@ -1614,7 +1614,7 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "/usr/sap/BO2": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "/var": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
@@ -1643,7 +1643,7 @@
             ],
             "Unix": [
                 "SAP-BC-ORA-SQL-QUERIES.md",
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "Windows": [
                 "X11-SSH-FORWARDING.md"
@@ -1693,7 +1693,7 @@
                 "X11-SSH-FORWARDING.md"
             ],
             "OpenSSL": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "Putty": [
                 "X11-SSH-FORWARDING.md"
@@ -1707,13 +1707,13 @@
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "SAP BusinessObjects BI": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "SAP Content Server": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "SAP JVM": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "SAP Netweaver": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
@@ -1745,12 +1745,12 @@
             ],
             "SSH": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
                 "X11-SSH-FORWARDING.md"
             ],
             "SSL": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "X11": [
                 "X11-SSH-FORWARDING.md"
@@ -1780,7 +1780,7 @@
             ],
             "SAP Basis": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "Unix Administration": [
                 "LINUX-SYSTEMD-JOURNALCTL.md",
@@ -1944,7 +1944,7 @@
                 "BATCH-RENAME-SED.md"
             ],
             "certificate": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "clear": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
@@ -2004,7 +2004,7 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "keystore": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "locking": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
@@ -2019,7 +2019,7 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "pkcs12": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "query": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
@@ -2098,7 +2098,7 @@
                 "BATCH-RENAME-SED.md"
             ],
             "Generate Keystore and Certificate for SAP BO BI4.0": [
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "Hello world": [
                 "HELLO-WORLD.md"
@@ -2171,8 +2171,8 @@
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Security": [
-                "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
-                "SAP-BC.SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
+                "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "Troubleshooting": [
                 "BATCH-RENAME-SED.md",
