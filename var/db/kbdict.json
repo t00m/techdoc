@@ -658,13 +658,6 @@
                 "RHEL",
                 "SQLPlus"
             ],
-            "Project": [
-                "Database Maintenance",
-                "SAP Basis Maintenance"
-            ],
-            "Public": [
-                "True"
-            ],
             "Scope": [
                 "Database Administration"
             ],
@@ -770,13 +763,6 @@
                     "SQLPlus",
                     "RHEL"
                 ],
-                "Project": [
-                    "SAP Basis Maintenance",
-                    "Database Maintenance"
-                ],
-                "Public": [
-                    "True"
-                ],
                 "Scope": [
                     "Database Administration"
                 ],
@@ -850,7 +836,7 @@
                     "oracle"
                 ]
             },
-            "metadata_hash": "cb4f6612a4b25bae9112449114aba5b040ab0577fa67af5e1e28e6c428f7b52a9637e3140e62edc86a1912828c1a6ef4402d87248b233fa2753e614940b24d76"
+            "metadata_hash": "b278a7851882e09ca3d92466edd32b35f4538048b6c5d2f1d0dc4c9afc536d4a70c289cd815f23f839a7a22778d3dbaaf2b1d5e1728951fb02b071511af00d8a"
         },
         "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md": {
             "Author": [
@@ -1881,14 +1867,6 @@
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ]
         },
-        "Project": {
-            "Database Maintenance": [
-                "SAP-BC-ORA-SQL-QUERIES.md"
-            ],
-            "SAP Basis Maintenance": [
-                "SAP-BC-ORA-SQL-QUERIES.md"
-            ]
-        },
         "Protocol": {
             "CPIC": [
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
@@ -1928,11 +1906,6 @@
             ],
             "X11": [
                 "X11-SSH-FORWARDING.md"
-            ]
-        },
-        "Public": {
-            "True": [
-                "SAP-BC-ORA-SQL-QUERIES.md"
             ]
         },
         "Scope": {
