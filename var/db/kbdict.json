@@ -1032,6 +1032,127 @@
             },
             "metadata_hash": "b278a7851882e09ca3d92466edd32b35f4538048b6c5d2f1d0dc4c9afc536d4a70c289cd815f23f839a7a22778d3dbaaf2b1d5e1728951fb02b071511af00d8a"
         },
+        "SAP-BC-OS-LINUX.md": {
+            "Author": [
+                "Tom\u00e1s V\u00edrseda"
+            ],
+            "Bookmark": [
+                "True"
+            ],
+            "Category": [
+                "Note"
+            ],
+            "Command": [
+                "curl",
+                "dd",
+                "find",
+                "ls",
+                "mailx",
+                "nc",
+                "openssl",
+                "rsync",
+                "xargs",
+                "xsltproc"
+            ],
+            "Date": [
+                "2019-10-08 00:00:00"
+            ],
+            "DocType": [
+                "Reference"
+            ],
+            "Filesystem": [
+                "/oracle",
+                "/usr/sap"
+            ],
+            "OS": [
+                "Linux"
+            ],
+            "Product": [
+                "SSH",
+                "SUM"
+            ],
+            "Scope": [
+                "SAP Basis",
+                "Unix Administration"
+            ],
+            "Status": [
+                "Draft"
+            ],
+            "Tag": [
+                "basis",
+                "commands",
+                "useful"
+            ],
+            "Title": [
+                "Linux for Basis Admins"
+            ],
+            "Topic": [
+                "Operation",
+                "Troubleshooting"
+            ],
+            "body_hash": "9b2e06c02da191ed369cb926f5f44aa6031e8dad1c8fc97b886f50cac0a8123ef7cc50751090f37457963a2c7d6dd06cd31e61194035cb554575d0debe77ee13",
+            "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-OS-LINUX.md",
+            "keys": {
+                "Author": [
+                    "Tom\u00e1s V\u00edrseda"
+                ],
+                "Bookmark": [
+                    "True"
+                ],
+                "Category": [
+                    "Note"
+                ],
+                "Command": [
+                    "nc",
+                    "rsync",
+                    "xsltproc",
+                    "mailx",
+                    "openssl",
+                    "curl",
+                    "find",
+                    "dd",
+                    "xargs",
+                    "ls"
+                ],
+                "Date": [
+                    "2019-10-08"
+                ],
+                "DocType": [
+                    "Reference"
+                ],
+                "Filesystem": [
+                    "/oracle",
+                    "/usr/sap"
+                ],
+                "OS": [
+                    "Linux"
+                ],
+                "Product": [
+                    "SUM",
+                    "SSH"
+                ],
+                "Scope": [
+                    "Unix Administration",
+                    "SAP Basis"
+                ],
+                "Status": [
+                    "Draft"
+                ],
+                "Tag": [
+                    "useful",
+                    "commands",
+                    "basis"
+                ],
+                "Title": [
+                    "Linux for Basis Admins"
+                ],
+                "Topic": [
+                    "Operation",
+                    "Troubleshooting"
+                ]
+            },
+            "metadata_hash": "f2322a5fbe4b7cead27bd4789698c0f09d3821343534c161a99dde334a296f49dab782b733e23c8cf86d926e2bb0d04f576c3b8e0cb552bce979c01c5ecaf277"
+        },
         "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md": {
             "Author": [
                 "Tom\u00e1s V\u00edrseda"
@@ -1626,13 +1747,20 @@
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
+                "SAP-BC-OS-LINUX.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+            ]
+        },
+        "Bookmark": {
+            "True": [
+                "SAP-BC-OS-LINUX.md"
             ]
         },
         "Category": {
             "Note": [
                 "HELLO-WORLD.md",
-                "SAP-BC-ORA-SQL-QUERIES.md"
+                "SAP-BC-ORA-SQL-QUERIES.md",
+                "SAP-BC-OS-LINUX.md"
             ],
             "Procedure": [
                 "BATCH-RENAME-SED.md",
@@ -1670,6 +1798,9 @@
             "crontab": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
+            "curl": [
+                "SAP-BC-OS-LINUX.md"
+            ],
             "dasd_configure": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
@@ -1678,6 +1809,9 @@
             ],
             "date": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
+            ],
+            "dd": [
+                "SAP-BC-OS-LINUX.md"
             ],
             "dnf": [
                 "X11-SSH-FORWARDING.md"
@@ -1696,6 +1830,7 @@
             ],
             "find": [
                 "BATCH-RENAME-SED.md",
+                "SAP-BC-OS-LINUX.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "getent": [
@@ -1719,6 +1854,7 @@
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "ls": [
+                "SAP-BC-OS-LINUX.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "lsdasd": [
@@ -1730,6 +1866,9 @@
             "lvs": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "mailx": [
+                "SAP-BC-OS-LINUX.md"
+            ],
             "make": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
@@ -1739,6 +1878,9 @@
             "mkreiserfs": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
+            "nc": [
+                "SAP-BC-OS-LINUX.md"
+            ],
             "nice": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
@@ -1747,6 +1889,9 @@
             ],
             "nslookup": [
                 "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
+            "openssl": [
+                "SAP-BC-OS-LINUX.md"
             ],
             "pvcreate": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
@@ -1758,7 +1903,8 @@
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
             "rsync": [
-                "COPY-FILES-REMOTE-SERVER-SSH.md"
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
+                "SAP-BC-OS-LINUX.md"
             ],
             "scp": [
                 "COPY-FILES-REMOTE-SERVER-SSH.md"
@@ -1811,8 +1957,14 @@
             "wget": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
+            "xargs": [
+                "SAP-BC-OS-LINUX.md"
+            ],
             "xauth": [
                 "X11-SSH-FORWARDING.md"
+            ],
+            "xsltproc": [
+                "SAP-BC-OS-LINUX.md"
             ],
             "xterm": [
                 "X11-SSH-FORWARDING.md",
@@ -1836,6 +1988,9 @@
             ],
             "2019-10-07 00:00:00": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
+            ],
+            "2019-10-08 00:00:00": [
+                "SAP-BC-OS-LINUX.md"
             ],
             "2021-01-22 00:00:00": [
                 "DNSIPHOSTNAME-RESOLUTION.md"
@@ -1884,7 +2039,8 @@
                 "DNSIPHOSTNAME-RESOLUTION.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
-                "SAP-BC-ORA-SQL-QUERIES.md"
+                "SAP-BC-ORA-SQL-QUERIES.md",
+                "SAP-BC-OS-LINUX.md"
             ],
             "Tutorial": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
@@ -1956,7 +2112,8 @@
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "/oracle": [
-                "SAP-BC-ORA-SQL-QUERIES.md"
+                "SAP-BC-ORA-SQL-QUERIES.md",
+                "SAP-BC-OS-LINUX.md"
             ],
             "/proc": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
@@ -1966,6 +2123,7 @@
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "/usr/sap": [
+                "SAP-BC-OS-LINUX.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "/usr/sap/BO2": [
@@ -1994,6 +2152,7 @@
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
+                "SAP-BC-OS-LINUX.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
@@ -2093,7 +2252,11 @@
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "SSH": [
-                "COPY-FILES-REMOTE-SERVER-SSH.md"
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
+                "SAP-BC-OS-LINUX.md"
+            ],
+            "SUM": [
+                "SAP-BC-OS-LINUX.md"
             ],
             "SUSE Linux Enterprise Server 11": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
@@ -2174,12 +2337,14 @@
             "SAP Basis": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
+                "SAP-BC-OS-LINUX.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "Unix Administration": [
                 "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "DNSIPHOSTNAME-RESOLUTION.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
+                "SAP-BC-OS-LINUX.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "X11-SSH-FORWARDING.md"
             ]
@@ -2213,6 +2378,9 @@
             ]
         },
         "Status": {
+            "Draft": [
+                "SAP-BC-OS-LINUX.md"
+            ],
             "Released": [
                 "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
@@ -2340,6 +2508,9 @@
             "automation": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
+            "basis": [
+                "SAP-BC-OS-LINUX.md"
+            ],
             "batch": [
                 "BATCH-RENAME-SED.md"
             ],
@@ -2357,6 +2528,9 @@
             ],
             "client": [
                 "X11-SSH-FORWARDING.md"
+            ],
+            "commands": [
+                "SAP-BC-OS-LINUX.md"
             ],
             "compilation": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
@@ -2501,6 +2675,9 @@
             "unit": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
+            "useful": [
+                "SAP-BC-OS-LINUX.md"
+            ],
             "vacuum": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
@@ -2565,6 +2742,9 @@
             "Keeping a KB4IT Website Up-to-Date Automatically": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
+            "Linux for Basis Admins": [
+                "SAP-BC-OS-LINUX.md"
+            ],
             "SFTP Connectivity - SSH Key Authentication": [
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
@@ -2627,7 +2807,8 @@
             ],
             "Operation": [
                 "COPY-FILES-REMOTE-SERVER-SSH.md",
-                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+                "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
+                "SAP-BC-OS-LINUX.md"
             ],
             "Performance": [
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
@@ -2642,6 +2823,7 @@
                 "BATCH-RENAME-SED.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
+                "SAP-BC-OS-LINUX.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "User": [
