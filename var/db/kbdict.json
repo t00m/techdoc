@@ -79,6 +79,107 @@
             },
             "metadata_hash": "192fc5d766ceaac9094ad6f4f6cdc999cf40dc867877a3a6ce0d70bfe93a75460c98a8620c9a6d956eeccb0959a63b77a79a9082d8aa59600cc09ad5a847bb2c"
         },
+        "COPY-FILES-REMOTE-SERVER-SSH.md": {
+            "Category": [
+                "Procedure"
+            ],
+            "Command": [
+                "rsync",
+                "scp",
+                "ssh"
+            ],
+            "Date": [
+                "2021-02-08 00:00:00"
+            ],
+            "DocType": [
+                "Reference"
+            ],
+            "OS": [
+                "Linux",
+                "Unix"
+            ],
+            "Product": [
+                "AIX",
+                "RHEL",
+                "SFTP",
+                "SSH",
+                "Solaris",
+                "Ubuntu"
+            ],
+            "Protocol": [
+                "SSH"
+            ],
+            "Scope": [
+                "Unix Administration"
+            ],
+            "Status": [
+                "Released"
+            ],
+            "Tag": [
+                "copy",
+                "remote",
+                "transfer"
+            ],
+            "Title": [
+                "Copy files between servers via SCP"
+            ],
+            "Topic": [
+                "Operation",
+                "Security"
+            ],
+            "body_hash": "c3c65e2f5de52def14852b258654c2f1cbc536c89709e44e3128fd9d7558a2bbce1daff7e2744898c9eb514cc3ce0a7a188891a56f82cd0e0129ab83a56ecd74",
+            "content": "/home/runner/work/techdoc/techdoc/source/COPY-FILES-REMOTE-SERVER-SSH.md",
+            "keys": {
+                "Category": [
+                    "Procedure"
+                ],
+                "Command": [
+                    "scp",
+                    "ssh",
+                    "rsync"
+                ],
+                "Date": [
+                    "2021-02-08"
+                ],
+                "DocType": [
+                    "Reference"
+                ],
+                "OS": [
+                    "Linux",
+                    "Unix"
+                ],
+                "Product": [
+                    "AIX",
+                    "Solaris",
+                    "SSH",
+                    "RHEL",
+                    "Ubuntu",
+                    "SFTP"
+                ],
+                "Protocol": [
+                    "SSH"
+                ],
+                "Scope": [
+                    "Unix Administration"
+                ],
+                "Status": [
+                    "Released"
+                ],
+                "Tag": [
+                    "copy",
+                    "remote",
+                    "transfer"
+                ],
+                "Title": [
+                    "Copy files between servers via SCP"
+                ],
+                "Topic": [
+                    "Operation",
+                    "Security"
+                ]
+            },
+            "metadata_hash": "487cee4f2f3cc9358db995b1baf8d356cc0331c8ee0058604d606704ee48060c987fd6edbf6f0a503ada67af1132b0ffcdc975808e68f4e397d3595b4c185056"
+        },
         "DNSIPHOSTNAME-RESOLUTION.md": {
             "Category": [
                 "Procedure"
@@ -1535,6 +1636,7 @@
             ],
             "Procedure": [
                 "BATCH-RENAME-SED.md",
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "DNSIPHOSTNAME-RESOLUTION.md",
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
@@ -1655,6 +1757,12 @@
             "rpm": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
+            "rsync": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
+            ],
+            "scp": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
+            ],
             "sed": [
                 "BATCH-RENAME-SED.md"
             ],
@@ -1665,6 +1773,7 @@
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "ssh": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
             ],
@@ -1731,6 +1840,9 @@
             "2021-01-22 00:00:00": [
                 "DNSIPHOSTNAME-RESOLUTION.md"
             ],
+            "2021-02-08 00:00:00": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
+            ],
             "2024-05-14 12:00:00": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
@@ -1768,6 +1880,7 @@
                 "X11-SSH-FORWARDING.md"
             ],
             "Reference": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "DNSIPHOSTNAME-RESOLUTION.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
@@ -1875,6 +1988,7 @@
         "OS": {
             "Linux": [
                 "BATCH-RENAME-SED.md",
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
@@ -1888,6 +2002,7 @@
                 "DNSIPHOSTNAME-RESOLUTION.md"
             ],
             "Unix": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
@@ -1907,6 +2022,7 @@
         },
         "Product": {
             "AIX": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Apache": [
@@ -1946,6 +2062,7 @@
                 "X11-SSH-FORWARDING.md"
             ],
             "RHEL": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
@@ -1969,11 +2086,23 @@
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
+            "SFTP": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
+            ],
             "SQLPlus": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
+            "SSH": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
+            ],
             "SUSE Linux Enterprise Server 11": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
+            ],
+            "Solaris": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
+            ],
+            "Ubuntu": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
             ],
             "Xming": [
                 "X11-SSH-FORWARDING.md"
@@ -2011,6 +2140,7 @@
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
             ],
             "SSH": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
@@ -2047,6 +2177,7 @@
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "Unix Administration": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "DNSIPHOSTNAME-RESOLUTION.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
@@ -2083,6 +2214,7 @@
         },
         "Status": {
             "Released": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "X11-SSH-FORWARDING.md"
@@ -2229,6 +2361,9 @@
             "compilation": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
+            "copy": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
+            ],
             "daemon": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
@@ -2315,6 +2450,7 @@
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "remote": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "X11-SSH-FORWARDING.md"
             ],
             "rename": [
@@ -2355,6 +2491,9 @@
             ],
             "tracking": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ],
+            "transfer": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
             ],
             "undo": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
@@ -2404,6 +2543,9 @@
             ],
             "Check IP or hostname resolution": [
                 "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
+            "Copy files between servers via SCP": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md"
             ],
             "Generate Keystore and Certificate for SAP BO BI4.0": [
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
@@ -2484,6 +2626,7 @@
                 "DNSIPHOSTNAME-RESOLUTION.md"
             ],
             "Operation": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
             "Performance": [
@@ -2491,6 +2634,7 @@
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Security": [
+                "COPY-FILES-REMOTE-SERVER-SSH.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],

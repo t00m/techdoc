@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>t00m's tech notes - Copy files between servers via SCP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="KB4IT 0.7.7+build.4">
+    <meta name="description" content="KB4IT document">
+    <meta name="author" content="KB4IT by t00mlabs.net">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/screen.css">
+    <script src="resources/themes/techdoc/framework/Highlight/highlight.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit.min.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit-icons.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery-3.5.1.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/dataTables.uikit.min.js"></script>
+    <script type="text/javascript" class="init">
+        $(document).ready(function() {
+            $('.kb4it-datatable:not([data-dt-init])').each(function() {
+                $(this).attr('data-dt-init', '1').DataTable({
+                    dom: '<"kbfilter"flrtip>',
+                    serverSide: false,
+                    ordering: true,
+                    searching: true,
+                    deferRender:    true,
+                    autoWidth:      false,
+                    scrollY:        'calc(100vh - 200px)',
+                    scrollCollapse: false,
+                    scroller:       false,
+                    stateSave: false,
+                    paging:   false,
+                    info:     true,
+                    order: [[ 0, "desc" ]]
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<!-- Template version 0.7.7+build.4 -->
+<div class="uk-background-muted uk-height-viewport">
+<div id="container-1" class="uk-container uk-container-center noprint">
+    <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
+        <nav class="uk-navbar-container uk-border-rounded uk-card-hover uk-box-shadow-large" style="background-color: white;" uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="" width="24px" height="24px">
+                        </a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="add.html"><span uk-icon="plus-circle"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Add document</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="events.html"><span uk-icon="calendar"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Events</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="bookmarks.html"><span uk-icon="bookmark"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Bookmarks</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="properties.html"><span uk-icon="database"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Properties</span></a>
+                                    <div class="uk-navbar-dropdown" uk-dropdown="pos: right-top">
+                                        <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-small uk-column-1-2">
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Category.html"><span class="">Category</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Command.html"><span class="">Command</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Database.html"><span class="">Database</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="DocType.html"><span class="">DocType</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="EnvVar.html"><span class="">EnvVar</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Environment.html"><span class="">Environment</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filename.html"><span class="">Filename</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filesystem.html"><span class="">Filesystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="OS.html"><span class="">OS</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Priority.html"><span class="">Priority</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Product.html"><span class="">Product</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Protocol.html"><span class="">Protocol</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Scope.html"><span class="">Scope</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Server.html"><span class="">Server</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Service.html"><span class="">Service</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Status.html"><span class="">Status</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Subsystem.html"><span class="">Subsystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Table.html"><span class="">Table</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Tag.html"><span class="">Tag</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Team.html"><span class="">Team</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Topic.html"><span class="">Topic</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Transaction.html"><span class="">Transaction</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="User.html"><span class="">User</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Website.html"><span class="">Website</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="stats.html"><span uk-icon="list"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Stats</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="uk-navbar-nav noprint">
+                    <!-- MENU CONTENTS :: START -->
+                    <!-- Template SECTION_ACTIONS.tpl :: START -->
+        <!-- Edit Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Edit document">
+            <a class="uk-link-heading" href="https://github.com/t00m/techdoc/edit/main/source/COPY-FILES-REMOTE-SERVER-SSH.md" target="_blank"><span uk-icon="pencil"></span></a>
+        </li>
+        <!-- Edit Button :: END -->
+        <!-- Metadata Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Document properties">
+            <a class="uk-link-heading" href="#modal-metadata" uk-toggle><span class="uk-link-heading" uk-icon="icon: hashtag; ratio: 1.0;"></span></a>
+            <div id="modal-metadata" class="uk-modal-full" uk-modal>
+                <div class="uk-modal-dialog uk-height-viewport">
+                    <button class="uk-modal-close-full uk-close-large uk-background-muted" type="button" uk-close></button>
+                    <div class="uk-grid-collapse uk-child-width-expand@s uk-flex-middle" uk-grid>
+                        <div class="uk-padding-large uk-background-muted">
+                            <div class="uk-text-lead uk-text-center uk-text-primary">Metadata</div>
+                            <div class="" style="border: 1px solid transparent;">
+<ul class="kb-metadata-list">
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Category.html">Category</a></strong>: <a class="kb-meta-val" href="Category_Procedure.html">Procedure</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Command.html">Command</a></strong>: <a class="kb-meta-val" href="Command_scp.html">scp</a>
+<a class="kb-meta-val" href="Command_ssh.html">ssh</a>
+<a class="kb-meta-val" href="Command_rsync.html">rsync</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_Reference.html">Reference</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="OS.html">OS</a></strong>: <a class="kb-meta-val" href="OS_Linux.html">Linux</a>
+<a class="kb-meta-val" href="OS_Unix.html">Unix</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Product.html">Product</a></strong>: <a class="kb-meta-val" href="Product_AIX.html">AIX</a>
+<a class="kb-meta-val" href="Product_Solaris.html">Solaris</a>
+<a class="kb-meta-val" href="Product_SSH.html">SSH</a>
+<a class="kb-meta-val" href="Product_RHEL.html">RHEL</a>
+<a class="kb-meta-val" href="Product_Ubuntu.html">Ubuntu</a>
+<a class="kb-meta-val" href="Product_SFTP.html">SFTP</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Protocol.html">Protocol</a></strong>: <a class="kb-meta-val" href="Protocol_SSH.html">SSH</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Scope.html">Scope</a></strong>: <a class="kb-meta-val" href="Scope_Unix_Administration.html">Unix Administration</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Status.html">Status</a></strong>: <a class="kb-meta-val" href="Status_Released.html">Released</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Tag.html">Tag</a></strong>: <a class="kb-meta-val" href="Tag_copy.html">copy</a>
+<a class="kb-meta-val" href="Tag_remote.html">remote</a>
+<a class="kb-meta-val" href="Tag_transfer.html">transfer</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Topic.html">Topic</a></strong>: <a class="kb-meta-val" href="Topic_Operation.html">Operation</a>
+<a class="kb-meta-val" href="Topic_Security.html">Security</a>
+
+</li>
+</ul>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- Metadata Button :: END -->
+        <!-- View Markdown Source Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Document source">
+            <a class="uk-link-heading" href="#modal-full-source" uk-toggle><span class="uk-link-heading" uk-icon="icon: code; ratio: 1.0;"></span></a>
+            <div id="modal-full-source" class="uk-modal-full" uk-modal>
+                <div class="uk-modal-dialog uk-height-viewport">
+                    <button class="uk-modal-close-full uk-close-large uk-background-muted" type="button" uk-close></button>
+                    <div class="uk-grid-collapse uk-child-width-expand@s uk-flex-middle" uk-grid>
+                        <div class="uk-padding-large uk-background-muted">
+                            <div class="uk-text-lead uk-text-center uk-text-danger">Source</div>
+                            <div class="uk-text-lead">COPY-FILES-REMOTE-SERVER-SSH.md&#160;<a onclick="copyToClipboard()" class="uk-icon-link uk-margin-small-right uk-link-toggle" uk-icon="icon: copy; ratio: 1.0" uk-tooltip="title: Copy to clipboard"></a>
+</div>
+                            <div class=""><textarea id="source-code" class="uk-width-1-1 uk-height-viewport">---
+Category: Procedure
+Command: scp, ssh, rsync
+Date: 2021-02-08
+DocType: Reference
+OS: Linux, Unix
+Product: AIX, Solaris, SSH, RHEL, Ubuntu, SFTP
+Protocol: SSH
+Scope: Unix Administration
+Status: Released
+Tag: copy, remote, transfer
+Topic: Operation, Security
+---
+
+# Copy files between servers via SCP
+
+## Overview
+
+`scp` (Secure Copy Protocol) copies files and directories between hosts over SSH.
+It uses SSH for authentication and encryption, so no extra setup is needed beyond
+an existing SSH configuration.
+
+General syntax:
+
+```bash
+scp [options] &lt;source&gt; &lt;destination&gt;
+```
+
+Remote paths use the format `user@host:/path`.
+
+---
+
+## Copy a local file to a remote server
+
+```bash
+scp /local/path/file.txt user@host:/remote/path/
+```
+
+---
+
+## Copy a remote file to the local machine
+
+```bash
+scp user@host:/remote/path/file.txt /local/path/
+```
+
+---
+
+## Copy between two remote servers
+
+```bash
+scp user1@host1:/path/file.txt user2@host2:/path/
+```
+
+---
+
+## Copy a directory recursively
+
+Use `-r` to copy a full directory tree.
+
+```bash
+scp -r /local/dir user@host:/remote/path/
+```
+
+---
+
+## Use a specific SSH private key
+
+```bash
+scp -i ~/.ssh/id_rsa /local/file.txt user@host:/remote/path/
+```
+
+---
+
+## Use a non-standard SSH port
+
+```bash
+scp -P 2222 /local/file.txt user@host:/remote/path/
+```
+
+&gt; **NOTE:** The port flag for `scp` is uppercase `-P`, unlike `ssh` which uses lowercase `-p`.
+
+---
+
+## Preserve file metadata (timestamps, permissions)
+
+```bash
+scp -p /local/file.txt user@host:/remote/path/
+```
+
+---
+
+## Limit bandwidth usage
+
+Value is in Kbits/s.
+
+```bash
+scp -l 1024 /local/file.txt user@host:/remote/path/
+```
+
+---
+
+## Copy with verbose output (useful for debugging)
+
+```bash
+scp -v /local/file.txt user@host:/remote/path/
+```
+
+---
+
+## Common options summary
+
+| Option | Description |
+|--------|-------------|
+| `-r` | Recursive copy (directories) |
+| `-P &lt;port&gt;` | Non-standard SSH port |
+| `-i &lt;key&gt;` | Private key file |
+| `-p` | Preserve file timestamps and permissions |
+| `-l &lt;kbps&gt;` | Limit transfer bandwidth |
+| `-v` | Verbose mode |
+| `-C` | Enable compression |
+| `-q` | Quiet mode (suppress progress) |
+
+---
+
+## Notes
+
+- `scp` relies on the remote `scp` binary being present on the target host.
+- For large or frequent transfers, consider `rsync` over SSH: it supports delta
+  transfers and is more efficient for repeated syncs.
+- On RHEL 9 and newer systems, `scp` may use the SFTP subsystem by default.
+  If transfers fail, check that `Subsystem sftp` is enabled in `sshd_config`.
+</textarea></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <!-- View Source Button :: END -->
+        <!-- Print Button :: START -->
+        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+            <a class="uk-link-heading" href="javascript:window.print()"><span uk-icon="icon: print; ratio: 1.0;"></span></a>
+        </li>
+        <!-- Print Button :: END -->
+<!-- Template SECTION_ACTIONS.tpl :: END -->
+
+
+
+                    <!-- MENU CONTENTS :: END -->
+                </ul>
+            </div>
+            <div class="uk-navbar-center">
+                <!-- DOCUMENT TITLE :: START -->
+                <ul class="uk-navbar-nav">
+                    <li class="uk-card uk-card-small uk-padding-small uk-padding-remove-vertical">
+                        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+                            <div class="uk-card uk-card-small">
+                                <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">Copy files between servers via SCP</span></a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+<ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-a-local-file-to-a-remote-server">Copy a local file to a remote server</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-a-remote-file-to-the-local-machine">Copy a remote file to the local machine</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-between-two-remote-servers">Copy between two remote servers</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-a-directory-recursively">Copy a directory recursively</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#use-a-specific-ssh-private-key">Use a specific SSH private key</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#use-a-non-standard-ssh-port">Use a non-standard SSH port</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#preserve-file-metadata-timestamps-permissions">Preserve file metadata (timestamps, permissions)</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#limit-bandwidth-usage">Limit bandwidth usage</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-with-verbose-output-useful-for-debugging">Copy with verbose output (useful for debugging)</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#common-options-summary">Common options summary</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#notes">Notes</a></li>
+</ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- DOCUMENT TITLE :: END -->
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
+                    </li>
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="#"><span uk-icon="info"></span></a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_app.html"><span class="uk-padding-none">About this app</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="help.html"><span class="uk-padding-none">Help</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_kb4it.html"><span class="uk-padding-none">About KB4IT</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="uk-container uk-container-center">
+    <div id="container-2" class="uk-container uk-container-center uk-flex uk-flex-center uk-hidden">
+        <span class="uk-text-lead">Copy files between servers via SCP</span>
+    </div>
+<!-- Template HTML_BODY_DOC.tpl :: START -->
+
+<!-- Print-only document header (hidden on screen) -->
+<div class="kb-print-header">
+    <h1 class="kb-print-doc-title">Copy files between servers via SCP</h1>
+</div>
+
+<!-- Inline collapsible TOC -->
+<details id="kb-toc-inline" open class="kb-toc-panel">
+    <summary class="kb-toc-summary">Table of Contents</summary>
+    <nav class="kb-toc-nav">
+        <ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-a-local-file-to-a-remote-server">Copy a local file to a remote server</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-a-remote-file-to-the-local-machine">Copy a remote file to the local machine</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-between-two-remote-servers">Copy between two remote servers</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-a-directory-recursively">Copy a directory recursively</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#use-a-specific-ssh-private-key">Use a specific SSH private key</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#use-a-non-standard-ssh-port">Use a non-standard SSH port</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#preserve-file-metadata-timestamps-permissions">Preserve file metadata (timestamps, permissions)</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#limit-bandwidth-usage">Limit bandwidth usage</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copy-with-verbose-output-useful-for-debugging">Copy with verbose output (useful for debugging)</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#common-options-summary">Common options summary</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#notes">Notes</a></li>
+</ul>
+    </nav>
+</details>
+
+    <!-- This is the nav containing the toggling elements -->
+    <ul class="uk-flex uk-flex-center uk-tab noprint uk-hidden" uk-switcher>
+        <li><a href="#">Document</a></li>
+    </ul>
+    <!-- This is the container of the content items -->
+    <ul class="uk-switcher uk-margin">
+        <li class="uk-active"><div class="kb-content kb-content-md">
+<div hidden>
+<div id="toctitle">Contents</div>
+<ul class="sectlevel1">
+<li><a class="" target="" href="#overview">Overview</a></li>
+<li><a class="" target="" href="#copy-a-local-file-to-a-remote-server">Copy a local file to a remote server</a></li>
+<li><a class="" target="" href="#copy-a-remote-file-to-the-local-machine">Copy a remote file to the local machine</a></li>
+<li><a class="" target="" href="#copy-between-two-remote-servers">Copy between two remote servers</a></li>
+<li><a class="" target="" href="#copy-a-directory-recursively">Copy a directory recursively</a></li>
+<li><a class="" target="" href="#use-a-specific-ssh-private-key">Use a specific SSH private key</a></li>
+<li><a class="" target="" href="#use-a-non-standard-ssh-port">Use a non-standard SSH port</a></li>
+<li><a class="" target="" href="#preserve-file-metadata-timestamps-permissions">Preserve file metadata (timestamps, permissions)</a></li>
+<li><a class="" target="" href="#limit-bandwidth-usage">Limit bandwidth usage</a></li>
+<li><a class="" target="" href="#copy-with-verbose-output-useful-for-debugging">Copy with verbose output (useful for debugging)</a></li>
+<li><a class="" target="" href="#common-options-summary">Common options summary</a></li>
+<li><a class="" target="" href="#notes">Notes</a></li>
+</ul>
+</div>
+
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="overview">Overview</h2>
+<div class="kb-section-body uk-container">
+<p><code>scp</code> (Secure Copy Protocol) copies files and directories between hosts over SSH.
+It uses SSH for authentication and encryption, so no extra setup is needed beyond
+an existing SSH configuration.</p>
+<p>General syntax:</p>
+<pre><code class="language-bash">scp [options] &lt;source&gt; &lt;destination&gt;
+</code></pre>
+<p>Remote paths use the format <code>user@host:/path</code>.</p>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="copy-a-local-file-to-a-remote-server">Copy a local file to a remote server</h2>
+<div class="kb-section-body uk-container">
+<pre><code class="language-bash">scp /local/path/file.txt user@host:/remote/path/
+</code></pre>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="copy-a-remote-file-to-the-local-machine">Copy a remote file to the local machine</h2>
+<div class="kb-section-body uk-container">
+<pre><code class="language-bash">scp user@host:/remote/path/file.txt /local/path/
+</code></pre>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="copy-between-two-remote-servers">Copy between two remote servers</h2>
+<div class="kb-section-body uk-container">
+<pre><code class="language-bash">scp user1@host1:/path/file.txt user2@host2:/path/
+</code></pre>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="copy-a-directory-recursively">Copy a directory recursively</h2>
+<div class="kb-section-body uk-container">
+<p>Use <code>-r</code> to copy a full directory tree.</p>
+<pre><code class="language-bash">scp -r /local/dir user@host:/remote/path/
+</code></pre>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="use-a-specific-ssh-private-key">Use a specific SSH private key</h2>
+<div class="kb-section-body uk-container">
+<pre><code class="language-bash">scp -i ~/.ssh/id_rsa /local/file.txt user@host:/remote/path/
+</code></pre>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="use-a-non-standard-ssh-port">Use a non-standard SSH port</h2>
+<div class="kb-section-body uk-container">
+<pre><code class="language-bash">scp -P 2222 /local/file.txt user@host:/remote/path/
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> The port flag for <code>scp</code> is uppercase <code>-P</code>, unlike <code>ssh</code> which uses lowercase <code>-p</code>.</p>
+</blockquote>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="preserve-file-metadata-timestamps-permissions">Preserve file metadata (timestamps, permissions)</h2>
+<div class="kb-section-body uk-container">
+<pre><code class="language-bash">scp -p /local/file.txt user@host:/remote/path/
+</code></pre>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="limit-bandwidth-usage">Limit bandwidth usage</h2>
+<div class="kb-section-body uk-container">
+<p>Value is in Kbits/s.</p>
+<pre><code class="language-bash">scp -l 1024 /local/file.txt user@host:/remote/path/
+</code></pre>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="copy-with-verbose-output-useful-for-debugging">Copy with verbose output (useful for debugging)</h2>
+<div class="kb-section-body uk-container">
+<pre><code class="language-bash">scp -v /local/file.txt user@host:/remote/path/
+</code></pre>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="common-options-summary">Common options summary</h2>
+<div class="kb-section-body uk-container">
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-r</code></td>
+<td>Recursive copy (directories)</td>
+</tr>
+<tr>
+<td><code>-P &lt;port&gt;</code></td>
+<td>Non-standard SSH port</td>
+</tr>
+<tr>
+<td><code>-i &lt;key&gt;</code></td>
+<td>Private key file</td>
+</tr>
+<tr>
+<td><code>-p</code></td>
+<td>Preserve file timestamps and permissions</td>
+</tr>
+<tr>
+<td><code>-l &lt;kbps&gt;</code></td>
+<td>Limit transfer bandwidth</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Verbose mode</td>
+</tr>
+<tr>
+<td><code>-C</code></td>
+<td>Enable compression</td>
+</tr>
+<tr>
+<td><code>-q</code></td>
+<td>Quiet mode (suppress progress)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="notes">Notes</h2>
+<div class="kb-section-body uk-container">
+<ul>
+<li>
+<code>scp</code> relies on the remote <code>scp</code> binary being present on the target host.</li>
+<li>For large or frequent transfers, consider <code>rsync</code> over SSH: it supports delta
+  transfers and is more efficient for repeated syncs.</li>
+<li>On RHEL 9 and newer systems, <code>scp</code> may use the SFTP subsystem by default.
+  If transfers fail, check that <code>Subsystem sftp</code> is enabled in <code>sshd_config</code>.</li>
+</ul>
+</div>
+</div>
+</div></li>
+    </ul>
+
+<!-- Document properties section at bottom (collapsed by default on screen) -->
+<div class="kb-sect1 kb-sect1-collapsed uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+    <h2 class="kb-h2">Document Properties</h2>
+    <div class="kb-section-body uk-container">
+        <ul class="kb-metadata-list">
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Category.html">Category</a></strong>: <a class="kb-meta-val" href="Category_Procedure.html">Procedure</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Command.html">Command</a></strong>: <a class="kb-meta-val" href="Command_scp.html">scp</a>
+<a class="kb-meta-val" href="Command_ssh.html">ssh</a>
+<a class="kb-meta-val" href="Command_rsync.html">rsync</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_Reference.html">Reference</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="OS.html">OS</a></strong>: <a class="kb-meta-val" href="OS_Linux.html">Linux</a>
+<a class="kb-meta-val" href="OS_Unix.html">Unix</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Product.html">Product</a></strong>: <a class="kb-meta-val" href="Product_AIX.html">AIX</a>
+<a class="kb-meta-val" href="Product_Solaris.html">Solaris</a>
+<a class="kb-meta-val" href="Product_SSH.html">SSH</a>
+<a class="kb-meta-val" href="Product_RHEL.html">RHEL</a>
+<a class="kb-meta-val" href="Product_Ubuntu.html">Ubuntu</a>
+<a class="kb-meta-val" href="Product_SFTP.html">SFTP</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Protocol.html">Protocol</a></strong>: <a class="kb-meta-val" href="Protocol_SSH.html">SSH</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Scope.html">Scope</a></strong>: <a class="kb-meta-val" href="Scope_Unix_Administration.html">Unix Administration</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Status.html">Status</a></strong>: <a class="kb-meta-val" href="Status_Released.html">Released</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Tag.html">Tag</a></strong>: <a class="kb-meta-val" href="Tag_copy.html">copy</a>
+<a class="kb-meta-val" href="Tag_remote.html">remote</a>
+<a class="kb-meta-val" href="Tag_transfer.html">transfer</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Topic.html">Topic</a></strong>: <a class="kb-meta-val" href="Topic_Operation.html">Operation</a>
+<a class="kb-meta-val" href="Topic_Security.html">Security</a>
+
+</li>
+</ul>
+
+    </div>
+</div>
+
+<!-- Template HTML_BODY_DOC.tpl :: END -->
+<!-- FOOTER :: START -->
+<div class="kb-footer">
+    <a class="kb-footer-top" href="#">&#8593; Back to top</a>
+    <span class="kb-footer-meta">Last updated Thursday, May 28, 2026 at 12:08</span>
+</div>
+<!-- FOOTER :: END -->
+</div>
+<!-- /uk-container -->
+</div>
+<!-- /uk-background-muted -->
+<!-- CONTENTS (Document) :: END -->
+<script>hljs.highlightAll();</script>
+<script>
+var input = document.getElementById("text_filter");
+var filter = document.getElementById("filter");
+
+input.addEventListener( "keyup", function(event)
+{
+    if ( input.value == "" )
+    {
+        filter.setAttribute( "uk-filter-control", "" );
+    }
+
+    else
+    {
+        filter.setAttribute( "uk-filter-control", "filter:[data-title*=" + JSON.stringify(input.value) + "i]" );
+    }
+
+    filter.click();
+});
+</script>
+<script>
+function copyToClipboard() {
+  var el = document.getElementById("source-code");
+  el.select();
+  el.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(el.value).catch(function() {
+    document.execCommand("copy");
+  });
+  UIkit.notification({message: "Source copied to clipboard", status: "success", timeout: 2000});
+}
+</script>
+<script>
+(function() {
+    var content = document.querySelector('.kb-content');
+    if (!content) return;
+    var sects = Array.from(content.querySelectorAll(':scope > .kb-sect1'));
+    if (!sects.length) return;
+
+    var acc = document.createElement('div');
+    acc.setAttribute('uk-accordion', '');
+    sects[0].parentNode.insertBefore(acc, sects[0]);
+    sects.forEach(function(s) {
+        s.classList.add('uk-open');
+        acc.appendChild(s);
+    });
+
+    UIkit.accordion(acc, {
+        targets: '> .kb-sect1',
+        toggle: '> h2',
+        content: '> .kb-section-body',
+        multiple: true,
+        animation: true,
+        duration: 200
+    });
+})();
+</script>
+<!-- GRID LAYOUT :: END -->
+</body>
+</html>
