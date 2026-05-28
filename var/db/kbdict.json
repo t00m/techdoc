@@ -79,6 +79,99 @@
             },
             "metadata_hash": "192fc5d766ceaac9094ad6f4f6cdc999cf40dc867877a3a6ce0d70bfe93a75460c98a8620c9a6d956eeccb0959a63b77a79a9082d8aa59600cc09ad5a847bb2c"
         },
+        "DNSIPHOSTNAME-RESOLUTION.md": {
+            "Category": [
+                "Procedure"
+            ],
+            "Command": [
+                "getent",
+                "nslookup"
+            ],
+            "Date": [
+                "2021-01-22 00:00:00"
+            ],
+            "DocType": [
+                "Reference"
+            ],
+            "Filename": [
+                "/etc/hosts",
+                "/etc/nsswitch.conf"
+            ],
+            "Filesystem": [
+                "/etc"
+            ],
+            "OS": [
+                "Solaris"
+            ],
+            "Priority": [
+                "Normal"
+            ],
+            "Scope": [
+                "Unix Administration"
+            ],
+            "Tag": [
+                "DNS",
+                "hosts",
+                "network",
+                "nsswitch",
+                "resolve"
+            ],
+            "Title": [
+                "Check IP or hostname resolution"
+            ],
+            "Topic": [
+                "Migration",
+                "Network"
+            ],
+            "body_hash": "b7af2092ebbe87888584359c3166ffc182404c1d0741963617c57dc23fbf009a7c7b97474fcdcb7761601d0b025c9bc6cceba74b797919159d62f10e481352c2",
+            "content": "/home/runner/work/techdoc/techdoc/source/DNSIPHOSTNAME-RESOLUTION.md",
+            "keys": {
+                "Category": [
+                    "Procedure"
+                ],
+                "Command": [
+                    "getent",
+                    "nslookup"
+                ],
+                "Date": [
+                    "2021-01-22"
+                ],
+                "DocType": [
+                    "Reference"
+                ],
+                "Filename": [
+                    "/etc/hosts",
+                    "/etc/nsswitch.conf"
+                ],
+                "Filesystem": [
+                    "/etc"
+                ],
+                "OS": [
+                    "Solaris"
+                ],
+                "Priority": [
+                    "Normal"
+                ],
+                "Scope": [
+                    "Unix Administration"
+                ],
+                "Tag": [
+                    "network",
+                    "DNS",
+                    "hosts",
+                    "nsswitch",
+                    "resolve"
+                ],
+                "Title": [
+                    "Check IP or hostname resolution"
+                ],
+                "Topic": [
+                    "Migration",
+                    "Network"
+                ]
+            },
+            "metadata_hash": "293fe83422f671eb7361951dfbf67ed1bdd6ec68bbf01c36ff2431e19580a4dbccda9bbd02b6a1a80460b9e4400a6809b6de69f031434fc6d898c8fb540bc65d"
+        },
         "HELLO-WORLD.md": {
             "Author": [
                 "Tom\u00e1s V\u00edrseda"
@@ -1442,6 +1535,7 @@
             ],
             "Procedure": [
                 "BATCH-RENAME-SED.md",
+                "DNSIPHOSTNAME-RESOLUTION.md",
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
@@ -1502,6 +1596,9 @@
                 "BATCH-RENAME-SED.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
+            "getent": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
             "git": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
@@ -1545,6 +1642,9 @@
             ],
             "nohup": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
+            "nslookup": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
             ],
             "pvcreate": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
@@ -1628,6 +1728,9 @@
             "2019-10-07 00:00:00": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
+            "2021-01-22 00:00:00": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
             "2024-05-14 12:00:00": [
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ],
@@ -1665,6 +1768,7 @@
                 "X11-SSH-FORWARDING.md"
             ],
             "Reference": [
+                "DNSIPHOSTNAME-RESOLUTION.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
@@ -1692,6 +1796,12 @@
             ]
         },
         "Filename": {
+            "/etc/hosts": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
+            "/etc/nsswitch.conf": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
             "fstab": [
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
@@ -1710,6 +1820,7 @@
                 "SLES11-ZLINUX-DASD-PROVISIONING.md"
             ],
             "/etc": [
+                "DNSIPHOSTNAME-RESOLUTION.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
@@ -1773,6 +1884,9 @@
                 "SLES11-ZLINUX-DASD-PROVISIONING.md",
                 "X11-SSH-FORWARDING.md"
             ],
+            "Solaris": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
             "Unix": [
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
@@ -1783,6 +1897,7 @@
         },
         "Priority": {
             "Normal": [
+                "DNSIPHOSTNAME-RESOLUTION.md",
                 "SAP-BC-ORA-SQL-QUERIES.md",
                 "X11-SSH-FORWARDING.md"
             ],
@@ -1932,6 +2047,7 @@
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
             "Unix Administration": [
+                "DNSIPHOSTNAME-RESOLUTION.md",
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
                 "X11-SSH-FORWARDING.md"
@@ -2077,6 +2193,9 @@
             ]
         },
         "Tag": {
+            "DNS": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
             "agent": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
             ],
@@ -2143,6 +2262,9 @@
             "growth": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
+            "hosts": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
             "httpd": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
@@ -2177,7 +2299,11 @@
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "network": [
+                "DNSIPHOSTNAME-RESOLUTION.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+            ],
+            "nsswitch": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
             ],
             "pkcs12": [
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
@@ -2196,6 +2322,9 @@
             ],
             "repository": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+            ],
+            "resolve": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
             ],
             "response time": [
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
@@ -2273,6 +2402,9 @@
             "Batch rename with sed": [
                 "BATCH-RENAME-SED.md"
             ],
+            "Check IP or hostname resolution": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
+            ],
             "Generate Keystore and Certificate for SAP BO BI4.0": [
                 "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
             ],
@@ -2339,6 +2471,7 @@
                 "SAP-BC-ORA-SQL-QUERIES.md"
             ],
             "Migration": [
+                "DNSIPHOSTNAME-RESOLUTION.md",
                 "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "Monitoring": [
@@ -2346,6 +2479,9 @@
                 "LINUX-SYSTEMD-JOURNALCTL.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-ORA-SQL-QUERIES.md"
+            ],
+            "Network": [
+                "DNSIPHOSTNAME-RESOLUTION.md"
             ],
             "Operation": [
                 "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
