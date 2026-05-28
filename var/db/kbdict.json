@@ -1297,7 +1297,7 @@
                 "SSH"
             ],
             "Scope": [
-                "SAP Administration",
+                "SAP Basis",
                 "Unix Administration"
             ],
             "Server": [
@@ -1372,7 +1372,7 @@
                 ],
                 "Scope": [
                     "Unix Administration",
-                    "SAP Administration"
+                    "SAP Basis"
                 ],
                 "Server": [
                     "SAP-PRD",
@@ -1399,7 +1399,7 @@
                     "Troubleshooting"
                 ]
             },
-            "metadata_hash": "cba921211a387cdfbb184dfc2826ada2f02023c8bc87eac3a5171361456fdf8992f3f2d8f672f7cfd3dc3908ed5f786dc954405d3cd0e81418b4b07851a4c29f"
+            "metadata_hash": "2be624686132fec946d53ed73c06e2606fa1531941f2d31fdd0d3420405bb026f7374adf71def29f481943bf4948f60d859668d4920027972ab4db980bed51fb"
         },
         "SLES11-ZLINUX-DASD-PROVISIONING.md": {
             "Category": [
@@ -2331,14 +2331,12 @@
                 "BATCH-RENAME-SED.md",
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
-            "SAP Administration": [
-                "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
-            ],
             "SAP Basis": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
                 "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
                 "SAP-BC-OS-LINUX.md",
-                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+                "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
+                "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
             ],
             "Unix Administration": [
                 "COPY-FILES-REMOTE-SERVER-SSH.md",

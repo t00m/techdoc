@@ -9,7 +9,7 @@ OS: Linux
 Priority: Very high
 Product: OpenSSH, RHEL, SAP Netweaver
 Protocol: SFTP, SSH
-Scope: Unix Administration, SAP Administration
+Scope: Unix Administration, SAP Basis
 Server: SAP-PRD, SAP-QUA, SAP-DEV, VENDOR-SFTP-PRD, VENDOR-SFTP-UAT
 Tag: ed25519, key pair, migration
 Team: SAP Basis
