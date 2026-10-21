@@ -1,0 +1,104 @@
+<h2 id="introduction">Introduction</h2>
+<p>The systemd journal is systemd's own logging system. It is equivalent to syslog in the init system. It collects and stores kernel logging data, system log messages, standard output, and errors for various systemd services.</p>
+<p>The thing with logging is that over time, it starts to grow big. If you check the disk space in Linux, you'll see that sometimes it takes several GB of space.</p>
+<h2 id="check-logs">Check Logs</h2>
+<h3 id="by-unit">By unit</h3>
+<p>To follow journal entries for a specific unit in real time:</p>
+<pre><code class="language-bash">sudo journalctl -f -u cups
+</code></pre>
+<p>where <code>-f</code> shows only recent journal entries and <code>-u</code> allows specifying the unit name (e.g. <code>cups</code>).</p>
+<h3 id="by-time">By time</h3>
+<p>To query entries within a specific time window:</p>
+<pre><code class="language-bash">sudo journalctl --since &quot;2024-10-11 00:30:00&quot; --until &quot;2024-10-11 03:00:00&quot;
+</code></pre>
+<p>where <code>--since</code> and <code>--until</code> act as lower and upper time boundaries respectively.</p>
+<h2 id="clean-procedure">Clean Procedure</h2>
+<h3 id="check-disk-space">Check disk space</h3>
+<p>First, check the space taken by journal logs with the <code>du</code> command:</p>
+<pre><code class="language-bash">du -sh /var/log/journal/
+</code></pre>
+<p>You can also use <code>journalctl</code> directly for the same purpose:</p>
+<pre><code class="language-bash">journalctl --disk-usage
+</code></pre>
+<h3 id="rotate">Rotate</h3>
+<p>The first recommended step is to rotate journal files. This marks currently active journal logs as archives and creates fresh log files. It is optional but considered good practice.</p>
+<pre><code class="language-bash">sudo journalctl --rotate
+</code></pre>
+<h3 id="clear-journal-logs-older-than-n-days">Clear journal logs older than N days</h3>
+<p>Keep in mind that logs are important for auditing purposes, so avoid deleting all of them at once. To remove all entries older than two days:</p>
+<pre><code class="language-bash">sudo journalctl --vacuum-time=2d
+</code></pre>
+<h3 id="restrict-logs-to-a-certain-size">Restrict logs to a certain size</h3>
+<p>Another approach is to restrict the total log size. This deletes journal log files until the disk space occupied falls below the specified threshold.</p>
+<pre><code class="language-bash">sudo journalctl --vacuum-size=100M
+</code></pre>
+<h3 id="restrict-number-of-log-files">Restrict number of log files</h3>
+<p>The third method limits the number of archived log files. As logs grow older they are archived into separate files. To keep only five archive files:</p>
+<pre><code class="language-bash">journalctl --vacuum-files=5
+</code></pre>
+<h3 id="automatically-clearing-old-log-files">Automatically clearing old log files</h3>
+<p>The manual vacuum operations above clean the logs at the time of execution. In a month, logs will accumulate again. Rather than relying on manual intervention, systemd can be configured to handle old log files automatically.</p>
+<p>The configuration file is located at <code>/etc/systemd/journald.conf</code>. Lines that are commented out indicate the compiled-in defaults (they are in effect even when commented).</p>
+<p>The most relevant settings for automatic housekeeping are:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SystemMaxUse</code></td>
+<td>Maximum disk space that journal logs may occupy</td>
+</tr>
+<tr>
+<td><code>SystemMaxFileSize</code></td>
+<td>Maximum size of an individual journal log file</td>
+</tr>
+<tr>
+<td><code>SystemMaxFiles</code></td>
+<td>Maximum number of journal log files to keep</td>
+</tr>
+</tbody>
+</table>
+<p>Make a backup of the configuration file before editing:</p>
+<pre><code class="language-bash">cp /etc/systemd/journald.conf /etc/systemd/journald.conf.back
+</code></pre>
+<p>Uncomment (remove the leading <code>#</code>) the setting you want to activate. The example below restricts the maximum journal disk space to 250 MB:</p>
+<pre><code class="language-ini">#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+#
+# Entries in this file show the compile time defaults.
+# You can change settings by editing this file.
+# Defaults can be restored by simply deleting this file.
+#
+# See journald.conf(5) for details.
+
+[Journal]
+#Storage=auto
+#Compress=yes
+#Seal=yes
+#SplitMode=uid
+#SyncIntervalSec=5m
+#RateLimitIntervalSec=30s
+#RateLimitBurst=1000
+SystemMaxUse=250M
+#SystemKeepFree=
+#SystemMaxFileSize=
+#SystemMaxFiles=100
+</code></pre>
+<p>After editing the configuration, restart the journal daemon to apply the changes:</p>
+<pre><code class="language-bash">sudo systemctl restart systemd-journald
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> <code>journald.conf</code> allows further tuning beyond housekeeping, including setting the minimum log level (e.g. <code>info</code>, <code>debug</code>, <code>err</code>). Refer to <code>man journald.conf</code> for the full parameter reference.</p>
+</blockquote>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://linuxhandbook.com/clear-systemd-journal-logs/">Linux Handbook — Clear Systemd Journal Logs</a></li>
+</ul>

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>t00m's tech notes - Linux for Basis Admins</title>
+    <title>KB4IT - Linux for Basis Admins</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="KB4IT 0.7.7+build.4">
-    <meta name="description" content="KB4IT document">
-    <meta name="author" content="KB4IT by t00mlabs.net">
+    <meta name="generator" content="KB4IT 0.9.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
@@ -39,9 +37,18 @@
             });
         });
     </script>
+<!-- kb4it:meta -->
+<meta name="description" content="Useful commands for Basis Administrators working with Linux.">
+<meta name="author" content="Tomás Vírseda">
+<meta property="og:title" content="Linux for Basis Admins">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KB4IT">
+<meta property="og:description" content="Useful commands for Basis Administrators working with Linux.">
+<meta name="twitter:card" content="summary">
+<!-- /kb4it:meta -->
 </head>
 <body>
-<!-- Template version 0.7.7+build.4 -->
+<!-- Template version 0.9.0 -->
 <div class="uk-background-muted uk-height-viewport">
 <div id="container-1" class="uk-container uk-container-center noprint">
     <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
@@ -50,7 +57,7 @@
                 <ul class="uk-navbar-nav noprint">
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
-                            <img src="resources/themes/techdoc/images/logo.svg" alt="" width="24px" height="24px">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="KB4IT" width="24" height="24">
                         </a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -199,6 +206,10 @@
 <a class="kb-meta-val" href="Command_dd.html">dd</a>
 <a class="kb-meta-val" href="Command_xargs.html">xargs</a>
 <a class="kb-meta-val" href="Command_ls.html">ls</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2019-10-08_000000.html">2019-10-08 00:00:00</a>
 
 </li>
 <li class="kb-metadata-item">
@@ -376,7 +387,7 @@ openssl s_client -showcerts -connect api.company.example:443
                             <div class="uk-card uk-card-small">
                                 <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">Linux for Basis Admins</span></a>
                                 <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
-                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <div class="uk-navbar-dropdown-nav">
 <ul class="uk-nav uk-nav-default">
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#introduction">Introduction</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#send-email">Send email</a></li>
@@ -387,7 +398,7 @@ openssl s_client -showcerts -connect api.company.example:443
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#generate-html-report-after-upgrade">Generate HTML report after upgrade</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-or-download-certificates">Check or download certificates</a></li>
 </ul>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -397,6 +408,17 @@ openssl s_client -showcerts -connect api.company.example:443
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav noprint">
+                    <li class="uk-flex uk-flex-middle uk-padding-small uk-padding-remove-vertical">
+                        <form class="kb4it-search" action="search.html" method="get" role="search">
+    <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
+    <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
+</form>
+<link rel="stylesheet" href="resources/common/css/kb4it-search.css">
+<script defer src="search-index.js"></script>
+<script defer src="resources/common/js/kb4it-search.js"></script>
+<script defer src="resources/common/js/kb4it-search-ui.js"></script>
+
+                    </li>
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
                     </li>
@@ -427,6 +449,7 @@ openssl s_client -showcerts -connect api.company.example:443
         <span class="uk-text-lead">Linux for Basis Admins</span>
     </div>
 <!-- Template HTML_BODY_DOC.tpl :: START -->
+<main class="kb-main">
 
 <!-- Print-only document header (hidden on screen) -->
 <div class="kb-print-header">
@@ -460,14 +483,14 @@ openssl s_client -showcerts -connect api.company.example:443
 <div hidden>
 <div id="toctitle">Contents</div>
 <ul class="sectlevel1">
-<li><a class="" target="" href="#introduction">Introduction</a></li>
-<li><a class="" target="" href="#send-email">Send email</a></li>
-<li><a class="" target="" href="#find-files">Find files</a></li>
-<li><a class="" target="" href="#check-ports">Check ports</a></li>
-<li><a class="" target="" href="#create-a-large-file">Create a large file</a></li>
-<li><a class="" target="" href="#sync-with-remote-directories-using-an-ssh-key">Sync with remote directories using an SSH key</a></li>
-<li><a class="" target="" href="#generate-html-report-after-upgrade">Generate HTML report after upgrade</a></li>
-<li><a class="" target="" href="#check-or-download-certificates">Check or download certificates</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#send-email">Send email</a></li>
+<li><a href="#find-files">Find files</a></li>
+<li><a href="#check-ports">Check ports</a></li>
+<li><a href="#create-a-large-file">Create a large file</a></li>
+<li><a href="#sync-with-remote-directories-using-an-ssh-key">Sync with remote directories using an SSH key</a></li>
+<li><a href="#generate-html-report-after-upgrade">Generate HTML report after upgrade</a></li>
+<li><a href="#check-or-download-certificates">Check or download certificates</a></li>
 </ul>
 </div>
 
@@ -578,6 +601,10 @@ xsltproc SAPupPhaseList.xsl phaselist.xml &gt; phaselist.html
 
 </li>
 <li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2019-10-08_000000.html">2019-10-08 00:00:00</a>
+
+</li>
+<li class="kb-metadata-item">
     <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_Reference.html">Reference</a>
 
 </li>
@@ -620,11 +647,12 @@ xsltproc SAPupPhaseList.xsl phaselist.xml &gt; phaselist.html
     </div>
 </div>
 
+</main>
 <!-- Template HTML_BODY_DOC.tpl :: END -->
 <!-- FOOTER :: START -->
 <div class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Thursday, May 28, 2026 at 13:11</span>
+    <span class="kb-footer-meta">Last updated Wednesday, October 21, 2026 at 19:49</span>
 </div>
 <!-- FOOTER :: END -->
 </div>

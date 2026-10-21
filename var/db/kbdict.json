@@ -1,4 +1,379 @@
 {
+    "core_signature": "cd17463eab6ab11898fb0f05e5e1ddfc17a4b4459cb2c358fe9a4ce2dae80315548eef21cd110f8561f2a96474a0ab8999e4df7300571e239d4c4096d0d29753",
+    "deployed": [
+        "Author.html",
+        "Author_Tom\u00e1s_V\u00edrseda.html",
+        "BATCH-RENAME-SED.html",
+        "Bookmark.html",
+        "Bookmark_True.html",
+        "COPY-FILES-REMOTE-SERVER-SSH.html",
+        "Category.html",
+        "Category_Note.html",
+        "Category_Procedure.html",
+        "Category_Report.html",
+        "Command.html",
+        "Command_apachectl.html",
+        "Command_cat.html",
+        "Command_chown.html",
+        "Command_configure.html",
+        "Command_cp.html",
+        "Command_crontab.html",
+        "Command_curl.html",
+        "Command_dasd_configure.html",
+        "Command_dasdfmt.html",
+        "Command_date.html",
+        "Command_dd.html",
+        "Command_dnf.html",
+        "Command_du.html",
+        "Command_echo.html",
+        "Command_eval.html",
+        "Command_fdasd.html",
+        "Command_find.html",
+        "Command_getent.html",
+        "Command_git.html",
+        "Command_grep.html",
+        "Command_java.html",
+        "Command_journalctl.html",
+        "Command_kb4it.html",
+        "Command_ls.html",
+        "Command_lsdasd.html",
+        "Command_lvcreate.html",
+        "Command_lvs.html",
+        "Command_mailx.html",
+        "Command_make.html",
+        "Command_mkdir.html",
+        "Command_mkreiserfs.html",
+        "Command_nc.html",
+        "Command_nice.html",
+        "Command_nohup.html",
+        "Command_nslookup.html",
+        "Command_openssl.html",
+        "Command_pvcreate.html",
+        "Command_python3.html",
+        "Command_rpm.html",
+        "Command_rsync.html",
+        "Command_scp.html",
+        "Command_sed.html",
+        "Command_sftp.html",
+        "Command_sqlplus.html",
+        "Command_ssh-add.html",
+        "Command_ssh-agent.html",
+        "Command_ssh-keygen.html",
+        "Command_ssh.html",
+        "Command_sshpass.html",
+        "Command_sudo.html",
+        "Command_systemctl.html",
+        "Command_vgcreate.html",
+        "Command_vgextend.html",
+        "Command_vgs.html",
+        "Command_vi.html",
+        "Command_wget.html",
+        "Command_xargs.html",
+        "Command_xauth.html",
+        "Command_xsltproc.html",
+        "Command_xterm.html",
+        "Command_yum.html",
+        "DNSIPHOSTNAME-RESOLUTION.html",
+        "Database.html",
+        "Database_Oracle.html",
+        "DocType.html",
+        "DocType_Explanation.html",
+        "DocType_How-to_guide.html",
+        "DocType_Reference.html",
+        "DocType_Tutorial.html",
+        "EnvVar.html",
+        "EnvVar_DISPLAY.html",
+        "Environment.html",
+        "Environment_Development.html",
+        "Environment_Production.html",
+        "Environment_Quality.html",
+        "Filename.html",
+        "Filename_etchosts.html",
+        "Filename_etcnsswitch.conf.html",
+        "Filename_fstab.html",
+        "Filename_journald.conf.back.html",
+        "Filename_journald.conf.html",
+        "Filename_sshd_config.html",
+        "Filesystem.html",
+        "Filesystem_dev.html",
+        "Filesystem_etc.html",
+        "Filesystem_etcfstab.html",
+        "Filesystem_etcssh.html",
+        "Filesystem_etcsystemd.html",
+        "Filesystem_home.html",
+        "Filesystem_intranet27.html",
+        "Filesystem_oracle.html",
+        "Filesystem_proc.html",
+        "Filesystem_ssh.html",
+        "Filesystem_tmp.html",
+        "Filesystem_usrsap.html",
+        "Filesystem_usrsapBO2.html",
+        "Filesystem_var.html",
+        "Filesystem_varlog.html",
+        "Filesystem_varlogjournal.html",
+        "HELLO-WORLD.html",
+        "KB4IT-WEBSITE-AUTOMATED-UPDATE.html",
+        "LINUX-SYSTEMD-JOURNALCTL.html",
+        "OS.html",
+        "OS_Linux.html",
+        "OS_Solaris.html",
+        "OS_Unix.html",
+        "OS_Windows.html",
+        "Priority.html",
+        "Priority_Normal.html",
+        "Priority_Very_high.html",
+        "Product.html",
+        "Product_AIX.html",
+        "Product_Apache.html",
+        "Product_Crontab.html",
+        "Product_DMS.html",
+        "Product_Domino.html",
+        "Product_GitLab.html",
+        "Product_KB4IT.html",
+        "Product_Markdown.html",
+        "Product_MobaXterm.html",
+        "Product_OpenSSH.html",
+        "Product_OpenSSL.html",
+        "Product_Putty.html",
+        "Product_RHEL.html",
+        "Product_ReiserFS.html",
+        "Product_SAP_BusinessObjects_BI.html",
+        "Product_SAP_Content_Server.html",
+        "Product_SAP_GUI.html",
+        "Product_SAP_JVM.html",
+        "Product_SAP_Netweaver.html",
+        "Product_SFTP.html",
+        "Product_SQLPlus.html",
+        "Product_SSH.html",
+        "Product_SUM.html",
+        "Product_SUSE_Linux_Enterprise_Server_11.html",
+        "Product_Solaris.html",
+        "Product_Ubuntu.html",
+        "Product_Xming.html",
+        "Product_s390x.html",
+        "Protocol.html",
+        "Protocol_CPIC.html",
+        "Protocol_FTP.html",
+        "Protocol_HTTP.html",
+        "Protocol_HTTPS.html",
+        "Protocol_LCOM.html",
+        "Protocol_NNTP.html",
+        "Protocol_RFC.html",
+        "Protocol_SFTP.html",
+        "Protocol_SMTP.html",
+        "Protocol_SSH.html",
+        "Protocol_SSL.html",
+        "Protocol_X11.html",
+        "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.html",
+        "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.html",
+        "SAP-BC-ORA-SQL-QUERIES.html",
+        "SAP-BC-OS-LINUX.html",
+        "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.html",
+        "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.html",
+        "SLES11-ZLINUX-DASD-PROVISIONING.html",
+        "Scope.html",
+        "Scope_Database_Administration.html",
+        "Scope_Infrastructure.html",
+        "Scope_Knowledge_Management.html",
+        "Scope_Linux_Administration.html",
+        "Scope_SAP_Basis.html",
+        "Scope_Unix_Administration.html",
+        "Server.html",
+        "Server_SAP-DEV.html",
+        "Server_SAP-PRD.html",
+        "Server_SAP-QUA.html",
+        "Server_VENDOR-SFTP-PRD.html",
+        "Server_VENDOR-SFTP-UAT.html",
+        "Server_lxzlin01.html",
+        "Server_lxzlin02.html",
+        "Service.html",
+        "Service_sshd.html",
+        "Status.html",
+        "Status_Draft.html",
+        "Status_Released.html",
+        "Subsystem.html",
+        "Subsystem_LVM.html",
+        "Subsystem_Systemd.html",
+        "Table.html",
+        "Table_ALL_TABLES.html",
+        "Table_DATABASE_PROPERTIES.html",
+        "Table_DBA_DATA_FILES.html",
+        "Table_DBA_FREE_SPACE.html",
+        "Table_DBA_HIST_SEG_STAT.html",
+        "Table_DBA_HIST_SNAPSHOT.html",
+        "Table_DBA_INDEXES.html",
+        "Table_DBA_OBJECTS.html",
+        "Table_DBA_REGISTRY.html",
+        "Table_DBA_SEGMENTS.html",
+        "Table_DBA_TABLES.html",
+        "Table_DBA_TABLESPACES.html",
+        "Table_DBA_TEMP_FILES.html",
+        "Table_DBA_TEMP_FREE_SPACE.html",
+        "Table_DBA_USERS.html",
+        "Table_RSSTATMANREQMAP.html",
+        "Table_SYS.V_TEMP_EXTENT_POOL.html",
+        "Table_SYS.V_TEMP_SPACE_HEADER.html",
+        "Table_T000.html",
+        "Table_USER_SEGMENTS.html",
+        "Table_USR02.html",
+        "Table_VDATABASE.html",
+        "Table_VDATAFILE.html",
+        "Table_VINSTANCE.html",
+        "Table_VLOG.html",
+        "Table_VLOGFILE.html",
+        "Table_VPARAMETER.html",
+        "Table_VSESSION_CONNECT_INFO.html",
+        "Table_VVERSION.html",
+        "Tag.html",
+        "Tag_DNS.html",
+        "Tag_agent.html",
+        "Tag_apache.html",
+        "Tag_autoextend.html",
+        "Tag_automation.html",
+        "Tag_basis.html",
+        "Tag_batch.html",
+        "Tag_bottleneck.html",
+        "Tag_buffer.html",
+        "Tag_certificate.html",
+        "Tag_clear.html",
+        "Tag_client.html",
+        "Tag_commands.html",
+        "Tag_compilation.html",
+        "Tag_copy.html",
+        "Tag_daemon.html",
+        "Tag_dasd.html",
+        "Tag_datafile.html",
+        "Tag_discovery.html",
+        "Tag_display.html",
+        "Tag_ed25519.html",
+        "Tag_forwarding.html",
+        "Tag_github-pages.html",
+        "Tag_graphical.html",
+        "Tag_group.html",
+        "Tag_growth.html",
+        "Tag_hosts.html",
+        "Tag_httpd.html",
+        "Tag_in-place.html",
+        "Tag_instance.html",
+        "Tag_journal.html",
+        "Tag_key_pair.html",
+        "Tag_keystore.html",
+        "Tag_locking.html",
+        "Tag_log.html",
+        "Tag_memory.html",
+        "Tag_message.html",
+        "Tag_migration.html",
+        "Tag_network.html",
+        "Tag_nsswitch.html",
+        "Tag_pkcs12.html",
+        "Tag_query.html",
+        "Tag_redolog.html",
+        "Tag_remote.html",
+        "Tag_rename.html",
+        "Tag_repository.html",
+        "Tag_resolve.html",
+        "Tag_response_time.html",
+        "Tag_scripting.html",
+        "Tag_secure.html",
+        "Tag_segment.html",
+        "Tag_size.html",
+        "Tag_slow.html",
+        "Tag_table.html",
+        "Tag_tablespace.html",
+        "Tag_text.html",
+        "Tag_tracking.html",
+        "Tag_transfer.html",
+        "Tag_undo.html",
+        "Tag_unit.html",
+        "Tag_useful.html",
+        "Tag_vacuum.html",
+        "Tag_wait_time.html",
+        "Tag_webserver.html",
+        "Tag_work_process.html",
+        "Tag_workload.html",
+        "Team.html",
+        "Team_SAP.html",
+        "Team_SAP_Basis.html",
+        "Team_Unix.html",
+        "Topic.html",
+        "Topic_Administration.html",
+        "Topic_Analysis.html",
+        "Topic_Archiving.html",
+        "Topic_Configuration.html",
+        "Topic_Connectivity.html",
+        "Topic_Documentation.html",
+        "Topic_Housekeeping.html",
+        "Topic_Installation.html",
+        "Topic_Knowledge_Management.html",
+        "Topic_Maintenance.html",
+        "Topic_Migration.html",
+        "Topic_Monitoring.html",
+        "Topic_Network.html",
+        "Topic_Operation.html",
+        "Topic_Performance.html",
+        "Topic_Security.html",
+        "Topic_Troubleshooting.html",
+        "Topic_User.html",
+        "Transaction.html",
+        "Transaction_DB02.html",
+        "Transaction_DB04.html",
+        "Transaction_RZ04.html",
+        "Transaction_RZ10.html",
+        "Transaction_RZ11.html",
+        "Transaction_SM12.html",
+        "Transaction_SM13.html",
+        "Transaction_SM50.html",
+        "Transaction_ST02.html",
+        "Transaction_ST05.html",
+        "Transaction_ST06.html",
+        "User.html",
+        "User_oracle.html",
+        "User_sapcs.html",
+        "Website.html",
+        "Website_linuxhandbook.com.html",
+        "X11-SSH-FORWARDING.html",
+        "about_app.html",
+        "about_kb4it.html",
+        "add.html",
+        "all.html",
+        "bookmarks.html",
+        "events.html",
+        "events_2011.html",
+        "events_201107.html",
+        "events_20110714.html",
+        "events_2014.html",
+        "events_201405.html",
+        "events_20140522.html",
+        "events_2019.html",
+        "events_201910.html",
+        "events_20191007.html",
+        "events_20191008.html",
+        "events_2021.html",
+        "events_202101.html",
+        "events_20210122.html",
+        "events_202102.html",
+        "events_20210208.html",
+        "events_2024.html",
+        "events_202405.html",
+        "events_20240514.html",
+        "events_2025.html",
+        "events_202512.html",
+        "events_20251215.html",
+        "events_2026.html",
+        "events_202604.html",
+        "events_20260416.html",
+        "events_20260428.html",
+        "events_202605.html",
+        "events_20260506.html",
+        "events_20260520.html",
+        "events_20260522.html",
+        "events_20260523.html",
+        "help.html",
+        "index.html",
+        "properties.html",
+        "search.html",
+        "stats.html"
+    ],
     "document": {
         "BATCH-RENAME-SED.md": {
             "Category": [
@@ -38,6 +413,7 @@
                 "Troubleshooting"
             ],
             "body_hash": "f30df30d09ef25f91816a34638b5d0e8e88cc47a731314d44d3d852e90b00e4f7cc40e4e7e528f05f64439e5fd6b40c91794d7c32d0cf8f0c6825fc0002d5e81",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/BATCH-RENAME-SED.md",
             "keys": {
                 "Category": [
@@ -128,6 +504,7 @@
                 "Security"
             ],
             "body_hash": "c3c65e2f5de52def14852b258654c2f1cbc536c89709e44e3128fd9d7558a2bbce1daff7e2744898c9eb514cc3ce0a7a188891a56f82cd0e0129ab83a56ecd74",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/COPY-FILES-REMOTE-SERVER-SSH.md",
             "keys": {
                 "Category": [
@@ -225,6 +602,7 @@
                 "Network"
             ],
             "body_hash": "b7af2092ebbe87888584359c3166ffc182404c1d0741963617c57dc23fbf009a7c7b97474fcdcb7761601d0b025c9bc6cceba74b797919159d62f10e481352c2",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/DNSIPHOSTNAME-RESOLUTION.md",
             "keys": {
                 "Category": [
@@ -296,6 +674,7 @@
                 "Hello world"
             ],
             "body_hash": "7391b989d7b7b3be236e467f2ff85b9397f1ed11c6989a88e06c07448157086de564a6a6357fd2e8db38bebb1431b8997707189a2d2ac4c30da2aad4788bc267",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/HELLO-WORLD.md",
             "keys": {
                 "Author": [
@@ -383,6 +762,7 @@
                 "Operation"
             ],
             "body_hash": "ab51b3d0cdafa3323802a615868888b472d967abe1d1fee1e4dd80124e2910f07d2e883a5b19766cd56db5c52253482b5aac3c78c6b86510ab1db53fc3f614fc",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
             "keys": {
                 "Author": [
@@ -510,6 +890,7 @@
                 "linuxhandbook.com"
             ],
             "body_hash": "0fba35780249f5945e50ce6592321a092e5097d431e724c0d139a3955581bd6561b16d74275f654f4ea37556f8a5a78a3cf25e59287cb6a07e14aded2f83b97e",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/LINUX-SYSTEMD-JOURNALCTL.md",
             "keys": {
                 "Category": [
@@ -627,6 +1008,7 @@
                 "sapcs"
             ],
             "body_hash": "77fe9837ba570321657a22de289fa2ae1cdc682568173aa12d996b2075c7e5b01edad88451b9baa288f513fb1218719cf95190a313d86f614c0704c066f4b9f1",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
             "keys": {
                 "Author": [
@@ -750,6 +1132,7 @@
                 "ST06"
             ],
             "body_hash": "07252c0f77d444ff3ea8d455633f93d50bcba22d4b65bd46bf124a57e3233b8dcc0c1876c1c925306e4649458ec6c052b17b2f833695ab650764eacc0fc710ce",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
             "keys": {
                 "Author": [
@@ -925,6 +1308,7 @@
                 "oracle"
             ],
             "body_hash": "8d173bab5e05760a127deefc06e22087137a164b058561cd7a499176c42a86d8fd6c4c3e3eea474afa2fd5879402fa3c1f64bac9f971b41e03dc66e57ceb2f13",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-ORA-SQL-QUERIES.md",
             "keys": {
                 "Category": [
@@ -1091,6 +1475,7 @@
                 "Troubleshooting"
             ],
             "body_hash": "9b2e06c02da191ed369cb926f5f44aa6031e8dad1c8fc97b886f50cac0a8123ef7cc50751090f37457963a2c7d6dd06cd31e61194035cb554575d0debe77ee13",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-OS-LINUX.md",
             "keys": {
                 "Author": [
@@ -1201,6 +1586,7 @@
                 "Security"
             ],
             "body_hash": "ba2d530a3e9091b662a4fd5d478e1fe745be197478f3537b52e264a6e494c85cfff7cc436bfcc627fa8402619600f4a60bb3f02fc1695a1e93c2bac2011f93e6",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
             "keys": {
                 "Author": [
@@ -1325,6 +1711,7 @@
                 "Troubleshooting"
             ],
             "body_hash": "dd1c758981a3167eacd554987539f0602aae1e5f92a7eabfae0323c184b099b68eec968f5b62f08a89b88d2652b4e566de26fcec46ce11b60654ee0b9fe0257b",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
             "keys": {
                 "Category": [
@@ -1472,6 +1859,7 @@
                 "Installation"
             ],
             "body_hash": "7fbcdc7fa77c60a3d8f28bd1ff7bb0c469fe3f44e76ac2755461163ff89b116bac9c8d0f530905862458bf2cb045f60867bbf21623970018a2f91feec33a9400",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SLES11-ZLINUX-DASD-PROVISIONING.md",
             "keys": {
                 "Category": [
@@ -1620,7 +2008,8 @@
                 "Configuration",
                 "Connectivity"
             ],
-            "body_hash": "d13f6093c0748efb8a86887f97ed8c99a0576389b5edf1c1def7f68272df7f050c5fec4c4cbfb3233711675ed08c8c3a90244026091d48652423ba0704add536",
+            "body_hash": "d799992cb560399f9fc702e57465dc1e720f923b3cb039a6959d3fa7f0f8920be36a02d92a02c5aa1010275147233c6ebc41a1c96cf012e919990aa27646a487",
+            "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/X11-SSH-FORWARDING.md",
             "keys": {
                 "Category": [
@@ -1699,47 +2088,129 @@
                 ]
             },
             "metadata_hash": "c498cd4e50c2b71a863dac6a6a653fd20b3146566e53c39d26efa44bedc2e8041ff39c87399ed1af9c9ad1cac5699addaa747f9fc25e1f656efcacd1b0785a0b"
-        },
-        "about_app.md": {
-            "SystemPage": [
-                "True"
-            ],
-            "Title": [
-                "About this app"
-            ],
-            "body_hash": "c8fc649fec6d1284b8dcaa7ebcbcfc0d04207d67571a93f201d333bc3615d4efddecf09414e22b0e89a7a7dcdf584153e07b6af56acd5f6f0befab0afc5e8f32",
-            "content": "/home/runner/work/techdoc/techdoc/source/about_app.md",
-            "keys": {
-                "SystemPage": [
-                    "True"
-                ],
-                "Title": [
-                    "About this app"
-                ]
-            },
-            "metadata_hash": "856ce8ddde31adb8cb51239511c88910b79e307bfdadc34e802ddd688c8f2d11d41b9a1635f22618384af5305fcda1ec8c6b961cf658ea12c32629654012a343"
-        },
-        "about_kb4it.md": {
-            "SystemPage": [
-                "True"
-            ],
-            "Title": [
-                "About KB4IT"
-            ],
-            "body_hash": "a85a6bf39e027a552252b3958ea7c37b9cd1c952ebef0eecf7f7424dafe65c6db2bc0d04a7aca9768942e8f3b71fb9a0346b2cc0986c5099b5f6a6237aa70cd3",
-            "content": "/home/runner/work/techdoc/techdoc/source/about_kb4it.md",
-            "keys": {
-                "SystemPage": [
-                    "True"
-                ],
-                "Title": [
-                    "About KB4IT"
-                ]
-            },
-            "metadata_hash": "0c6b45f7155497596425ef89c86e38abe27369dc735f408915f5d79ae0dc8ffc8fd83a83e9b8c0a3343a293e4b541a6fa179ef3c7ed57eb0303b8cfaf476869f"
         }
     },
-    "kb4it_version": "0.7.7+build.4",
+    "events": {
+        "events_2011": [
+            "SLES11-ZLINUX-DASD-PROVISIONING.md"
+        ],
+        "events_201107": [
+            "SLES11-ZLINUX-DASD-PROVISIONING.md"
+        ],
+        "events_20110714": [
+            "SLES11-ZLINUX-DASD-PROVISIONING.md"
+        ],
+        "events_2014": [
+            "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+        ],
+        "events_201405": [
+            "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+        ],
+        "events_20140522": [
+            "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md"
+        ],
+        "events_2019": [
+            "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
+            "SAP-BC-OS-LINUX.md"
+        ],
+        "events_201910": [
+            "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
+            "SAP-BC-OS-LINUX.md"
+        ],
+        "events_20191007": [
+            "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
+        ],
+        "events_20191008": [
+            "SAP-BC-OS-LINUX.md"
+        ],
+        "events_2021": [
+            "COPY-FILES-REMOTE-SERVER-SSH.md",
+            "DNSIPHOSTNAME-RESOLUTION.md"
+        ],
+        "events_202101": [
+            "DNSIPHOSTNAME-RESOLUTION.md"
+        ],
+        "events_20210122": [
+            "DNSIPHOSTNAME-RESOLUTION.md"
+        ],
+        "events_202102": [
+            "COPY-FILES-REMOTE-SERVER-SSH.md"
+        ],
+        "events_20210208": [
+            "COPY-FILES-REMOTE-SERVER-SSH.md"
+        ],
+        "events_2024": [
+            "LINUX-SYSTEMD-JOURNALCTL.md"
+        ],
+        "events_202405": [
+            "LINUX-SYSTEMD-JOURNALCTL.md"
+        ],
+        "events_20240514": [
+            "LINUX-SYSTEMD-JOURNALCTL.md"
+        ],
+        "events_2025": [
+            "X11-SSH-FORWARDING.md"
+        ],
+        "events_202512": [
+            "X11-SSH-FORWARDING.md"
+        ],
+        "events_20251215": [
+            "X11-SSH-FORWARDING.md"
+        ],
+        "events_2026": [
+            "BATCH-RENAME-SED.md",
+            "HELLO-WORLD.md",
+            "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
+            "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
+            "SAP-BC-ORA-SQL-QUERIES.md",
+            "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
+        ],
+        "events_202604": [
+            "BATCH-RENAME-SED.md",
+            "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
+        ],
+        "events_20260416": [
+            "BATCH-RENAME-SED.md"
+        ],
+        "events_20260428": [
+            "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md"
+        ],
+        "events_202605": [
+            "HELLO-WORLD.md",
+            "KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
+            "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
+            "SAP-BC-ORA-SQL-QUERIES.md"
+        ],
+        "events_20260506": [
+            "SAP-BC-ORA-SQL-QUERIES.md"
+        ],
+        "events_20260520": [
+            "HELLO-WORLD.md"
+        ],
+        "events_20260522": [
+            "KB4IT-WEBSITE-AUTOMATED-UPDATE.md"
+        ],
+        "events_20260523": [
+            "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
+        ]
+    },
+    "kb4it_version": "0.9.0",
+    "links": {
+        "BATCH-RENAME-SED.md": [],
+        "COPY-FILES-REMOTE-SERVER-SSH.md": [],
+        "DNSIPHOSTNAME-RESOLUTION.md": [],
+        "HELLO-WORLD.md": [],
+        "KB4IT-WEBSITE-AUTOMATED-UPDATE.md": [],
+        "LINUX-SYSTEMD-JOURNALCTL.md": [],
+        "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md": [],
+        "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md": [],
+        "SAP-BC-ORA-SQL-QUERIES.md": [],
+        "SAP-BC-OS-LINUX.md": [],
+        "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md": [],
+        "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md": [],
+        "SLES11-ZLINUX-DASD-PROVISIONING.md": [],
+        "X11-SSH-FORWARDING.md": []
+    },
     "metadata": {
         "Author": {
             "Tom\u00e1s V\u00edrseda": [
@@ -2395,12 +2866,6 @@
                 "X11-SSH-FORWARDING.md"
             ]
         },
-        "SystemPage": {
-            "True": [
-                "about_app.md",
-                "about_kb4it.md"
-            ]
-        },
         "Table": {
             "ALL_TABLES": [
                 "SAP-BC-ORA-SQL-QUERIES.md"
@@ -2704,12 +3169,6 @@
             ]
         },
         "Title": {
-            "About KB4IT": [
-                "about_kb4it.md"
-            ],
-            "About this app": [
-                "about_app.md"
-            ],
             "Apache compilation and installation in RedHat": [
                 "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md"
             ],
@@ -2876,5 +3335,6 @@
                 "LINUX-SYSTEMD-JOURNALCTL.md"
             ]
         }
-    }
+    },
+    "site_signature": ""
 }

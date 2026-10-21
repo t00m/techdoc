@@ -1,0 +1,7 @@
+<h2 id="information">Information</h2>
+<p>How to check properly IP/hostname resolution</p>
+<h2 id="procedure">Procedure</h2>
+<ul>
+<li><code>nslookup</code> will perform a DNS request</li>
+<li><code>getent hosts &lt;hostname&gt;</code> will perform a resolution by looking first in <code>/etc/hosts</code>, and if not found, then in DNS (<code>/etc/nsswitch.conf</code>)</li>
+</ul>

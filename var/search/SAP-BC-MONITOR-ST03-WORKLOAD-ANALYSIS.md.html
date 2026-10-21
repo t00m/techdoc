@@ -1,0 +1,345 @@
+<h2 id="overview">Overview</h2>
+<p>Transaction <strong>ST03</strong> (Workload Monitor) provides a breakdown of the time components that make up
+the total response time for ABAP work processes. Understanding each component - and its acceptable
+threshold - is essential for diagnosing performance issues in an SAP system.</p>
+<h2 id="time-components">Time Components</h2>
+<h3 id="wait-time">Wait Time</h3>
+<p><strong>Definition:</strong> Queue time for a Dialog (DIA) work process to become available (visible in SM50).</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threshold</td>
+<td>&lt; 50 ms</td>
+</tr>
+<tr>
+<td>Indicates</td>
+<td>Insufficient work processes, inactive update task, incorrect operation mode, locked tasks, long-running transactions</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>Ensure extended memory is sufficient before adding more work processes.</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>SM50, RZ04, RZ10, RZ11, SM13, SM12</td>
+</tr>
+</tbody>
+</table>
+<h3 id="roll-in-roll-out-time">Roll In / Roll Out Time</h3>
+<p><strong>Definition:</strong> Time to copy the user context (internal tables, parameters, screen lists) to/from
+work process memory.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threshold</td>
+<td>&lt; 20 ms</td>
+</tr>
+<tr>
+<td>Indicates</td>
+<td>Undersized SAP roll buffer or extended memory; CPU bottleneck</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>Tune roll memory and extended memory parameters.</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>RZ10, RZ11, ST02, ST06</td>
+</tr>
+</tbody>
+</table>
+<h3 id="load-time">Load Time</h3>
+<p><strong>Definition:</strong> Time to load and generate programs and screens from SAP buffers.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threshold</td>
+<td>&lt; 50 ms</td>
+</tr>
+<tr>
+<td>Indicates</td>
+<td>Undersized program/CUA/screen buffer, recent transports to production, CPU bottleneck</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>Tune SAP buffers.</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>RZ10, RZ11, ST02, ST06</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-time">Response Time</h3>
+<p><strong>Definition:</strong> Total elapsed time from when a request arrives in the system until processing is
+complete.</p>
+<pre><code>Response Time = Roll In + Wait + Load/Gen + DB Time + Processing + Roll Wait + Enqueue + (other)
+</code></pre>
+<p>This is the top-level KPI. All other time components are sub-components of it.</p>
+<h3 id="processing-time">Processing Time</h3>
+<p><strong>Definition:</strong> CPU-bound time consumed by ABAP processing.</p>
+<pre><code>Processing Time = Response Time - Wait Time - Load/Gen Time - DB Time - Roll In Time - Enqueue Time - DB Procedure Time
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threshold</td>
+<td>Processing time ≤ 2× CPU time</td>
+</tr>
+<tr>
+<td>Indicates</td>
+<td>If Processing &gt;&gt;&gt; 2× CPU time → CPU bottleneck</td>
+</tr>
+</tbody>
+</table>
+<h3 id="db-time">DB Time</h3>
+<p><strong>Definition:</strong> Time spent reading from or writing to the database.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threshold</td>
+<td>&lt; 40% of total response time</td>
+</tr>
+<tr>
+<td>Indicates</td>
+<td>Poorly tuned database, I/O disk problems, slow/expensive SQL statements</td>
+</tr>
+<tr>
+<td>Resolution</td>
+<td>Check OS, storage, and DB layer. For custom (Z) reports with expensive SQL, coordinate with developers to optimize queries.</td>
+</tr>
+<tr>
+<td>Transactions</td>
+<td>ST06, DB02, DB04, ST05</td>
+</tr>
+</tbody>
+</table>
+<h3 id="roll-wait-time">Roll Wait Time</h3>
+<p><strong>Definition:</strong> Time waiting for a reply from RFC connections.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threshold</td>
+<td>&lt; 200 ms</td>
+</tr>
+<tr>
+<td>Indicates</td>
+<td>Slow network or slow remote system</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gui-time">GUI Time</h3>
+<p><strong>Definition:</strong> Time for data transfer from the SAP application server to the SAPGUI workstation,
+including LAN/WAN roundtrips.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threshold</td>
+<td>No fixed threshold; compare against baseline</td>
+</tr>
+<tr>
+<td>Indicates</td>
+<td>Network performance issues (WAN/VPN) or slow client PC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="enqueue-time">Enqueue Time</h3>
+<p><strong>Definition:</strong> Time for a work process to set an enqueue (row lock).</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Threshold</td>
+<td>Should be negligible</td>
+</tr>
+<tr>
+<td>Indicates</td>
+<td>Lock contention or enqueue server issues</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="task-types">Task Types</h2>
+<p>The task type identifies the nature of the work process activity recorded in each statistics record.</p>
+<table>
+<thead>
+<tr>
+<th>Task Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AUTOABAP</code></td>
+<td>Automatically-processed report (e.g. monitoring tools)</td>
+</tr>
+<tr>
+<td><code>B.INPUT</code></td>
+<td>Transaction step in batch input mode, processed by a Dialog work process</td>
+</tr>
+<tr>
+<td><code>BACKGROUND</code></td>
+<td>Transaction step started by a background processing work process</td>
+</tr>
+<tr>
+<td><code>BUFFER SYNC</code></td>
+<td>Periodic local table buffer synchronization (controlled by <code>rdisp/bufreftime</code>)</td>
+</tr>
+<tr>
+<td><code>DIALOG</code></td>
+<td>Standard online transaction step initiated by a user</td>
+</tr>
+<tr>
+<td><code>RFC</code></td>
+<td>Remote Function Call in the ABAP system, processed by a Dialog work process</td>
+</tr>
+<tr>
+<td><code>CPIC</code></td>
+<td>Communication via CPIC interface, processed by a Dialog work process</td>
+</tr>
+<tr>
+<td><code>SPOOL</code></td>
+<td>Transaction step of a spool work process</td>
+</tr>
+<tr>
+<td><code>UPDATE</code></td>
+<td>Transaction step of the SAP update task (V1), started by the dispatcher</td>
+</tr>
+<tr>
+<td><code>UPDATE2</code></td>
+<td>V2 (asynchronous) update</td>
+</tr>
+<tr>
+<td><code>ALE</code></td>
+<td>IDoc processing, handled by a Dialog work process</td>
+</tr>
+<tr>
+<td><code>LCOM</code></td>
+<td>Fast RFC (fRFC/LCOM-RFC) using shared memory pipeline (ABAP ↔ Java in Web AS only)</td>
+</tr>
+<tr>
+<td><code>HTTP</code>, <code>HTTPS</code>, <code>NNTP</code>, <code>SMTP</code>, <code>FTP</code></td>
+<td>ICM requests based on the corresponding Internet protocol</td>
+</tr>
+<tr>
+<td><code>ENQUEUE</code></td>
+<td>Enqueue handler task</td>
+</tr>
+<tr>
+<td><code>DIALOG(-)GUI</code></td>
+<td>Dialog task without GUI involvement</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quick-diagnostic-reference">Quick Diagnostic Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely Component</th>
+<th>First Transactions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High total response time</td>
+<td>Investigate all sub-components</td>
+<td>ST03, SM50</td>
+</tr>
+<tr>
+<td>Users waiting for work process</td>
+<td>High Wait Time</td>
+<td>SM50, RZ04, RZ10</td>
+</tr>
+<tr>
+<td>Memory-related slowness</td>
+<td>High Roll In/Out</td>
+<td>ST02, RZ10, RZ11</td>
+</tr>
+<tr>
+<td>Slow after transport</td>
+<td>High Load Time</td>
+<td>ST02, RZ10</td>
+</tr>
+<tr>
+<td>Database bottleneck</td>
+<td>High DB Time</td>
+<td>ST05, DB02, DB04</td>
+</tr>
+<tr>
+<td>Remote system slowness</td>
+<td>High Roll Wait Time</td>
+<td>SM59, network checks</td>
+</tr>
+<tr>
+<td>GUI lag, WAN issues</td>
+<td>High GUI Time</td>
+<td>Network team</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="references">References</h2>
+<h3 id="sap-help">SAP Help</h3>
+<ul>
+<li><a href="https://help.sap.com/saphelp_nw70/helpdata/en/21/2c8f38c7215428e10000009b38f8cf/content.htm">Workload Overview</a></li>
+<li><a href="https://help.sap.com/saphelp_nw70/helpdata/en/c4/3a6af1505211d189550000e829fbbd/content.htm">Response Times: Rough Guide</a></li>
+</ul>
+<h3 id="sap-notes">SAP Notes</h3>
+<ul>
+<li><strong>SAP Note 8963</strong> - Definition of SAP response time / processing time / CPU time</li>
+<li><strong>SAP Note 376148</strong> - Response times without GUI time</li>
+<li><strong>SAP Note 364625</strong> - Interpretation of response time in 4.6</li>
+</ul>
+<h3 id="external">External</h3>
+<ul>
+<li><a href="http://darrylgriffiths.blogspot.com.es/2014/03/analysing-high-sap-roll-wait-time-nw702.html">Analysing High SAP Roll Wait Time - NW702</a></li>
+</ul>

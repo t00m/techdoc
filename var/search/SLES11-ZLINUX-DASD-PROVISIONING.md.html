@@ -1,0 +1,350 @@
+<h2 id="overview">Overview</h2>
+<p>This procedure documents the full storage provisioning workflow performed on an IBM z/Architecture
+Linux guest (<code>lxzlin02</code>, SUSE Linux Enterprise Server 11 on s390x) to bring a new Lotus Domino
+mail instance (<code>intranet27</code>) into service.</p>
+<p>The workflow covers:</p>
+<ul>
+<li>Correcting SSH client configuration to reach the target host</li>
+<li>Bringing DASD devices online from the hypervisor channel subsystem</li>
+<li>Low-level DASD formatting (<code>dasdfmt</code>) and partition creation (<code>fdasd</code>)</li>
+<li>LVM stack setup: Physical Volumes, Volume Groups, and Logical Volumes</li>
+<li>ReiserFS filesystem creation on each logical volume
+The storage layout mirrors the existing <code>intranet25</code> and <code>intranet26</code> instances:
+one <strong>data</strong> volume, one <strong>translog</strong> volume, and one <strong>mail</strong> volume (spanning three DASDs).</li>
+</ul>
+<blockquote>
+<p><strong>WARNING:</strong> <code>dasdfmt</code> is a destructive operation. All data on the target DASD is erased.
+Confirm device Bus-IDs carefully before proceeding.</p>
+</blockquote>
+<hr />
+<h2 id="background-what-is-dasd">Background - What Is DASD?</h2>
+<p><strong>DASD</strong> (Direct Access Storage Device) is the IBM term for a disk storage unit attached
+to a mainframe or IBM Z system. Unlike conventional block devices (e.g. SCSI or SATA disks)
+that communicate over a PCI or SAS bus, DASDs are connected through IBM's <strong>channel subsystem</strong>
+- a dedicated I/O fabric that offloads data transfer from the CPU entirely.</p>
+<p>Each DASD is identified by a <strong>Bus-ID</strong> in the format <code>&lt;css&gt;.&lt;ssid&gt;.&lt;devno&gt;</code> (e.g. <code>0.0.0317</code>),
+where <code>css</code> is the channel subsystem, <code>ssid</code> is the subchannel set, and <code>devno</code> is the
+four-hex-digit device number allocated by the system administrator.</p>
+<p>The most common DASD type in IBM Z environments is <strong>ECKD</strong> (Extended Count Key Data),
+a track-and-cylinder geometry format that requires a low-level format (<code>dasdfmt</code>) before
+the device can be used. This is fundamentally different from conventional disks, where the
+physical format is done at the factory. ECKD geometry is expressed in cylinders × heads
+(tracks per cylinder), and the block size must be explicitly chosen - <code>4096</code> bytes is
+standard for modern Linux workloads.</p>
+<p>The other type visible in this environment is <strong>FBA</strong> (Fixed Block Architecture), which
+presents a flat sector-addressable surface similar to a conventional disk. FBA devices do
+not require <code>dasdfmt</code>.</p>
+<p>Under Linux on IBM Z (zLinux), the kernel exposes each active DASD as a block device
+under <code>/dev/dasdX</code> (where <code>X</code> is an alphabetic suffix assigned in discovery order).
+A DASD must be explicitly brought <strong>online</strong> via <code>dasd_configure</code> before the kernel
+recognises it - devices allocated to the LPAR but not yet activated appear as <code>offline</code>
+in <code>lsdasd -a</code> output.</p>
+<p>The toolchain used in this procedure maps directly to the DASD lifecycle:</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lsdasd</code></td>
+<td>List all DASDs known to the LPAR and their online/offline state</td>
+</tr>
+<tr>
+<td><code>dasd_configure</code></td>
+<td>Set a DASD online or offline by Bus-ID</td>
+</tr>
+<tr>
+<td><code>dasdfmt</code></td>
+<td>Low-level format: writes track headers and sets block size</td>
+</tr>
+<tr>
+<td><code>fdasd</code></td>
+<td>Partition a DASD by writing a VTOC (Volume Table of Contents)</td>
+</tr>
+</tbody>
+</table>
+<p>Once partitioned, a DASD partition (e.g. <code>/dev/dasdv1</code>) is a standard Linux block device
+and can be used directly with LVM (<code>pvcreate</code>, <code>vgcreate</code>, etc.) like any other disk.</p>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Root access (or <code>sudo</code>) on <code>lxzlin02</code>.</li>
+<li>DASD Bus-IDs to provision have been allocated and verified with the storage/mainframe team.</li>
+<li>Target mount points exist or will be created under <code>/intranet27/</code>.</li>
+<li>The operator workstation (<code>lxzlin01</code>) must have a valid SSH client config entry for <code>lxzlin02</code>.</li>
+</ul>
+<hr />
+<h2 id="procedure">Procedure</h2>
+<h3 id="step-1-fix-ssh-client-configuration">Step 1 - Fix SSH Client Configuration</h3>
+<p>The first connection attempt from <code>lxzlin01</code> to <code>lxzlin02</code> failed with
+<code>Could not resolve hostname lxzlin02: Name or service unknown</code>. The <code>~/.ssh/config</code> file
+was owned by <code>root</code> instead of the connecting user, preventing writes.</p>
+<pre><code class="language-bash"># On lxzlin01 - fix ownership of the SSH config file
+sudo chown jdoe /home/jdoe/.ssh/config
+</code></pre>
+<p>Then add the <code>lxzlin02</code> host alias block to <code>~/.ssh/config</code> (hostname/IP mapping) and
+re-attempt the connection:</p>
+<pre><code class="language-bash">ssh lxzlin02
+</code></pre>
+<p>Accept the RSA host key fingerprint on first connection. Subsequent connections will
+use the cached key from <code>~/.known_hosts</code>.</p>
+<hr />
+<h3 id="step-2-identify-offline-dasd-devices">Step 2 - Identify Offline DASD Devices</h3>
+<p>Log in to <code>lxzlin02</code> as root and list all offline DASD devices assigned to this LPAR:</p>
+<pre><code class="language-bash">lsdasd -a | grep offline
+</code></pre>
+<p>Devices confirmed offline and ready for provisioning in this session:</p>
+<table>
+<thead>
+<tr>
+<th>Bus-ID</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0.0316</td>
+<td><code>softdomvg</code> extension (2.3 GB)</td>
+</tr>
+<tr>
+<td>0.0.0317</td>
+<td><code>intranet27datavg</code> (23 GB)</td>
+</tr>
+<tr>
+<td>0.0.0321</td>
+<td><code>intranet27translogvg</code> (7 GB)</td>
+</tr>
+<tr>
+<td>0.0.0318</td>
+<td><code>intranet27mailvg</code> member 1 (23 GB)</td>
+</tr>
+<tr>
+<td>0.0.0319</td>
+<td><code>intranet27mailvg</code> member 2 (23 GB)</td>
+</tr>
+<tr>
+<td>0.0.0320</td>
+<td><code>intranet27mailvg</code> member 3 (23 GB)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="step-3-bring-dasds-online">Step 3 - Bring DASDs Online</h3>
+<p>Use <code>dasd_configure</code> to set each device online. Repeat for every Bus-ID listed above.</p>
+<pre><code class="language-bash">dasd_configure 0.0.0316 1 0
+dasd_configure 0.0.0317 1 0
+dasd_configure 0.0.0321 1 0
+dasd_configure 0.0.0318 1 0
+dasd_configure 0.0.0319 1 0
+dasd_configure 0.0.0320 1 0
+</code></pre>
+<p>The arguments are: <code>&lt;bus-id&gt; &lt;online=1&gt; &lt;ro=0&gt;</code>. Verify each device appears active:</p>
+<pre><code class="language-bash">lsdasd
+</code></pre>
+<p>Each device will be assigned a kernel block device name (<code>dasdu</code>, <code>dasdv</code>, <code>dasdw</code>, …).</p>
+<hr />
+<h3 id="step-4-low-level-format-each-dasd">Step 4 - Low-Level Format Each DASD</h3>
+<p>DASD devices on z/Architecture require a low-level format before use. Use <code>dasdfmt</code> with
+a 4096-byte block size and compatible disk layout (<code>-p</code>). The command prints geometry
+and prompts for confirmation.</p>
+<pre><code class="language-bash"># Format each device - replace /dev/dasdX with the actual device name
+dasdfmt -b 4096 -f /dev/dasdu -p    # 0.0.0316 - softdomvg extension
+dasdfmt -b 4096 -f /dev/dasdv -p    # 0.0.0317 - intranet27 data
+dasdfmt -b 4096 -f /dev/dasdw -p    # 0.0.0321 - intranet27 translog
+dasdfmt -b 4096 -f /dev/dasdx -p    # 0.0.0318 - intranet27 mail (1/3)
+dasdfmt -b 4096 -f /dev/dasdy -p    # 0.0.0319 - intranet27 mail (2/3)
+dasdfmt -b 4096 -f /dev/dasdz -p    # 0.0.0320 - intranet27 mail (3/3)
+</code></pre>
+<p>Type <code>yes</code> at the confirmation prompt for each device. Formatting a 23 GB ECKD DASD
+(32 759 cylinders) takes several minutes.</p>
+<hr />
+<h3 id="step-5-create-dasd-partitions">Step 5 - Create DASD Partitions</h3>
+<p><code>fdasd -a</code> auto-creates a single partition spanning the entire DASD and writes the
+VTOC (Volume Table of Contents), which is the IBM equivalent of a partition table.</p>
+<pre><code class="language-bash">fdasd -a /dev/dasdu
+fdasd -a /dev/dasdv
+fdasd -a /dev/dasdw
+fdasd -a /dev/dasdx
+fdasd -a /dev/dasdy
+fdasd -a /dev/dasdz
+</code></pre>
+<p>This produces partition devices: <code>/dev/dasdu1</code>, <code>/dev/dasdv1</code>, <code>/dev/dasdw1</code>,
+<code>/dev/dasdx1</code>, <code>/dev/dasdy1</code>, <code>/dev/dasdz1</code>.</p>
+<hr />
+<h3 id="step-6-create-physical-volumes">Step 6 - Create Physical Volumes</h3>
+<p>Initialize each partition as an LVM Physical Volume:</p>
+<pre><code class="language-bash">pvcreate /dev/dasdu1
+pvcreate /dev/dasdv1
+pvcreate /dev/dasdw1
+pvcreate /dev/dasdx1
+pvcreate /dev/dasdy1
+pvcreate /dev/dasdz1
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> Always use the partition device (<code>dasdX1</code>), not the raw device (<code>dasdX</code>).
+LVM on DASD requires the VTOC partition, not the whole disk.</p>
+</blockquote>
+<hr />
+<h3 id="step-7-extend-existing-volume-group-softdomvg">Step 7 - Extend Existing Volume Group (<code>softdomvg</code>)</h3>
+<p>The DASD <code>0.0.0316</code> (<code>/dev/dasdu1</code>, 2.3 GB) is used to add a fifth physical volume to
+the existing <code>softdomvg</code> group, which hosts IBM software mount points:</p>
+<pre><code class="language-bash">vgextend softdomvg /dev/dasdu1
+</code></pre>
+<p>Create the new logical volume within <code>softdomvg</code>:</p>
+<pre><code class="language-bash">lvcreate -L 2342M --name optibm4lv softdomvg
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> LVM rounds the requested size up to the nearest physical extent boundary.
+<code>2342M</code> was rounded to <code>2.29 GB</code>. Use <code>--name</code> (two dashes), not <code>-name</code>.</p>
+</blockquote>
+<hr />
+<h3 id="step-8-create-new-volume-groups-for-intranet27">Step 8 - Create New Volume Groups for <code>intranet27</code></h3>
+<p>Three new Volume Groups are needed, following the same naming convention as <code>intranet25</code>
+and <code>intranet26</code>:</p>
+<pre><code class="language-bash"># Data VG - single 23 GB DASD
+vgcreate intranet27datavg /dev/dasdv1
+
+# Translog VG - single 7 GB DASD
+vgcreate intranet27translogvg /dev/dasdw1
+
+# Mail VG - three 23 GB DASDs (total ~67 GB, matching intranet25mailvg and intranet26mailvg)
+vgcreate intranet27mailvg /dev/dasdx1 /dev/dasdy1 /dev/dasdz1
+</code></pre>
+<p>Verify the new VGs are visible:</p>
+<pre><code class="language-bash">vgs
+</code></pre>
+<hr />
+<h3 id="step-9-create-logical-volumes">Step 9 - Create Logical Volumes</h3>
+<p>Create one LV per VG, sized to match the existing instances:</p>
+<pre><code class="language-bash"># Data LV - 22 GB
+lvcreate -L 22G --name intranet27datalv intranet27datavg
+
+# Translog LV - 7000 MB (VG capacity is ~6.88 GB; requesting 7 GB or 7042 MB exceeds
+# the available extents - use 7000M as a safe value)
+lvcreate -L 7000M --name intranet27transloglv intranet27translogvg
+
+# Mail LV - 66 GB
+lvcreate -L 66G --name intranet27maillv intranet27mailvg
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> The translog VG (<code>intranet27translogvg</code>) has ~6.88 GB total. Requesting <code>7G</code>,
+<code>6.88G</code>, <code>7043M</code>, or <code>7042M</code> all fail because LVM requires a few extents for metadata.
+Use <code>7000M</code> to stay within the available extent count.</p>
+</blockquote>
+<p>Verify all LVs:</p>
+<pre><code class="language-bash">lvs
+</code></pre>
+<hr />
+<h3 id="step-10-create-reiserfs-filesystems">Step 10 - Create ReiserFS Filesystems</h3>
+<p>Format each new logical volume with ReiserFS (the filesystem used by existing instances
+on this server):</p>
+<pre><code class="language-bash">mkreiserfs /dev/softdomvg/optibm4lv
+mkreiserfs /dev/intranet27datavg/intranet27datalv
+mkreiserfs /dev/intranet27translogvg/intranet27transloglv
+mkreiserfs /dev/intranet27mailvg/intranet27maillv
+</code></pre>
+<p>Type <code>y</code> at the confirmation prompt for each. <code>mkreiserfs</code> will display the UUID assigned
+to each volume.</p>
+<hr />
+<h3 id="step-11-update-etcfstab">Step 11 - Update <code>/etc/fstab</code></h3>
+<p>Back up the current <code>fstab</code> before editing:</p>
+<pre><code class="language-bash">cp /etc/fstab /etc/fstab-20110714
+</code></pre>
+<p>Add mount entries for each new logical volume. Use the LVM device mapper path
+(<code>/dev/&lt;vgname&gt;/&lt;lvname&gt;</code>). Example entries following the pattern of existing instances:</p>
+<pre><code>/dev/intranet27datavg/intranet27datalv     /intranet27/data     reiserfs  defaults  0 0
+/dev/intranet27translogvg/intranet27transloglv /intranet27/translog reiserfs defaults 0 0
+/dev/intranet27mailvg/intranet27maillv     /intranet27/mail     reiserfs  defaults  0 0
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> Adjust mount point paths to match the actual Domino directory layout under
+<code>/intranet27/</code> before saving.</p>
+</blockquote>
+<hr />
+<h2 id="verification">Verification</h2>
+<p>After completing all steps, confirm the final storage layout:</p>
+<pre><code class="language-bash"># All target DASDs active
+lsdasd
+
+# All VGs present with correct sizes and 0 free space (fully allocated)
+vgs
+
+# All LVs present with expected sizes
+lvs
+</code></pre>
+<p>Expected final VG state for the new instance:</p>
+<table>
+<thead>
+<tr>
+<th>VG</th>
+<th>PVs</th>
+<th>LVs</th>
+<th>Size</th>
+<th>Free</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>intranet27datavg</code></td>
+<td>1</td>
+<td>1</td>
+<td>22.49 G</td>
+<td>~504 MB</td>
+</tr>
+<tr>
+<td><code>intranet27mailvg</code></td>
+<td>3</td>
+<td>1</td>
+<td>67.48 G</td>
+<td>~1.48 G</td>
+</tr>
+<tr>
+<td><code>intranet27translogvg</code></td>
+<td>1</td>
+<td>1</td>
+<td>6.88 G</td>
+<td>~40 MB</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Could not resolve hostname</code> on SSH</td>
+<td>Host alias missing or <code>~/.ssh/config</code> unreadable</td>
+<td>Fix file ownership (<code>chown user ~/.ssh/config</code>) and add host block</td>
+</tr>
+<tr>
+<td><code>Device 0.0.0XXX is already online</code></td>
+<td><code>dasd_configure</code> called twice</td>
+<td>Harmless; device is online - continue</td>
+</tr>
+<tr>
+<td><code>Insufficient free extents</code> on <code>lvcreate</code></td>
+<td>Requested size exceeds VG capacity after metadata</td>
+<td>Reduce size by a few MB (e.g. use <code>7000M</code> instead of <code>7042M</code>)</td>
+</tr>
+<tr>
+<td><code>Volume group "X" not found</code> on <code>lvcreate</code></td>
+<td>Used <code>-name</code> (one dash) instead of <code>--name</code></td>
+<td>Always use <code>--name</code> for the LV name option</td>
+</tr>
+<tr>
+<td><code>pvcreate</code> on raw device (<code>/dev/dasdX</code>)</td>
+<td>Tab-completion selected the whole disk</td>
+<td>Use the partition (<code>/dev/dasdX1</code>) - the one with the <code>1</code> suffix</td>
+</tr>
+</tbody>
+</table>

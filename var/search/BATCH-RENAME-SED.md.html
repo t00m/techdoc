@@ -1,0 +1,32 @@
+<h2 id="goal">Goal</h2>
+<p>Replace a property name across hundreds of Markdown files in a single operation - for example, renaming <code>Updated:</code> to <code>Date:</code> throughout an entire KB4IT document repository.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>A POSIX-compatible shell (bash, sh, ksh)</li>
+<li>GNU <code>sed</code> (required for the <code>-i</code> in-place flag)</li>
+<li>Read/write access to the target directory</li>
+</ul>
+<h2 id="steps">Steps</h2>
+<h3 id="1-dry-run-identify-affected-files">1. Dry Run - Identify Affected Files</h3>
+<p>Before making any changes, list every file that contains the old property name:</p>
+<pre><code class="language-bash">grep -rl 'Updated:' /path/to/docs --include=&quot;*.md&quot;
+</code></pre>
+<p>Review the output to confirm the scope matches your expectations.</p>
+<h3 id="2-single-directory">2. Single Directory</h3>
+<p>If all files are in one flat directory, run:</p>
+<pre><code class="language-bash">sed -i 's/Updated:/Date:/g' *.md
+</code></pre>
+<p>The <code>-i</code> flag edits each file in-place. The <code>g</code> flag replaces all occurrences per line, though a property name typically appears only once per file.</p>
+<h3 id="3-recursive-multiple-subdirectories">3. Recursive - Multiple Subdirectories</h3>
+<p>For a directory tree, use <code>find</code> with the <code>+</code> terminator to batch files into a single <code>sed</code> invocation (more efficient than one process per file):</p>
+<pre><code class="language-bash">find /path/to/docs -name &quot;*.md&quot; -exec sed -i 's/Updated:/Date:/g' {} +
+</code></pre>
+<h3 id="4-verify-the-result">4. Verify the Result</h3>
+<p>Confirm no occurrences of the old name remain:</p>
+<pre><code class="language-bash">grep -r 'Updated:' /path/to/docs --include=&quot;*.md&quot;
+</code></pre>
+<p>An empty result means the rename is complete.</p>
+<blockquote>
+<p><strong>WARNING:</strong> The <code>-i</code> flag modifies files permanently. Ensure you have a backup or the repository is under version control (e.g. Git) before running the command.</p>
+<p><strong>TIP:</strong> On macOS, GNU <code>sed</code> is not the default. Either install it via Homebrew (<code>brew install gnu-sed</code>) and use <code>gsed</code>, or append a backup suffix: <code>sed -i '' 's/Updated:/Date:/g' *.md</code>.</p>
+</blockquote>

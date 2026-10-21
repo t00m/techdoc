@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>t00m's tech notes - IBM zLinux - DASD Provisioning an...e Setup for a New Domino Instance</title>
+    <title>KB4IT - IBM zLinux - DASD Provisioning an...e Setup for a New Domino Instance</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="KB4IT 0.7.7+build.4">
-    <meta name="description" content="KB4IT document">
-    <meta name="author" content="KB4IT by t00mlabs.net">
+    <meta name="generator" content="KB4IT 0.9.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
@@ -39,9 +37,17 @@
             });
         });
     </script>
+<!-- kb4it:meta -->
+<meta name="description" content="This procedure documents the full storage provisioning workflow performed on an IBM z/Architecture Linux guest ( lxzlin02 , SUSE Linux Enterprise Server 11 on…">
+<meta property="og:title" content="IBM zLinux - DASD Provisioning and LVM Storage Setup for a New Domino Instance">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KB4IT">
+<meta property="og:description" content="This procedure documents the full storage provisioning workflow performed on an IBM z/Architecture Linux guest ( lxzlin02 , SUSE Linux Enterprise Server 11 on…">
+<meta name="twitter:card" content="summary">
+<!-- /kb4it:meta -->
 </head>
 <body>
-<!-- Template version 0.7.7+build.4 -->
+<!-- Template version 0.9.0 -->
 <div class="uk-background-muted uk-height-viewport">
 <div id="container-1" class="uk-container uk-container-center noprint">
     <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
@@ -50,7 +56,7 @@
                 <ul class="uk-navbar-nav noprint">
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
-                            <img src="resources/themes/techdoc/images/logo.svg" alt="" width="24px" height="24px">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="KB4IT" width="24" height="24">
                         </a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -72,10 +78,16 @@
                                                 <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Bookmark.html"><span class="">Bookmark</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Category.html"><span class="">Category</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Command.html"><span class="">Command</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Database.html"><span class="">Database</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="DocType.html"><span class="">DocType</span></a>
@@ -120,6 +132,9 @@
                                                 <a class="uk-link-heading" href="Subsystem.html"><span class="">Subsystem</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Table.html"><span class="">Table</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Tag.html"><span class="">Tag</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
@@ -127,6 +142,12 @@
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Topic.html"><span class="">Topic</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Transaction.html"><span class="">Transaction</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="User.html"><span class="">User</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Website.html"><span class="">Website</span></a>
@@ -182,6 +203,10 @@
 <a class="kb-meta-val" href="Command_lvs.html">lvs</a>
 <a class="kb-meta-val" href="Command_mkreiserfs.html">mkreiserfs</a>
 <a class="kb-meta-val" href="Command_cp.html">cp</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2011-07-14_000000.html">2011-07-14 00:00:00</a>
 
 </li>
 <li class="kb-metadata-item">
@@ -646,7 +671,7 @@ Expected final VG state for the new instance:
                             <div class="uk-card uk-card-small">
                                 <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">IBM zLinux - DASD Provisioning an...e Setup for a New Domino Instance</span></a>
                                 <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
-                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <div class="uk-navbar-dropdown-nav">
 <ul class="uk-nav uk-nav-default">
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#background-what-is-dasd">Background - What Is DASD?</a></li>
@@ -669,7 +694,7 @@ Expected final VG state for the new instance:
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#verification">Verification</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -679,6 +704,17 @@ Expected final VG state for the new instance:
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav noprint">
+                    <li class="uk-flex uk-flex-middle uk-padding-small uk-padding-remove-vertical">
+                        <form class="kb4it-search" action="search.html" method="get" role="search">
+    <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
+    <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
+</form>
+<link rel="stylesheet" href="resources/common/css/kb4it-search.css">
+<script defer src="search-index.js"></script>
+<script defer src="resources/common/js/kb4it-search.js"></script>
+<script defer src="resources/common/js/kb4it-search-ui.js"></script>
+
+                    </li>
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
                     </li>
@@ -709,6 +745,7 @@ Expected final VG state for the new instance:
         <span class="uk-text-lead">IBM zLinux - DASD Provisioning an...e Setup for a New Domino Instance</span>
     </div>
 <!-- Template HTML_BODY_DOC.tpl :: START -->
+<main class="kb-main">
 
 <!-- Print-only document header (hidden on screen) -->
 <div class="kb-print-header">
@@ -754,26 +791,26 @@ Expected final VG state for the new instance:
 <div hidden>
 <div id="toctitle">Contents</div>
 <ul class="sectlevel1">
-<li><a class="" target="" href="#overview">Overview</a></li>
-<li><a class="" target="" href="#background-what-is-dasd">Background - What Is DASD?</a></li>
-<li><a class="" target="" href="#prerequisites">Prerequisites</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#background-what-is-dasd">Background - What Is DASD?</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
 <li>
-<a class="" target="" href="#procedure">Procedure</a><ul>
-<li><a class="" target="" href="#step-1-fix-ssh-client-configuration">Step 1 - Fix SSH Client Configuration</a></li>
-<li><a class="" target="" href="#step-2-identify-offline-dasd-devices">Step 2 - Identify Offline DASD Devices</a></li>
-<li><a class="" target="" href="#step-3-bring-dasds-online">Step 3 - Bring DASDs Online</a></li>
-<li><a class="" target="" href="#step-4-low-level-format-each-dasd">Step 4 - Low-Level Format Each DASD</a></li>
-<li><a class="" target="" href="#step-5-create-dasd-partitions">Step 5 - Create DASD Partitions</a></li>
-<li><a class="" target="" href="#step-6-create-physical-volumes">Step 6 - Create Physical Volumes</a></li>
-<li><a class="" target="" href="#step-7-extend-existing-volume-group-softdomvg">Step 7 - Extend Existing Volume Group (softdomvg)</a></li>
-<li><a class="" target="" href="#step-8-create-new-volume-groups-for-intranet27">Step 8 - Create New Volume Groups for intranet27</a></li>
-<li><a class="" target="" href="#step-9-create-logical-volumes">Step 9 - Create Logical Volumes</a></li>
-<li><a class="" target="" href="#step-10-create-reiserfs-filesystems">Step 10 - Create ReiserFS Filesystems</a></li>
-<li><a class="" target="" href="#step-11-update-etcfstab">Step 11 - Update /etc/fstab</a></li>
+<a href="#procedure">Procedure</a><ul>
+<li><a href="#step-1-fix-ssh-client-configuration">Step 1 - Fix SSH Client Configuration</a></li>
+<li><a href="#step-2-identify-offline-dasd-devices">Step 2 - Identify Offline DASD Devices</a></li>
+<li><a href="#step-3-bring-dasds-online">Step 3 - Bring DASDs Online</a></li>
+<li><a href="#step-4-low-level-format-each-dasd">Step 4 - Low-Level Format Each DASD</a></li>
+<li><a href="#step-5-create-dasd-partitions">Step 5 - Create DASD Partitions</a></li>
+<li><a href="#step-6-create-physical-volumes">Step 6 - Create Physical Volumes</a></li>
+<li><a href="#step-7-extend-existing-volume-group-softdomvg">Step 7 - Extend Existing Volume Group (softdomvg)</a></li>
+<li><a href="#step-8-create-new-volume-groups-for-intranet27">Step 8 - Create New Volume Groups for intranet27</a></li>
+<li><a href="#step-9-create-logical-volumes">Step 9 - Create Logical Volumes</a></li>
+<li><a href="#step-10-create-reiserfs-filesystems">Step 10 - Create ReiserFS Filesystems</a></li>
+<li><a href="#step-11-update-etcfstab">Step 11 - Update /etc/fstab</a></li>
 </ul>
 </li>
-<li><a class="" target="" href="#verification">Verification</a></li>
-<li><a class="" target="" href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#verification">Verification</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </div>
 
@@ -1243,6 +1280,10 @@ lvs
 
 </li>
 <li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2011-07-14_000000.html">2011-07-14 00:00:00</a>
+
+</li>
+<li class="kb-metadata-item">
     <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_How-to_guide.html">How-to guide</a>
 
 </li>
@@ -1300,11 +1341,12 @@ lvs
     </div>
 </div>
 
+</main>
 <!-- Template HTML_BODY_DOC.tpl :: END -->
 <!-- FOOTER :: START -->
 <div class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Thursday, May 21, 2026 at 13:43</span>
+    <span class="kb-footer-meta">Last updated Wednesday, October 21, 2026 at 19:49</span>
 </div>
 <!-- FOOTER :: END -->
 </div>

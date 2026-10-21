@@ -1,0 +1,325 @@
+<h2 id="overview">Overview</h2>
+<p>This document describes how to establish and validate SFTP connectivity from the SAP Payroll
+systems to the vendor SFTP server using SSH key-based authentication. It covers key generation,
+testing procedures, and known outcomes across environments (Development/DEV, Quality/QUA,
+Production/PRD), with emphasis on the transition from password-based authentication to the
+recommended ED25519 key method.</p>
+<blockquote>
+<p><strong>NOTE:</strong> Password-based SFTP authentication via <code>sshpass</code> is <strong>obsolete</strong> and must not be
+used in production. It is documented here only for historical reference and as a baseline
+for initial connectivity tests.</p>
+</blockquote>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>SSH client (<code>OpenSSH 8.0+</code>) installed on the SAP host.</li>
+<li>The SAP OS user for the target environment (<code>devadm</code>, <code>quaadm</code>, or <code>prdadm</code>) must have
+  write access to <code>~/.ssh/</code>.</li>
+<li>The vendor must have registered and activated the public key on their SFTP server before
+  key-based authentication can succeed.</li>
+<li>The vendor SFTP server hostkey must be present in <code>~/.ssh/known_hosts</code>
+  (auto-added on first successful connection, or added manually).</li>
+</ul>
+<hr />
+<h2 id="environments-and-connection-parameters">Environments and Connection Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>SAP System</th>
+<th>SAP Host</th>
+<th>OS User</th>
+<th>SFTP Server</th>
+<th>SFTP Username</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Development</td>
+<td>DEV</td>
+<td>SAP-DEV</td>
+<td>devadm</td>
+<td>VENDOR-SFTP-UAT</td>
+<td>ftpuser-uat@vendor-domain</td>
+</tr>
+<tr>
+<td>Quality</td>
+<td>QUA</td>
+<td>SAP-QUA</td>
+<td>quaadm</td>
+<td>VENDOR-SFTP-UAT</td>
+<td>ftpuser-uat@vendor-domain</td>
+</tr>
+<tr>
+<td>Production</td>
+<td>PRD</td>
+<td>SAP-PRD</td>
+<td>prdadm</td>
+<td>VENDOR-SFTP-PRD</td>
+<td>ftpuser-prd@vendor-domain</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-pairs-reference">Key Pairs Reference</h2>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>Algorithm</th>
+<th>Key file (private)</th>
+<th>Fingerprint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UAT (RSA)</td>
+<td>RSA 4096</td>
+<td><code>~/.ssh/id_acme-ssh_key-uat</code></td>
+<td><code>SHA256:QLVAYE8vilDQKM56FU0Tho8S4C+MaKpAXqthlnM1yCA</code></td>
+</tr>
+<tr>
+<td>PRD (RSA)</td>
+<td>RSA 4096</td>
+<td><code>~/.ssh/id_acme-ssh_key-prd</code></td>
+<td><code>SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0</code></td>
+</tr>
+<tr>
+<td>UAT (ED25519)</td>
+<td>ED25519 256</td>
+<td><code>~/.ssh/ssh_key_uat</code></td>
+<td><code>SHA256:Z6iykBXNvtP84njBNILg1p3LZrxnGOhmwQ6+IYF/kDA</code></td>
+</tr>
+<tr>
+<td>PRD (ED25519)</td>
+<td>ED25519 256</td>
+<td><code>~/.ssh/id_acme-ssh_key-prod</code></td>
+<td><code>SHA256:TYcA2jIghuLWBiClrq1bqStoMAdfeH8UwPWc0DSm1QM</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>NOTE:</strong> Vendor SFTP server host key fingerprint (RSA):
+<code>SHA256:LZUIVXeQXBtUqpcCGNRYzqrL5Jr5TB7gjgFza6Mm9gA</code></p>
+</blockquote>
+<hr />
+<h2 id="procedure">Procedure</h2>
+<h3 id="step-1-generate-a-new-ssh-key-pair-ed25519-recommended">Step 1 - Generate a new SSH key pair (ED25519, recommended)</h3>
+<p>ED25519 is the algorithm recommended by the Unix/infrastructure team. It provides stronger
+security than RSA with a shorter key length, and is supported by OpenSSH 8.0+.</p>
+<pre><code class="language-bash">ssh-keygen -t ed25519 -a 100
+</code></pre>
+<p>Example session (on SAP-DEV as devadm):</p>
+<pre><code>Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/devadm/.ssh/id_ed25519): /home/devadm/.ssh/ssh_key_uat
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/devadm/.ssh/ssh_key_uat.
+Your public key has been saved in /home/devadm/.ssh/ssh_key_uat.pub.
+The key fingerprint is:
+SHA256:Z6iykBXNvtP84njBNILg1p3LZrxnGOhmwQ6+IYF/kDA devadm@SAP-DEV
+</code></pre>
+<p>Verify the generated key:</p>
+<pre><code class="language-bash">ssh-keygen -lf ~/.ssh/ssh_key_uat.pub
+</code></pre>
+<p>Expected output:</p>
+<pre><code>256 SHA256:Z6iykBXNvtP84njBNILg1p3LZrxnGOhmwQ6+IYF/kDA devadm@SAP-DEV (ED25519)
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> Use <code>-a 100</code> (key derivation rounds) to strengthen the key against brute-force
+attacks on the passphrase, if a passphrase is set.</p>
+</blockquote>
+<hr />
+<h3 id="step-2-send-the-public-key-to-the-vendor">Step 2 - Send the public key to the vendor</h3>
+<p>After generation, send the <strong>public key file</strong> (<code>*.pub</code>) to the vendor contact, and request
+it be registered on the SFTP server for the corresponding environment and username.</p>
+<p>Do not proceed to connection testing until the vendor confirms the key has been activated.</p>
+<hr />
+<h3 id="step-3-verify-key-fingerprints-match">Step 3 - Verify key fingerprints match</h3>
+<p>Before and after key deployment, verify that both private and public key fingerprints are identical:</p>
+<pre><code class="language-bash"># Private key fingerprint
+ssh-keygen -lf ~/.ssh/id_acme-ssh_key-prod
+
+# Public key fingerprint
+ssh-keygen -lf ~/.ssh/id_acme-ssh_key-prod.pub
+</code></pre>
+<p>Both commands must return the <strong>same SHA256 fingerprint</strong>. A mismatch indicates a key file
+integrity problem.</p>
+<hr />
+<h3 id="step-4-create-a-connection-test-script">Step 4 - Create a connection test script</h3>
+<p>Create a minimal test script for each environment. The <code>-v</code> flag enables verbose debug output,
+which is essential for diagnosing authentication failures.</p>
+<p><strong>UAT test script</strong> (run as <code>devadm</code> on SAP-DEV):</p>
+<pre><code class="language-bash">#!/usr/bin/bash
+FTPUSR=ftpuser-uat@vendor-domain
+FTPSRV=VENDOR-SFTP-UAT
+FTPKEY=&quot;$HOME/.ssh/ssh_key_uat&quot;
+sftp -v -i $FTPKEY $FTPUSR@$FTPSRV
+</code></pre>
+<p><strong>PRD test script</strong> (run as <code>prdadm</code> on SAP-PRD):</p>
+<pre><code class="language-bash">#!/usr/bin/bash
+FTPUSR=ftpuser-prd@vendor-domain
+FTPSRV=VENDOR-SFTP-PRD
+FTPKEY=&quot;$HOME/.ssh/id_acme-ssh_key-prod&quot;
+sftp -v -i $FTPKEY $FTPUSR@$FTPSRV
+</code></pre>
+<p>Run the test with a timestamp to record when connectivity was validated:</p>
+<pre><code class="language-bash">date &amp;&amp; ./test_ssh_key.sh
+</code></pre>
+<hr />
+<h3 id="step-5-interpret-the-verbose-output">Step 5 - Interpret the verbose output</h3>
+<h4 id="successful-key-based-authentication">Successful key-based authentication</h4>
+<p>The following lines in the verbose output confirm success:</p>
+<pre><code>debug1: Offering public key: &lt;keyfile&gt; &lt;algorithm&gt; &lt;fingerprint&gt; explicit
+debug1: Server accepts key: &lt;keyfile&gt; &lt;algorithm&gt; &lt;fingerprint&gt; explicit
+debug1: Authentication succeeded (publickey).
+Authenticated to VENDOR-SFTP-PRD (IP-PRD:22).
+Connected to VENDOR-SFTP-PRD.
+</code></pre>
+<p>Full successful session example (RSA PRD key, SAP-PRD):</p>
+<pre><code>debug1: Will attempt key: /home/prdadm/.ssh/id_acme-ssh_key-prd RSA SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0 explicit
+debug1: Offering public key: /home/prdadm/.ssh/id_acme-ssh_key-prd RSA SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0 explicit
+debug1: Server accepts key: /home/prdadm/.ssh/id_acme-ssh_key-prd RSA SHA256:Nfo2Pw8+AZQBnkmWvjexW82uQCFUC0cywU+c9lALhq0 explicit
+debug1: Authentication succeeded (publickey).
+Authenticated to VENDOR-SFTP-PRD (IP-PRD:22).
+Connected to VENDOR-SFTP-PRD.
+</code></pre>
+<h4 id="failed-key-based-authentication-key-not-yet-registered-by-vendor">Failed key-based authentication (key not yet registered by vendor)</h4>
+<p>If the vendor has not yet registered the public key, the server will decline it and fall through
+to keyboard-interactive (password prompt):</p>
+<pre><code>debug1: Offering public key: /home/prdadm/.ssh/id_acme-ssh_key-prod ED25519 SHA256:TYcA2jIghuLWBiClrq1bqStoMAdfeH8UwPWc0DSm1QM explicit
+debug1: Authentications that can continue: password,keyboard-interactive,publickey
+debug1: Next authentication method: keyboard-interactive
+Password authentication
+Password:
+</code></pre>
+<p>This is <strong>not</strong> an SSH client error - the client offered the key correctly. The server
+simply rejected it, meaning the public key is not yet registered or is registered under a
+different username. <strong>Do not enter a password.</strong> Interrupt the session (<code>Ctrl+C</code>) and
+follow up with the vendor.</p>
+<hr />
+<h3 id="step-6-historical-password-based-authentication-via-sshpass">Step 6 - (Historical) Password-based authentication via sshpass</h3>
+<blockquote>
+<p><strong>WARNING:</strong> This method is <strong>obsolete</strong> and <strong>not recommended</strong> for production use.
+It is retained here for historical reference only.</p>
+</blockquote>
+<p>Initial connectivity tests were performed using <code>sshpass</code> before SSH key pairs were exchanged.</p>
+<pre><code class="language-bash">#!/usr/bin/bash
+FTPUSR=ftpuser-uat@vendor-domain
+FTPSRV=VENDOR-SFTP-UAT
+FTPPAS=XXXXXXXXXXXXXXXXXXXX
+LOG=$HOME/sftp-test.log
+
+echo &quot;$(date '+%d.%m.%Y - %H:%M:%S') =&gt; Attempting connection&quot; &gt;&gt; $LOG
+sshpass -p $FTPPAS sftp -v $FTPUSR@$FTPSRV &lt;&lt; EOF &gt;&gt; $LOG 2&gt;&amp;1
+EOF
+</code></pre>
+<p>Successful output (filtered):</p>
+<pre><code>Password authentication
+Authenticated to VENDOR-SFTP-UAT (IP-UAT:22).
+Connected to VENDOR-SFTP-UAT.
+</code></pre>
+<hr />
+<h2 id="verification">Verification</h2>
+<p>After a successful connection, confirm the following from the verbose output:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Expected value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>KEX algorithm</td>
+<td><code>ecdh-sha2-nistp256</code></td>
+</tr>
+<tr>
+<td>Host key algorithm</td>
+<td><code>rsa-sha2-512</code></td>
+</tr>
+<tr>
+<td>Cipher (both directions)</td>
+<td><code>aes256-ctr</code></td>
+</tr>
+<tr>
+<td>MAC</td>
+<td><code>hmac-sha2-256-etm@openssh.com</code></td>
+</tr>
+<tr>
+<td>Authentication method</td>
+<td><code>publickey</code></td>
+</tr>
+<tr>
+<td>Server host key fingerprint</td>
+<td><code>SHA256:LZUIVXeQXBtUqpcCGNRYzqrL5Jr5TB7gjgFza6Mm9gA</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server declines key, prompts for password</td>
+<td>Public key not yet registered by vendor</td>
+<td>Contact vendor; provide correct public key and username</td>
+</tr>
+<tr>
+<td><code>Host key verification failed</code></td>
+<td><code>known_hosts</code> entry changed or missing</td>
+<td>Clear stale entry: <code>ssh-keygen -R VENDOR-SFTP-PRD</code>; reconnect to re-add</td>
+</tr>
+<tr>
+<td><code>no match: APACHE-SSHD-2.5.1</code></td>
+<td>Debug message about unknown server banner</td>
+<td>Informational only; does not affect connectivity</td>
+</tr>
+<tr>
+<td><code>Warning: Permanently added the RSA host key for IP address</code></td>
+<td>IP added to <code>known_hosts</code> after hostname already present</td>
+<td>Normal behaviour; not an error</td>
+</tr>
+<tr>
+<td>Fingerprint mismatch between private and public key</td>
+<td>Wrong key file pair</td>
+<td>Re-run <code>ssh-keygen -lf</code> on both files; regenerate if needed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-algorithm-comparison">Key Algorithm Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Key size</th>
+<th><code>ssh-keygen</code> command</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RSA</td>
+<td>3072–4096 bit</td>
+<td><code>ssh-keygen -t rsa -b 4096</code></td>
+<td>Widely supported; larger key size required</td>
+</tr>
+<tr>
+<td>ED25519</td>
+<td>256 bit (fixed)</td>
+<td><code>ssh-keygen -t ed25519 -a 100</code></td>
+<td><strong>Recommended</strong>; modern, compact, strong</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>ED25519 is the standard going forward.</p>
+</blockquote>

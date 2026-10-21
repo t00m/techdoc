@@ -1,0 +1,41 @@
+<h2 id="introduction">Introduction</h2>
+<p>Useful commands for Basis Administrators working with Linux.</p>
+<h2 id="send-email">Send email</h2>
+<p>To send the output of a program by email, use a pipe:</p>
+<p><code>| mailx -s "$(hostname) control_check_ora.log" adminsap@company.example</code></p>
+<h2 id="find-files">Find files</h2>
+<p>Find files modified in the last day and format the timestamp:</p>
+<pre><code class="language-bash">find /path/to/directory/* -mtime -1 | xargs ls -ldtrh --time-style=&quot;+%Y-%m-%d %H:%M:%S&quot;
+
+find /oracle/*/sapdata? | xargs ls -ldtrh --time-style=&quot;+%Y-%m-%d %H:%M:%S&quot; | grep sr3.data
+</code></pre>
+<h2 id="check-ports">Check ports</h2>
+<p><code>nc -zv webserver.local 8080</code></p>
+<p><strong>Output:</strong></p>
+<pre><code>Connection to webserver.local 8080 port [tcp/*] succeeded!
+</code></pre>
+<h2 id="create-a-large-file">Create a large file</h2>
+<p>Create a 10G file:</p>
+<pre><code class="language-bash">dd if=/dev/zero of=/oracle/&lt;SID&gt;/DELETE_IF_NECESSARY.SAP bs=1 count=0 seek=10737418240
+</code></pre>
+<h2 id="sync-with-remote-directories-using-an-ssh-key">Sync with remote directories using an SSH key</h2>
+<p>Sync remote directories using <code>rsync</code> over SSH instead of SFTP:</p>
+<pre><code class="language-bash">rsync -auvz -e &quot;ssh -l root -i &lt;SSH_PRIV_KEY&gt;&quot; &lt;source_server&gt;:/path/to/source/directory /local/target/path
+</code></pre>
+<h2 id="generate-html-report-after-upgrade">Generate HTML report after upgrade</h2>
+<p>Get all <code>.xml</code> and <code>.xsl</code> files from <code>/usr/sap/&lt;SID&gt;/SUM/abap/doc</code> (root directory only).</p>
+<p>From a Linux box, run the following commands to generate the HTML reports:</p>
+<pre><code class="language-bash">xsltproc UpgAnalysis.xsl UPGANA.XML &gt; report.html
+xsltproc SAPupPhaseList.xsl phaselist.xml &gt; phaselist.html
+</code></pre>
+<h2 id="check-or-download-certificates">Check or download certificates</h2>
+<p>Check certificate details for a web server:</p>
+<pre><code class="language-bash">curl -I https://webserver.company.example -v
+</code></pre>
+<p>Inspect the full certificate chain:</p>
+<pre><code class="language-bash">openssl s_client -showcerts -connect api.company.example:443
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The commands above connect to the target host on port 443 and display the certificate chain, issuer, validity dates, and TLS session details.</p>
+</div>

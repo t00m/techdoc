@@ -1,0 +1,68 @@
+<h2 id="problem">Problem</h2>
+<p>When connecting to a remote Linux server via SSH, graphical applications cannot be displayed
+locally unless X11 forwarding is properly configured on both the client and the server side.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>SSH access to the target Linux server.</li>
+<li>An X server running on the client machine (built-in on Linux/macOS; requires Xming or similar on Windows).</li>
+<li>Sufficient privileges to edit <code>/etc/ssh/sshd_config</code> on the server (or access to a sudoer account).</li>
+</ul>
+<h2 id="procedure">Procedure</h2>
+<h3 id="client">Client</h3>
+<p>Ensure that the SSH client has the <strong>X11 forwarding</strong> option enabled before connecting.</p>
+<ul>
+<li><strong>MobaXterm / Linux SSH client:</strong> X11 forwarding is typically enabled by default or via the session settings.</li>
+<li><strong>Putty:</strong> Putty does not include a built-in X server. <a href="https://sourceforge.net/projects/xming/">Xming</a> must be installed and running separately. Enable X11 forwarding under <em>Connection → SSH → X11 → Enable X11 forwarding</em>.</li>
+</ul>
+<h3 id="server">Server</h3>
+<h4 id="1-enable-x11-forwarding-in-sshd">1. Enable X11 Forwarding in SSHD</h4>
+<p>Edit <code>/etc/ssh/sshd_config</code> and ensure the following directive is present and not commented out:</p>
+<pre><code>X11Forwarding yes
+</code></pre>
+<p>Restart the SSH daemon after any change to this file:</p>
+<pre><code class="language-bash">sudo systemctl restart sshd
+</code></pre>
+<h4 id="2-authorise-the-target-user">2. Authorise the Target User</h4>
+<p>Once connected with X11 forwarding active, grant the target OS user access to the current X display:</p>
+<pre><code class="language-bash">sudo -u &lt;os_user&gt; xauth add `xauth list $DISPLAY`
+</code></pre>
+<h4 id="3-verify-the-display-variable">3. Verify the DISPLAY Variable</h4>
+<p>Confirm that the <code>DISPLAY</code> environment variable is correctly propagated for the target user:</p>
+<pre><code class="language-bash">sudo -u &lt;os_user&gt; echo $DISPLAY
+</code></pre>
+<p>Expected output example: <code>:10.0</code> or <code>localhost:10.0</code>.</p>
+<h4 id="4-test-the-forwarded-display">4. Test the Forwarded Display</h4>
+<p>Launch a minimal X application to confirm the full chain is working:</p>
+<pre><code class="language-bash">sudo -u &lt;os_user&gt; xterm
+</code></pre>
+<p>An <code>xterm</code> window should open on the local desktop.</p>
+<h2 id="verification">Verification</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X11Forwarding yes</code> present in <code>/etc/ssh/sshd_config</code></td>
+<td>Directive uncommented and set to <code>yes</code></td>
+</tr>
+<tr>
+<td><code>echo $DISPLAY</code> for target user</td>
+<td>Returns a non-empty value such as <code>localhost:10.0</code></td>
+</tr>
+<tr>
+<td><code>xterm</code> launches</td>
+<td>A terminal window appears on the local X display</td>
+</tr>
+</tbody>
+</table>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li><strong><code>DISPLAY</code> is empty:</strong> the SSH session was not started with X11 forwarding enabled. Reconnect using <code>ssh -X user@host</code> or enable the option in the client.</li>
+<li><strong><code>xauth</code> command not found:</strong> install the <code>xauth</code> package (<code>dnf install xorg-x11-xauth</code> on RHEL/Rocky).</li>
+<li><strong><code>xterm</code> command not found:</strong> install the <code>xterm</code> package (<code>dnf install xterm</code>).</li>
+<li><strong>Xming not displaying on Windows:</strong> ensure Xming is started <em>before</em> opening the SSH session in Putty.</li>
+</ul>

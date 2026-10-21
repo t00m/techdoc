@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>t00m's tech notes - Useful Oracle queries for SAP Basis Administrators</title>
+    <title>KB4IT - Useful Oracle queries for SAP Basis Administrators</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="KB4IT 0.7.7+build.4">
-    <meta name="description" content="KB4IT document">
-    <meta name="author" content="KB4IT by t00mlabs.net">
+    <meta name="generator" content="KB4IT 0.9.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
@@ -39,9 +37,17 @@
             });
         });
     </script>
+<!-- kb4it:meta -->
+<meta name="description" content="This is a comprehensive reference of SQL*Plus queries for SAP Basis Administrators working with Oracle databases. It covers database administration tasks…">
+<meta property="og:title" content="Useful Oracle queries for SAP Basis Administrators">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KB4IT">
+<meta property="og:description" content="This is a comprehensive reference of SQL*Plus queries for SAP Basis Administrators working with Oracle databases. It covers database administration tasks…">
+<meta name="twitter:card" content="summary">
+<!-- /kb4it:meta -->
 </head>
 <body>
-<!-- Template version 0.7.7+build.4 -->
+<!-- Template version 0.9.0 -->
 <div class="uk-background-muted uk-height-viewport">
 <div id="container-1" class="uk-container uk-container-center noprint">
     <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
@@ -50,7 +56,7 @@
                 <ul class="uk-navbar-nav noprint">
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
-                            <img src="resources/themes/techdoc/images/logo.svg" alt="" width="24px" height="24px">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="KB4IT" width="24" height="24">
                         </a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -70,6 +76,9 @@
                                         <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-small uk-column-1-2">
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Bookmark.html"><span class="">Bookmark</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Category.html"><span class="">Category</span></a>
@@ -183,6 +192,10 @@
 </li>
 <li class="kb-metadata-item">
     <strong><a class="kb-meta-key" href="Database.html">Database</a></strong>: <a class="kb-meta-val" href="Database_Oracle.html">Oracle</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2026-05-06_000000.html">2026-05-06 00:00:00</a>
 
 </li>
 <li class="kb-metadata-item">
@@ -1487,7 +1500,7 @@ Lists all tables starting with "PNR" sorted by owner and table name.
                             <div class="uk-card uk-card-small">
                                 <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">Useful Oracle queries for SAP Basis Administrators</span></a>
                                 <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
-                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <div class="uk-navbar-dropdown-nav">
 <ul class="uk-nav uk-nav-default">
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#prerequisites-and-setup">Prerequisites and Setup</a></li>
@@ -1602,7 +1615,7 @@ Lists all tables starting with "PNR" sorted by owner and table name.
 </ul>
 </li>
 </ul>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1612,6 +1625,17 @@ Lists all tables starting with "PNR" sorted by owner and table name.
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav noprint">
+                    <li class="uk-flex uk-flex-middle uk-padding-small uk-padding-remove-vertical">
+                        <form class="kb4it-search" action="search.html" method="get" role="search">
+    <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
+    <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
+</form>
+<link rel="stylesheet" href="resources/common/css/kb4it-search.css">
+<script defer src="search-index.js"></script>
+<script defer src="resources/common/js/kb4it-search.js"></script>
+<script defer src="resources/common/js/kb4it-search-ui.js"></script>
+
+                    </li>
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
                     </li>
@@ -1642,6 +1666,7 @@ Lists all tables starting with "PNR" sorted by owner and table name.
         <span class="uk-text-lead">Useful Oracle queries for SAP Basis Administrators</span>
     </div>
 <!-- Template HTML_BODY_DOC.tpl :: START -->
+<main class="kb-main">
 
 <!-- Print-only document header (hidden on screen) -->
 <div class="kb-print-header">
@@ -1779,116 +1804,116 @@ Lists all tables starting with "PNR" sorted by owner and table name.
 <div hidden>
 <div id="toctitle">Contents</div>
 <ul class="sectlevel1">
-<li><a class="" target="" href="#overview">Overview</a></li>
-<li><a class="" target="" href="#prerequisites-and-setup">Prerequisites and Setup</a></li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#prerequisites-and-setup">Prerequisites and Setup</a></li>
 <li>
-<a class="" target="" href="#configuration">Configuration</a><ul>
-<li><a class="" target="" href="#common-format-variables">Common Format Variables</a></li>
+<a href="#configuration">Configuration</a><ul>
+<li><a href="#common-format-variables">Common Format Variables</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#database">Database</a><ul>
-<li><a class="" target="" href="#show-oracle-database-version">Show Oracle Database version</a></li>
-<li><a class="" target="" href="#show-database-details">Show database details</a></li>
-<li><a class="" target="" href="#show-database-size">Show database size</a></li>
+<a href="#database">Database</a><ul>
+<li><a href="#show-oracle-database-version">Show Oracle Database version</a></li>
+<li><a href="#show-database-details">Show database details</a></li>
+<li><a href="#show-database-size">Show database size</a></li>
 <li>
-<a class="" target="" href="#show-oracle-instant-client-version">Show Oracle Instant Client Version</a><ul>
-<li><a class="" target="" href="#installed-components-in-database">Installed components in Database</a></li>
+<a href="#show-oracle-instant-client-version">Show Oracle Instant Client Version</a><ul>
+<li><a href="#installed-components-in-database">Installed components in Database</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#instance">Instance</a><ul>
-<li><a class="" target="" href="#show-database-instance-details">Show database instance details</a></li>
-<li><a class="" target="" href="#monitor-instance-status-of-oracle">Monitor instance status of oracle</a></li>
-<li><a class="" target="" href="#db-schema-for-sdb">DB Schema for SDB</a></li>
+<a href="#instance">Instance</a><ul>
+<li><a href="#show-database-instance-details">Show database instance details</a></li>
+<li><a href="#monitor-instance-status-of-oracle">Monitor instance status of oracle</a></li>
+<li><a href="#db-schema-for-sdb">DB Schema for SDB</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#tablespaces">Tablespaces</a><ul>
-<li><a class="" target="" href="#show-tablespaces-details">Show tablespaces details</a></li>
-<li><a class="" target="" href="#list-of-datafiles-for-tablespace">List of datafiles for tablespace</a></li>
-<li><a class="" target="" href="#find-tables-being-used-by-tablespace">Find tables being used by tablespace</a></li>
-<li><a class="" target="" href="#check-autoextend">Check autoextend</a></li>
-<li><a class="" target="" href="#check-what-is-the-retention-period-for-psapundo-tablespace">Check what is the retention period for PSAPUNDO tablespace</a></li>
-<li><a class="" target="" href="#get-total-used-and-free-space-for-tablespaces">Get total, used and free space for tablespaces</a></li>
-<li><a class="" target="" href="#psaptemp">PSAPTEMP</a></li>
+<a href="#tablespaces">Tablespaces</a><ul>
+<li><a href="#show-tablespaces-details">Show tablespaces details</a></li>
+<li><a href="#list-of-datafiles-for-tablespace">List of datafiles for tablespace</a></li>
+<li><a href="#find-tables-being-used-by-tablespace">Find tables being used by tablespace</a></li>
+<li><a href="#check-autoextend">Check autoextend</a></li>
+<li><a href="#check-what-is-the-retention-period-for-psapundo-tablespace">Check what is the retention period for PSAPUNDO tablespace</a></li>
+<li><a href="#get-total-used-and-free-space-for-tablespaces">Get total, used and free space for tablespaces</a></li>
+<li><a href="#psaptemp">PSAPTEMP</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#tables">Tables</a><ul>
-<li><a class="" target="" href="#get-table-size">Get table size</a></li>
+<a href="#tables">Tables</a><ul>
+<li><a href="#get-table-size">Get table size</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#users">Users</a><ul>
-<li><a class="" target="" href="#show-database-users">Show database users</a></li>
-<li><a class="" target="" href="#to-see-all-user-who-were-locked-by-the-system-admin">To see all user who were locked by the system admin</a></li>
-<li><a class="" target="" href="#list-of-users">List of users</a></li>
-<li><a class="" target="" href="#unlock-user-account">(Un)lock user account</a></li>
-<li><a class="" target="" href="#create-user">Create user</a></li>
-<li><a class="" target="" href="#delete-sap-user-or-another-user">Delete SAP* user (or another user)</a></li>
-<li><a class="" target="" href="#password-complexity">Password complexity</a></li>
-<li><a class="" target="" href="#activate-complexity-in-profiles">Activate complexity in profiles:</a></li>
-<li><a class="" target="" href="#deativate-complexity-in-profiles">Deativate complexity in profiles:</a></li>
+<a href="#users">Users</a><ul>
+<li><a href="#show-database-users">Show database users</a></li>
+<li><a href="#to-see-all-user-who-were-locked-by-the-system-admin">To see all user who were locked by the system admin</a></li>
+<li><a href="#list-of-users">List of users</a></li>
+<li><a href="#unlock-user-account">(Un)lock user account</a></li>
+<li><a href="#create-user">Create user</a></li>
+<li><a href="#delete-sap-user-or-another-user">Delete SAP* user (or another user)</a></li>
+<li><a href="#password-complexity">Password complexity</a></li>
+<li><a href="#activate-complexity-in-profiles">Activate complexity in profiles:</a></li>
+<li><a href="#deativate-complexity-in-profiles">Deativate complexity in profiles:</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#datafiles">Datafiles</a><ul>
-<li><a class="" target="" href="#check-datafiles">Check datafiles</a></li>
-<li><a class="" target="" href="#list-of-datafiles">List of datafiles</a></li>
-<li><a class="" target="" href="#resize-datafile-until-size">Resize datafile until size</a></li>
+<a href="#datafiles">Datafiles</a><ul>
+<li><a href="#check-datafiles">Check datafiles</a></li>
+<li><a href="#list-of-datafiles">List of datafiles</a></li>
+<li><a href="#resize-datafile-until-size">Resize datafile until size</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#redologs">Redologs</a><ul>
-<li><a class="" target="" href="#list-of-redologs-groups-and-files-belonging-to-each-group">List of redologs groups and files belonging to each group</a></li>
-<li><a class="" target="" href="#active-redolog-groups">Active Redolog groups</a></li>
-<li><a class="" target="" href="#check-the-online-redolog-files-details">Check the online redolog files details</a></li>
+<a href="#redologs">Redologs</a><ul>
+<li><a href="#list-of-redologs-groups-and-files-belonging-to-each-group">List of redologs groups and files belonging to each group</a></li>
+<li><a href="#active-redolog-groups">Active Redolog groups</a></li>
+<li><a href="#check-the-online-redolog-files-details">Check the online redolog files details</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#redologs_1">Redologs</a><ul>
-<li><a class="" target="" href="#list-of-redologs-groups-and-files-belonging-to-each-group_1">List of redologs groups and files belonging to each group</a></li>
-<li><a class="" target="" href="#active-redolog-groups_1">Active Redolog groups</a></li>
-<li><a class="" target="" href="#check-the-online-redolog-files-details_1">Check the online redolog files details</a></li>
+<a href="#redologs_1">Redologs</a><ul>
+<li><a href="#list-of-redologs-groups-and-files-belonging-to-each-group_1">List of redologs groups and files belonging to each group</a></li>
+<li><a href="#active-redolog-groups_1">Active Redolog groups</a></li>
+<li><a href="#check-the-online-redolog-files-details_1">Check the online redolog files details</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#table-size-analysis">Table Size Analysis</a><ul>
-<li><a class="" target="" href="#get-single-table-size">Get single table size</a></li>
-<li><a class="" target="" href="#get-table-size-from-user_segments">Get table size from USER_SEGMENTS</a></li>
-<li><a class="" target="" href="#size-multiple-specific-tables-with-their-indexes">Size multiple specific tables with their indexes</a></li>
+<a href="#table-size-analysis">Table Size Analysis</a><ul>
+<li><a href="#get-single-table-size">Get single table size</a></li>
+<li><a href="#get-table-size-from-user_segments">Get table size from USER_SEGMENTS</a></li>
+<li><a href="#size-multiple-specific-tables-with-their-indexes">Size multiple specific tables with their indexes</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#segment-growth-and-historical-analysis">Segment Growth and Historical Analysis</a><ul>
-<li><a class="" target="" href="#table-size-over-last-30-days">Table size over last 30 days</a></li>
-<li><a class="" target="" href="#detailed-growth-tracking-with-object-types">Detailed growth tracking with object types</a></li>
-<li><a class="" target="" href="#daily-space-delta-growth-rate-with-current-total-size">Daily space delta (growth rate) with current total size</a></li>
-<li><a class="" target="" href="#simplified-daily-growth-without-current-size-lookup">Simplified daily growth without current size lookup</a></li>
+<a href="#segment-growth-and-historical-analysis">Segment Growth and Historical Analysis</a><ul>
+<li><a href="#table-size-over-last-30-days">Table size over last 30 days</a></li>
+<li><a href="#detailed-growth-tracking-with-object-types">Detailed growth tracking with object types</a></li>
+<li><a href="#daily-space-delta-growth-rate-with-current-total-size">Daily space delta (growth rate) with current total size</a></li>
+<li><a href="#simplified-daily-growth-without-current-size-lookup">Simplified daily growth without current size lookup</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#sap-queries">SAP Queries</a><ul>
-<li><a class="" target="" href="#system-in-upgrade-enable-imports">System in upgrade &#8212; enable imports</a></li>
-<li><a class="" target="" href="#brbackup-error-clear-lock">BRBACKUP error &#8212; clear lock</a></li>
+<a href="#sap-queries">SAP Queries</a><ul>
+<li><a href="#system-in-upgrade-enable-imports">System in upgrade &#8212; enable imports</a></li>
+<li><a href="#brbackup-error-clear-lock">BRBACKUP error &#8212; clear lock</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#instance-management">Instance Management</a><ul>
-<li><a class="" target="" href="#show-instance-startup-time">Show instance startup time</a></li>
+<a href="#instance-management">Instance Management</a><ul>
+<li><a href="#show-instance-startup-time">Show instance startup time</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#tablespace-capacity-and-free-space">Tablespace Capacity and Free Space</a><ul>
-<li><a class="" target="" href="#detailed-tablespace-usage-permanent-and-temporary">Detailed tablespace usage (permanent and temporary)</a></li>
+<a href="#tablespace-capacity-and-free-space">Tablespace Capacity and Free Space</a><ul>
+<li><a href="#detailed-tablespace-usage-permanent-and-temporary">Detailed tablespace usage (permanent and temporary)</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#discovery-queries">Discovery Queries</a><ul>
-<li><a class="" target="" href="#find-tables-matching-a-name-pattern">Find tables matching a name pattern</a></li>
+<a href="#discovery-queries">Discovery Queries</a><ul>
+<li><a href="#find-tables-matching-a-name-pattern">Find tables matching a name pattern</a></li>
 </ul>
 </li>
 </ul>
@@ -1925,7 +1950,7 @@ SPOOL &lt;filename&gt;    -- Optional: redirect output to file
 -- ... run queries ...
 SPOOL OFF
 </code></pre>
-<p>For detailed formatting options, see the <a class="" target="" href="http://docs.oracle.com/cd/B19306_01/server.102/b14357/ch12040.htm">SQL*Plus User&#8217;s Guide and Reference</a>.</p>
+<p>For detailed formatting options, see the <a href="http://docs.oracle.com/cd/B19306_01/server.102/b14357/ch12040.htm">SQL*Plus User&#8217;s Guide and Reference</a>.</p>
 <div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
 <h3 class="kb-h3" id="common-format-variables">Common Format Variables</h3>
 <div class="kb-section-body uk-container">
@@ -2000,7 +2025,7 @@ WHERE sid = sys_context('userenv', 'sid');
 <pre><code>CLIENT_VERSION
 11.2.0.3.0
 </code></pre>
-<p>For a list of all possibilities to check and identify Oracle Instant Client Version check this <a class="" target="" href="http://scn.sap.com/docs/DOC-61410">document</a>.</p>
+<p>For a list of all possibilities to check and identify Oracle Instant Client Version check this <a href="http://scn.sap.com/docs/DOC-61410">document</a>.</p>
 <div class="kb-sect3 sect3 uk-border-rounded uk-padding-small">
 <h4 class="kb-h4" id="installed-components-in-database">Installed components in Database</h4>
 <div class="kb-section-body uk-container">
@@ -2202,7 +2227,7 @@ PSAPTEMP                  /oracle/SDB/sapdata1/temp_6/temp.data6             200
 <p><code>ALTER DATABASE DEFAULT TEMPORARY TABLESPACE PSAPTEMP</code>
 6. Drop the first temporary tablespace</p>
 <p><code>DROP TABLESPACE PSAPTEMP123 INCLUDING CONTENTS;</code></p>
-<p>If <em>ERROR ORA-60100: dropping temporary tablespace with tablespace ID number (tsn) 3 is blocked due to sort segments</em>, apply the following <a class="" target="" href="https://support.oracle.com/knowledge/Oracle%20Database%20Products/2696984_1.html">solution</a>:</p>
+<p>If <em>ERROR ORA-60100: dropping temporary tablespace with tablespace ID number (tsn) 3 is blocked due to sort segments</em>, apply the following <a href="https://support.oracle.com/knowledge/Oracle%20Database%20Products/2696984_1.html">solution</a>:</p>
 <pre><code>shutdown immediate
 startup;
 DROP TABLESPACE PSAPTEMP INCLUDING CONTENTS;
@@ -3029,6 +3054,10 @@ ORDER BY owner, table_name;
 
 </li>
 <li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2026-05-06_000000.html">2026-05-06 00:00:00</a>
+
+</li>
+<li class="kb-metadata-item">
     <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_Reference.html">Reference</a>
 
 </li>
@@ -3132,11 +3161,12 @@ ORDER BY owner, table_name;
     </div>
 </div>
 
+</main>
 <!-- Template HTML_BODY_DOC.tpl :: END -->
 <!-- FOOTER :: START -->
 <div class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Saturday, May 23, 2026 at 10:57</span>
+    <span class="kb-footer-meta">Last updated Wednesday, October 21, 2026 at 19:49</span>
 </div>
 <!-- FOOTER :: END -->
 </div>

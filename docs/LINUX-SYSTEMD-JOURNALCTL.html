@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>t00m's tech notes - How to manage Systemd journal logs</title>
+    <title>KB4IT - How to manage Systemd journal logs</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="KB4IT 0.7.7+build.4">
-    <meta name="description" content="KB4IT document">
-    <meta name="author" content="KB4IT by t00mlabs.net">
+    <meta name="generator" content="KB4IT 0.9.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
@@ -39,9 +37,17 @@
             });
         });
     </script>
+<!-- kb4it:meta -->
+<meta name="description" content="The systemd journal is systemd&#39;s own logging system. It is equivalent to syslog in the init system. It collects and stores kernel logging data, system log…">
+<meta property="og:title" content="How to manage Systemd journal logs">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KB4IT">
+<meta property="og:description" content="The systemd journal is systemd&#39;s own logging system. It is equivalent to syslog in the init system. It collects and stores kernel logging data, system log…">
+<meta name="twitter:card" content="summary">
+<!-- /kb4it:meta -->
 </head>
 <body>
-<!-- Template version 0.7.7+build.4 -->
+<!-- Template version 0.9.0 -->
 <div class="uk-background-muted uk-height-viewport">
 <div id="container-1" class="uk-container uk-container-center noprint">
     <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
@@ -50,7 +56,7 @@
                 <ul class="uk-navbar-nav noprint">
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
-                            <img src="resources/themes/techdoc/images/logo.svg" alt="" width="24px" height="24px">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="KB4IT" width="24" height="24">
                         </a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -72,16 +78,25 @@
                                                 <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Bookmark.html"><span class="">Bookmark</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Category.html"><span class="">Category</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Command.html"><span class="">Command</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Database.html"><span class="">Database</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="DocType.html"><span class="">DocType</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="EnvVar.html"><span class="">EnvVar</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Environment.html"><span class="">Environment</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Filename.html"><span class="">Filename</span></a>
@@ -105,6 +120,9 @@
                                                 <a class="uk-link-heading" href="Scope.html"><span class="">Scope</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Server.html"><span class="">Server</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Service.html"><span class="">Service</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
@@ -114,6 +132,9 @@
                                                 <a class="uk-link-heading" href="Subsystem.html"><span class="">Subsystem</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Table.html"><span class="">Table</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Tag.html"><span class="">Tag</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
@@ -121,6 +142,12 @@
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Topic.html"><span class="">Topic</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Transaction.html"><span class="">Transaction</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="User.html"><span class="">User</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Website.html"><span class="">Website</span></a>
@@ -164,6 +191,10 @@
 <a class="kb-meta-val" href="Command_cp.html">cp</a>
 <a class="kb-meta-val" href="Command_du.html">du</a>
 <a class="kb-meta-val" href="Command_systemctl.html">systemctl</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2024-05-14_120000.html">2024-05-14 12:00:00</a>
 
 </li>
 <li class="kb-metadata-item">
@@ -425,7 +456,7 @@ sudo systemctl restart systemd-journald
                             <div class="uk-card uk-card-small">
                                 <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">How to manage Systemd journal logs</span></a>
                                 <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
-                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <div class="uk-navbar-dropdown-nav">
 <ul class="uk-nav uk-nav-default">
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#introduction">Introduction</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle">
@@ -446,7 +477,7 @@ sudo systemctl restart systemd-journald
 </li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#references">References</a></li>
 </ul>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -456,6 +487,17 @@ sudo systemctl restart systemd-journald
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav noprint">
+                    <li class="uk-flex uk-flex-middle uk-padding-small uk-padding-remove-vertical">
+                        <form class="kb4it-search" action="search.html" method="get" role="search">
+    <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
+    <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
+</form>
+<link rel="stylesheet" href="resources/common/css/kb4it-search.css">
+<script defer src="search-index.js"></script>
+<script defer src="resources/common/js/kb4it-search.js"></script>
+<script defer src="resources/common/js/kb4it-search-ui.js"></script>
+
+                    </li>
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
                     </li>
@@ -486,6 +528,7 @@ sudo systemctl restart systemd-journald
         <span class="uk-text-lead">How to manage Systemd journal logs</span>
     </div>
 <!-- Template HTML_BODY_DOC.tpl :: START -->
+<main class="kb-main">
 
 <!-- Print-only document header (hidden on screen) -->
 <div class="kb-print-header">
@@ -529,24 +572,24 @@ sudo systemctl restart systemd-journald
 <div hidden>
 <div id="toctitle">Contents</div>
 <ul class="sectlevel1">
-<li><a class="" target="" href="#introduction">Introduction</a></li>
+<li><a href="#introduction">Introduction</a></li>
 <li>
-<a class="" target="" href="#check-logs">Check Logs</a><ul>
-<li><a class="" target="" href="#by-unit">By unit</a></li>
-<li><a class="" target="" href="#by-time">By time</a></li>
+<a href="#check-logs">Check Logs</a><ul>
+<li><a href="#by-unit">By unit</a></li>
+<li><a href="#by-time">By time</a></li>
 </ul>
 </li>
 <li>
-<a class="" target="" href="#clean-procedure">Clean Procedure</a><ul>
-<li><a class="" target="" href="#check-disk-space">Check disk space</a></li>
-<li><a class="" target="" href="#rotate">Rotate</a></li>
-<li><a class="" target="" href="#clear-journal-logs-older-than-n-days">Clear journal logs older than N days</a></li>
-<li><a class="" target="" href="#restrict-logs-to-a-certain-size">Restrict logs to a certain size</a></li>
-<li><a class="" target="" href="#restrict-number-of-log-files">Restrict number of log files</a></li>
-<li><a class="" target="" href="#automatically-clearing-old-log-files">Automatically clearing old log files</a></li>
+<a href="#clean-procedure">Clean Procedure</a><ul>
+<li><a href="#check-disk-space">Check disk space</a></li>
+<li><a href="#rotate">Rotate</a></li>
+<li><a href="#clear-journal-logs-older-than-n-days">Clear journal logs older than N days</a></li>
+<li><a href="#restrict-logs-to-a-certain-size">Restrict logs to a certain size</a></li>
+<li><a href="#restrict-number-of-log-files">Restrict number of log files</a></li>
+<li><a href="#automatically-clearing-old-log-files">Automatically clearing old log files</a></li>
 </ul>
 </li>
-<li><a class="" target="" href="#references">References</a></li>
+<li><a href="#references">References</a></li>
 </ul>
 </div>
 
@@ -698,7 +741,7 @@ SystemMaxUse=250M
 <h2 class="kb-h2" id="references">References</h2>
 <div class="kb-section-body uk-container">
 <ul>
-<li><a class="" target="" href="https://linuxhandbook.com/clear-systemd-journal-logs/">Linux Handbook &#8212; Clear Systemd Journal Logs</a></li>
+<li><a href="https://linuxhandbook.com/clear-systemd-journal-logs/">Linux Handbook &#8212; Clear Systemd Journal Logs</a></li>
 </ul>
 </div>
 </div>
@@ -719,6 +762,10 @@ SystemMaxUse=250M
 <a class="kb-meta-val" href="Command_cp.html">cp</a>
 <a class="kb-meta-val" href="Command_du.html">du</a>
 <a class="kb-meta-val" href="Command_systemctl.html">systemctl</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2024-05-14_120000.html">2024-05-14 12:00:00</a>
 
 </li>
 <li class="kb-metadata-item">
@@ -783,11 +830,12 @@ SystemMaxUse=250M
     </div>
 </div>
 
+</main>
 <!-- Template HTML_BODY_DOC.tpl :: END -->
 <!-- FOOTER :: START -->
 <div class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Thursday, May 21, 2026 at 09:26</span>
+    <span class="kb-footer-meta">Last updated Wednesday, October 21, 2026 at 19:49</span>
 </div>
 <!-- FOOTER :: END -->
 </div>

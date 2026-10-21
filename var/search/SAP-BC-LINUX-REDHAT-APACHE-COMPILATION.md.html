@@ -1,0 +1,50 @@
+<h2 id="preparation">Preparation</h2>
+<p>Before the SAP Content Server installation, Apache Web Server must be compiled and installed in <code>/sapdb/apache2</code>-</p>
+<p>Mandatory packages:</p>
+<pre><code class="language-shell">yum install uuidd uuid mod_ssl openssl-devel libapreq2 krb5-devel keyutils-libs-devel zlib-devel pcre-devel openldap-devel libverto-devel libsepol-devel libselinux-devel libdb-devel expat-devel libcom_err-devel cyrus-sasl-devel gcc-c++ libstdc++-devel gcc glibc-headers glibc-devel kernel-headers cpp mpfr libmpc
+</code></pre>
+<p>Then, download the sources to a temporary directory:</p>
+<p><code>wget -c https://dlcdn.apache.org/httpd/httpd-2.4.54.tar.bz2</code></p>
+<blockquote>
+<p><strong>🔥 CAUTION</strong>\
+Uninstall Apache from RedHat distribution</p>
+</blockquote>
+<p><code>rpm -e --nodeps httpd</code></p>
+<h2 id="apache-compilation">Apache compilation</h2>
+<p>Compile it and install it (as <code>sapcs</code> user or <code>root</code>? Check):</p>
+<pre><code class="language-shell">mkdir –p /app/sapcs/software/apache
+export LDFLAGS=&quot;-L/lib64&quot;
+export CFLAGS=&quot;-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -g&quot;
+./configure --prefix=/app/sapcs/software/apache --enable-load-all-modules --enable-mods-shared=most --with-mpm=prefork --enable-ssl --with-expat=builtin
+make
+</code></pre>
+<h2 id="installation">Installation</h2>
+<p><code>make install</code></p>
+<h2 id="check-installation">Check installation</h2>
+<p>Apache 2.0.59 Compilation flags:</p>
+<p><code>/global/sapcs/software/apache2/bin/apachectl -V</code></p>
+<pre><code>Server version: Apache/2.0.59
+Server built:   Aug  6 2007 16:40:45
+Server's Module Magic Number: 20020903:12
+Server loaded:  APR 0.9.12, APR-UTIL 0.9.12
+Compiled using: APR 0.9.12, APR-UTIL 0.9.12
+Architecture:   64-bit
+Server compiled with....
+ -D APACHE_MPM_DIR=&quot;server/mpm/prefork&quot;
+ -D APR_HAS_SENDFILE
+ -D APR_HAS_MMAP
+ -D APR_HAVE_IPV6 (IPv4-mapped addresses enabled)
+ -D APR_USE_FCNTL_SERIALIZE
+ -D APR_USE_PTHREAD_SERIALIZE
+ -D SINGLE_LISTEN_UNSERIALIZED_ACCEPT
+ -D APR_HAS_OTHER_CHILD
+ -D AP_HAVE_RELIABLE_PIPED_LOGS
+ -D HTTPD_ROOT=&quot;/global/sapcs/software/apache2&quot;
+ -D SUEXEC_BIN=&quot;/global/sapcs/software/apache2/bin/suexec&quot;
+ -D DEFAULT_PIDLOG=&quot;logs/httpd.pid&quot;
+ -D DEFAULT_SCOREBOARD=&quot;logs/apache_runtime_status&quot;
+ -D DEFAULT_LOCKFILE=&quot;logs/accept.lock&quot;
+ -D DEFAULT_ERRORLOG=&quot;logs/error_log&quot;
+ -D AP_TYPES_CONFIG_FILE=&quot;conf/mime.types&quot;
+ -D SERVER_CONFIG_FILE=&quot;conf/httpd.conf&quot;
+</code></pre>

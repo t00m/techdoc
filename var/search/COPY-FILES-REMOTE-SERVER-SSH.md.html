@@ -1,0 +1,102 @@
+<h2 id="overview">Overview</h2>
+<p><code>scp</code> (Secure Copy Protocol) copies files and directories between hosts over SSH.
+It uses SSH for authentication and encryption, so no extra setup is needed beyond
+an existing SSH configuration.</p>
+<p>General syntax:</p>
+<pre><code class="language-bash">scp [options] &lt;source&gt; &lt;destination&gt;
+</code></pre>
+<p>Remote paths use the format <code>user@host:/path</code>.</p>
+<hr />
+<h2 id="copy-a-local-file-to-a-remote-server">Copy a local file to a remote server</h2>
+<pre><code class="language-bash">scp /local/path/file.txt user@host:/remote/path/
+</code></pre>
+<hr />
+<h2 id="copy-a-remote-file-to-the-local-machine">Copy a remote file to the local machine</h2>
+<pre><code class="language-bash">scp user@host:/remote/path/file.txt /local/path/
+</code></pre>
+<hr />
+<h2 id="copy-between-two-remote-servers">Copy between two remote servers</h2>
+<pre><code class="language-bash">scp user1@host1:/path/file.txt user2@host2:/path/
+</code></pre>
+<hr />
+<h2 id="copy-a-directory-recursively">Copy a directory recursively</h2>
+<p>Use <code>-r</code> to copy a full directory tree.</p>
+<pre><code class="language-bash">scp -r /local/dir user@host:/remote/path/
+</code></pre>
+<hr />
+<h2 id="use-a-specific-ssh-private-key">Use a specific SSH private key</h2>
+<pre><code class="language-bash">scp -i ~/.ssh/id_rsa /local/file.txt user@host:/remote/path/
+</code></pre>
+<hr />
+<h2 id="use-a-non-standard-ssh-port">Use a non-standard SSH port</h2>
+<pre><code class="language-bash">scp -P 2222 /local/file.txt user@host:/remote/path/
+</code></pre>
+<blockquote>
+<p><strong>NOTE:</strong> The port flag for <code>scp</code> is uppercase <code>-P</code>, unlike <code>ssh</code> which uses lowercase <code>-p</code>.</p>
+</blockquote>
+<hr />
+<h2 id="preserve-file-metadata-timestamps-permissions">Preserve file metadata (timestamps, permissions)</h2>
+<pre><code class="language-bash">scp -p /local/file.txt user@host:/remote/path/
+</code></pre>
+<hr />
+<h2 id="limit-bandwidth-usage">Limit bandwidth usage</h2>
+<p>Value is in Kbits/s.</p>
+<pre><code class="language-bash">scp -l 1024 /local/file.txt user@host:/remote/path/
+</code></pre>
+<hr />
+<h2 id="copy-with-verbose-output-useful-for-debugging">Copy with verbose output (useful for debugging)</h2>
+<pre><code class="language-bash">scp -v /local/file.txt user@host:/remote/path/
+</code></pre>
+<hr />
+<h2 id="common-options-summary">Common options summary</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-r</code></td>
+<td>Recursive copy (directories)</td>
+</tr>
+<tr>
+<td><code>-P &lt;port&gt;</code></td>
+<td>Non-standard SSH port</td>
+</tr>
+<tr>
+<td><code>-i &lt;key&gt;</code></td>
+<td>Private key file</td>
+</tr>
+<tr>
+<td><code>-p</code></td>
+<td>Preserve file timestamps and permissions</td>
+</tr>
+<tr>
+<td><code>-l &lt;kbps&gt;</code></td>
+<td>Limit transfer bandwidth</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td>Verbose mode</td>
+</tr>
+<tr>
+<td><code>-C</code></td>
+<td>Enable compression</td>
+</tr>
+<tr>
+<td><code>-q</code></td>
+<td>Quiet mode (suppress progress)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="notes">Notes</h2>
+<ul>
+<li><code>scp</code> relies on the remote <code>scp</code> binary being present on the target host.</li>
+<li>For large or frequent transfers, consider <code>rsync</code> over SSH: it supports delta
+  transfers and is more efficient for repeated syncs.</li>
+<li>On RHEL 9 and newer systems, <code>scp</code> may use the SFTP subsystem by default.
+  If transfers fail, check that <code>Subsystem sftp</code> is enabled in <code>sshd_config</code>.</li>
+</ul>

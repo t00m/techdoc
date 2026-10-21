@@ -1,0 +1,851 @@
+<h2 id="overview">Overview</h2>
+<p>This is a comprehensive reference of SQL*Plus queries for SAP Basis Administrators working with Oracle databases. It covers database administration tasks including instance and database monitoring, tablespace and datafile management, table and index analysis, user and security management, and growth trend analysis using Oracle’s Automatic Workload Repository (AWR).</p>
+<p>All queries should work in any Oracle 10g+ instance with SAP schema (<code>SAPSR3</code> owner). Queries use standard Oracle data dictionary views and dynamic performance views.</p>
+<p><em>DBSID</em> is <code>SDB</code>.</p>
+<h2 id="prerequisites-and-setup">Prerequisites and Setup</h2>
+<ul>
+<li>SQL*Plus access to Oracle database with DBA or monitoring privileges</li>
+<li>Knowledge of basic SQL syntax and Oracle object naming conventions</li>
+<li>AWR enabled (for historical segment statistics queries)</li>
+<li>SAP tables populated (for SAP-specific queries)</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<p>Before running queries, apply these SQL*Plus settings to control output formatting:</p>
+<pre><code class="language-sql">SET LINESIZE 32767
+SET WRAP OFF
+SET PAGESIZE 100
+SET LINESIZE 150
+SPOOL &lt;filename&gt;    -- Optional: redirect output to file
+-- ... run queries ...
+SPOOL OFF
+</code></pre>
+<p>For detailed formatting options, see the <a href="http://docs.oracle.com/cd/B19306_01/server.102/b14357/ch12040.htm">SQL*Plus User’s Guide and Reference</a>.</p>
+<h3 id="common-format-variables">Common Format Variables</h3>
+<p>These column formatting statements are used throughout this guide:</p>
+<pre><code class="language-sql">COL SEGMENT_NAME FORMAT A20
+COL SEGMENT_TYPE FORMAT A15
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+COL TABLESPACE_NAME FORMAT A32
+COL OWNER FORMAT A15
+COL OBJECT_NAME FORMAT A36
+COL TABLE_NAME FORMAT A30
+COL USERNAME FORMAT A15
+COL ACCOUNT_STATUS FORMAT A10
+COL AUTHENTICATION_TYPE FORMAT A15
+</code></pre>
+<h2 id="database">Database</h2>
+<h3 id="show-oracle-database-version">Show Oracle Database version</h3>
+<pre><code class="language-sql">SELECT
+FROM v$version;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>BANNER
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 – 64bit Production
+PL/SQL Release 11.2.0.3.0 – Production CORE    11.2.0.3.0      Production
+TNS for IBM/AIX RISC System/6000: Version 11.2.0.3.0 – Production
+NLSRTL Version 11.2.0.3.0 – Production
+</code></pre>
+<h3 id="show-database-details">Show database details</h3>
+<pre><code class="language-sql">SELECT NAME, LOG_MODE, OPEN_MODE, DATABASE_ROLE, PLATFORM_NAME
+FROM  v$database;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>NAME LOG_MODE     OPEN_MODE   DATABASE_ROLE PLATFORM_NAME
+SDB  NOARCHIVELOG READ WRITE  PRIMARY       AIX-Based Systems (64-bit)
+</code></pre>
+<h3 id="show-database-size">Show database size</h3>
+<pre><code class="language-sql">SELECT SUM(BYTES)/1024/1024/1024 AS &quot;DBSIZE(GB)&quot;
+FROM dba_data_files;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>DBSIZE(GB)
+5312.59766
+</code></pre>
+<h3 id="show-oracle-instant-client-version">Show Oracle Instant Client Version</h3>
+<pre><code class="language-sql">SELECT DISTINCT client_version
+FROM v$session_connect_info
+WHERE sid = sys_context('userenv', 'sid');
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>CLIENT_VERSION
+11.2.0.3.0
+</code></pre>
+<p>For a list of all possibilities to check and identify Oracle Instant Client Version check this <a href="http://scn.sap.com/docs/DOC-61410">document</a>.</p>
+<h4 id="installed-components-in-database">Installed components in Database</h4>
+<pre><code class="language-sql">SELECT comp_name, version, status
+FROM dba_registry;
+</code></pre>
+<h2 id="instance">Instance</h2>
+<h3 id="show-database-instance-details">Show database instance details</h3>
+<pre><code class="language-sql">SELECT INSTANCE_NAME, HOST_NAME, VERSION, STARTUP_TIME, STATUS, INSTANCE_ROLE
+FROM v$instance;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>INSTANCE_NAME HOST_NAME VERSION    STARTUP_TIME STATUS INSTANCE_ROLE
+SDB           SAPSERVER 11.2.0.3.0 26-MAR-15    OPEN   PRIMARY_INSTANCE
+</code></pre>
+<h3 id="monitor-instance-status-of-oracle">Monitor instance status of oracle</h3>
+<pre><code class="language-sql">SELECT host_name, status
+FROM v$instance;
+</code></pre>
+<h3 id="db-schema-for-sdb">DB Schema for SDB</h3>
+<pre><code class="language-sql">SELECT OWNER
+FROM DBA_TABLES WHERE TABLE_NAME = 'T000';
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>OWNER
+SAPSR3
+</code></pre>
+<h2 id="tablespaces">Tablespaces</h2>
+<h3 id="show-tablespaces-details">Show tablespaces details</h3>
+<pre><code class="language-sql">SELECT TABLESPACE_NAME, STATUS, CONTENTS, SEGMENT_SPACE_MANAGEMENT
+FROM dba_tablespaces;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>TABLESPACE_NAME                STATUS    CONTENTS  SEGMEN
+SYSTEM                         ONLINE    PERMANENT MANUAL
+PSAPUNDO                       ONLINE    UNDO      MANUAL
+SYSAUX                         ONLINE    PERMANENT AUTO
+PSAPTEMP                       ONLINE    TEMPORARY MANUAL
+PSAPSR3                        ONLINE    PERMANENT AUTO
+PSAPSR3USR                     ONLINE    PERMANENT AUTO
+TOOLS                          ONLINE    PERMANENT AUTO
+PSAPSR3731                     ONLINE    PERMANENT AUTO
+</code></pre>
+<h3 id="list-of-datafiles-for-tablespace">List of datafiles for tablespace</h3>
+<pre><code class="language-sql">SELECT file_name
+FROM dba_data_files
+WHERE tablespace_name='&lt;TABLESPACE_NAME&gt;';
+</code></pre>
+<h3 id="find-tables-being-used-by-tablespace">Find tables being used by tablespace</h3>
+<pre><code class="language-sql">SELECT table_name
+FROM dba_tables
+WHERE tablespace_name='PSAPSR37XX';
+</code></pre>
+<h3 id="check-autoextend">Check autoextend</h3>
+<pre><code class="language-sql">SELECT TABLESPACE_NAME,SEGMENT_SPACE_MANAGEMENT
+FROM dba_tablespaces;
+</code></pre>
+<h3 id="check-what-is-the-retention-period-for-psapundo-tablespace">Check what is the retention period for PSAPUNDO tablespace</h3>
+<pre><code class="language-sql">SELECT name &quot;retention&quot;,value/60 &quot;minutes&quot;
+FROM v$parameter
+WHERE name like '%undo_retention%';
+</code></pre>
+<h3 id="get-total-used-and-free-space-for-tablespaces">Get total, used and free space for tablespaces</h3>
+<pre><code class="language-sql">set pages 49999 lin 120
+col tablespace_name for a32 tru
+col &quot;Total GB&quot;  for 999,999.9
+col &quot;GB Used&quot;   for 999,999.9
+col &quot;GB Free&quot;   for 99,999.9
+col &quot;Pct Free&quot;  for 999.9
+col &quot;Pct Used&quot;  for 999.9
+comp sum of &quot;Total GB&quot;  on report
+comp sum of &quot;GB Used&quot;   on report
+comp sum of &quot;GB Free&quot;   on report
+break on report
+
+Select A.Tablespace_Name, B.Total/1024/1024/1024 &quot;Total GB&quot;,
+       (B.Total-a.Total_Free)/1024/1024/1024 &quot;GB Used&quot;,
+       A.Total_Free/1024/1024/1024 &quot;GB Free&quot;,
+       (A.Total_Free/B.Total) * 100 &quot;Pct Free&quot;,
+       ((B.Total-A.Total_Free)/B.Total) * 100 &quot;Pct Used&quot;
+  From (Select Tablespace_Name, Sum(Bytes) Total_Free
+          From Sys.Dba_Free_Space
+         Group By Tablespace_Name     ) A
+     , (Select Tablespace_Name, Sum(Bytes) Total
+          From Sys.Dba_Data_Files
+         Group By Tablespace_Name     ) B
+Where A.Tablespace_Name = B.Tablespace_Name
+Order By 1
+/
+</code></pre>
+<h3 id="psaptemp">PSAPTEMP</h3>
+<p>Get freespace:</p>
+<pre><code class="language-sql">SQL&gt; select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
+
+    TBSIZE       FREE
+---------- ----------
+    172000      48290
+</code></pre>
+<p>Get properties:</p>
+<pre><code class="language-sql">SQL&gt;  column property_name format a25;
+SQL&gt; column property_value format a15;
+SQL&gt; SELECT property_name, property_value as value from database_properties WHERE property_name='DEFAULT_TEMP_TABLESPACE';
+
+PROPERTY_NAME             VALUE
+------------------------- ---------------
+DEFAULT_TEMP_TABLESPACE   PSAPTEMP
+</code></pre>
+<p>Get details:</p>
+<pre><code class="language-sql">SQL&gt; set linesize 150
+SQL&gt; column tablespace format a25;
+SQL&gt; column filename format a45;
+SQL&gt; SELECT tablespace_name as tablespace, file_name as filename, bytes/1024/1024 as MB, status from dba_temp_files;
+
+TABLESPACE                FILENAME                                              MB STATUS
+------------------------- --------------------------------------------- ---------- -------
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_4/temp.data4             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_8/temp.data8             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_9/temp.data9             32000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_7/temp.data7             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_2/temp.data2             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_5/temp.data5             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_3/temp.data3             20000 ONLINE
+PSAPTEMP                  /oracle/SDB/sapdata1/temp_6/temp.data6             20000 ONLINE
+
+8 rows selected.
+</code></pre>
+<p><strong>Recreate</strong>:</p>
+<ol>
+<li>Create a new temporary tablespace:</li>
+</ol>
+<p><code>sql
+   $ mkdir /oracle/SDB/sapdata1/temp_0/
+   sql&gt; CREATE TEMPORARY TABLESPACE "PSAPTEMP123" TEMPFILE '/oracle/SDB/sapdata1/temp_0/temp.data123' SIZE 100M REUSE AUTOEXTEND OFF;</code>
+2. Make it default:</p>
+<p><code>ALTER DATABASE DEFAULT TEMPORARY TABLESPACE PSAPTEMP123;</code>
+3. Drop the old one</p>
+<p><code>DROP TABLESPACE PSAPTEMP INCLUDING CONTENTS;</code>
+4. Create another one like the original</p>
+<p><code>sql
+   sql&gt; create temporary tablespace PSAPTEMP tempfile '/oracle/SDB/sapdata1/temp_1/temp.data1' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_2/temp.data2' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_3/temp.data3' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_4/temp.data4' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_5/temp.data5' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_6/temp.data6' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_7/temp.data7' size 1000M autoextend on next 100M maxsize 32000M;
+   sql&gt; ALTER TABLESPACE PSAPTEMP ADD TEMPFILE '/oracle/SDB/sapdata1/temp_8/temp.data8' size 1000M autoextend on next 100M maxsize 32000M;</code>
+5. Make it default:</p>
+<p><code>ALTER DATABASE DEFAULT TEMPORARY TABLESPACE PSAPTEMP</code>
+6. Drop the first temporary tablespace</p>
+<p><code>DROP TABLESPACE PSAPTEMP123 INCLUDING CONTENTS;</code></p>
+<p>If <em>ERROR ORA-60100: dropping temporary tablespace with tablespace ID number (tsn) 3 is blocked due to sort segments</em>, apply the following <a href="https://support.oracle.com/knowledge/Oracle%20Database%20Products/2696984_1.html">solution</a>:</p>
+<pre><code>shutdown immediate
+startup;
+DROP TABLESPACE PSAPTEMP INCLUDING CONTENTS;
+</code></pre>
+<p>Check PSAPTEMP freespace:</p>
+<pre><code>select tablespace_size/1024/1024 as tbsize, free_space/1024/1024 as free from dba_temp_free_space;
+</code></pre>
+<p>List datafiles in PSAPTEMP:</p>
+<pre><code>set linesize 150
+column tablespace format a25;
+column filename format a45;
+SELECT tablespace_name as tablespace, file_name as filename, bytes/1024/1024 as MB, status from dba_temp_files;
+</code></pre>
+<h2 id="tables">Tables</h2>
+<h3 id="get-table-size">Get table size</h3>
+<pre><code class="language-sql">select segment_name,sum(bytes)/1024/1024/1024 GB from dba_segments where segment_type='TABLE' and segment_name=upper('&amp;TABLE_NAME') group by segment_name;
+</code></pre>
+<h2 id="users">Users</h2>
+<h3 id="show-database-users">Show database users</h3>
+<pre><code class="language-sql">SET PAGESIZE 100;
+COLUMN USERNAME FORMAT A25;
+COLUMN ACCOUNT_STATUS FORMAT A10;
+COLUMN AUTHENTICATION_TYPE FORMAT A15;
+SELECT USERNAME, ACCOUNT_STATUS, AUTHENTICATION_TYPE FROM dba_users;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>USERNAME                       ACCOUNT_STATUS                   AUTHENTI
+SAPSR3                         OPEN                             PASSWORD
+SYSTEM                         OPEN                             PASSWORD
+SYS                            OPEN                             PASSWORD
+OPS$SAPSERVICESAP              OPEN                             EXTERNAL
+OPS$ORASAP                     OPEN                             EXTERNAL
+</code></pre>
+<h3 id="to-see-all-user-who-were-locked-by-the-system-admin">To see all user who were locked by the system admin</h3>
+<pre><code class="language-sql">SELECT bname
+FROM &lt;schema-name&gt;.USR02
+WHERE uflag='64' and mandt='&lt;client-id&gt;';
+</code></pre>
+<h3 id="list-of-users">List of users</h3>
+<pre><code class="language-sql">COLUMN USERNAME FORMAT A15;
+COLUMN LAST_LOGIN FORMAT A50;
+COLUMN ACCOUNT_STATUS FORMAT A10;
+SELECT USERNAME, ACCOUNT_STATUS, LAST_LOGIN FROM DBA_USERS WHERE LAST_LOGIN IS NOT NULL ORDER BY LAST_LOGIN DESC;
+
+USERNAME        ACCOUNT_ST LAST_LOGIN
+--------------- ---------- --------------------------------------------------
+SAPSR3          OPEN       20-NOV-23 09.15.58.000000000 AM +01:00
+DBSNMP          OPEN       20-NOV-23 09.04.31.000000000 AM +01:00
+ETLSAP          OPEN       20-NOV-23 05.03.38.000000000 AM +01:00
+OPS$ORABWD      OPEN       20-NOV-23 04.00.50.000000000 AM +01:00
+OPS$ORACLE      OPEN       19-NOV-23 07.00.45.000000000 AM +01:00
+SYSTEM          OPEN       13-NOV-23 01.41.19.000000000 PM +01:00
+OPS$BWDADM      OPEN       15-JUL-23 07.04.01.000000000 PM +01:00
+
+7 rows selected.
+</code></pre>
+<h3 id="unlock-user-account">(Un)lock user account</h3>
+<pre><code class="language-sql">ALTER USER &lt;USERNAME&gt; ACCOUNT LOCK;
+</code></pre>
+<pre><code class="language-sql">ALTER USER &lt;USERNAME&gt; ACCOUNT UNLOCK;
+</code></pre>
+<h3 id="create-user">Create user</h3>
+<pre><code class="language-sql">CREATE USER &lt;USERNAME&gt; IDENTIFIED BY &lt;PASSWORD&gt; [PROFILE &lt;PROFILE_NAME&gt;]
+</code></pre>
+<h3 id="delete-sap-user-or-another-user">Delete SAP* user (or another user)</h3>
+<p>First we check if user exists:</p>
+<pre><code class="language-sql">SELECT MANDT, BNAME
+FROM &lt;DB_SCHEMA&gt;.USR02
+WHERE MANDT = 'XXX' AND BNAME = 'SAP*';
+</code></pre>
+<p>Then delete it:</p>
+<pre><code class="language-sql">DELETE
+FROM &lt;DB_SCHEMA&gt;.USR02
+WHERE MANDT = 'XXX' AND BNAME = 'SAP*';
+</code></pre>
+<h3 id="password-complexity">Password complexity</h3>
+<p>Execute script sap_utlpwdmg.sql from SAP Note 1522952 in SQL Plus:</p>
+<pre><code class="language-sql">@sap_utlpwdmg.sql
+</code></pre>
+<h3 id="activate-complexity-in-profiles">Activate complexity in profiles:</h3>
+<pre><code class="language-sql">ALTER PROFILE DEFAULT LIMIT PASSWORD_VERIFY_FUNCTION verify_function_sap;
+ALTER PROFILE SAPUPROF LIMIT PASSWORD_VERIFY_FUNCTION verify_function_sap;
+</code></pre>
+<h3 id="deativate-complexity-in-profiles">Deativate complexity in profiles:</h3>
+<pre><code class="language-sql">ALTER PROFILE DEFAULT LIMIT PASSWORD_VERIFY_FUNCTION NULL;
+ALTER PROFILE SAPUPROF LIMIT PASSWORD_VERIFY_FUNCTION NULL;
+</code></pre>
+<h2 id="datafiles">Datafiles</h2>
+<h3 id="check-datafiles">Check datafiles</h3>
+<pre><code class="language-sql">SELECT FILE#, STATUS, ENABLED
+FROM  v$datafile;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>     FILE# STATUS  ENABLED
+       375 ONLINE  READ WRITE
+       376 ONLINE  READ WRITE
+       377 ONLINE  READ WRITE
+       378 ONLINE  READ WRITE
+       379 ONLINE  READ WRITE
+       380 ONLINE  READ WRITE
+</code></pre>
+<h3 id="list-of-datafiles">List of datafiles</h3>
+<pre><code class="language-sql">SELECT FILE_NAME AS Datafile, BYTES/1024/1024 AS &quot;Size(MB)&quot;
+FROM DBA_DATA_FILES
+WHERE TABLESPACE_NAME LIKE '%&lt;TABLESPACE_NAME&gt;%';
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>Datafile                                          Size(MB)
+[…]
+/oracle/SDB/sapdata9/sr3731_3/sr3731.data3           20000
+/oracle/SDB/sapdata9/sr3731_4/sr3731.data4           20000
+/oracle/SDB/sapdata9/sr3731_5/sr3731.data5           20000
+/oracle/SDB/sapdata9/sr3731_6/sr3731.data6           20000
+/oracle/SDB/sapdata9/sr3731_7/sr3731.data7            3500
+/oracle/SDB/sapdata5/sr3_348/sr3.data348             31744
+</code></pre>
+<h3 id="resize-datafile-until-size">Resize datafile until size</h3>
+<pre><code class="language-sql">ALTER DATABASE DATAFILE '&lt;PATH_TO_DATAFILE&gt;' RESIZE &lt;SIZE&gt;M;
+</code></pre>
+<h2 id="redologs">Redologs</h2>
+<h3 id="list-of-redologs-groups-and-files-belonging-to-each-group">List of redologs groups and files belonging to each group</h3>
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT a.group#, a.member, b.bytes/1024/1024 AS &quot;SIZE(MB)&quot;
+FROM v$logfile a, v$log b
+WHERE a.group# = b.group#;
+
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>    GROUP# MEMBER                                          SIZE(MB)
+---------- --------------------------------------------- ----------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf                   200
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf                   200
+         2 /oracle/SDB/origlogB/log_g12m1.dbf                   200
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf                   200
+         3 /oracle/SDB/origlogA/log_g13m1.dbf                   200
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf                   200
+         4 /oracle/SDB/origlogB/log_g14m1.dbf                   200
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf                   200
+
+8 rows selected.
+</code></pre>
+<h3 id="active-redolog-groups">Active Redolog groups</h3>
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER STATUS A20;
+SELECT group#, status
+FROM v$log;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>    GROUP# STATUS
+---------- ----------------
+         1 INACTIVE
+         2 INACTIVE
+         3 CURRENT
+         4 INACTIVE
+</code></pre>
+<h3 id="check-the-online-redolog-files-details">Check the online redolog files details</h3>
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT l.group#,f.member,l.archived,l.bytes/1024/1024  AS &quot;SIZE(MB)&quot;,l.status,f.type
+FROM v$log l, v$logfile f
+WHERE l.group# = f.group#;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>    GROUP# MEMBER                                   ARC      BYTES STATUS           TYPE
+---------- ---------------------------------------- --- ---------- ---------------- -------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/origlogB/log_g12m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         3 /oracle/SDB/origlogA/log_g13m1.dbf       NO   194.43711 CURRENT          ONLINE
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf       NO   194.43711 CURRENT          ONLINE
+         4 /oracle/SDB/origlogB/log_g14m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf       YES  194.43711 INACTIVE         ONLINE
+
+8 rows selected.
+</code></pre>
+<h2 id="redologs_1">Redologs</h2>
+<h3 id="list-of-redologs-groups-and-files-belonging-to-each-group_1">List of redologs groups and files belonging to each group</h3>
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT a.group#, a.member, b.bytes/1024/1024 AS &quot;SIZE(MB)&quot;
+FROM v$logfile a, v$log b
+WHERE a.group# = b.group#;
+
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>    GROUP# MEMBER                                          SIZE(MB)
+---------- --------------------------------------------- ----------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf                   200
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf                   200
+         2 /oracle/SDB/origlogB/log_g12m1.dbf                   200
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf                   200
+         3 /oracle/SDB/origlogA/log_g13m1.dbf                   200
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf                   200
+         4 /oracle/SDB/origlogB/log_g14m1.dbf                   200
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf                   200
+
+8 rows selected.
+</code></pre>
+<h3 id="active-redolog-groups_1">Active Redolog groups</h3>
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER STATUS A20;
+SELECT group#, status
+FROM v$log;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>    GROUP# STATUS
+---------- ----------------
+         1 INACTIVE
+         2 INACTIVE
+         3 CURRENT
+         4 INACTIVE
+</code></pre>
+<h3 id="check-the-online-redolog-files-details_1">Check the online redolog files details</h3>
+<pre><code class="language-sql">SET LINESIZE 150
+SET PAGESIZE 200
+COLUMN GROUP FORMAT A10;
+COLUMN MEMBER FORMAT A45;
+
+SELECT l.group#,f.member,l.archived,l.bytes/1024/1024  AS &quot;SIZE(MB)&quot;,l.status,f.type
+FROM v$log l, v$logfile f
+WHERE l.group# = f.group#;
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>    GROUP# MEMBER                                   ARC      BYTES STATUS           TYPE
+---------- ---------------------------------------- --- ---------- ---------------- -------
+         1 /oracle/SDB/origlogA/log_g11m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         1 /oracle/SDB/mirrlogA/log_g11m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/origlogB/log_g12m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         2 /oracle/SDB/mirrlogB/log_g12m2.dbf       YES  194.43711 INACTIVE         ONLINE
+         3 /oracle/SDB/origlogA/log_g13m1.dbf       NO   194.43711 CURRENT          ONLINE
+         3 /oracle/SDB/mirrlogA/log_g13m2.dbf       NO   194.43711 CURRENT          ONLINE
+         4 /oracle/SDB/origlogB/log_g14m1.dbf       YES  194.43711 INACTIVE         ONLINE
+         4 /oracle/SDB/mirrlogB/log_g14m2.dbf       YES  194.43711 INACTIVE         ONLINE
+
+8 rows selected.
+</code></pre>
+<h2 id="table-size-analysis">Table Size Analysis</h2>
+<p>This section covers queries for analyzing individual table and index sizes in the SAP schema.</p>
+<h3 id="get-single-table-size">Get single table size</h3>
+<p>Query the total allocated space (in GB) for a specific table:</p>
+<pre><code class="language-sql">SELECT segment_name,
+       SUM(bytes)/1024/1024/1024 AS GB
+FROM dba_segments
+WHERE segment_type = 'TABLE'
+  AND segment_name = UPPER('&amp;TABLE_NAME')
+GROUP BY segment_name;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>&amp;TABLE_NAME</code> — table name (case-insensitive; will be converted to uppercase)</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>To find the size of <code>RSSTATMANREQMAP</code>:</p>
+<pre><code class="language-sql">SELECT segment_name,
+       SUM(bytes)/1024/1024/1024 AS GB
+FROM dba_segments
+WHERE segment_type = 'TABLE'
+  AND segment_name = UPPER('RSSTATMANREQMAP')
+GROUP BY segment_name;
+</code></pre>
+<h3 id="get-table-size-from-user_segments">Get table size from USER_SEGMENTS</h3>
+<p>If you are logged in as the table owner, query <code>USER_SEGMENTS</code> instead of <code>DBA_SEGMENTS</code>:</p>
+<pre><code class="language-sql">SELECT segment_name,
+       SUM(bytes)/1024/1024/1024 AS GB
+FROM user_segments
+WHERE segment_type = 'TABLE'
+  AND segment_name = UPPER('SAPSR3.RSSTATMANREQMAP')
+GROUP BY segment_name;
+</code></pre>
+<h3 id="size-multiple-specific-tables-with-their-indexes">Size multiple specific tables with their indexes</h3>
+<p>When you need to size a specific set of tables by name:</p>
+<pre><code class="language-sql">COL SEGMENT_NAME FORMAT A20
+COL SEGMENT_TYPE FORMAT A15
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+SET LINESIZE 200
+SET PAGESIZE 100
+
+SELECT 
+    segment_name,
+    segment_type,
+    ROUND(bytes/1024, 2) AS size_kb,
+    ROUND(bytes/1024/1024, 2) AS size_mb,
+    ROUND(bytes/1024/1024/1024, 2) AS size_gb
+FROM dba_segments
+WHERE owner = 'SAPSR3'
+AND (
+    (segment_name IN ('&lt;TABLE_1&gt;', '&lt;TABLE_2&gt;') AND segment_type = 'TABLE')
+    OR 
+    (segment_name IN (
+        SELECT index_name 
+        FROM dba_indexes 
+        WHERE table_owner = 'SAPSR3' 
+        AND table_name IN ('&lt;TABLE_1&gt;', '&lt;TABLE_2&gt;')
+    ) AND segment_type LIKE 'INDEX%')
+)
+ORDER BY segment_type, bytes DESC;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li>Modify the list in <code>segment_name IN (...)</code> to match your target tables.</li>
+<li>Results are ordered by type and size (largest first).</li>
+</ul>
+<h2 id="segment-growth-and-historical-analysis">Segment Growth and Historical Analysis</h2>
+<p>This section provides queries using Oracle’s Automatic Workload Repository (AWR) to track segment growth over time.</p>
+<blockquote>
+<p><strong>❗ IMPORTANT</strong>\
+AWR must be enabled and retention set appropriately. Growth queries require at least two snapshots spanning your target time period.</p>
+</blockquote>
+<h3 id="table-size-over-last-30-days">Table size over last 30 days</h3>
+<p>Query historical segment usage data to see how a table grew:</p>
+<pre><code class="language-sql">SELECT 
+    snap_id,
+    TO_CHAR(begin_interval_time, 'YYYY-MM-DD') AS snap_date,
+    tablespace_name,
+    object_name,
+    SUM(space_used_total) / 1024 / 1024 AS size_mb
+FROM 
+    dba_hist_seg_stat ss
+    JOIN dba_hist_snapshot sn ON ss.snap_id = sn.snap_id
+WHERE 
+    object_name LIKE '%&lt;PATTERN&gt;%'
+    AND owner = 'SAPSR3'
+GROUP BY 
+    snap_id, begin_interval_time, tablespace_name, object_name
+ORDER BY 
+    snap_date;
+</code></pre>
+<h3 id="detailed-growth-tracking-with-object-types">Detailed growth tracking with object types</h3>
+<p>This query provides object type classification and is filtered to a specific date range:</p>
+<pre><code class="language-sql">COL SNAP_DATE FORMAT A10
+COL OBJECT_NAME FORMAT A30
+COL OBJECT_TYPE FORMAT A15
+COL OWNER FORMAT A6
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+SELECT 
+    TO_CHAR(sn.begin_interval_time, 'YYYY-MM-DD') AS snap_date,
+    o.owner,
+    o.object_name,
+    o.object_type,
+    SUM(ss.space_used_total) / 1024 / 1024 AS size_mb
+FROM 
+    dba_hist_seg_stat ss
+    JOIN dba_hist_snapshot sn ON ss.snap_id = sn.snap_id 
+      AND ss.dbid = sn.dbid
+    JOIN dba_objects o ON ss.obj# = o.object_id
+WHERE 
+    o.object_name LIKE '&lt;TABLE_1&gt;'
+    AND o.owner = 'SAPSR3'
+    AND o.object_type LIKE '%TABLE%'
+    AND sn.begin_interval_time &gt;= TRUNC(SYSDATE) - 30
+    AND sn.begin_interval_time &lt; TRUNC(SYSDATE) + 1
+GROUP BY 
+    TO_CHAR(sn.begin_interval_time, 'YYYY-MM-DD'),
+    o.owner,    
+    o.object_name,
+    o.object_type
+ORDER BY 
+    snap_date;
+</code></pre>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Change <code>TRUNC(SYSDATE) - 30</code> to adjust the lookback window.</li>
+<li>Include <code>object_type</code> to distinguish tables from their associated objects.</li>
+</ul>
+<h3 id="daily-space-delta-growth-rate-with-current-total-size">Daily space delta (growth rate) with current total size</h3>
+<p>This advanced query shows the daily space delta for objects and correlates it with their current total size in <code>dba_segments</code>:</p>
+<pre><code class="language-sql">COLUMN owner                  FORMAT A16
+COLUMN object_name            FORMAT A36
+COLUMN start_day              FORMAT A11
+COLUMN block_increase_mbytes  FORMAT 999,999,999.99
+COLUMN total_size_mb          FORMAT 999,999,999.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+SPOOL CHANGES.txt 
+
+SELECT
+    obj.owner,
+    obj.object_name,
+    obj.object_type,
+    TO_CHAR(sn.begin_interval_time, 'RRRR-MON-DD') AS start_day,
+    SUM(a.space_used_delta) / 1024 / 1024 AS block_increase_mbytes,
+
+    /* Current total size from DBA_SEGMENTS (MB) */
+    (
+        SELECT SUM(s.bytes) / 1024 / 1024
+        FROM dba_segments s
+        WHERE s.owner = obj.owner
+          AND (
+                s.segment_name = obj.object_name
+             OR s.segment_name IN (
+                    SELECT i.index_name
+                    FROM dba_indexes i
+                    WHERE i.table_owner = obj.owner
+                      AND i.table_name  = obj.object_name
+                )
+          )
+    ) AS total_size_mb
+
+FROM
+    dba_hist_seg_stat   a,
+    dba_hist_snapshot   sn,
+    dba_objects         obj
+WHERE
+    sn.snap_id = a.snap_id
+    AND a.instance_number = sn.instance_number
+    AND obj.object_id = a.obj#
+    AND obj.object_type LIKE '%TABLE%'
+    AND obj.owner NOT IN ('SYS','SYSTEM')
+    AND sn.end_interval_time BETWEEN
+        TO_TIMESTAMP('17-JAN-2026','DD-MON-RRRR')
+        AND TO_TIMESTAMP('21-JAN-2026','DD-MON-RRRR')
+GROUP BY
+    obj.owner,
+    obj.object_name,
+    obj.object_type,
+    TO_CHAR(sn.begin_interval_time,'RRRR-MON-DD')
+ORDER BY
+    obj.object_name,
+    start_day
+/
+
+SPOOL OFF
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>TO_TIMESTAMP('17-JAN-2026', 'DD-MON-RRRR')</code> — start of date range (adjust as needed)</li>
+<li><code>TO_TIMESTAMP('21-JAN-2026', 'DD-MON-RRRR')</code> — end of date range (adjust as needed)</li>
+</ul>
+<p><strong>Output Interpretation</strong></p>
+<ul>
+<li><code>block_increase_mbytes</code> — daily growth (positive = growing, negative = shrinking)</li>
+<li><code>total_size_mb</code> — current size from live dictionary (snapshot of today’s allocation)</li>
+</ul>
+<h3 id="simplified-daily-growth-without-current-size-lookup">Simplified daily growth without current size lookup</h3>
+<p>For better performance, use this simplified version without the correlated subquery:</p>
+<pre><code class="language-sql">COL SNAP_DATE FORMAT A10
+COL OBJECT_NAME FORMAT A30
+COL OBJECT_TYPE FORMAT A15
+COL OWNER FORMAT A6
+COL SIZE_KB FORMAT 999,999,990.99
+COL SIZE_MB FORMAT 999,999,990.99
+COL SIZE_GB FORMAT 99,990.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+COLUMN owner FORMAT A16
+COLUMN object_name FORMAT A36
+COLUMN start_day FORMAT A11
+COLUMN block_increase_mbytes FORMAT 999,999,999.99
+SET LINESIZE 200
+SET PAGESIZE 20000
+
+SPOOL CHANGES.txt 
+
+SELECT   
+    obj.object_name, 
+    obj.object_type,
+    TO_CHAR(sn.BEGIN_INTERVAL_TIME,'RRRR-MON-DD') AS start_day,
+    SUM(a.SPACE_USED_DELTA) / 1024 / 1024 AS block_increase_mbytes
+FROM     
+    dba_hist_seg_stat a,
+    dba_hist_snapshot sn,
+    dba_objects obj
+WHERE    
+    sn.snap_id = a.snap_id
+    AND a.instance_number = sn.instance_number
+    AND obj.object_id = a.obj#
+    AND obj.object_type LIKE '%TABLE%'
+    AND obj.owner NOT IN ('SYS','SYSTEM') 
+    AND sn.end_interval_time BETWEEN 
+        TO_TIMESTAMP('17-JAN-2026','DD-MON-RRRR')
+        AND TO_TIMESTAMP('21-JAN-2026','DD-MON-RRRR')
+GROUP BY 
+    obj.owner, obj.object_name, obj.object_type,
+    TO_CHAR(sn.BEGIN_INTERVAL_TIME,'RRRR-MON-DD')
+ORDER BY 
+    obj.object_name, start_day
+/
+
+SPOOL OFF
+</code></pre>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Much faster than the correlated subquery version.</li>
+<li>Use when you only need daily growth rates, not current total size.</li>
+</ul>
+<h2 id="sap-queries">SAP Queries</h2>
+<h3 id="system-in-upgrade-enable-imports">System in upgrade — enable imports</h3>
+<p>When the system is marked as being in upgrade and you need to enable imports:</p>
+<pre><code class="language-sql">UPDATE SAPSR3.uvers SET PUTSTATUS='+';
+COMMIT;
+</code></pre>
+<p><strong>⚠️ WARNING</strong>\
+Only execute this if you intend to allow imports during a system upgrade.</p>
+<h3 id="brbackup-error-clear-lock">BRBACKUP error — clear lock</h3>
+<p>If BRBACKUP reports it is currently running or was killed:</p>
+<p><strong>Error message</strong></p>
+<pre><code>BR0051I BRBACKUP 6.40 (43)
+BR0055I Start of database backup: bebchpaa.anf 2014-01-16 01.00.34
+BR0484I BRBACKUP log file: /oracle/SDB/sapbackup/bebchpaa.anf
+BR0071E BRBACKUP currently running or was killed
+BR0072I Please delete file /oracle/SDB/sapbackup/.lock.brb if BRBACKUP was killed
+BR0073E Setting of BRBACKUP lock failed
+BR0056I End of database backup: bebchpaa.anf 2014-01-16 07.00.04
+BR0280I BRBACKUP time stamp: 2009-07-26 07.00.05
+BR0054I BRBACKUP terminated with errors
+</code></pre>
+<p>Connect to database:</p>
+<pre><code class="language-bash">sqlplus /nolog
+SQL&gt; connect /as sysdba
+</code></pre>
+<p>End backup:</p>
+<pre><code class="language-sql">ALTER DATABASE END BACKUP;
+</code></pre>
+<p>Then check if the lock file exists and delete it. If not found, run the backup again.</p>
+<h2 id="instance-management">Instance Management</h2>
+<h3 id="show-instance-startup-time">Show instance startup time</h3>
+<p>Query when the current instance was started:</p>
+<pre><code class="language-sql">SELECT instance_name, 
+       TO_CHAR(startup_time, 'mm/dd/yyyy hh24:mi:ss') AS startup_time 
+FROM v$instance;
+</code></pre>
+<p><strong>Output</strong></p>
+<pre><code>INSTANCE_NAME STARTUP_TIME
+------------- ---------------------
+SDB           01/26/2026 14:23:45
+</code></pre>
+<h2 id="tablespace-capacity-and-free-space">Tablespace Capacity and Free Space</h2>
+<p>This section provides comprehensive queries for monitoring tablespace allocation, usage, and capacity.</p>
+<h3 id="detailed-tablespace-usage-permanent-and-temporary">Detailed tablespace usage (permanent and temporary)</h3>
+<p>This complex query provides a unified view of both permanent and temporary tablespace usage:</p>
+<pre><code class="language-sql">SET LINESIZE 150
+
+SELECT a.tablespace_name AS &quot;Tablespace Name&quot;,
+       ROUND(a.bytes_alloc / 1024 / 1024) AS &quot;Allocated (MB)&quot;,
+       ROUND(NVL(b.bytes_free, 0) / 1024 / 1024) AS &quot;Free (MB)&quot;,
+       ROUND((a.bytes_alloc - NVL(b.bytes_free, 0)) / 1024 / 1024) AS &quot;Used (MB)&quot;,
+       ROUND((NVL(b.bytes_free, 0) / a.bytes_alloc) * 100) AS &quot;% Free&quot;,
+       100 - ROUND((NVL(b.bytes_free, 0) / a.bytes_alloc) * 100) AS &quot;% Used&quot;,
+       ROUND(maxbytes / 1024 / 1024) AS &quot;Max. Bytes (MB)&quot;
+FROM (
+    SELECT f.tablespace_name,
+           SUM(f.bytes) bytes_alloc,
+           SUM(DECODE(f.autoextensible, 'YES', f.maxbytes, 'NO', f.bytes)) maxbytes
+    FROM dba_data_files f
+    GROUP BY tablespace_name
+) a,
+(
+    SELECT f.tablespace_name,
+           SUM(f.bytes) bytes_free
+    FROM dba_free_space f
+    GROUP BY tablespace_name
+) b
+WHERE a.tablespace_name = b.tablespace_name(+)
+UNION ALL
+SELECT h.tablespace_name AS tablespace_name,
+       ROUND(SUM(h.bytes_free + h.bytes_used) / 1048576) megs_alloc,
+       ROUND(SUM((h.bytes_free + h.bytes_used) - NVL(p.bytes_used, 0)) / 1048576) megs_free,
+       ROUND(SUM(NVL(p.bytes_used, 0)) / 1048576) megs_used,
+       ROUND((SUM((h.bytes_free + h.bytes_used) - NVL(p.bytes_used, 0)) / 
+              SUM(h.bytes_used + h.bytes_free)) * 100) Pct_Free, 
+       100 - ROUND((SUM((h.bytes_free + h.bytes_used) - NVL(p.bytes_used, 0)) / 
+                    SUM(h.bytes_used + h.bytes_free)) * 100) pct_used,
+       ROUND(SUM(f.maxbytes) / 1048576) max
+FROM sys.v_$TEMP_SPACE_HEADER h, 
+     sys.v_$Temp_extent_pool p,
+     dba_temp_files f
+WHERE p.file_id(+) = h.file_id
+  AND p.tablespace_name(+) = h.tablespace_name
+  AND f.file_id = h.file_id
+  AND f.tablespace_name = h.tablespace_name
+GROUP BY h.tablespace_name
+ORDER BY 1;
+</code></pre>
+<p><strong>Output</strong></p>
+<p>This query returns one row per tablespace showing allocation, usage, and capacity.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Permanent tablespaces are retrieved from <code>dba_data_files</code> and <code>dba_free_space</code>.</li>
+<li>Temporary tablespaces are retrieved from dynamic performance views (<code>v_$TEMP_SPACE_HEADER</code>, <code>v_$Temp_extent_pool</code>).</li>
+<li>The <code>UNION ALL</code> combines both types for a complete picture.</li>
+<li><code>% Free</code> approaching zero indicates potential space issues.</li>
+</ul>
+<h2 id="discovery-queries">Discovery Queries</h2>
+<h3 id="find-tables-matching-a-name-pattern">Find tables matching a name pattern</h3>
+<p>Search for all tables matching a pattern across all owners:</p>
+<pre><code class="language-sql">SET PAGESIZE 10000
+COL OWNER FORMAT A15
+COL TABLE_NAME FORMAT A30
+COL TABLESPACE_NAME FORMAT A20
+COL STATUS FORMAT A10
+
+SELECT owner, table_name, tablespace_name, status
+FROM all_tables
+WHERE table_name LIKE 'PNR%'
+ORDER BY owner, table_name;
+</code></pre>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><code>LIKE 'PNR%'</code> — adjust pattern as needed (% = wildcard)</li>
+</ul>
+<p><strong>Output</strong></p>
+<p>Lists all tables starting with "PNR" sorted by owner and table name.</p>

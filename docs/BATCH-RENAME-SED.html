@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>t00m's tech notes - Batch rename with sed</title>
+    <title>KB4IT - Batch rename with sed</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="KB4IT 0.7.7+build.4">
-    <meta name="description" content="KB4IT document">
-    <meta name="author" content="KB4IT by t00mlabs.net">
+    <meta name="generator" content="KB4IT 0.9.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
@@ -39,9 +37,17 @@
             });
         });
     </script>
+<!-- kb4it:meta -->
+<meta name="description" content="Replace a property name across hundreds of Markdown files in a single operation - for example, renaming Updated: to Date: throughout an entire KB4IT document…">
+<meta property="og:title" content="Batch rename with sed">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KB4IT">
+<meta property="og:description" content="Replace a property name across hundreds of Markdown files in a single operation - for example, renaming Updated: to Date: throughout an entire KB4IT document…">
+<meta name="twitter:card" content="summary">
+<!-- /kb4it:meta -->
 </head>
 <body>
-<!-- Template version 0.7.7+build.4 -->
+<!-- Template version 0.9.0 -->
 <div class="uk-background-muted uk-height-viewport">
 <div id="container-1" class="uk-container uk-container-center noprint">
     <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
@@ -50,7 +56,7 @@
                 <ul class="uk-navbar-nav noprint">
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
-                            <img src="resources/themes/techdoc/images/logo.svg" alt="" width="24px" height="24px">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="KB4IT" width="24" height="24">
                         </a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -70,6 +76,9 @@
                                         <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-small uk-column-1-2">
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Bookmark.html"><span class="">Bookmark</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Category.html"><span class="">Category</span></a>
@@ -105,13 +114,7 @@
                                                 <a class="uk-link-heading" href="Product.html"><span class="">Product</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
-                                                <a class="uk-link-heading" href="Project.html"><span class="">Project</span></a>
-                                            </li>
-                                            <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Protocol.html"><span class="">Protocol</span></a>
-                                            </li>
-                                            <li class="uk-link-toggle">
-                                                <a class="uk-link-heading" href="Public.html"><span class="">Public</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Scope.html"><span class="">Scope</span></a>
@@ -139,6 +142,9 @@
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Topic.html"><span class="">Topic</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Transaction.html"><span class="">Transaction</span></a>
                                             </li>
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="User.html"><span class="">User</span></a>
@@ -184,6 +190,10 @@
     <strong><a class="kb-meta-key" href="Command.html">Command</a></strong>: <a class="kb-meta-val" href="Command_sed.html">sed</a>
 <a class="kb-meta-val" href="Command_find.html">find</a>
 <a class="kb-meta-val" href="Command_grep.html">grep</a>
+
+</li>
+<li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2026-04-16_000000.html">2026-04-16 00:00:00</a>
 
 </li>
 <li class="kb-metadata-item">
@@ -328,7 +338,7 @@ An empty result means the rename is complete.
                             <div class="uk-card uk-card-small">
                                 <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">Batch rename with sed</span></a>
                                 <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
-                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <div class="uk-navbar-dropdown-nav">
 <ul class="uk-nav uk-nav-default">
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#goal">Goal</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#prerequisites">Prerequisites</a></li>
@@ -341,7 +351,7 @@ An empty result means the rename is complete.
 </ul>
 </li>
 </ul>
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -351,6 +361,17 @@ An empty result means the rename is complete.
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav noprint">
+                    <li class="uk-flex uk-flex-middle uk-padding-small uk-padding-remove-vertical">
+                        <form class="kb4it-search" action="search.html" method="get" role="search">
+    <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
+    <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
+</form>
+<link rel="stylesheet" href="resources/common/css/kb4it-search.css">
+<script defer src="search-index.js"></script>
+<script defer src="resources/common/js/kb4it-search.js"></script>
+<script defer src="resources/common/js/kb4it-search-ui.js"></script>
+
+                    </li>
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
                     </li>
@@ -381,6 +402,7 @@ An empty result means the rename is complete.
         <span class="uk-text-lead">Batch rename with sed</span>
     </div>
 <!-- Template HTML_BODY_DOC.tpl :: START -->
+<main class="kb-main">
 
 <!-- Print-only document header (hidden on screen) -->
 <div class="kb-print-header">
@@ -416,14 +438,14 @@ An empty result means the rename is complete.
 <div hidden>
 <div id="toctitle">Contents</div>
 <ul class="sectlevel1">
-<li><a class="" target="" href="#goal">Goal</a></li>
-<li><a class="" target="" href="#prerequisites">Prerequisites</a></li>
+<li><a href="#goal">Goal</a></li>
+<li><a href="#prerequisites">Prerequisites</a></li>
 <li>
-<a class="" target="" href="#steps">Steps</a><ul>
-<li><a class="" target="" href="#1-dry-run-identify-affected-files">1. Dry Run - Identify Affected Files</a></li>
-<li><a class="" target="" href="#2-single-directory">2. Single Directory</a></li>
-<li><a class="" target="" href="#3-recursive-multiple-subdirectories">3. Recursive - Multiple Subdirectories</a></li>
-<li><a class="" target="" href="#4-verify-the-result">4. Verify the Result</a></li>
+<a href="#steps">Steps</a><ul>
+<li><a href="#1-dry-run-identify-affected-files">1. Dry Run - Identify Affected Files</a></li>
+<li><a href="#2-single-directory">2. Single Directory</a></li>
+<li><a href="#3-recursive-multiple-subdirectories">3. Recursive - Multiple Subdirectories</a></li>
+<li><a href="#4-verify-the-result">4. Verify the Result</a></li>
 </ul>
 </li>
 </ul>
@@ -508,6 +530,10 @@ An empty result means the rename is complete.
 
 </li>
 <li class="kb-metadata-item">
+    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2026-04-16_000000.html">2026-04-16 00:00:00</a>
+
+</li>
+<li class="kb-metadata-item">
     <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_How-to_guide.html">How-to guide</a>
 
 </li>
@@ -540,11 +566,12 @@ An empty result means the rename is complete.
     </div>
 </div>
 
+</main>
 <!-- Template HTML_BODY_DOC.tpl :: END -->
 <!-- FOOTER :: START -->
 <div class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Friday, May 22, 2026 at 13:53</span>
+    <span class="kb-footer-meta">Last updated Wednesday, October 21, 2026 at 19:49</span>
 </div>
 <!-- FOOTER :: END -->
 </div>

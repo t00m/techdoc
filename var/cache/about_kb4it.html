@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>t00m's tech notes - About KB4IT</title>
+    <title>KB4IT - About KB4IT</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="KB4IT 0.7.7+build.4">
-    <meta name="description" content="KB4IT document">
-    <meta name="author" content="KB4IT by t00mlabs.net">
+    <meta name="generator" content="KB4IT 0.9.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
@@ -39,9 +37,15 @@
             });
         });
     </script>
+<!-- kb4it:meta -->
+<meta property="og:title" content="KB4IT">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KB4IT">
+<meta name="twitter:card" content="summary">
+<!-- /kb4it:meta -->
 </head>
 <body>
-<!-- Template version 0.7.7+build.4 -->
+<!-- Template version 0.9.0 -->
 <div class="uk-background-muted uk-height-viewport">
 <div id="container-1" class="uk-container uk-container-center noprint">
     <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
@@ -50,7 +54,7 @@
                 <ul class="uk-navbar-nav noprint">
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
-                            <img src="resources/themes/techdoc/images/logo.svg" alt="" width="24px" height="24px">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="KB4IT" width="24" height="24">
                         </a>
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -174,6 +178,15 @@
                         <div class="uk-child-width-expand@s uk-text-center" uk-grid>
                             <div class="uk-card uk-card-small">
                                 <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">About KB4IT</span></a>
+                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
+                                    <div class="uk-navbar-dropdown-nav">
+<ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#description">Description</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copyright">Copyright</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#license">License</a></li>
+</ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
@@ -182,6 +195,17 @@
             </div>
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav noprint">
+                    <li class="uk-flex uk-flex-middle uk-padding-small uk-padding-remove-vertical">
+                        <form class="kb4it-search" action="search.html" method="get" role="search">
+    <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
+    <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
+</form>
+<link rel="stylesheet" href="resources/common/css/kb4it-search.css">
+<script defer src="search-index.js"></script>
+<script defer src="resources/common/js/kb4it-search.js"></script>
+<script defer src="resources/common/js/kb4it-search-ui.js"></script>
+
+                    </li>
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
                         <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
                     </li>
@@ -212,12 +236,24 @@
         <span class="uk-text-lead">About KB4IT</span>
     </div>
 <!-- Template HTML_BODY_DOC.tpl :: START -->
+<main class="kb-main">
 
 <!-- Print-only document header (hidden on screen) -->
 <div class="kb-print-header">
     <h1 class="kb-print-doc-title">About KB4IT</h1>
 </div>
 
+<!-- Inline collapsible TOC -->
+<details id="kb-toc-inline" open class="kb-toc-panel">
+    <summary class="kb-toc-summary">Table of Contents</summary>
+    <nav class="kb-toc-nav">
+        <ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#description">Description</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#copyright">Copyright</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#license">License</a></li>
+</ul>
+    </nav>
+</details>
 
     <!-- This is the nav containing the toggling elements -->
     <ul class="uk-flex uk-flex-center uk-tab noprint uk-hidden" uk-switcher>
@@ -226,24 +262,49 @@
     <!-- This is the container of the content items -->
     <ul class="uk-switcher uk-margin">
         <li class="uk-active"><div class="kb-content kb-content-md">
+<div hidden>
+<div id="toctitle">Contents</div>
+<ul class="sectlevel1">
+<li><a href="#description">Description</a></li>
+<li><a href="#copyright">Copyright</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</div>
+
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="description">Description</h2>
+<div class="kb-section-body uk-container">
 <p><strong>KB4IT</strong> is a static website generator mainly for technical documentation purposes.</p>
-<p>It is based on <a class="" target="" href="https://commonmark.org/">Markdown</a> sources and uses the <a class="" target="" href="https://python-markdown.github.io/">python-markdown</a> library to convert them to HTML.</p>
-<p>This website was built using KB4IT 0.7.7+build.4</p>
-<p>For more information, visit the Git <a class="" target="" href="https://github.com/t00m/KB4IT">repository</a>.</p>
+<p>It is based on <a href="https://commonmark.org/">Markdown</a> sources and uses the <a href="https://python-markdown.github.io/">python-markdown</a> library to convert them to HTML.</p>
+<p>This website was built using KB4IT 0.9.0</p>
+<p>For more information, visit the Git <a href="https://github.com/t00m/KB4IT">repository</a>.</p>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="copyright">Copyright</h2>
+<div class="kb-section-body uk-container">
 <p>Copyright (C) 2019-2026 Tom&#225;s V&#237;rseda</p>
-<p>The code is licensed under the terms of the <a class="" target="" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v3</a>.</p>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="license">License</h2>
+<div class="kb-section-body uk-container">
+<p>The code is licensed under the terms of the <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL v3</a>.</p>
 <blockquote>
 <p>You're free to <strong>grab</strong>, <strong>extend</strong>, <strong>improve</strong> and <strong>fork</strong> the code as you want as long as it stays as GPLv3.</p>
 </blockquote>
+</div>
+</div>
 </div></li>
     </ul>
 
 
+</main>
 <!-- Template HTML_BODY_DOC.tpl :: END -->
 <!-- FOOTER :: START -->
 <div class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Thursday, May 28, 2026 at 13:12</span>
+    <span class="kb-footer-meta">Last updated Wednesday, October 21, 2026 at 19:49</span>
 </div>
 <!-- FOOTER :: END -->
 </div>
