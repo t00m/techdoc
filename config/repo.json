@@ -1,10 +1,14 @@
 {
+    "admin": false,
     "datatable": [
         "Date",
         "Title",
-        "Category",
+        "WorkType",
+        "Priority",
+        "Status",
         "Scope",
-        "Topic"
+        "Topic",
+        "Quality"
     ],
     "events": [
         "Change",
@@ -40,6 +44,7 @@
         "Team",
         "Topic"
     ],
+    "site_url": "https://t00m.github.io/techdoc/",
     "sort": "Date",
     "source": "source",
     "target": "docs",
