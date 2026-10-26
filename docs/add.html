@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>KB4IT - Add document</title>
+    <!-- PAGE METADATA :: START -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="KB4IT 0.9.0">
+    <title>KB4IT - Add document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="KB4IT 0.10.0+unknown; techdoc 1.0.0+aa5e0096a0f6">
+    <!-- PAGE METADATA :: END -->
+    <!-- SCRIPT FLAG :: START -->
+    <!-- With JavaScript on, panels that a script switches are hidden until shown. -->
+    <script>document.documentElement.classList.add('kb-js');</script>
+    <!-- SCRIPT FLAG :: END -->
+    <!-- STYLESHEETS :: START -->
     <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/print.css" type="text/css" media="print">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/screen.css">
+    <!-- STYLESHEETS :: END -->
+    <!-- LIBRARIES :: START -->
     <script src="resources/themes/techdoc/framework/Highlight/highlight.js"></script>
     <script src="resources/themes/techdoc/framework/uikit/js/uikit.min.js"></script>
     <script src="resources/themes/techdoc/framework/uikit/js/uikit-icons.min.js"></script>
     <script src="resources/themes/techdoc/framework/datatables/js/jquery-3.5.1.js"></script>
     <script src="resources/themes/techdoc/framework/datatables/js/jquery.dataTables.min.js"></script>
     <script src="resources/themes/techdoc/framework/datatables/js/dataTables.uikit.min.js"></script>
-    <script type="text/javascript" class="init">
+    <!-- LIBRARIES :: END -->
+    <script src="resources/themes/techdoc/framework/kb4it/js/page.js" defer></script>
+    <script src="resources/themes/techdoc/framework/kb4it/js/blocks.js" defer></script>
+    <!-- DATATABLES SETUP :: START -->
+    <script class="init">
         $(document).ready(function() {
             $('.kb4it-datatable:not([data-dt-init])').each(function() {
                 $(this).attr('data-dt-init', '1').DataTable({
@@ -27,6 +39,7 @@
                     deferRender:    true,
                     autoWidth:      false,
                     scrollY:        'calc(100vh - 200px)',
+                    scrollX:        true,
                     scrollCollapse: false,
                     scroller:       false,
                     stateSave: false,
@@ -37,19 +50,29 @@
             });
         });
     </script>
+    <!-- DATATABLES SETUP :: END -->
+    <!-- PRINT FOOTER :: START -->
+    
+    <style media="print">
+        @page { @bottom-left { content: "Add document"; } }
+    </style>
+    <!-- PRINT FOOTER :: END -->
 <!-- kb4it:meta -->
 <meta property="og:title" content="KB4IT">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KB4IT">
 <meta name="twitter:card" content="summary">
+<link rel="icon" href="resources/themes/techdoc/images/logo.svg">
 <!-- /kb4it:meta -->
 </head>
 <body>
-<!-- Template version 0.9.0 -->
+<!-- PAGE :: START -->
 <div class="uk-background-muted uk-height-viewport">
+<!-- TOP BAR :: START -->
 <div id="container-1" class="uk-container uk-container-center noprint">
-    <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
-        <nav class="uk-navbar-container uk-border-rounded uk-card-hover uk-box-shadow-large" style="background-color: white;" uk-navbar>
+    <div id="kb4it-menu" style="z-index: 980;" data-uk-sticky="show-on-up: true">
+        <nav class="uk-navbar-container uk-border-rounded uk-card-hover uk-box-shadow-large" style="background-color: white;" data-uk-navbar>
+            <!-- LOGO MENU :: START -->
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav noprint">
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
@@ -59,18 +82,21 @@
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="add.html"><span uk-icon="plus-circle"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Add document</span></a>
+                                    <a class="uk-link-heading" href="add.html"><span data-uk-icon="plus-circle"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Add document</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="search.html"><span data-uk-icon="search"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Search</span></a>
                                 </li>
                                 <li class="uk-nav-divider">
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="events.html"><span uk-icon="calendar"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Events</span></a>
+                                    <a class="uk-link-heading" href="events.html"><span data-uk-icon="calendar"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Events</span></a>
                                 </li>
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="bookmarks.html"><span uk-icon="bookmark"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Bookmarks</span></a>
+                                    <a class="uk-link-heading" href="bookmarks.html"><span data-uk-icon="bookmark"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Bookmarks</span></a>
                                 </li>
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="properties.html"><span uk-icon="database"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Properties</span></a>
-                                    <div class="uk-navbar-dropdown" uk-dropdown="pos: right-top">
+                                    <a class="uk-link-heading" href="properties.html"><span data-uk-icon="database"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Properties</span></a>
+                                    <div class="uk-navbar-dropdown" data-uk-dropdown="pos: right-top">
                                         <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-small uk-column-1-2">
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
@@ -155,39 +181,56 @@
                                 </li>
                                 <li class="uk-nav-divider">
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="stats.html"><span uk-icon="list"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Stats</span></a>
+                                    <a class="uk-link-heading" href="stats.html"><span data-uk-icon="list"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Stats</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="quality.html"><span data-uk-icon="star"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Quality</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="javascript:location.reload();"><span data-uk-icon="refresh"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Reload page</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="help.html"><span data-uk-icon="question"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Help</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_app.html"><span data-uk-icon="info"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">About this app</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_kb4it.html"><span data-uk-icon="info"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">About KB4IT</span></a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                 </ul>
-                <ul class="uk-navbar-nav noprint">
-                    <!-- MENU CONTENTS :: START -->
-                    <!-- Template SECTION_ACTIONS.tpl :: START -->
-<!-- Template SECTION_ACTIONS.tpl :: END -->
-
-
-
-                    <!-- MENU CONTENTS :: END -->
-                </ul>
             </div>
-            <div class="uk-navbar-center">
-                <!-- DOCUMENT TITLE :: START -->
+            <!-- LOGO MENU :: END -->
+            <!-- PAGE TITLE :: START -->
+            <!-- The title takes the room the left and right blocks leave, and is cut with an ellipsis. -->
+            <div class="kb4it-navbar-title">
                 <ul class="uk-navbar-nav">
-                    <li class="uk-card uk-card-small uk-padding-small uk-padding-remove-vertical">
-                        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-                            <div class="uk-card uk-card-small">
-                                <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">Add document</span></a>
-                            </div>
-                        </div>
+                    <li>
+                        <a class="uk-link-toggle uk-text-primary" href="#" title="Add document"><span id="kb4it-page-title" class="uk-text-primary uk-text-small">Add document</span></a>
+
                     </li>
                 </ul>
-                <!-- DOCUMENT TITLE :: END -->
             </div>
+            <!-- PAGE TITLE :: END -->
+            <!-- SEARCH BUTTON :: START -->
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav noprint">
-                    <li class="uk-flex uk-flex-middle uk-padding-small uk-padding-remove-vertical">
-                        <form class="kb4it-search" action="search.html" method="get" role="search">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="#kb4it-search-modal" title="Search (/ or Ctrl+K)" aria-label="Search" data-uk-toggle><span data-uk-icon="search"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- SEARCH BUTTON :: END -->
+        </nav>
+    </div>
+    <!-- SEARCH DIALOG :: START -->
+    <div id="kb4it-search-modal" class="kb4it-search-modal" data-uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <form class="kb4it-search" action="search.html" method="get" role="search">
     <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
     <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
 </form>
@@ -196,79 +239,65 @@
 <script defer src="resources/common/js/kb4it-search.js"></script>
 <script defer src="resources/common/js/kb4it-search-ui.js"></script>
 
-                    </li>
-                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
-                        <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
-                    </li>
-                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
-                        <a class="uk-link-heading" href="#"><span uk-icon="info"></span></a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="about_app.html"><span class="uk-padding-none">About this app</span></a>
-                                </li>
-                                <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="help.html"><span class="uk-padding-none">Help</span></a>
-                                </li>
-                                <li class="uk-nav-divider">
-                                <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="about_kb4it.html"><span class="uk-padding-none">About KB4IT</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        </div>
     </div>
+    <script>
+        (function () {
+            var modal = document.getElementById("kb4it-search-modal");
+            UIkit.util.on(modal, "shown", function () { document.getElementById("kb4it-search-input").focus(); });
+            document.addEventListener("keydown", function (e) {
+                // Keys typed in a field are left alone: Ctrl+K inserts a link in the Add page editor.
+                var target = e.target, typing = target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName);
+                var slash = e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey;
+                var ctrlK = (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k";
+                if (!typing && (slash || ctrlK)) { e.preventDefault(); UIkit.modal(modal).show(); }
+            });
+        })();
+    </script>
+    <!-- SEARCH DIALOG :: END -->
 </div>
+<!-- TOP BAR :: END -->
+<!-- CONTENT :: START -->
 <div class="uk-container uk-container-center">
-    <div id="container-2" class="uk-container uk-container-center uk-flex uk-flex-center uk-hidden">
-        <span class="uk-text-lead">Add document</span>
-    </div>
-<!-- Template HTML_BODY_DOC.tpl :: START -->
+<!-- MAIN CONTENT :: START -->
 <main class="kb-main">
+    <div class="kb-main-body">
+    <!-- PRINT HEADER :: START -->
+    <!-- Shown only on paper: the document title above the contents. -->
+    <div class="kb-print-header">
+        <h1 class="kb-print-doc-title">Add document</h1>
+    </div>
+    <!-- PRINT HEADER :: END -->
 
-<!-- Print-only document header (hidden on screen) -->
-<div class="kb-print-header">
-    <h1 class="kb-print-doc-title">Add document</h1>
-</div>
 
-
-    <!-- This is the nav containing the toggling elements -->
-    <ul class="uk-flex uk-flex-center uk-tab noprint uk-hidden" uk-switcher>
-        <li><a href="#">Document</a></li>
-    </ul>
-    <!-- This is the container of the content items -->
-    <ul class="uk-switcher uk-margin">
-        <li class="uk-active"><div class="kb-content kb-content-md">
-<script id="kb-add-keys" type="application/json">{"Author": [{"v": "Tom\u00e1s V\u00edrseda", "c": 6}], "Bookmark": [{"v": "True", "c": 1}], "Category": [{"v": "Note", "c": 3}, {"v": "Procedure", "c": 10}, {"v": "Report", "c": 1}], "Command": [{"v": "apachectl", "c": 1}, {"v": "cat", "c": 1}, {"v": "chown", "c": 1}, {"v": "configure", "c": 1}, {"v": "cp", "c": 2}, {"v": "crontab", "c": 1}, {"v": "curl", "c": 1}, {"v": "dasd_configure", "c": 1}, {"v": "dasdfmt", "c": 1}, {"v": "date", "c": 1}, {"v": "dd", "c": 1}, {"v": "dnf", "c": 1}, {"v": "du", "c": 1}, {"v": "echo", "c": 1}, {"v": "eval", "c": 1}, {"v": "fdasd", "c": 1}, {"v": "find", "c": 3}, {"v": "getent", "c": 1}, {"v": "git", "c": 1}, {"v": "grep", "c": 3}, {"v": "java", "c": 1}, {"v": "journalctl", "c": 1}, {"v": "kb4it", "c": 1}, {"v": "ls", "c": 2}, {"v": "lsdasd", "c": 1}, {"v": "lvcreate", "c": 1}, {"v": "lvs", "c": 1}, {"v": "mailx", "c": 1}, {"v": "make", "c": 1}, {"v": "mkdir", "c": 1}, {"v": "mkreiserfs", "c": 1}, {"v": "nc", "c": 1}, {"v": "nice", "c": 1}, {"v": "nohup", "c": 1}, {"v": "nslookup", "c": 1}, {"v": "openssl", "c": 1}, {"v": "pvcreate", "c": 1}, {"v": "python3", "c": 1}, {"v": "rpm", "c": 1}, {"v": "rsync", "c": 2}, {"v": "scp", "c": 1}, {"v": "sed", "c": 1}, {"v": "sftp", "c": 1}, {"v": "sqlplus", "c": 1}, {"v": "ssh", "c": 3}, {"v": "ssh-add", "c": 1}, {"v": "ssh-agent", "c": 1}, {"v": "ssh-keygen", "c": 1}, {"v": "sshpass", "c": 1}, {"v": "sudo", "c": 1}, {"v": "systemctl", "c": 2}, {"v": "vgcreate", "c": 1}, {"v": "vgextend", "c": 1}, {"v": "vgs", "c": 1}, {"v": "vi", "c": 1}, {"v": "wget", "c": 1}, {"v": "xargs", "c": 1}, {"v": "xauth", "c": 1}, {"v": "xsltproc", "c": 1}, {"v": "xterm", "c": 2}, {"v": "yum", "c": 1}], "Database": [{"v": "Oracle", "c": 1}], "DocType": [{"v": "Explanation", "c": 1}, {"v": "How-to guide", "c": 5}, {"v": "Reference", "c": 6}, {"v": "Tutorial", "c": 2}], "Environment": [{"v": "Development", "c": 1}, {"v": "Production", "c": 2}, {"v": "Quality", "c": 1}], "EnvVar": [{"v": "$DISPLAY", "c": 1}], "Filename": [{"v": "/etc/hosts", "c": 1}, {"v": "/etc/nsswitch.conf", "c": 1}, {"v": "fstab", "c": 1}, {"v": "journald.conf", "c": 1}, {"v": "journald.conf.back", "c": 1}, {"v": "sshd_config", "c": 1}], "Filesystem": [{"v": "/dev", "c": 1}, {"v": "/etc", "c": 5}, {"v": "/etc/fstab", "c": 1}, {"v": "/etc/ssh", "c": 2}, {"v": "/etc/systemd", "c": 1}, {"v": "/home", "c": 1}, {"v": "/intranet27", "c": 1}, {"v": "/oracle", "c": 2}, {"v": "/proc", "c": 1}, {"v": "/tmp", "c": 2}, {"v": "/usr/sap", "c": 2}, {"v": "/usr/sap/BO2", "c": 1}, {"v": "/var", "c": 1}, {"v": "/var/log", "c": 2}, {"v": "/var/log/journal", "c": 1}, {"v": "~/.ssh", "c": 1}], "OS": [{"v": "Linux", "c": 11}, {"v": "Solaris", "c": 1}, {"v": "Unix", "c": 3}, {"v": "Windows", "c": 1}], "Priority": [{"v": "Normal", "c": 3}, {"v": "Very high", "c": 1}], "Product": [{"v": "AIX", "c": 2}, {"v": "Apache", "c": 1}, {"v": "Crontab", "c": 1}, {"v": "DMS", "c": 1}, {"v": "Domino", "c": 1}, {"v": "GitLab", "c": 1}, {"v": "KB4IT", "c": 3}, {"v": "Markdown", "c": 1}, {"v": "MobaXterm", "c": 1}, {"v": "OpenSSH", "c": 2}, {"v": "OpenSSL", "c": 1}, {"v": "Putty", "c": 1}, {"v": "RHEL", "c": 4}, {"v": "ReiserFS", "c": 1}, {"v": "SAP BusinessObjects BI", "c": 1}, {"v": "SAP Content Server", "c": 1}, {"v": "SAP GUI", "c": 1}, {"v": "SAP JVM", "c": 1}, {"v": "SAP Netweaver", "c": 2}, {"v": "SFTP", "c": 1}, {"v": "SQLPlus", "c": 1}, {"v": "SSH", "c": 2}, {"v": "SUM", "c": 1}, {"v": "SUSE Linux Enterprise Server 11", "c": 1}, {"v": "Solaris", "c": 1}, {"v": "Ubuntu", "c": 1}, {"v": "Xming", "c": 1}, {"v": "s390x", "c": 1}], "Protocol": [{"v": "CPIC", "c": 1}, {"v": "FTP", "c": 1}, {"v": "HTTP", "c": 1}, {"v": "HTTPS", "c": 1}, {"v": "LCOM", "c": 1}, {"v": "NNTP", "c": 1}, {"v": "RFC", "c": 1}, {"v": "SFTP", "c": 1}, {"v": "SMTP", "c": 1}, {"v": "SSH", "c": 5}, {"v": "SSL", "c": 1}, {"v": "X11", "c": 1}], "Scope": [{"v": "Database Administration", "c": 2}, {"v": "Infrastructure", "c": 1}, {"v": "Knowledge Management", "c": 1}, {"v": "Linux Administration", "c": 2}, {"v": "SAP Basis", "c": 5}, {"v": "Unix Administration", "c": 6}], "Server": [{"v": "SAP-DEV", "c": 1}, {"v": "SAP-PRD", "c": 1}, {"v": "SAP-QUA", "c": 1}, {"v": "VENDOR-SFTP-PRD", "c": 1}, {"v": "VENDOR-SFTP-UAT", "c": 1}, {"v": "lxzlin01", "c": 1}, {"v": "lxzlin02", "c": 1}], "Service": [{"v": "sshd", "c": 1}], "Status": [{"v": "Draft", "c": 1}, {"v": "Released", "c": 4}], "Subsystem": [{"v": "LVM", "c": 1}, {"v": "Systemd", "c": 2}], "Table": [{"v": "ALL_TABLES", "c": 1}, {"v": "DATABASE_PROPERTIES", "c": 1}, {"v": "DBA_DATA_FILES", "c": 1}, {"v": "DBA_FREE_SPACE", "c": 1}, {"v": "DBA_HIST_SEG_STAT", "c": 1}, {"v": "DBA_HIST_SNAPSHOT", "c": 1}, {"v": "DBA_INDEXES", "c": 1}, {"v": "DBA_OBJECTS", "c": 1}, {"v": "DBA_REGISTRY", "c": 1}, {"v": "DBA_SEGMENTS", "c": 1}, {"v": "DBA_TABLES", "c": 1}, {"v": "DBA_TABLESPACES", "c": 1}, {"v": "DBA_TEMP_FILES", "c": 1}, {"v": "DBA_TEMP_FREE_SPACE", "c": 1}, {"v": "DBA_USERS", "c": 1}, {"v": "RSSTATMANREQMAP", "c": 1}, {"v": "SYS.V_$TEMP_EXTENT_POOL", "c": 1}, {"v": "SYS.V_$TEMP_SPACE_HEADER", "c": 1}, {"v": "T000", "c": 1}, {"v": "USER_SEGMENTS", "c": 1}, {"v": "USR02", "c": 1}, {"v": "V$DATABASE", "c": 1}, {"v": "V$DATAFILE", "c": 1}, {"v": "V$INSTANCE", "c": 1}, {"v": "V$LOG", "c": 1}, {"v": "V$LOGFILE", "c": 1}, {"v": "V$PARAMETER", "c": 1}, {"v": "V$SESSION_CONNECT_INFO", "c": 1}, {"v": "V$VERSION", "c": 1}], "Tag": [{"v": "DNS", "c": 1}, {"v": "agent", "c": 1}, {"v": "apache", "c": 1}, {"v": "autoextend", "c": 1}, {"v": "automation", "c": 1}, {"v": "basis", "c": 1}, {"v": "batch", "c": 1}, {"v": "bottleneck", "c": 1}, {"v": "buffer", "c": 1}, {"v": "certificate", "c": 1}, {"v": "clear", "c": 1}, {"v": "client", "c": 1}, {"v": "commands", "c": 1}, {"v": "compilation", "c": 1}, {"v": "copy", "c": 1}, {"v": "daemon", "c": 1}, {"v": "dasd", "c": 1}, {"v": "datafile", "c": 1}, {"v": "discovery", "c": 1}, {"v": "display", "c": 1}, {"v": "ed25519", "c": 1}, {"v": "forwarding", "c": 1}, {"v": "github-pages", "c": 1}, {"v": "graphical", "c": 1}, {"v": "group", "c": 1}, {"v": "growth", "c": 1}, {"v": "hosts", "c": 1}, {"v": "httpd", "c": 1}, {"v": "in-place", "c": 1}, {"v": "instance", "c": 1}, {"v": "journal", "c": 1}, {"v": "key pair", "c": 1}, {"v": "keystore", "c": 1}, {"v": "locking", "c": 1}, {"v": "log", "c": 1}, {"v": "memory", "c": 1}, {"v": "message", "c": 1}, {"v": "migration", "c": 1}, {"v": "network", "c": 2}, {"v": "nsswitch", "c": 1}, {"v": "pkcs12", "c": 1}, {"v": "query", "c": 1}, {"v": "redolog", "c": 1}, {"v": "remote", "c": 2}, {"v": "rename", "c": 1}, {"v": "repository", "c": 1}, {"v": "resolve", "c": 1}, {"v": "response time", "c": 1}, {"v": "scripting", "c": 1}, {"v": "secure", "c": 1}, {"v": "segment", "c": 1}, {"v": "size", "c": 1}, {"v": "slow", "c": 1}, {"v": "table", "c": 1}, {"v": "tablespace", "c": 1}, {"v": "text", "c": 1}, {"v": "tracking", "c": 1}, {"v": "transfer", "c": 1}, {"v": "undo", "c": 1}, {"v": "unit", "c": 1}, {"v": "useful", "c": 1}, {"v": "vacuum", "c": 1}, {"v": "wait time", "c": 1}, {"v": "webserver", "c": 1}, {"v": "work process", "c": 1}, {"v": "workload", "c": 1}], "Team": [{"v": "SAP", "c": 1}, {"v": "SAP Basis", "c": 1}, {"v": "Unix", "c": 1}], "Topic": [{"v": "Administration", "c": 3}, {"v": "Analysis", "c": 1}, {"v": "Archiving", "c": 1}, {"v": "Configuration", "c": 2}, {"v": "Connectivity", "c": 2}, {"v": "Documentation", "c": 1}, {"v": "Housekeeping", "c": 2}, {"v": "Installation", "c": 2}, {"v": "Knowledge Management", "c": 1}, {"v": "Maintenance", "c": 1}, {"v": "Migration", "c": 2}, {"v": "Monitoring", "c": 4}, {"v": "Network", "c": 1}, {"v": "Operation", "c": 3}, {"v": "Performance", "c": 2}, {"v": "Security", "c": 3}, {"v": "Troubleshooting", "c": 5}, {"v": "User", "c": 1}], "Transaction": [{"v": "DB02", "c": 1}, {"v": "DB04", "c": 1}, {"v": "RZ04", "c": 1}, {"v": "RZ10", "c": 1}, {"v": "RZ11", "c": 1}, {"v": "SM12", "c": 1}, {"v": "SM13", "c": 1}, {"v": "SM50", "c": 1}, {"v": "ST02", "c": 1}, {"v": "ST05", "c": 1}, {"v": "ST06", "c": 1}], "User": [{"v": "oracle", "c": 1}, {"v": "sapcs", "c": 1}], "Website": [{"v": "linuxhandbook.com", "c": 1}]}</script>
-<script id="kb-add-skeletons" type="application/json">{"change": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nTag:\nTopic:\nCategory: Change\nPriority: Normal\nStatus: New\nScope:\n---\n\n# Title of the Change\n\n## Overview\n\nDescribe the change here.\n\n## Impact\n\nDescribe the impact.\n\n## Rollback\n\nDescribe rollback procedure.\n", "incident": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nTag:\nTopic:\nCategory: Incident\nPriority: Normal\nStatus: New\nScope:\n---\n\n# Title of the Incident\n\n## Summary\n\nBrief description of the incident.\n\n## Timeline\n\nChronological account of events.\n\n## Root Cause\n\nRoot cause analysis.\n\n## Resolution\n\nSteps taken to resolve.\n", "meeting": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nTag:\nTopic:\nCategory: Meeting\nScope:\n---\n\n# Title of the Meeting\n\n## Attendees\n\nList attendees here.\n\n## Agenda\n\n- Item 1\n- Item 2\n\n## Notes\n\nMeeting notes here.\n\n## Action Items\n\n- [ ] Action 1\n- [ ] Action 2\n", "note": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Explanation\nTag:\nTopic:\nCategory: Note\nScope:\n---\n\n# Title of the Note\n\n## Overview\n\nWrite your note here.\n", "post": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Explanation\nTag:\nTopic:\nCategory: Post\nScope:\n---\n\n# Title of the Post\n\n## Overview\n\nWrite your post here.\n", "procedure": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: How-to guide\nTag:\nTopic:\nCategory: Procedure\nScope:\n---\n\n# Title of the Procedure\n\n## Prerequisites\n\nList prerequisites here.\n\n## Steps\n\n1. Step one\n2. Step two\n3. Step three\n\n## Verification\n\nHow to verify the procedure was successful.\n", "report": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nTag:\nTopic:\nCategory: Report\nStatus: Draft\nScope:\n---\n\n# Title of the Report\n\n## Executive Summary\n\nBrief summary for leadership.\n\n## Findings\n\nDetailed findings.\n\n## Recommendations\n\nRecommended actions.\n", "task": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nTag:\nTopic:\nCategory: Task\nPriority: Normal\nStatus: New\nScope:\n---\n\n# Title of the Task\n\n## Objective\n\nDescribe the objective.\n\n## Acceptance Criteria\n\n- Criterion 1\n- Criterion 2\n\n## Notes\n\nAdditional notes.\n"}</script>
-
+    <!-- DOCUMENT BODY :: START -->
+    <div class="kb-content kb-content-md uk-margin" data-uk-lightbox="toggle: a.kb-zoom; animation: fade">
+<!-- ADD DOCUMENT :: START -->
 <div class="uk-container kb-add">
 
-    <div class="kb-add-note uk-alert-primary" uk-alert>
-        <span uk-icon="icon: info; ratio: 0.9"></span>
-        <strong>Note:</strong> KB4IT is a static site generator, it cannot create files for you.
-        Click <em>Create</em> on any card, edit the template, then copy the
-        ready-to-use Markdown file into your repository's <strong>source</strong>
-        directory and rebuild.
+    <div class="kb-add-note uk-alert-primary" data-uk-alert>
+        <span data-uk-icon="icon: info; ratio: 0.9"></span>
+        <strong>Note:</strong> This page saves or downloads the Markdown file for you.
+        Click <em>Create</em> on any card, edit the template, then <em>Save</em> it
+        (or <em>Copy</em> the text). Put the file in your repository's <strong>source</strong>
+        folder and rebuild.
     </div>
 
-    <div class="kb-add-note uk-alert-primary" uk-alert>
-        <span uk-icon="icon: git-branch; ratio: 0.9"></span>
+    <div class="kb-add-note uk-alert-primary" data-uk-alert>
+        <span data-uk-icon="icon: git-branch; ratio: 0.9"></span>
         <strong>Online repository:</strong> The document source is hosted at
         <a href="https://github.com/t00m/techdoc/edit/main/source" target="_blank">
             https://github.com/t00m/techdoc
         </a>,  navigate to the source folder to upload your new file.
     </div>
 
-    <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+    <!-- CATEGORY CARDS :: START -->
+    <div class="uk-grid-small uk-child-width-1-2@s uk-child-width-1-4@m" data-uk-grid>
         <div>
             <div class="uk-card uk-card-default uk-card-hover uk-card-small kb-add-card" style="border-top: 3px solid #f0506e;">
                 <div class="uk-card-header kb-add-card-header">
                     <h3 class="kb-h3">
-                        <span uk-icon="icon: cog; ratio: 0.95" style="color: #f0506e;"></span>
+                        <span data-uk-icon="icon: cog; ratio: 0.95" style="color: #f0506e;"></span>
                         Add Change
                     </h3>
                 </div>
@@ -276,7 +305,7 @@
                     <p class="uk-margin-remove">A planned or completed modification to a system, process, or infrastructure component.</p>
                 </div>
                 <div class="uk-card-footer kb-add-card-footer">
-                    <button class="uk-button uk-button-small uk-button-primary" onclick="kbAddOpen('change')">Create</button>
+                    <button class="uk-button uk-button-small uk-button-primary" data-kb-open="change">Create</button>
                 </div>
             </div>
         </div>
@@ -284,7 +313,7 @@
             <div class="uk-card uk-card-default uk-card-hover uk-card-small kb-add-card" style="border-top: 3px solid #faa05a;">
                 <div class="uk-card-header kb-add-card-header">
                     <h3 class="kb-h3">
-                        <span uk-icon="icon: warning; ratio: 0.95" style="color: #faa05a;"></span>
+                        <span data-uk-icon="icon: warning; ratio: 0.95" style="color: #faa05a;"></span>
                         Add Incident
                     </h3>
                 </div>
@@ -292,7 +321,7 @@
                     <p class="uk-margin-remove">An unexpected disruption or quality degradation of a service.</p>
                 </div>
                 <div class="uk-card-footer kb-add-card-footer">
-                    <button class="uk-button uk-button-small uk-button-primary" onclick="kbAddOpen('incident')">Create</button>
+                    <button class="uk-button uk-button-small uk-button-primary" data-kb-open="incident">Create</button>
                 </div>
             </div>
         </div>
@@ -300,7 +329,7 @@
             <div class="uk-card uk-card-default uk-card-hover uk-card-small kb-add-card" style="border-top: 3px solid #32d296;">
                 <div class="uk-card-header kb-add-card-header">
                     <h3 class="kb-h3">
-                        <span uk-icon="icon: users; ratio: 0.95" style="color: #32d296;"></span>
+                        <span data-uk-icon="icon: users; ratio: 0.95" style="color: #32d296;"></span>
                         Add Meeting
                     </h3>
                 </div>
@@ -308,7 +337,7 @@
                     <p class="uk-margin-remove">Minutes or agenda for a team meeting, review, or discussion.</p>
                 </div>
                 <div class="uk-card-footer kb-add-card-footer">
-                    <button class="uk-button uk-button-small uk-button-primary" onclick="kbAddOpen('meeting')">Create</button>
+                    <button class="uk-button uk-button-small uk-button-primary" data-kb-open="meeting">Create</button>
                 </div>
             </div>
         </div>
@@ -316,7 +345,7 @@
             <div class="uk-card uk-card-default uk-card-hover uk-card-small kb-add-card" style="border-top: 3px solid #1e87f0;">
                 <div class="uk-card-header kb-add-card-header">
                     <h3 class="kb-h3">
-                        <span uk-icon="icon: file-text; ratio: 0.95" style="color: #1e87f0;"></span>
+                        <span data-uk-icon="icon: file-text; ratio: 0.95" style="color: #1e87f0;"></span>
                         Add Note
                     </h3>
                 </div>
@@ -324,7 +353,7 @@
                     <p class="uk-margin-remove">A free-form note, observation, or brief record.</p>
                 </div>
                 <div class="uk-card-footer kb-add-card-footer">
-                    <button class="uk-button uk-button-small uk-button-primary" onclick="kbAddOpen('note')">Create</button>
+                    <button class="uk-button uk-button-small uk-button-primary" data-kb-open="note">Create</button>
                 </div>
             </div>
         </div>
@@ -332,7 +361,7 @@
             <div class="uk-card uk-card-default uk-card-hover uk-card-small kb-add-card" style="border-top: 3px solid #1e87f0;">
                 <div class="uk-card-header kb-add-card-header">
                     <h3 class="kb-h3">
-                        <span uk-icon="icon: comment; ratio: 0.95" style="color: #1e87f0;"></span>
+                        <span data-uk-icon="icon: comment; ratio: 0.95" style="color: #1e87f0;"></span>
                         Add Post
                     </h3>
                 </div>
@@ -340,7 +369,7 @@
                     <p class="uk-margin-remove">A blog-style post, announcement, or article.</p>
                 </div>
                 <div class="uk-card-footer kb-add-card-footer">
-                    <button class="uk-button uk-button-small uk-button-primary" onclick="kbAddOpen('post')">Create</button>
+                    <button class="uk-button uk-button-small uk-button-primary" data-kb-open="post">Create</button>
                 </div>
             </div>
         </div>
@@ -348,7 +377,7 @@
             <div class="uk-card uk-card-default uk-card-hover uk-card-small kb-add-card" style="border-top: 3px solid #32d296;">
                 <div class="uk-card-header kb-add-card-header">
                     <h3 class="kb-h3">
-                        <span uk-icon="icon: list; ratio: 0.95" style="color: #32d296;"></span>
+                        <span data-uk-icon="icon: list; ratio: 0.95" style="color: #32d296;"></span>
                         Add Procedure
                     </h3>
                 </div>
@@ -356,7 +385,7 @@
                     <p class="uk-margin-remove">A step-by-step operational procedure or runbook.</p>
                 </div>
                 <div class="uk-card-footer kb-add-card-footer">
-                    <button class="uk-button uk-button-small uk-button-primary" onclick="kbAddOpen('procedure')">Create</button>
+                    <button class="uk-button uk-button-small uk-button-primary" data-kb-open="procedure">Create</button>
                 </div>
             </div>
         </div>
@@ -364,7 +393,7 @@
             <div class="uk-card uk-card-default uk-card-hover uk-card-small kb-add-card" style="border-top: 3px solid #888888;">
                 <div class="uk-card-header kb-add-card-header">
                     <h3 class="kb-h3">
-                        <span uk-icon="icon: album; ratio: 0.95" style="color: #888888;"></span>
+                        <span data-uk-icon="icon: album; ratio: 0.95" style="color: #888888;"></span>
                         Add Report
                     </h3>
                 </div>
@@ -372,7 +401,7 @@
                     <p class="uk-margin-remove">A formal or informal report summarising findings, metrics, or status.</p>
                 </div>
                 <div class="uk-card-footer kb-add-card-footer">
-                    <button class="uk-button uk-button-small uk-button-primary" onclick="kbAddOpen('report')">Create</button>
+                    <button class="uk-button uk-button-small uk-button-primary" data-kb-open="report">Create</button>
                 </div>
             </div>
         </div>
@@ -380,7 +409,7 @@
             <div class="uk-card uk-card-default uk-card-hover uk-card-small kb-add-card" style="border-top: 3px solid #faa05a;">
                 <div class="uk-card-header kb-add-card-header">
                     <h3 class="kb-h3">
-                        <span uk-icon="icon: check; ratio: 0.95" style="color: #faa05a;"></span>
+                        <span data-uk-icon="icon: check; ratio: 0.95" style="color: #faa05a;"></span>
                         Add Task
                     </h3>
                 </div>
@@ -388,511 +417,396 @@
                     <p class="uk-margin-remove">A work item or action to be tracked and completed.</p>
                 </div>
                 <div class="uk-card-footer kb-add-card-footer">
-                    <button class="uk-button uk-button-small uk-button-primary" onclick="kbAddOpen('task')">Create</button>
+                    <button class="uk-button uk-button-small uk-button-primary" data-kb-open="task">Create</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- CATEGORY CARDS :: END -->
 
 </div>
-<!-- /kb-add -->
+<!-- ADD DOCUMENT :: END -->
 
-<!-- &#9472;&#9472; Full-screen modal,  one per category &#9472;&#9472; -->
-<div id="modal-add-change" class="uk-modal-full" uk-modal>
+<!-- EDITOR DATA :: START -->
+<link rel="stylesheet" href="resources/editor/kb4it-editor.css">
+<script id="kb-add-keys" type="application/json">{"Author": [{"v": "Tom\u00e1s V\u00edrseda", "c": 6}], "Bookmark": [{"v": "Yes", "c": 1}], "Category": [{"v": "Note", "c": 3}, {"v": "Procedure", "c": 10}, {"v": "Report", "c": 1}], "Command": [{"v": "apachectl", "c": 1}, {"v": "cat", "c": 1}, {"v": "chown", "c": 1}, {"v": "configure", "c": 1}, {"v": "cp", "c": 2}, {"v": "crontab", "c": 1}, {"v": "curl", "c": 1}, {"v": "dasd_configure", "c": 1}, {"v": "dasdfmt", "c": 1}, {"v": "date", "c": 1}, {"v": "dd", "c": 1}, {"v": "dnf", "c": 1}, {"v": "du", "c": 1}, {"v": "echo", "c": 1}, {"v": "eval", "c": 1}, {"v": "fdasd", "c": 1}, {"v": "find", "c": 3}, {"v": "getent", "c": 1}, {"v": "git", "c": 1}, {"v": "grep", "c": 3}, {"v": "java", "c": 1}, {"v": "journalctl", "c": 1}, {"v": "kb4it", "c": 1}, {"v": "ls", "c": 2}, {"v": "lsdasd", "c": 1}, {"v": "lvcreate", "c": 1}, {"v": "lvs", "c": 1}, {"v": "mailx", "c": 1}, {"v": "make", "c": 1}, {"v": "mkdir", "c": 1}, {"v": "mkreiserfs", "c": 1}, {"v": "nc", "c": 1}, {"v": "nice", "c": 1}, {"v": "nohup", "c": 1}, {"v": "nslookup", "c": 1}, {"v": "openssl", "c": 1}, {"v": "pvcreate", "c": 1}, {"v": "python3", "c": 1}, {"v": "rpm", "c": 1}, {"v": "rsync", "c": 2}, {"v": "scp", "c": 1}, {"v": "sed", "c": 1}, {"v": "sftp", "c": 1}, {"v": "sqlplus", "c": 1}, {"v": "ssh", "c": 3}, {"v": "ssh-add", "c": 1}, {"v": "ssh-agent", "c": 1}, {"v": "ssh-keygen", "c": 1}, {"v": "sshpass", "c": 1}, {"v": "sudo", "c": 1}, {"v": "systemctl", "c": 2}, {"v": "vgcreate", "c": 1}, {"v": "vgextend", "c": 1}, {"v": "vgs", "c": 1}, {"v": "vi", "c": 1}, {"v": "wget", "c": 1}, {"v": "xargs", "c": 1}, {"v": "xauth", "c": 1}, {"v": "xsltproc", "c": 1}, {"v": "xterm", "c": 1}, {"v": "yum", "c": 1}], "Database": [{"v": "Oracle", "c": 1}], "DocType": [{"v": "Explanation", "c": 1}, {"v": "How-to guide", "c": 5}, {"v": "Reference", "c": 6}, {"v": "Tutorial", "c": 2}], "Environment": [{"v": "Development", "c": 1}, {"v": "Production", "c": 2}, {"v": "Quality", "c": 1}], "EnvVar": [{"v": "$DISPLAY", "c": 1}], "Filename": [{"v": "/etc/hosts", "c": 1}, {"v": "/etc/nsswitch.conf", "c": 1}, {"v": "fstab", "c": 1}, {"v": "journald.conf", "c": 1}, {"v": "journald.conf.back", "c": 1}, {"v": "sshd_config", "c": 1}], "Filesystem": [{"v": "/dev", "c": 1}, {"v": "/etc", "c": 5}, {"v": "/etc/fstab", "c": 1}, {"v": "/etc/ssh", "c": 2}, {"v": "/etc/systemd", "c": 1}, {"v": "/home", "c": 1}, {"v": "/intranet27", "c": 1}, {"v": "/oracle", "c": 2}, {"v": "/proc", "c": 1}, {"v": "/tmp", "c": 2}, {"v": "/usr/sap", "c": 2}, {"v": "/usr/sap/BO2", "c": 1}, {"v": "/var", "c": 1}, {"v": "/var/log", "c": 2}, {"v": "/var/log/journal", "c": 1}, {"v": "~/.ssh", "c": 1}], "OS": [{"v": "Linux", "c": 11}, {"v": "Solaris", "c": 1}, {"v": "Unix", "c": 3}, {"v": "Windows", "c": 1}], "Priority": [{"v": "Normal", "c": 3}, {"v": "Very high", "c": 1}], "Product": [{"v": "AIX", "c": 2}, {"v": "Apache", "c": 1}, {"v": "Crontab", "c": 1}, {"v": "DMS", "c": 1}, {"v": "Domino", "c": 1}, {"v": "GitLab", "c": 1}, {"v": "KB4IT", "c": 3}, {"v": "Markdown", "c": 1}, {"v": "MobaXterm", "c": 1}, {"v": "OpenSSH", "c": 2}, {"v": "OpenSSL", "c": 1}, {"v": "Putty", "c": 1}, {"v": "RHEL", "c": 4}, {"v": "ReiserFS", "c": 1}, {"v": "SAP BusinessObjects BI", "c": 1}, {"v": "SAP Content Server", "c": 1}, {"v": "SAP GUI", "c": 1}, {"v": "SAP JVM", "c": 1}, {"v": "SAP Netweaver", "c": 2}, {"v": "SFTP", "c": 1}, {"v": "SQLPlus", "c": 1}, {"v": "SSH", "c": 2}, {"v": "SUM", "c": 1}, {"v": "SUSE Linux Enterprise Server 11", "c": 1}, {"v": "Solaris", "c": 1}, {"v": "Ubuntu", "c": 1}, {"v": "Xming", "c": 1}, {"v": "s390x", "c": 1}], "Protocol": [{"v": "CPIC", "c": 1}, {"v": "FTP", "c": 1}, {"v": "HTTP", "c": 1}, {"v": "HTTPS", "c": 1}, {"v": "LCOM", "c": 1}, {"v": "NNTP", "c": 1}, {"v": "RFC", "c": 1}, {"v": "SFTP", "c": 1}, {"v": "SMTP", "c": 1}, {"v": "SSH", "c": 5}, {"v": "SSL", "c": 1}, {"v": "X11", "c": 1}], "Scope": [{"v": "Database Administration", "c": 2}, {"v": "Infrastructure", "c": 1}, {"v": "Knowledge Management", "c": 1}, {"v": "Linux Administration", "c": 2}, {"v": "SAP Basis", "c": 5}, {"v": "Unix Administration", "c": 6}], "Server": [{"v": "SAP-DEV", "c": 1}, {"v": "SAP-PRD", "c": 1}, {"v": "SAP-QUA", "c": 1}, {"v": "VENDOR-SFTP-PRD", "c": 1}, {"v": "VENDOR-SFTP-UAT", "c": 1}, {"v": "lxzlin01", "c": 1}, {"v": "lxzlin02", "c": 1}], "Service": [{"v": "sshd", "c": 1}], "Status": [{"v": "Draft", "c": 1}, {"v": "Released", "c": 4}], "Subsystem": [{"v": "LVM", "c": 1}, {"v": "Systemd", "c": 2}], "Table": [{"v": "ALL_TABLES", "c": 1}, {"v": "DATABASE_PROPERTIES", "c": 1}, {"v": "DBA_DATA_FILES", "c": 1}, {"v": "DBA_FREE_SPACE", "c": 1}, {"v": "DBA_HIST_SEG_STAT", "c": 1}, {"v": "DBA_HIST_SNAPSHOT", "c": 1}, {"v": "DBA_INDEXES", "c": 1}, {"v": "DBA_OBJECTS", "c": 1}, {"v": "DBA_REGISTRY", "c": 1}, {"v": "DBA_SEGMENTS", "c": 1}, {"v": "DBA_TABLES", "c": 1}, {"v": "DBA_TABLESPACES", "c": 1}, {"v": "DBA_TEMP_FILES", "c": 1}, {"v": "DBA_TEMP_FREE_SPACE", "c": 1}, {"v": "DBA_USERS", "c": 1}, {"v": "RSSTATMANREQMAP", "c": 1}, {"v": "SYS.V_$TEMP_EXTENT_POOL", "c": 1}, {"v": "SYS.V_$TEMP_SPACE_HEADER", "c": 1}, {"v": "T000", "c": 1}, {"v": "USER_SEGMENTS", "c": 1}, {"v": "USR02", "c": 1}, {"v": "V$DATABASE", "c": 1}, {"v": "V$DATAFILE", "c": 1}, {"v": "V$INSTANCE", "c": 1}, {"v": "V$LOG", "c": 1}, {"v": "V$LOGFILE", "c": 1}, {"v": "V$PARAMETER", "c": 1}, {"v": "V$SESSION_CONNECT_INFO", "c": 1}, {"v": "V$VERSION", "c": 1}], "Tag": [{"v": "DNS", "c": 1}, {"v": "agent", "c": 1}, {"v": "apache", "c": 1}, {"v": "autoextend", "c": 1}, {"v": "automation", "c": 1}, {"v": "basis", "c": 1}, {"v": "batch", "c": 1}, {"v": "bottleneck", "c": 1}, {"v": "buffer", "c": 1}, {"v": "certificate", "c": 1}, {"v": "clear", "c": 1}, {"v": "client", "c": 1}, {"v": "commands", "c": 1}, {"v": "compilation", "c": 1}, {"v": "copy", "c": 1}, {"v": "daemon", "c": 1}, {"v": "dasd", "c": 1}, {"v": "datafile", "c": 1}, {"v": "discovery", "c": 1}, {"v": "display", "c": 1}, {"v": "ed25519", "c": 1}, {"v": "forwarding", "c": 1}, {"v": "github-pages", "c": 1}, {"v": "graphical", "c": 1}, {"v": "group", "c": 1}, {"v": "growth", "c": 1}, {"v": "hosts", "c": 1}, {"v": "httpd", "c": 1}, {"v": "in-place", "c": 1}, {"v": "instance", "c": 1}, {"v": "journal", "c": 1}, {"v": "key pair", "c": 1}, {"v": "keystore", "c": 1}, {"v": "locking", "c": 1}, {"v": "log", "c": 1}, {"v": "memory", "c": 1}, {"v": "message", "c": 1}, {"v": "migration", "c": 1}, {"v": "network", "c": 2}, {"v": "nsswitch", "c": 1}, {"v": "pkcs12", "c": 1}, {"v": "query", "c": 1}, {"v": "redolog", "c": 1}, {"v": "remote", "c": 2}, {"v": "rename", "c": 1}, {"v": "repository", "c": 1}, {"v": "resolve", "c": 1}, {"v": "response time", "c": 1}, {"v": "scripting", "c": 1}, {"v": "secure", "c": 1}, {"v": "segment", "c": 1}, {"v": "size", "c": 1}, {"v": "slow", "c": 1}, {"v": "table", "c": 1}, {"v": "tablespace", "c": 1}, {"v": "text", "c": 1}, {"v": "tracking", "c": 1}, {"v": "transfer", "c": 1}, {"v": "undo", "c": 1}, {"v": "unit", "c": 1}, {"v": "useful", "c": 1}, {"v": "vacuum", "c": 1}, {"v": "wait time", "c": 1}, {"v": "webserver", "c": 1}, {"v": "work process", "c": 1}, {"v": "workload", "c": 1}], "Team": [{"v": "SAP", "c": 1}, {"v": "SAP Basis", "c": 1}, {"v": "Unix", "c": 1}], "Topic": [{"v": "Administration", "c": 3}, {"v": "Analysis", "c": 1}, {"v": "Archiving", "c": 1}, {"v": "Configuration", "c": 2}, {"v": "Connectivity", "c": 2}, {"v": "Documentation", "c": 1}, {"v": "Housekeeping", "c": 2}, {"v": "Installation", "c": 2}, {"v": "Knowledge Management", "c": 1}, {"v": "Maintenance", "c": 1}, {"v": "Migration", "c": 2}, {"v": "Monitoring", "c": 4}, {"v": "Network", "c": 1}, {"v": "Operation", "c": 3}, {"v": "Performance", "c": 2}, {"v": "Security", "c": 3}, {"v": "Troubleshooting", "c": 5}, {"v": "User", "c": 1}], "Transaction": [{"v": "DB02", "c": 1}, {"v": "DB04", "c": 1}, {"v": "RZ04", "c": 1}, {"v": "RZ10", "c": 1}, {"v": "RZ11", "c": 1}, {"v": "SM12", "c": 1}, {"v": "SM13", "c": 1}, {"v": "SM50", "c": 1}, {"v": "ST02", "c": 1}, {"v": "ST05", "c": 1}, {"v": "ST06", "c": 1}], "User": [{"v": "oracle", "c": 1}, {"v": "sapcs", "c": 1}], "Website": [{"v": "linuxhandbook.com", "c": 1}]}</script>
+<script id="kb-add-skeletons" type="application/json">{"change": {"name": "Change", "text": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nCategory: Record\nWorkType: Change\nPriority: Normal\nStatus: New\nSummary:\nTag:\nTopic:\nScope:\nProduct:\n---\n\n# Title of the change\n\n## Overview\n\nDescribe the change: what, where, when and why.\n\n## Impact\n\nDescribe the systems and users affected, and the downtime.\n\n## Rollback\n\nDescribe how to undo the change if it fails.\n\n## References\n\n- [SAP Note 0000000](https://me.sap.com/notes/0000000)\n- Link the documents this one builds on.\n"}, "incident": {"name": "Incident", "text": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nCategory: Record\nWorkType: Incident\nPriority: Normal\nStatus: New\nSummary:\nTag:\nTopic:\nScope:\nProduct:\n---\n\n# Title of the incident\n\n## Summary\n\nSummarise what failed, for whom and for how long.\n\n## Timeline\n\n- HH:MM Describe the first event, such as the alert.\n- HH:MM Describe the next event, up to the recovery.\n\n## Root Cause\n\nExplain why it failed.\n\n## Resolution\n\nDescribe what fixed it, and what prevents it from happening again.\n\n## References\n\n- [SAP Note 0000000](https://me.sap.com/notes/0000000)\n- Link the documents this one builds on.\n"}, "meeting": {"name": "Meeting", "text": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nCategory: Minutes\nWorkType: Meeting\nStatus: New\nSummary:\nTag:\nTopic:\nScope:\nProduct:\n---\n\n# Title of the meeting\n\n## Objective\n\nSay why the meeting took place and what it had to decide.\n\n## Attendees\n\n- List each attendee with their role.\n\n## Agenda\n\n- Describe the first agenda item.\n- Describe the next agenda item.\n\n## Notes\n\nRecord the discussion and the decisions taken.\n\n## Action Items\n\n- [ ] Describe the action, with its owner and due date.\n\n## References\n\n- [SAP Note 0000000](https://me.sap.com/notes/0000000)\n- Link the documents this one builds on.\n"}, "note": {"name": "Note", "text": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Explanation\nCategory: Note\nStatus: Draft\nSummary:\nTag:\nTopic:\nScope:\nProduct:\n---\n\n# Title of the note\n\n## Overview\n\nSay what this note is about and why it matters.\n\n## Details\n\nExplain the topic: background, how it works, what to keep in mind.\n\n## References\n\n- [SAP Note 0000000](https://me.sap.com/notes/0000000)\n- Link the documents this one builds on.\n"}, "post": {"name": "Post", "text": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Explanation\nCategory: Post\nStatus: Draft\nSummary:\nTag:\nTopic:\nScope:\nProduct:\n---\n\n# Title of the post\n\n## Overview\n\nSay what this post is about and who should read it.\n\n## Details\n\nWrite the body of the post: what happened, what changed, what it means for the reader.\n\n## References\n\n- [SAP Note 0000000](https://me.sap.com/notes/0000000)\n- Link the documents this one builds on.\n"}, "procedure": {"name": "Procedure", "text": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: How-to guide\nCategory: Procedure\nPriority: Normal\nStatus: Draft\nSummary:\nTag:\nTopic:\nScope:\nProduct:\n---\n\n# Title of the procedure\n\n## Introduction\n\nSay what this procedure achieves and when to use it.\n\n## Prerequisites\n\n- Access, role or authorisation needed.\n- Systems, tools or files needed before you start.\n\n## Steps\n\n1. Describe the first step.\n2. Describe the second step.\n3. Describe the third step.\n\n```bash\nreplace-with-the-command --and-its-options\n```\n\n## Verification\n\nExplain how to check that the procedure worked.\n\n## References\n\n- [SAP Note 0000000](https://me.sap.com/notes/0000000)\n- Link the documents this one builds on.\n"}, "report": {"name": "Report", "text": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nCategory: Report\nStatus: Draft\nSummary:\nTag:\nTopic:\nScope:\nProduct:\n---\n\n# Title of the report\n\n## Executive Summary\n\nSummarise the main findings and the decision you need, in a few lines.\n\n## Findings\n\n| Area | Finding | Impact |\n|---|---|---|\n| System or process | What you found | High, Medium or Low |\n\n## Recommendations\n\n- Recommend the first action, with an owner and a date.\n- Recommend the next action, with an owner and a date.\n\n## References\n\n- [SAP Note 0000000](https://me.sap.com/notes/0000000)\n- Link the documents this one builds on.\n"}, "task": {"name": "Task", "text": "---\nAuthor:\nDate: YYYY-MM-DD\nVersion: 1.0\nDocType: Reference\nCategory: Record\nWorkType: Task\nPriority: Normal\nStatus: New\nSummary:\nTag:\nTopic:\nScope:\nProduct:\n---\n\n# Title of the task\n\n## Objective\n\nDescribe what this task must achieve and why.\n\n## Acceptance Criteria\n\n- [ ] Describe the first condition for done.\n- [ ] Describe the second condition for done.\n\n## Notes\n\nRecord decisions, findings and links gathered while working.\n\n## References\n\n- [SAP Note 0000000](https://me.sap.com/notes/0000000)\n- Link the documents this one builds on.\n"}}</script>
+<!-- EDITOR DATA :: END -->
+
+<!-- EDITOR DIALOG :: START -->
+<!-- Full-screen dialog to write a new document of one category (see its id). -->
+<dialog id="modal-add-change" class="kb-dialog-modal">
     <div class="kb-dialog">
 
-        <!-- Header -->
-        <div class="kb-dialog-header" style="border-bottom: 3px solid #f0506e;">
-            <span uk-icon="icon: cog; ratio: 1.2" style="color: #f0506e; flex-shrink: 0;"></span>
+        <!-- DIALOG HEADER :: START -->
+        <div class="kb-dialog-header" tabindex="-1" style="border-bottom: 3px solid #f0506e;">
             <span class="kb-dialog-title" style="color: #f0506e;">Add Change</span>
             <span class="kb-dialog-desc">A planned or completed modification to a system, process, or infrastructure component.</span>
             <div class="kb-dialog-actions">
-                <button class="uk-button uk-button-primary uk-button-small" onclick="kbAddCopy('change')">
-                    <span uk-icon="icon: copy; ratio: 0.85"></span> Copy
-                </button>
-                <button class="uk-button uk-button-small uk-modal-close uk-close" type="button" uk-close> Close </button>
+                <button id="kb-save-change" class="kb-btn kb-btn-primary kb-btn-small" type="button" data-kb-save="change"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="14,10 9.5,14.5 5,10"></polyline><rect width="13" height="1" x="3" y="17" fill="currentColor" stroke="none"></rect><line x1="9.5" y1="13.91" x2="9.5" y2="3"></line></svg><span class="kb-save-label">Save</span></button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-copy="change"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><rect width="12" height="16" x="3.5" y="2.5"></rect><polyline points="5 0.5 17.5 0.5 17.5 17"></polyline></svg>Copy</button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-close="change">Close</button>
             </div>
         </div>
+        <!-- DIALOG HEADER :: END -->
 
-        <!-- Split body -->
+        <!-- DIALOG BODY :: START -->
         <div class="kb-dialog-body">
 
-            <!-- Left: editable Markdown template -->
+            <!-- TEMPLATE EDITOR :: START -->
             <div class="kb-pane-left">
                 <div class="kb-pane-label">Template</div>
-                <textarea id="kb-editor-change" class="kb-editor" spellcheck="false"></textarea>
+                <div id="kb-toolbar-change" class="kb-toolbar"></div>
+                <div id="kb-editor-change" class="kb-editor-host"></div>
             </div>
+            <!-- TEMPLATE EDITOR :: END -->
 
-            <!-- Right: key values reference as accordion word clouds -->
+            <!-- PROPERTIES PANE :: START -->
             <div class="kb-pane-right">
-                <div class="kb-pane-label">Values reference</div>
-                <div class="kb-accord-wrap">
-                    <div id="kb-accord-change"></div>
+                <div class="kb-pane-label">Properties</div>
+                <div class="kb-props-wrap">
+                    <div id="kb-props-change"></div>
                 </div>
             </div>
+            <!-- PROPERTIES PANE :: END -->
 
         </div>
-<!-- /kb-dialog-body -->
+        <!-- DIALOG BODY :: END -->
 
     </div>
-<!-- /kb-dialog -->
-</div>
-<!-- /modal -->
-<div id="modal-add-incident" class="uk-modal-full" uk-modal>
+</dialog>
+<!-- EDITOR DIALOG :: END -->
+<!-- EDITOR DIALOG :: START -->
+<!-- Full-screen dialog to write a new document of one category (see its id). -->
+<dialog id="modal-add-incident" class="kb-dialog-modal">
     <div class="kb-dialog">
 
-        <!-- Header -->
-        <div class="kb-dialog-header" style="border-bottom: 3px solid #faa05a;">
-            <span uk-icon="icon: warning; ratio: 1.2" style="color: #faa05a; flex-shrink: 0;"></span>
+        <!-- DIALOG HEADER :: START -->
+        <div class="kb-dialog-header" tabindex="-1" style="border-bottom: 3px solid #faa05a;">
             <span class="kb-dialog-title" style="color: #faa05a;">Add Incident</span>
             <span class="kb-dialog-desc">An unexpected disruption or quality degradation of a service.</span>
             <div class="kb-dialog-actions">
-                <button class="uk-button uk-button-primary uk-button-small" onclick="kbAddCopy('incident')">
-                    <span uk-icon="icon: copy; ratio: 0.85"></span> Copy
-                </button>
-                <button class="uk-button uk-button-small uk-modal-close uk-close" type="button" uk-close> Close </button>
+                <button id="kb-save-incident" class="kb-btn kb-btn-primary kb-btn-small" type="button" data-kb-save="incident"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="14,10 9.5,14.5 5,10"></polyline><rect width="13" height="1" x="3" y="17" fill="currentColor" stroke="none"></rect><line x1="9.5" y1="13.91" x2="9.5" y2="3"></line></svg><span class="kb-save-label">Save</span></button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-copy="incident"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><rect width="12" height="16" x="3.5" y="2.5"></rect><polyline points="5 0.5 17.5 0.5 17.5 17"></polyline></svg>Copy</button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-close="incident">Close</button>
             </div>
         </div>
+        <!-- DIALOG HEADER :: END -->
 
-        <!-- Split body -->
+        <!-- DIALOG BODY :: START -->
         <div class="kb-dialog-body">
 
-            <!-- Left: editable Markdown template -->
+            <!-- TEMPLATE EDITOR :: START -->
             <div class="kb-pane-left">
                 <div class="kb-pane-label">Template</div>
-                <textarea id="kb-editor-incident" class="kb-editor" spellcheck="false"></textarea>
+                <div id="kb-toolbar-incident" class="kb-toolbar"></div>
+                <div id="kb-editor-incident" class="kb-editor-host"></div>
             </div>
+            <!-- TEMPLATE EDITOR :: END -->
 
-            <!-- Right: key values reference as accordion word clouds -->
+            <!-- PROPERTIES PANE :: START -->
             <div class="kb-pane-right">
-                <div class="kb-pane-label">Values reference</div>
-                <div class="kb-accord-wrap">
-                    <div id="kb-accord-incident"></div>
+                <div class="kb-pane-label">Properties</div>
+                <div class="kb-props-wrap">
+                    <div id="kb-props-incident"></div>
                 </div>
             </div>
+            <!-- PROPERTIES PANE :: END -->
 
         </div>
-<!-- /kb-dialog-body -->
+        <!-- DIALOG BODY :: END -->
 
     </div>
-<!-- /kb-dialog -->
-</div>
-<!-- /modal -->
-<div id="modal-add-meeting" class="uk-modal-full" uk-modal>
+</dialog>
+<!-- EDITOR DIALOG :: END -->
+<!-- EDITOR DIALOG :: START -->
+<!-- Full-screen dialog to write a new document of one category (see its id). -->
+<dialog id="modal-add-meeting" class="kb-dialog-modal">
     <div class="kb-dialog">
 
-        <!-- Header -->
-        <div class="kb-dialog-header" style="border-bottom: 3px solid #32d296;">
-            <span uk-icon="icon: users; ratio: 1.2" style="color: #32d296; flex-shrink: 0;"></span>
+        <!-- DIALOG HEADER :: START -->
+        <div class="kb-dialog-header" tabindex="-1" style="border-bottom: 3px solid #32d296;">
             <span class="kb-dialog-title" style="color: #32d296;">Add Meeting</span>
             <span class="kb-dialog-desc">Minutes or agenda for a team meeting, review, or discussion.</span>
             <div class="kb-dialog-actions">
-                <button class="uk-button uk-button-primary uk-button-small" onclick="kbAddCopy('meeting')">
-                    <span uk-icon="icon: copy; ratio: 0.85"></span> Copy
-                </button>
-                <button class="uk-button uk-button-small uk-modal-close uk-close" type="button" uk-close> Close </button>
+                <button id="kb-save-meeting" class="kb-btn kb-btn-primary kb-btn-small" type="button" data-kb-save="meeting"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="14,10 9.5,14.5 5,10"></polyline><rect width="13" height="1" x="3" y="17" fill="currentColor" stroke="none"></rect><line x1="9.5" y1="13.91" x2="9.5" y2="3"></line></svg><span class="kb-save-label">Save</span></button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-copy="meeting"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><rect width="12" height="16" x="3.5" y="2.5"></rect><polyline points="5 0.5 17.5 0.5 17.5 17"></polyline></svg>Copy</button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-close="meeting">Close</button>
             </div>
         </div>
+        <!-- DIALOG HEADER :: END -->
 
-        <!-- Split body -->
+        <!-- DIALOG BODY :: START -->
         <div class="kb-dialog-body">
 
-            <!-- Left: editable Markdown template -->
+            <!-- TEMPLATE EDITOR :: START -->
             <div class="kb-pane-left">
                 <div class="kb-pane-label">Template</div>
-                <textarea id="kb-editor-meeting" class="kb-editor" spellcheck="false"></textarea>
+                <div id="kb-toolbar-meeting" class="kb-toolbar"></div>
+                <div id="kb-editor-meeting" class="kb-editor-host"></div>
             </div>
+            <!-- TEMPLATE EDITOR :: END -->
 
-            <!-- Right: key values reference as accordion word clouds -->
+            <!-- PROPERTIES PANE :: START -->
             <div class="kb-pane-right">
-                <div class="kb-pane-label">Values reference</div>
-                <div class="kb-accord-wrap">
-                    <div id="kb-accord-meeting"></div>
+                <div class="kb-pane-label">Properties</div>
+                <div class="kb-props-wrap">
+                    <div id="kb-props-meeting"></div>
                 </div>
             </div>
+            <!-- PROPERTIES PANE :: END -->
 
         </div>
-<!-- /kb-dialog-body -->
+        <!-- DIALOG BODY :: END -->
 
     </div>
-<!-- /kb-dialog -->
-</div>
-<!-- /modal -->
-<div id="modal-add-note" class="uk-modal-full" uk-modal>
+</dialog>
+<!-- EDITOR DIALOG :: END -->
+<!-- EDITOR DIALOG :: START -->
+<!-- Full-screen dialog to write a new document of one category (see its id). -->
+<dialog id="modal-add-note" class="kb-dialog-modal">
     <div class="kb-dialog">
 
-        <!-- Header -->
-        <div class="kb-dialog-header" style="border-bottom: 3px solid #1e87f0;">
-            <span uk-icon="icon: file-text; ratio: 1.2" style="color: #1e87f0; flex-shrink: 0;"></span>
+        <!-- DIALOG HEADER :: START -->
+        <div class="kb-dialog-header" tabindex="-1" style="border-bottom: 3px solid #1e87f0;">
             <span class="kb-dialog-title" style="color: #1e87f0;">Add Note</span>
             <span class="kb-dialog-desc">A free-form note, observation, or brief record.</span>
             <div class="kb-dialog-actions">
-                <button class="uk-button uk-button-primary uk-button-small" onclick="kbAddCopy('note')">
-                    <span uk-icon="icon: copy; ratio: 0.85"></span> Copy
-                </button>
-                <button class="uk-button uk-button-small uk-modal-close uk-close" type="button" uk-close> Close </button>
+                <button id="kb-save-note" class="kb-btn kb-btn-primary kb-btn-small" type="button" data-kb-save="note"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="14,10 9.5,14.5 5,10"></polyline><rect width="13" height="1" x="3" y="17" fill="currentColor" stroke="none"></rect><line x1="9.5" y1="13.91" x2="9.5" y2="3"></line></svg><span class="kb-save-label">Save</span></button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-copy="note"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><rect width="12" height="16" x="3.5" y="2.5"></rect><polyline points="5 0.5 17.5 0.5 17.5 17"></polyline></svg>Copy</button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-close="note">Close</button>
             </div>
         </div>
+        <!-- DIALOG HEADER :: END -->
 
-        <!-- Split body -->
+        <!-- DIALOG BODY :: START -->
         <div class="kb-dialog-body">
 
-            <!-- Left: editable Markdown template -->
+            <!-- TEMPLATE EDITOR :: START -->
             <div class="kb-pane-left">
                 <div class="kb-pane-label">Template</div>
-                <textarea id="kb-editor-note" class="kb-editor" spellcheck="false"></textarea>
+                <div id="kb-toolbar-note" class="kb-toolbar"></div>
+                <div id="kb-editor-note" class="kb-editor-host"></div>
             </div>
+            <!-- TEMPLATE EDITOR :: END -->
 
-            <!-- Right: key values reference as accordion word clouds -->
+            <!-- PROPERTIES PANE :: START -->
             <div class="kb-pane-right">
-                <div class="kb-pane-label">Values reference</div>
-                <div class="kb-accord-wrap">
-                    <div id="kb-accord-note"></div>
+                <div class="kb-pane-label">Properties</div>
+                <div class="kb-props-wrap">
+                    <div id="kb-props-note"></div>
                 </div>
             </div>
+            <!-- PROPERTIES PANE :: END -->
 
         </div>
-<!-- /kb-dialog-body -->
+        <!-- DIALOG BODY :: END -->
 
     </div>
-<!-- /kb-dialog -->
-</div>
-<!-- /modal -->
-<div id="modal-add-post" class="uk-modal-full" uk-modal>
+</dialog>
+<!-- EDITOR DIALOG :: END -->
+<!-- EDITOR DIALOG :: START -->
+<!-- Full-screen dialog to write a new document of one category (see its id). -->
+<dialog id="modal-add-post" class="kb-dialog-modal">
     <div class="kb-dialog">
 
-        <!-- Header -->
-        <div class="kb-dialog-header" style="border-bottom: 3px solid #1e87f0;">
-            <span uk-icon="icon: comment; ratio: 1.2" style="color: #1e87f0; flex-shrink: 0;"></span>
+        <!-- DIALOG HEADER :: START -->
+        <div class="kb-dialog-header" tabindex="-1" style="border-bottom: 3px solid #1e87f0;">
             <span class="kb-dialog-title" style="color: #1e87f0;">Add Post</span>
             <span class="kb-dialog-desc">A blog-style post, announcement, or article.</span>
             <div class="kb-dialog-actions">
-                <button class="uk-button uk-button-primary uk-button-small" onclick="kbAddCopy('post')">
-                    <span uk-icon="icon: copy; ratio: 0.85"></span> Copy
-                </button>
-                <button class="uk-button uk-button-small uk-modal-close uk-close" type="button" uk-close> Close </button>
+                <button id="kb-save-post" class="kb-btn kb-btn-primary kb-btn-small" type="button" data-kb-save="post"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="14,10 9.5,14.5 5,10"></polyline><rect width="13" height="1" x="3" y="17" fill="currentColor" stroke="none"></rect><line x1="9.5" y1="13.91" x2="9.5" y2="3"></line></svg><span class="kb-save-label">Save</span></button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-copy="post"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><rect width="12" height="16" x="3.5" y="2.5"></rect><polyline points="5 0.5 17.5 0.5 17.5 17"></polyline></svg>Copy</button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-close="post">Close</button>
             </div>
         </div>
+        <!-- DIALOG HEADER :: END -->
 
-        <!-- Split body -->
+        <!-- DIALOG BODY :: START -->
         <div class="kb-dialog-body">
 
-            <!-- Left: editable Markdown template -->
+            <!-- TEMPLATE EDITOR :: START -->
             <div class="kb-pane-left">
                 <div class="kb-pane-label">Template</div>
-                <textarea id="kb-editor-post" class="kb-editor" spellcheck="false"></textarea>
+                <div id="kb-toolbar-post" class="kb-toolbar"></div>
+                <div id="kb-editor-post" class="kb-editor-host"></div>
             </div>
+            <!-- TEMPLATE EDITOR :: END -->
 
-            <!-- Right: key values reference as accordion word clouds -->
+            <!-- PROPERTIES PANE :: START -->
             <div class="kb-pane-right">
-                <div class="kb-pane-label">Values reference</div>
-                <div class="kb-accord-wrap">
-                    <div id="kb-accord-post"></div>
+                <div class="kb-pane-label">Properties</div>
+                <div class="kb-props-wrap">
+                    <div id="kb-props-post"></div>
                 </div>
             </div>
+            <!-- PROPERTIES PANE :: END -->
 
         </div>
-<!-- /kb-dialog-body -->
+        <!-- DIALOG BODY :: END -->
 
     </div>
-<!-- /kb-dialog -->
-</div>
-<!-- /modal -->
-<div id="modal-add-procedure" class="uk-modal-full" uk-modal>
+</dialog>
+<!-- EDITOR DIALOG :: END -->
+<!-- EDITOR DIALOG :: START -->
+<!-- Full-screen dialog to write a new document of one category (see its id). -->
+<dialog id="modal-add-procedure" class="kb-dialog-modal">
     <div class="kb-dialog">
 
-        <!-- Header -->
-        <div class="kb-dialog-header" style="border-bottom: 3px solid #32d296;">
-            <span uk-icon="icon: list; ratio: 1.2" style="color: #32d296; flex-shrink: 0;"></span>
+        <!-- DIALOG HEADER :: START -->
+        <div class="kb-dialog-header" tabindex="-1" style="border-bottom: 3px solid #32d296;">
             <span class="kb-dialog-title" style="color: #32d296;">Add Procedure</span>
             <span class="kb-dialog-desc">A step-by-step operational procedure or runbook.</span>
             <div class="kb-dialog-actions">
-                <button class="uk-button uk-button-primary uk-button-small" onclick="kbAddCopy('procedure')">
-                    <span uk-icon="icon: copy; ratio: 0.85"></span> Copy
-                </button>
-                <button class="uk-button uk-button-small uk-modal-close uk-close" type="button" uk-close> Close </button>
+                <button id="kb-save-procedure" class="kb-btn kb-btn-primary kb-btn-small" type="button" data-kb-save="procedure"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="14,10 9.5,14.5 5,10"></polyline><rect width="13" height="1" x="3" y="17" fill="currentColor" stroke="none"></rect><line x1="9.5" y1="13.91" x2="9.5" y2="3"></line></svg><span class="kb-save-label">Save</span></button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-copy="procedure"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><rect width="12" height="16" x="3.5" y="2.5"></rect><polyline points="5 0.5 17.5 0.5 17.5 17"></polyline></svg>Copy</button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-close="procedure">Close</button>
             </div>
         </div>
+        <!-- DIALOG HEADER :: END -->
 
-        <!-- Split body -->
+        <!-- DIALOG BODY :: START -->
         <div class="kb-dialog-body">
 
-            <!-- Left: editable Markdown template -->
+            <!-- TEMPLATE EDITOR :: START -->
             <div class="kb-pane-left">
                 <div class="kb-pane-label">Template</div>
-                <textarea id="kb-editor-procedure" class="kb-editor" spellcheck="false"></textarea>
+                <div id="kb-toolbar-procedure" class="kb-toolbar"></div>
+                <div id="kb-editor-procedure" class="kb-editor-host"></div>
             </div>
+            <!-- TEMPLATE EDITOR :: END -->
 
-            <!-- Right: key values reference as accordion word clouds -->
+            <!-- PROPERTIES PANE :: START -->
             <div class="kb-pane-right">
-                <div class="kb-pane-label">Values reference</div>
-                <div class="kb-accord-wrap">
-                    <div id="kb-accord-procedure"></div>
+                <div class="kb-pane-label">Properties</div>
+                <div class="kb-props-wrap">
+                    <div id="kb-props-procedure"></div>
                 </div>
             </div>
+            <!-- PROPERTIES PANE :: END -->
 
         </div>
-<!-- /kb-dialog-body -->
+        <!-- DIALOG BODY :: END -->
 
     </div>
-<!-- /kb-dialog -->
-</div>
-<!-- /modal -->
-<div id="modal-add-report" class="uk-modal-full" uk-modal>
+</dialog>
+<!-- EDITOR DIALOG :: END -->
+<!-- EDITOR DIALOG :: START -->
+<!-- Full-screen dialog to write a new document of one category (see its id). -->
+<dialog id="modal-add-report" class="kb-dialog-modal">
     <div class="kb-dialog">
 
-        <!-- Header -->
-        <div class="kb-dialog-header" style="border-bottom: 3px solid #888888;">
-            <span uk-icon="icon: album; ratio: 1.2" style="color: #888888; flex-shrink: 0;"></span>
+        <!-- DIALOG HEADER :: START -->
+        <div class="kb-dialog-header" tabindex="-1" style="border-bottom: 3px solid #888888;">
             <span class="kb-dialog-title" style="color: #888888;">Add Report</span>
             <span class="kb-dialog-desc">A formal or informal report summarising findings, metrics, or status.</span>
             <div class="kb-dialog-actions">
-                <button class="uk-button uk-button-primary uk-button-small" onclick="kbAddCopy('report')">
-                    <span uk-icon="icon: copy; ratio: 0.85"></span> Copy
-                </button>
-                <button class="uk-button uk-button-small uk-modal-close uk-close" type="button" uk-close> Close </button>
+                <button id="kb-save-report" class="kb-btn kb-btn-primary kb-btn-small" type="button" data-kb-save="report"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="14,10 9.5,14.5 5,10"></polyline><rect width="13" height="1" x="3" y="17" fill="currentColor" stroke="none"></rect><line x1="9.5" y1="13.91" x2="9.5" y2="3"></line></svg><span class="kb-save-label">Save</span></button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-copy="report"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><rect width="12" height="16" x="3.5" y="2.5"></rect><polyline points="5 0.5 17.5 0.5 17.5 17"></polyline></svg>Copy</button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-close="report">Close</button>
             </div>
         </div>
+        <!-- DIALOG HEADER :: END -->
 
-        <!-- Split body -->
+        <!-- DIALOG BODY :: START -->
         <div class="kb-dialog-body">
 
-            <!-- Left: editable Markdown template -->
+            <!-- TEMPLATE EDITOR :: START -->
             <div class="kb-pane-left">
                 <div class="kb-pane-label">Template</div>
-                <textarea id="kb-editor-report" class="kb-editor" spellcheck="false"></textarea>
+                <div id="kb-toolbar-report" class="kb-toolbar"></div>
+                <div id="kb-editor-report" class="kb-editor-host"></div>
             </div>
+            <!-- TEMPLATE EDITOR :: END -->
 
-            <!-- Right: key values reference as accordion word clouds -->
+            <!-- PROPERTIES PANE :: START -->
             <div class="kb-pane-right">
-                <div class="kb-pane-label">Values reference</div>
-                <div class="kb-accord-wrap">
-                    <div id="kb-accord-report"></div>
+                <div class="kb-pane-label">Properties</div>
+                <div class="kb-props-wrap">
+                    <div id="kb-props-report"></div>
                 </div>
             </div>
+            <!-- PROPERTIES PANE :: END -->
 
         </div>
-<!-- /kb-dialog-body -->
+        <!-- DIALOG BODY :: END -->
 
     </div>
-<!-- /kb-dialog -->
-</div>
-<!-- /modal -->
-<div id="modal-add-task" class="uk-modal-full" uk-modal>
+</dialog>
+<!-- EDITOR DIALOG :: END -->
+<!-- EDITOR DIALOG :: START -->
+<!-- Full-screen dialog to write a new document of one category (see its id). -->
+<dialog id="modal-add-task" class="kb-dialog-modal">
     <div class="kb-dialog">
 
-        <!-- Header -->
-        <div class="kb-dialog-header" style="border-bottom: 3px solid #faa05a;">
-            <span uk-icon="icon: check; ratio: 1.2" style="color: #faa05a; flex-shrink: 0;"></span>
+        <!-- DIALOG HEADER :: START -->
+        <div class="kb-dialog-header" tabindex="-1" style="border-bottom: 3px solid #faa05a;">
             <span class="kb-dialog-title" style="color: #faa05a;">Add Task</span>
             <span class="kb-dialog-desc">A work item or action to be tracked and completed.</span>
             <div class="kb-dialog-actions">
-                <button class="uk-button uk-button-primary uk-button-small" onclick="kbAddCopy('task')">
-                    <span uk-icon="icon: copy; ratio: 0.85"></span> Copy
-                </button>
-                <button class="uk-button uk-button-small uk-modal-close uk-close" type="button" uk-close> Close </button>
+                <button id="kb-save-task" class="kb-btn kb-btn-primary kb-btn-small" type="button" data-kb-save="task"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><polyline points="14,10 9.5,14.5 5,10"></polyline><rect width="13" height="1" x="3" y="17" fill="currentColor" stroke="none"></rect><line x1="9.5" y1="13.91" x2="9.5" y2="3"></line></svg><span class="kb-save-label">Save</span></button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-copy="task"><svg class="kb-btn-icon" width="17" height="17" viewbox="0 0 20 20" fill="none" stroke="currentColor" aria-hidden="true"><rect width="12" height="16" x="3.5" y="2.5"></rect><polyline points="5 0.5 17.5 0.5 17.5 17"></polyline></svg>Copy</button>
+                <button class="kb-btn kb-btn-small" type="button" data-kb-close="task">Close</button>
             </div>
         </div>
+        <!-- DIALOG HEADER :: END -->
 
-        <!-- Split body -->
+        <!-- DIALOG BODY :: START -->
         <div class="kb-dialog-body">
 
-            <!-- Left: editable Markdown template -->
+            <!-- TEMPLATE EDITOR :: START -->
             <div class="kb-pane-left">
                 <div class="kb-pane-label">Template</div>
-                <textarea id="kb-editor-task" class="kb-editor" spellcheck="false"></textarea>
+                <div id="kb-toolbar-task" class="kb-toolbar"></div>
+                <div id="kb-editor-task" class="kb-editor-host"></div>
             </div>
+            <!-- TEMPLATE EDITOR :: END -->
 
-            <!-- Right: key values reference as accordion word clouds -->
+            <!-- PROPERTIES PANE :: START -->
             <div class="kb-pane-right">
-                <div class="kb-pane-label">Values reference</div>
-                <div class="kb-accord-wrap">
-                    <div id="kb-accord-task"></div>
+                <div class="kb-pane-label">Properties</div>
+                <div class="kb-props-wrap">
+                    <div id="kb-props-task"></div>
                 </div>
             </div>
+            <!-- PROPERTIES PANE :: END -->
 
         </div>
-<!-- /kb-dialog-body -->
+        <!-- DIALOG BODY :: END -->
 
     </div>
-<!-- /kb-dialog -->
-</div>
-<!-- /modal -->
+</dialog>
+<!-- EDITOR DIALOG :: END -->
 
-<script>
-(function () {
-    var KB_KEYS = JSON.parse(document.getElementById('kb-add-keys').textContent);
-    var KB_SKEL = JSON.parse(document.getElementById('kb-add-skeletons').textContent);
-
-    /* YYYY-MM-DD in local time */
-    function timestamp() {
-        var d = new Date();
-        var p = function (n) { return String(n).padStart(2, '0'); };
-    return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
-        // return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ':00';
-    }
-
-    /* Extract keys from Markdown skeleton (YAML front matter between --- delimiters) */
-    function parseKeysMd(catId) {
-        var keys = [];
-        var lines = KB_SKEL[catId].split('\n');
-        var inFm = false, fmCount = 0;
-        for (var i = 0; i < lines.length; i++) {
-            if (lines[i].trim() === '---') {
-                fmCount++;
-                if (fmCount === 1) { inFm = true; continue; }
-                if (fmCount === 2) { break; }
-            }
-            if (inFm) {
-                var m = lines[i].match(/^([A-Za-z][^:]+):\s*(.*)/);
-                if (m) keys.push({ name: m[1].trim(), val: m[2].trim() });
-            }
-        }
-        return keys;
-    }
-
-    /* Build Markdown template: substitute date and title in skeleton */
-    function buildTemplateMd(catId) {
-        var lines = KB_SKEL[catId].split('\n');
-        var out = [];
-        var inFm = false, fmDone = false, fmCount = 0, titleReplaced = false;
-        for (var i = 0; i < lines.length; i++) {
-            var line = lines[i];
-            if (!fmDone && line.trim() === '---') {
-                fmCount++;
-                if (fmCount === 1) { inFm = true; out.push(line); continue; }
-                if (fmCount === 2) { inFm = false; fmDone = true; out.push(line); continue; }
-            }
-            if (inFm) {
-                var dm = line.match(/^(Date:\s*)(.*)/);
-                if (dm) { out.push('Date: ' + timestamp()); continue; }
-                out.push(line);
-            } else if (fmDone && !titleReplaced && /^#\s+/.test(line)) {
-                out.push('# ' + catId.charAt(0).toUpperCase() + catId.slice(1) + ' title');
-                titleReplaced = true;
-            } else {
-                out.push(line);
-            }
-        }
-        return out.join('\n');
-    }
-
-    /* Build the clean editable template for the left pane */
-    function buildTemplate(catId) {
-        return buildTemplateMd(catId);
-    }
-
-    /* Build the accordion + word clouds for the right pane */
-    function buildAccordion(catId) {
-        var container = document.getElementById('kb-accord-' + catId);
-        container.innerHTML = '';
-
-        var ul = document.createElement('ul');
-        ul.setAttribute('uk-accordion', '');
-
-        Object.keys(KB_KEYS).sort(function (a, b) {
-            return a.toLowerCase().localeCompare(b.toLowerCase());
-        }).forEach(function (keyName) {
-            var items = KB_KEYS[keyName];
-
-            var li = document.createElement('li');
-
-            var a = document.createElement('a');
-            a.className = 'uk-accordion-title';
-            a.href = '';
-            a.innerHTML = keyName +
-                (items.length > 0
-                    ? '<span style="font-size:0.7rem;font-weight:400;color:#ccc;margin-left:5px;">(' + items.length + ')</span>'
-                    : '');
-
-            var div = document.createElement('div');
-            div.className = 'uk-accordion-content';
-
-            var cloud = document.createElement('div');
-            cloud.className = 'kb-wcloud';
-
-            if (items.length > 0) {
-                var maxC = 1;
-                items.forEach(function (it) { if (it.c > maxC) maxC = it.c; });
-                var logMax = Math.log(1 + maxC) || 1;
-                items.forEach(function (it) {
-                    var w = Math.log(1 + it.c) / logMax;
-                    var sp = document.createElement('span');
-                    sp.className = 'kb-wcloud-word';
-                    sp.style.setProperty('--kb-weight', w.toFixed(3));
-                    sp.textContent = it.v;
-                    sp.title = it.c + (it.c === 1 ? ' document' : ' documents');
-                    cloud.appendChild(sp);
-                });
-            } else {
-                var empty = document.createElement('span');
-                empty.style.cssText = 'font-size:0.75rem;color:#bbb;font-style:italic;';
-                empty.textContent = 'No values yet';
-                cloud.appendChild(empty);
-            }
-
-            div.appendChild(cloud);
-            li.appendChild(a);
-            li.appendChild(div);
-            ul.appendChild(li);
-        });
-
-        container.appendChild(ul);
-    }
-
-    window.kbAddOpen = function (catId) {
-        document.getElementById('kb-editor-' + catId).value = buildTemplate(catId);
-        buildAccordion(catId);
-        UIkit.modal('#modal-add-' + catId).show();
-    };
-
-    window.kbAddCopy = function (catId) {
-        var el = document.getElementById('kb-editor-' + catId);
-        navigator.clipboard.writeText(el.value).catch(function () {
-            el.select();
-            document.execCommand('copy');
-        });
-        UIkit.notification({ message: 'Copied to clipboard', status: 'success', timeout: 2000 });
-    };
-})();
-</script>
-</div></li>
-    </ul>
+<!-- EDITOR SCRIPTS :: START -->
+<script src="resources/editor/codemirror.min.js"></script>
+<script src="resources/editor/kb4it-frontmatter.js"></script>
+<script src="resources/editor/kb4it-editor.js"></script>
+<!-- EDITOR SCRIPTS :: END -->
 
 
+    </div>
+    <!-- DOCUMENT BODY :: END -->
+    </div>
 </main>
-<!-- Template HTML_BODY_DOC.tpl :: END -->
+<!-- MAIN CONTENT :: END -->
+<!-- BACK TO TOP :: START -->
+<a class="kb-totop kb-noprint" href="#" aria-label="Back to top"><span data-uk-icon="icon: arrow-up" aria-hidden="true"></span><span class="uk-hidden-visually">Back to top</span></a>
+<!-- BACK TO TOP :: END -->
 <!-- FOOTER :: START -->
-<div class="kb-footer">
+<footer class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Wednesday, October 21, 2026 at 19:49</span>
-</div>
+    <span class="kb-footer-meta">Last updated Monday, October 26, 2026 at 21:32</span>
+</footer>
 <!-- FOOTER :: END -->
 </div>
-<!-- /uk-container -->
+<!-- CONTENT :: END -->
 </div>
-<!-- /uk-background-muted -->
-<!-- CONTENTS (Document) :: END -->
+<!-- PAGE :: END -->
+<!-- PAGE SCRIPTS :: START -->
+<!-- Code highlighting -->
 <script>hljs.highlightAll();</script>
-<script>
-var input = document.getElementById("text_filter");
-var filter = document.getElementById("filter");
-
-input.addEventListener( "keyup", function(event)
-{
-    if ( input.value == "" )
-    {
-        filter.setAttribute( "uk-filter-control", "" );
-    }
-
-    else
-    {
-        filter.setAttribute( "uk-filter-control", "filter:[data-title*=" + JSON.stringify(input.value) + "i]" );
-    }
-
-    filter.click();
-});
-</script>
+<!-- Copy the document source to the clipboard (source dialog) -->
 <script>
 function copyToClipboard() {
   var el = document.getElementById("source-code");
@@ -904,31 +818,61 @@ function copyToClipboard() {
   UIkit.notification({message: "Source copied to clipboard", status: "success", timeout: 2000});
 }
 </script>
+<!-- Section folding -->
 <script>
+// Every section folds when you click its heading. Every section starts folded except the first
+// top-level one and the sections inside it. A link to a section unfolds it and the sections around it.
 (function() {
     var content = document.querySelector('.kb-content');
     if (!content) return;
-    var sects = Array.from(content.querySelectorAll(':scope > .kb-sect1'));
+    var SECT = '.kb-sect1, .kb-sect2, .kb-sect3, .kb-sect4';
+    var sects = Array.from(content.querySelectorAll(SECT)).filter(function(s) {
+        return s.querySelector(':scope > .kb-section-body');
+    });
     if (!sects.length) return;
-
-    var acc = document.createElement('div');
-    acc.setAttribute('uk-accordion', '');
-    sects[0].parentNode.insertBefore(acc, sects[0]);
+    var top = sects.filter(function(s) { return s.classList.contains('kb-sect1'); });
+    var first = top[0] || sects[0];
     sects.forEach(function(s) {
-        s.classList.add('uk-open');
-        acc.appendChild(s);
+        if (s !== first && !first.contains(s)) s.classList.add('kb-closed');
     });
-
-    UIkit.accordion(acc, {
-        targets: '> .kb-sect1',
-        toggle: '> h2',
-        content: '> .kb-section-body',
-        multiple: true,
-        animation: true,
-        duration: 200
+    sects.forEach(function(s) {
+        var heading = s.firstElementChild;
+        if (!heading || !/^H[2-5]$/.test(heading.tagName)) return;
+        heading.classList.add('kb-fold-toggle');
+        heading.setAttribute('role', 'button');
+        heading.setAttribute('tabindex', '0');
+        function sync() { heading.setAttribute('aria-expanded', String(!s.classList.contains('kb-closed'))); }
+        function toggle() { s.classList.toggle('kb-closed'); sync(); }
+        heading.addEventListener('click', toggle);
+        heading.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+        sync();
     });
+    function reveal(id) {
+        var target = id && document.getElementById(id);
+        if (!target || !content.contains(target)) return;
+        for (var node = target; node && node !== content; node = node.parentElement) {
+            if (node.matches && node.matches(SECT) && node.classList.contains('kb-closed')) {
+                node.classList.remove('kb-closed');
+                var h = node.firstElementChild;
+                if (h) h.setAttribute('aria-expanded', 'true');
+            }
+        }
+        target.scrollIntoView();
+    }
+    function fromHash() { try { reveal(decodeURIComponent(location.hash.slice(1))); } catch (e) {} }
+    window.addEventListener('hashchange', fromHash);
+    document.addEventListener('click', function(e) {
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (a && a.getAttribute('href').length > 1 && !a.hasAttribute('data-uk-toggle')) {
+            // A click on the current hash fires no hashchange, so reveal it here too.
+            setTimeout(function() { reveal(decodeURIComponent(a.getAttribute('href').slice(1))); }, 0);
+        }
+    });
+    fromHash();
 })();
 </script>
-<!-- GRID LAYOUT :: END -->
+<!-- PAGE SCRIPTS :: END -->
 </body>
 </html>

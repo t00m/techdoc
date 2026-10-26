@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- PAGE METADATA :: START -->
+    <meta charset="UTF-8">
+    <title>KB4IT - Quality</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="KB4IT 0.10.0+unknown; techdoc 1.0.0+aa5e0096a0f6">
+    <!-- PAGE METADATA :: END -->
+    <!-- SCRIPT FLAG :: START -->
+    <!-- With JavaScript on, panels that a script switches are hidden until shown. -->
+    <script>document.documentElement.classList.add('kb-js');</script>
+    <!-- SCRIPT FLAG :: END -->
+    <!-- STYLESHEETS :: START -->
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/screen.css">
+    <!-- STYLESHEETS :: END -->
+    <!-- LIBRARIES :: START -->
+    <script src="resources/themes/techdoc/framework/Highlight/highlight.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit.min.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit-icons.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery-3.5.1.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/dataTables.uikit.min.js"></script>
+    <!-- LIBRARIES :: END -->
+    <script src="resources/themes/techdoc/framework/kb4it/js/page.js" defer></script>
+    <script src="resources/themes/techdoc/framework/kb4it/js/blocks.js" defer></script>
+    <!-- DATATABLES SETUP :: START -->
+    <script class="init">
+        $(document).ready(function() {
+            $('.kb4it-datatable:not([data-dt-init])').each(function() {
+                $(this).attr('data-dt-init', '1').DataTable({
+                    dom: '<"kbfilter"flrtip>',
+                    serverSide: false,
+                    ordering: true,
+                    searching: true,
+                    deferRender:    true,
+                    autoWidth:      false,
+                    scrollY:        'calc(100vh - 200px)',
+                    scrollX:        true,
+                    scrollCollapse: false,
+                    scroller:       false,
+                    stateSave: false,
+                    paging:   false,
+                    info:     true,
+                    order: [[ 0, "desc" ]]
+                });
+            });
+        });
+    </script>
+    <!-- DATATABLES SETUP :: END -->
+    <!-- PRINT FOOTER :: START -->
+    
+    <style media="print">
+        @page { @bottom-left { content: "Quality"; } }
+    </style>
+    <!-- PRINT FOOTER :: END -->
+<!-- kb4it:meta -->
+<meta property="og:title" content="KB4IT">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KB4IT">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="resources/themes/techdoc/images/logo.svg">
+<!-- /kb4it:meta -->
+</head>
+<body>
+<!-- PAGE :: START -->
+<div class="uk-background-muted uk-height-viewport">
+<!-- TOP BAR :: START -->
+<div id="container-1" class="uk-container uk-container-center noprint">
+    <div id="kb4it-menu" style="z-index: 980;" data-uk-sticky="show-on-up: true">
+        <nav class="uk-navbar-container uk-border-rounded uk-card-hover uk-box-shadow-large" style="background-color: white;" data-uk-navbar>
+            <!-- LOGO MENU :: START -->
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="KB4IT" width="24" height="24">
+                        </a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="add.html"><span data-uk-icon="plus-circle"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Add document</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="search.html"><span data-uk-icon="search"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Search</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="events.html"><span data-uk-icon="calendar"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Events</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="bookmarks.html"><span data-uk-icon="bookmark"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Bookmarks</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="properties.html"><span data-uk-icon="database"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Properties</span></a>
+                                    <div class="uk-navbar-dropdown" data-uk-dropdown="pos: right-top">
+                                        <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-small uk-column-1-2">
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Bookmark.html"><span class="">Bookmark</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Category.html"><span class="">Category</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Command.html"><span class="">Command</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Database.html"><span class="">Database</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="DocType.html"><span class="">DocType</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="EnvVar.html"><span class="">EnvVar</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Environment.html"><span class="">Environment</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filename.html"><span class="">Filename</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filesystem.html"><span class="">Filesystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="OS.html"><span class="">OS</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Priority.html"><span class="">Priority</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Product.html"><span class="">Product</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Protocol.html"><span class="">Protocol</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Scope.html"><span class="">Scope</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Server.html"><span class="">Server</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Service.html"><span class="">Service</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Status.html"><span class="">Status</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Subsystem.html"><span class="">Subsystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Table.html"><span class="">Table</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Tag.html"><span class="">Tag</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Team.html"><span class="">Team</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Topic.html"><span class="">Topic</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Transaction.html"><span class="">Transaction</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="User.html"><span class="">User</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Website.html"><span class="">Website</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="stats.html"><span data-uk-icon="list"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Stats</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="quality.html"><span data-uk-icon="star"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Quality</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="javascript:location.reload();"><span data-uk-icon="refresh"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Reload page</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="help.html"><span data-uk-icon="question"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Help</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_app.html"><span data-uk-icon="info"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">About this app</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_kb4it.html"><span data-uk-icon="info"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">About KB4IT</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- LOGO MENU :: END -->
+            <!-- PAGE TITLE :: START -->
+            <!-- The title takes the room the left and right blocks leave, and is cut with an ellipsis. -->
+            <div class="kb4it-navbar-title">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a class="uk-link-toggle uk-text-primary" href="#" title="Quality"><span id="kb4it-page-title" class="uk-text-primary uk-text-small">Quality</span></a>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- PAGE TITLE :: END -->
+            <!-- SEARCH BUTTON :: START -->
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="#kb4it-search-modal" title="Search (/ or Ctrl+K)" aria-label="Search" data-uk-toggle><span data-uk-icon="search"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- SEARCH BUTTON :: END -->
+        </nav>
+    </div>
+    <!-- SEARCH DIALOG :: START -->
+    <div id="kb4it-search-modal" class="kb4it-search-modal" data-uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <form class="kb4it-search" action="search.html" method="get" role="search">
+    <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
+    <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
+</form>
+<link rel="stylesheet" href="resources/common/css/kb4it-search.css">
+<script defer src="search-index.js"></script>
+<script defer src="resources/common/js/kb4it-search.js"></script>
+<script defer src="resources/common/js/kb4it-search-ui.js"></script>
+
+        </div>
+    </div>
+    <script>
+        (function () {
+            var modal = document.getElementById("kb4it-search-modal");
+            UIkit.util.on(modal, "shown", function () { document.getElementById("kb4it-search-input").focus(); });
+            document.addEventListener("keydown", function (e) {
+                // Keys typed in a field are left alone: Ctrl+K inserts a link in the Add page editor.
+                var target = e.target, typing = target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName);
+                var slash = e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey;
+                var ctrlK = (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k";
+                if (!typing && (slash || ctrlK)) { e.preventDefault(); UIkit.modal(modal).show(); }
+            });
+        })();
+    </script>
+    <!-- SEARCH DIALOG :: END -->
+</div>
+<!-- TOP BAR :: END -->
+<!-- CONTENT :: START -->
+<div class="uk-container uk-container-center">
+<!-- MAIN CONTENT :: START -->
+<main class="kb-main">
+    <div class="kb-main-body">
+    <!-- PRINT HEADER :: START -->
+    <!-- Shown only on paper: the document title above the contents. -->
+    <div class="kb-print-header">
+        <h1 class="kb-print-doc-title">Quality</h1>
+    </div>
+    <!-- PRINT HEADER :: END -->
+
+
+    <!-- DOCUMENT BODY :: START -->
+    <div class="kb-content kb-content-md uk-margin" data-uk-lightbox="toggle: a.kb-zoom; animation: fade">
+<!-- QUALITY PAGE :: START -->
+<div class="uk-container kb-quality-page">
+    <p class="kb-q-disclaimer">Scores of every document, and the work that would raise them. The score measures structure, metadata, links and age, not whether the content is correct. <a href="quality-guide.html">How the score works</a></p>
+
+    <!-- TIER MIX :: START -->
+    <details class="kb-section kb-collapsible" id="quality-mix" open>
+        <summary class="kb-section-title">Tier mix</summary>
+        <div class="kb-q-mixrow">
+            <span class="kb-q-mixpeer">Reference</span>
+            <span class="kb-q-mix">
+                <span class="kb-q-complete" style="width: 66.7%" title="Complete: 4"></span>
+                <span class="kb-q-basic" style="width: 16.7%" title="Basic: 1"></span>
+                <span class="kb-q-stub" style="width: 16.7%" title="Stub: 1"></span>
+            </span>
+            <span class="kb-q-mixlabel">0 exemplary, 4 complete, 1 basic, 1 stub of 6</span>
+        </div>
+        <div class="kb-q-mixrow">
+            <span class="kb-q-mixpeer">How-to guide</span>
+            <span class="kb-q-mix">
+                <span class="kb-q-complete" style="width: 80.0%" title="Complete: 4"></span>
+                <span class="kb-q-basic" style="width: 20.0%" title="Basic: 1"></span>
+            </span>
+            <span class="kb-q-mixlabel">0 exemplary, 4 complete, 1 basic, 0 stub of 5</span>
+        </div>
+        <div class="kb-q-mixrow">
+            <span class="kb-q-mixpeer">Tutorial</span>
+            <span class="kb-q-mix">
+                <span class="kb-q-complete" style="width: 50.0%" title="Complete: 1"></span>
+                <span class="kb-q-basic" style="width: 50.0%" title="Basic: 1"></span>
+            </span>
+            <span class="kb-q-mixlabel">0 exemplary, 1 complete, 1 basic, 0 stub of 2</span>
+        </div>
+        <div class="kb-q-mixrow">
+            <span class="kb-q-mixpeer">Explanation</span>
+            <span class="kb-q-mix">
+                <span class="kb-q-stub" style="width: 100.0%" title="Stub: 1"></span>
+            </span>
+            <span class="kb-q-mixlabel">0 exemplary, 0 complete, 0 basic, 1 stub of 1</span>
+        </div>
+    </details>
+    <!-- TIER MIX :: END -->
+
+    <!-- BEST DOCUMENTS :: START -->
+    <details class="kb-section kb-collapsible" id="quality-best" open>
+        <summary class="kb-section-title">Best documents</summary>
+        <div class="kb-best">
+            <a class="kb-best-card" href="KB4IT-WEBSITE-AUTOMATED-UPDATE.html">
+                <span class="kb-q-emblem small kb-q-complete"><svg viewbox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#eee" stroke-width="4"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="73 100" stroke-linecap="round"></circle></svg><span class="num">73</span></span>
+                <span><span class="t">Keeping a KB4IT Website Up-to-Date Automatically</span><span class="s">Tutorial, 2026</span></span>
+            </a>
+            <a class="kb-best-card" href="X11-SSH-FORWARDING.html">
+                <span class="kb-q-emblem small kb-q-complete"><svg viewbox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#eee" stroke-width="4"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="74 100" stroke-linecap="round"></circle></svg><span class="num">74</span></span>
+                <span><span class="t">How To Configure X11 Forwarding Using SSH In Linux</span><span class="s">How-to guide, 2025</span></span>
+            </a>
+            <a class="kb-best-card" href="SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.html">
+                <span class="kb-q-emblem small kb-q-complete"><svg viewbox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#eee" stroke-width="4"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="68 100" stroke-linecap="round"></circle></svg><span class="num">68</span></span>
+                <span><span class="t">SFTP Connectivity - SSH Key Authentication</span><span class="s">How-to guide, 2026</span></span>
+            </a>
+            <a class="kb-best-card" href="BATCH-RENAME-SED.html">
+                <span class="kb-q-emblem small kb-q-complete"><svg viewbox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#eee" stroke-width="4"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="63 100" stroke-linecap="round"></circle></svg><span class="num">63</span></span>
+                <span><span class="t">Batch rename with sed</span><span class="s">How-to guide, 2026</span></span>
+            </a>
+            <a class="kb-best-card" href="LINUX-SYSTEMD-JOURNALCTL.html">
+                <span class="kb-q-emblem small kb-q-complete"><svg viewbox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#eee" stroke-width="4"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="74 100" stroke-linecap="round"></circle></svg><span class="num">74</span></span>
+                <span><span class="t">How to manage Systemd journal logs</span><span class="s">Reference, 2024</span></span>
+            </a>
+            <a class="kb-best-card" href="SAP-BC-ORA-SQL-QUERIES.html">
+                <span class="kb-q-emblem small kb-q-complete"><svg viewbox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#eee" stroke-width="4"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="73 100" stroke-linecap="round"></circle></svg><span class="num">73</span></span>
+                <span><span class="t">Useful Oracle queries for SAP Basis Administrators</span><span class="s">Reference, 2026</span></span>
+            </a>
+            <a class="kb-best-card" href="SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.html">
+                <span class="kb-q-emblem small kb-q-complete"><svg viewbox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#eee" stroke-width="4"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="70 100" stroke-linecap="round"></circle></svg><span class="num">70</span></span>
+                <span><span class="t">ST03: SAP Workload Analysis</span><span class="s">Reference, 2026</span></span>
+            </a>
+        </div>
+    </details>
+    <!-- BEST DOCUMENTS :: END -->
+
+    <!-- EXEMPLARY :: START -->
+    <details class="kb-section kb-collapsible" id="quality-exemplary" open>
+        <summary class="kb-section-title">Exemplary documents (0)</summary>
+        <p class="kb-q-empty">No Exemplary document yet. The quick wins below are the shortest way there.</p>
+    </details>
+    <!-- EXEMPLARY :: END -->
+
+    <!-- QUICK WINS :: START -->
+    <details class="kb-section kb-collapsible" id="quality-wins" open>
+        <summary class="kb-section-title">Quick wins (5)</summary>
+        <p class="kb-q-intro">Documents one change away from the next tier, closest first.</p>
+        <ul class="kb-wins">
+            <li>
+<span class="kb-q-chip kb-q-complete">74</span><a href="LINUX-SYSTEMD-JOURNALCTL.html">How to manage Systemd journal logs</a><a class="act" href="quality-guide.html#check-core-keys">Add the Author key +1: Exemplary</a>
+</li>
+            <li>
+<span class="kb-q-chip kb-q-complete">74</span><a href="X11-SSH-FORWARDING.html">How To Configure X11 Forwarding Using SSH In Linux</a><a class="act" href="quality-guide.html#check-core-keys">Add the Author key +1: Exemplary</a>
+</li>
+            <li>
+<span class="kb-q-chip kb-q-complete">73</span><a href="KB4IT-WEBSITE-AUTOMATED-UPDATE.html">Keeping a KB4IT Website Up-to-Date Automatically</a><a class="act" href="quality-guide.html#check-skeleton-section">Add the Steps section +2: Exemplary</a>
+</li>
+            <li>
+<span class="kb-q-chip kb-q-complete">73</span><a href="SAP-BC-ORA-SQL-QUERIES.html">Useful Oracle queries for SAP Basis Administrators</a><a class="act" href="quality-guide.html#check-image">Add an image or a diagram +2: Exemplary</a>
+</li>
+            <li>
+<span class="kb-q-chip kb-q-complete">70</span><a href="SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.html">ST03: SAP Workload Analysis</a><a class="act" href="quality-guide.html#check-final-status">Set a final status +5: Exemplary</a>
+</li>
+        </ul>
+    </details>
+    <!-- QUICK WINS :: END -->
+
+    <!-- BROKEN LINKS :: START -->
+    <details class="kb-section kb-collapsible" id="quality-broken" open>
+        <summary class="kb-section-title">Broken links (0)</summary>
+        <p class="kb-q-empty">None.</p>
+    </details>
+    <!-- BROKEN LINKS :: END -->
+
+    <!-- MISSING IMAGES :: START -->
+    <details class="kb-section kb-collapsible" id="quality-images">
+        <summary class="kb-section-title">Missing images (0)</summary>
+        <p class="kb-q-empty">None.</p>
+    </details>
+    <!-- MISSING IMAGES :: END -->
+
+    <!-- NO SUMMARY :: START -->
+    <details class="kb-section kb-collapsible" id="quality-summary">
+        <summary class="kb-section-title">Documents without a Summary (14)</summary>
+        <ul class="kb-q-list kb-q-columns">
+            <li><a href="BATCH-RENAME-SED.html">Batch rename with sed</a></li>
+            <li><a href="COPY-FILES-REMOTE-SERVER-SSH.html">Copy files between servers via SCP</a></li>
+            <li><a href="DNSIPHOSTNAME-RESOLUTION.html">Check IP or hostname resolution</a></li>
+            <li><a href="HELLO-WORLD.html">Hello world</a></li>
+            <li><a href="KB4IT-WEBSITE-AUTOMATED-UPDATE.html">Keeping a KB4IT Website Up-to-Date Automatically</a></li>
+            <li><a href="LINUX-SYSTEMD-JOURNALCTL.html">How to manage Systemd journal logs</a></li>
+            <li><a href="SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.html">Apache compilation and installation in RedHat</a></li>
+            <li><a href="SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.html">ST03: SAP Workload Analysis</a></li>
+            <li><a href="SAP-BC-ORA-SQL-QUERIES.html">Useful Oracle queries for SAP Basis Administrators</a></li>
+            <li><a href="SAP-BC-OS-LINUX.html">Linux for Basis Admins</a></li>
+            <li><a href="SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.html">Generate Keystore and Certificate for SAP BO BI4.0</a></li>
+            <li><a href="SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.html">SFTP Connectivity - SSH Key Authentication</a></li>
+            <li><a href="SLES11-ZLINUX-DASD-PROVISIONING.html">IBM zLinux - DASD Provisioning and LVM Storage Setup for a New Domino Instance</a></li>
+            <li><a href="X11-SSH-FORWARDING.html">How To Configure X11 Forwarding Using SSH In Linux</a></li>
+        </ul>
+    </details>
+    <!-- NO SUMMARY :: END -->
+
+    <!-- DUPLICATES :: START -->
+    <details class="kb-section kb-collapsible" id="quality-duplicates" open>
+        <summary class="kb-section-title">Possible duplicates (0)</summary>
+        <p class="kb-q-intro">Titles that share most of their words. Titles that differ only by a date are left out.</p>
+        <p class="kb-q-empty">None.</p>
+    </details>
+    <!-- DUPLICATES :: END -->
+</div>
+<!-- QUALITY PAGE :: END -->
+
+    </div>
+    <!-- DOCUMENT BODY :: END -->
+    </div>
+</main>
+<!-- MAIN CONTENT :: END -->
+<!-- BACK TO TOP :: START -->
+<a class="kb-totop kb-noprint" href="#" aria-label="Back to top"><span data-uk-icon="icon: arrow-up" aria-hidden="true"></span><span class="uk-hidden-visually">Back to top</span></a>
+<!-- BACK TO TOP :: END -->
+<!-- FOOTER :: START -->
+<footer class="kb-footer">
+    <a class="kb-footer-top" href="#">&#8593; Back to top</a>
+    <span class="kb-footer-meta">Last updated Monday, October 26, 2026 at 21:32</span>
+</footer>
+<!-- FOOTER :: END -->
+</div>
+<!-- CONTENT :: END -->
+</div>
+<!-- PAGE :: END -->
+<!-- PAGE SCRIPTS :: START -->
+<!-- Code highlighting -->
+<script>hljs.highlightAll();</script>
+<!-- Copy the document source to the clipboard (source dialog) -->
+<script>
+function copyToClipboard() {
+  var el = document.getElementById("source-code");
+  el.select();
+  el.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(el.value).catch(function() {
+    document.execCommand("copy");
+  });
+  UIkit.notification({message: "Source copied to clipboard", status: "success", timeout: 2000});
+}
+</script>
+<!-- Section folding -->
+<script>
+// Every section folds when you click its heading. Every section starts folded except the first
+// top-level one and the sections inside it. A link to a section unfolds it and the sections around it.
+(function() {
+    var content = document.querySelector('.kb-content');
+    if (!content) return;
+    var SECT = '.kb-sect1, .kb-sect2, .kb-sect3, .kb-sect4';
+    var sects = Array.from(content.querySelectorAll(SECT)).filter(function(s) {
+        return s.querySelector(':scope > .kb-section-body');
+    });
+    if (!sects.length) return;
+    var top = sects.filter(function(s) { return s.classList.contains('kb-sect1'); });
+    var first = top[0] || sects[0];
+    sects.forEach(function(s) {
+        if (s !== first && !first.contains(s)) s.classList.add('kb-closed');
+    });
+    sects.forEach(function(s) {
+        var heading = s.firstElementChild;
+        if (!heading || !/^H[2-5]$/.test(heading.tagName)) return;
+        heading.classList.add('kb-fold-toggle');
+        heading.setAttribute('role', 'button');
+        heading.setAttribute('tabindex', '0');
+        function sync() { heading.setAttribute('aria-expanded', String(!s.classList.contains('kb-closed'))); }
+        function toggle() { s.classList.toggle('kb-closed'); sync(); }
+        heading.addEventListener('click', toggle);
+        heading.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+        sync();
+    });
+    function reveal(id) {
+        var target = id && document.getElementById(id);
+        if (!target || !content.contains(target)) return;
+        for (var node = target; node && node !== content; node = node.parentElement) {
+            if (node.matches && node.matches(SECT) && node.classList.contains('kb-closed')) {
+                node.classList.remove('kb-closed');
+                var h = node.firstElementChild;
+                if (h) h.setAttribute('aria-expanded', 'true');
+            }
+        }
+        target.scrollIntoView();
+    }
+    function fromHash() { try { reveal(decodeURIComponent(location.hash.slice(1))); } catch (e) {} }
+    window.addEventListener('hashchange', fromHash);
+    document.addEventListener('click', function(e) {
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (a && a.getAttribute('href').length > 1 && !a.hasAttribute('data-uk-toggle')) {
+            // A click on the current hash fires no hashchange, so reveal it here too.
+            setTimeout(function() { reveal(decodeURIComponent(a.getAttribute('href').slice(1))); }, 0);
+        }
+    });
+    fromHash();
+})();
+</script>
+<!-- PAGE SCRIPTS :: END -->
+</body>
+</html>

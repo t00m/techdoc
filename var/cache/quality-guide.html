@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- PAGE METADATA :: START -->
+    <meta charset="UTF-8">
+    <title>KB4IT - Quality guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="KB4IT 0.10.0+unknown; techdoc 1.0.0+aa5e0096a0f6">
+    <!-- PAGE METADATA :: END -->
+    <!-- SCRIPT FLAG :: START -->
+    <!-- With JavaScript on, panels that a script switches are hidden until shown. -->
+    <script>document.documentElement.classList.add('kb-js');</script>
+    <!-- SCRIPT FLAG :: END -->
+    <!-- STYLESHEETS :: START -->
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/print.css" type="text/css" media="print">
+    <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/screen.css">
+    <!-- STYLESHEETS :: END -->
+    <!-- LIBRARIES :: START -->
+    <script src="resources/themes/techdoc/framework/Highlight/highlight.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit.min.js"></script>
+    <script src="resources/themes/techdoc/framework/uikit/js/uikit-icons.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery-3.5.1.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="resources/themes/techdoc/framework/datatables/js/dataTables.uikit.min.js"></script>
+    <!-- LIBRARIES :: END -->
+    <script src="resources/themes/techdoc/framework/kb4it/js/page.js" defer></script>
+    <script src="resources/themes/techdoc/framework/kb4it/js/blocks.js" defer></script>
+    <!-- DATATABLES SETUP :: START -->
+    <script class="init">
+        $(document).ready(function() {
+            $('.kb4it-datatable:not([data-dt-init])').each(function() {
+                $(this).attr('data-dt-init', '1').DataTable({
+                    dom: '<"kbfilter"flrtip>',
+                    serverSide: false,
+                    ordering: true,
+                    searching: true,
+                    deferRender:    true,
+                    autoWidth:      false,
+                    scrollY:        'calc(100vh - 200px)',
+                    scrollX:        true,
+                    scrollCollapse: false,
+                    scroller:       false,
+                    stateSave: false,
+                    paging:   false,
+                    info:     true,
+                    order: [[ 0, "desc" ]]
+                });
+            });
+        });
+    </script>
+    <!-- DATATABLES SETUP :: END -->
+    <!-- PRINT FOOTER :: START -->
+    
+    <style media="print">
+        @page { @bottom-left { content: "Quality guide"; } }
+    </style>
+    <!-- PRINT FOOTER :: END -->
+<!-- kb4it:meta -->
+<meta property="og:title" content="KB4IT">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KB4IT">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="resources/themes/techdoc/images/logo.svg">
+<!-- /kb4it:meta -->
+</head>
+<body>
+<!-- PAGE :: START -->
+<div class="uk-background-muted uk-height-viewport">
+<!-- TOP BAR :: START -->
+<div id="container-1" class="uk-container uk-container-center noprint">
+    <div id="kb4it-menu" style="z-index: 980;" data-uk-sticky="show-on-up: true">
+        <nav class="uk-navbar-container uk-border-rounded uk-card-hover uk-box-shadow-large" style="background-color: white;" data-uk-navbar>
+            <!-- LOGO MENU :: START -->
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-logo uk-transition-scale-up uk-transition-opaque" href="index.html">
+                            <img src="resources/themes/techdoc/images/logo.svg" alt="KB4IT" width="24" height="24">
+                        </a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="add.html"><span data-uk-icon="plus-circle"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Add document</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="search.html"><span data-uk-icon="search"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Search</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="events.html"><span data-uk-icon="calendar"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Events</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="bookmarks.html"><span data-uk-icon="bookmark"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Bookmarks</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="properties.html"><span data-uk-icon="database"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Properties</span></a>
+                                    <div class="uk-navbar-dropdown" data-uk-dropdown="pos: right-top">
+                                        <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-small uk-column-1-2">
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Bookmark.html"><span class="">Bookmark</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Category.html"><span class="">Category</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Command.html"><span class="">Command</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Database.html"><span class="">Database</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="DocType.html"><span class="">DocType</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="EnvVar.html"><span class="">EnvVar</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Environment.html"><span class="">Environment</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filename.html"><span class="">Filename</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Filesystem.html"><span class="">Filesystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="OS.html"><span class="">OS</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Priority.html"><span class="">Priority</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Product.html"><span class="">Product</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Protocol.html"><span class="">Protocol</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Scope.html"><span class="">Scope</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Server.html"><span class="">Server</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Service.html"><span class="">Service</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Status.html"><span class="">Status</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Subsystem.html"><span class="">Subsystem</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Table.html"><span class="">Table</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Tag.html"><span class="">Tag</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Team.html"><span class="">Team</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Topic.html"><span class="">Topic</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Transaction.html"><span class="">Transaction</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="User.html"><span class="">User</span></a>
+                                            </li>
+                                            <li class="uk-link-toggle">
+                                                <a class="uk-link-heading" href="Website.html"><span class="">Website</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="stats.html"><span data-uk-icon="list"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Stats</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="quality.html"><span data-uk-icon="star"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Quality</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="javascript:location.reload();"><span data-uk-icon="refresh"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Reload page</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="help.html"><span data-uk-icon="question"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Help</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_app.html"><span data-uk-icon="info"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">About this app</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_kb4it.html"><span data-uk-icon="info"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">About KB4IT</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- LOGO MENU :: END -->
+            <!-- PAGE TITLE :: START -->
+            <!-- The title takes the room the left and right blocks leave, and is cut with an ellipsis. -->
+            <div class="kb4it-navbar-title">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a class="uk-link-toggle uk-text-primary" href="#" title="Quality guide"><span id="kb4it-page-title" class="uk-text-primary uk-text-small">Quality guide</span></a>
+
+                        <!-- TITLE MENU :: START -->
+                        <!-- Shown on hover: the page actions in one row, then the table of contents. -->
+                        <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center kb4it-title-menu">
+                            <!-- TITLE MENU CONTENTS :: START -->
+                            <div class="uk-navbar-dropdown-nav kb4it-title-toc">
+<ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#intro">How the quality score works</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#tiers">Tiers</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-findable">Findable (15 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-core-keys">Core keys</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-known-values">Known values</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-summary">Summary</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-structured">Structured (25 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-sections">Two or more sections</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-context">Opens with context</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-doctype-fit">Fits its DocType</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-skeleton-section">Skeleton sections</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-third-section">Three or more sections</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-empty-section">No empty sections</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-skeleton-text">No skeleton text left</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-complete">Complete (25 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-words">Long enough for its type</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-connected">Connected (15 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-backlinks">Other documents link to it</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-internal-link">Links to a related document</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-source">Cites a source</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-references">References section</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-image">Image or diagram</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-broken-link">Working links</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-missing-image">Images present</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-current">Current (20 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-final-status">Final status</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-freshness">Recently reviewed</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-dated">Dated</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#skeletons">Skeletons</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-change">Change</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-incident">Incident</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-meeting">Meeting</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-note">Note</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-post">Post</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-procedure">Procedure</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-report">Report</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-task">Task</a></li>
+</ul>
+</li>
+</ul>
+                            </div>
+                            <!-- TITLE MENU CONTENTS :: END -->
+                        </div>
+                        <!-- TITLE MENU :: END -->
+                    </li>
+                </ul>
+            </div>
+            <!-- PAGE TITLE :: END -->
+            <!-- SEARCH BUTTON :: START -->
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav noprint">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="#kb4it-search-modal" title="Search (/ or Ctrl+K)" aria-label="Search" data-uk-toggle><span data-uk-icon="search"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- SEARCH BUTTON :: END -->
+        </nav>
+    </div>
+    <!-- SEARCH DIALOG :: START -->
+    <div id="kb4it-search-modal" class="kb4it-search-modal" data-uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <form class="kb4it-search" action="search.html" method="get" role="search">
+    <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
+    <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
+</form>
+<link rel="stylesheet" href="resources/common/css/kb4it-search.css">
+<script defer src="search-index.js"></script>
+<script defer src="resources/common/js/kb4it-search.js"></script>
+<script defer src="resources/common/js/kb4it-search-ui.js"></script>
+
+        </div>
+    </div>
+    <script>
+        (function () {
+            var modal = document.getElementById("kb4it-search-modal");
+            UIkit.util.on(modal, "shown", function () { document.getElementById("kb4it-search-input").focus(); });
+            document.addEventListener("keydown", function (e) {
+                // Keys typed in a field are left alone: Ctrl+K inserts a link in the Add page editor.
+                var target = e.target, typing = target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName);
+                var slash = e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey;
+                var ctrlK = (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k";
+                if (!typing && (slash || ctrlK)) { e.preventDefault(); UIkit.modal(modal).show(); }
+            });
+        })();
+    </script>
+    <!-- SEARCH DIALOG :: END -->
+</div>
+<!-- TOP BAR :: END -->
+<!-- CONTENT :: START -->
+<div class="uk-container uk-container-center">
+<!-- MAIN CONTENT :: START -->
+<main class="kb-main">
+    <div class="kb-main-body">
+    <!-- PRINT HEADER :: START -->
+    <!-- Shown only on paper: the document title above the contents. -->
+    <div class="kb-print-header">
+        <h1 class="kb-print-doc-title">Quality guide</h1>
+    </div>
+    <!-- PRINT HEADER :: END -->
+
+
+    <!-- TABLE OF CONTENTS :: START -->
+    <details id="kb-toc-inline" open class="kb-toc-panel">
+        <summary class="kb-toc-summary">Table of Contents</summary>
+        <nav class="kb-toc-nav">
+            <ul class="uk-nav uk-nav-default">
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#intro">How the quality score works</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#tiers">Tiers</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-findable">Findable (15 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-core-keys">Core keys</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-known-values">Known values</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-summary">Summary</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-structured">Structured (25 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-sections">Two or more sections</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-context">Opens with context</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-doctype-fit">Fits its DocType</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-skeleton-section">Skeleton sections</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-third-section">Three or more sections</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-empty-section">No empty sections</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-skeleton-text">No skeleton text left</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-complete">Complete (25 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-words">Long enough for its type</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-connected">Connected (15 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-backlinks">Other documents link to it</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-internal-link">Links to a related document</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-source">Cites a source</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-references">References section</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-image">Image or diagram</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-broken-link">Working links</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-missing-image">Images present</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#dim-current">Current (20 points)</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-final-status">Final status</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-freshness">Recently reviewed</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#check-dated">Dated</a></li>
+</ul>
+</li>
+<!-- TOC TOP --><li class="uk-link-toggle">
+<a class="uk-link-heading" href="#skeletons">Skeletons</a><ul>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-change">Change</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-incident">Incident</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-meeting">Meeting</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-note">Note</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-post">Post</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-procedure">Procedure</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-report">Report</a></li>
+<!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#skeleton-task">Task</a></li>
+</ul>
+</li>
+</ul>
+        </nav>
+    </details>
+    <!-- TABLE OF CONTENTS :: END -->
+    <!-- DOCUMENT BODY :: START -->
+    <div class="kb-content kb-content-md uk-margin" data-uk-lightbox="toggle: a.kb-zoom; animation: fade">
+<div hidden>
+<div id="toctitle">Contents</div>
+<ul class="sectlevel1">
+<li><a href="#intro">How the quality score works</a></li>
+<li><a href="#tiers">Tiers</a></li>
+<li>
+<a href="#dim-findable">Findable (15 points)</a><ul>
+<li><a href="#check-core-keys">Core keys</a></li>
+<li><a href="#check-known-values">Known values</a></li>
+<li><a href="#check-summary">Summary</a></li>
+</ul>
+</li>
+<li>
+<a href="#dim-structured">Structured (25 points)</a><ul>
+<li><a href="#check-sections">Two or more sections</a></li>
+<li><a href="#check-context">Opens with context</a></li>
+<li><a href="#check-doctype-fit">Fits its DocType</a></li>
+<li><a href="#check-skeleton-section">Skeleton sections</a></li>
+<li><a href="#check-third-section">Three or more sections</a></li>
+<li><a href="#check-empty-section">No empty sections</a></li>
+<li><a href="#check-skeleton-text">No skeleton text left</a></li>
+</ul>
+</li>
+<li>
+<a href="#dim-complete">Complete (25 points)</a><ul>
+<li><a href="#check-words">Long enough for its type</a></li>
+</ul>
+</li>
+<li>
+<a href="#dim-connected">Connected (15 points)</a><ul>
+<li><a href="#check-backlinks">Other documents link to it</a></li>
+<li><a href="#check-internal-link">Links to a related document</a></li>
+<li><a href="#check-source">Cites a source</a></li>
+<li><a href="#check-references">References section</a></li>
+<li><a href="#check-image">Image or diagram</a></li>
+<li><a href="#check-broken-link">Working links</a></li>
+<li><a href="#check-missing-image">Images present</a></li>
+</ul>
+</li>
+<li>
+<a href="#dim-current">Current (20 points)</a><ul>
+<li><a href="#check-final-status">Final status</a></li>
+<li><a href="#check-freshness">Recently reviewed</a></li>
+<li><a href="#check-dated">Dated</a></li>
+</ul>
+</li>
+<li>
+<a href="#skeletons">Skeletons</a><ul>
+<li><a href="#skeleton-change">Change</a></li>
+<li><a href="#skeleton-incident">Incident</a></li>
+<li><a href="#skeleton-meeting">Meeting</a></li>
+<li><a href="#skeleton-note">Note</a></li>
+<li><a href="#skeleton-post">Post</a></li>
+<li><a href="#skeleton-procedure">Procedure</a></li>
+<li><a href="#skeleton-report">Report</a></li>
+<li><a href="#skeleton-task">Task</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="intro">How the quality score works</h2>
+<div class="kb-section-body uk-container">
+<p>Every document gets a score from 0 to 100, shown as a ring under the top bar. Click the ring to open the <strong>Quality</strong> tab: five bars, what the document already has, and the next steps with the points each one adds. Hover over any item for a tip; click it to come to its section on this page.</p>
+<p>The score measures structure, metadata, links and age. It does not check that the content is correct.</p>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="tiers">Tiers</h2>
+<div class="kb-section-body uk-container">
+<div class="kb-table uk-overflow-auto"><table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Score</th>
+<th>Look</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exemplary</td>
+<td>75 and up</td>
+<td>gold ring, a gold line under the top bar and a note</td>
+</tr>
+<tr>
+<td>Complete</td>
+<td>60 to 74</td>
+<td>green ring</td>
+</tr>
+<tr>
+<td>Basic</td>
+<td>40 to 59</td>
+<td>grey ring</td>
+</tr>
+<tr>
+<td>Stub</td>
+<td>under 40</td>
+<td>grey ring</td>
+</tr>
+<tr>
+<td>Retired</td>
+<td>Status Obsolete, Deprecated, Withdrawn, Rejected</td>
+<td>no score</td>
+</tr>
+</tbody>
+</table></div>
+<p>Records (documents with a <code>WorkType</code>: changes, incidents, tasks, meetings) are short by nature. They are judged by the sections of their WorkType skeleton instead of the shape of a DocType, need 60 words instead of 150 to 800, and get points for a final status instead of a recent date. A record is compared with records of the same WorkType.</p>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="dim-findable">Findable (15 points)</h2>
+<div class="kb-section-body uk-container">
+<p>Can a reader find the document and know what it is? Points for the frontmatter keys, known values and a Summary.</p>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-core-keys">Core keys</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The frontmatter has the core keys: Author, Date, DocType, Category, Status, Tag, Topic, Scope and Product.</p>
+<p><strong>How to meet it.</strong> Add each missing key to the frontmatter, between the two <code>---</code> lines at the top of the file. One point per key.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">---
+Author: Ana P&#233;rez
+Date: 2026-10-24
+DocType: How-to guide
+Category: Procedure
+Status: Released
+Tag: certificate, renewal
+Topic: Security
+Scope: SAP Administration
+Product: ADS
+---
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-known-values">Known values</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> Status, Priority and DocType use values the theme knows, so lists, colours and filters work.</p>
+<p><strong>How to meet it.</strong> Use one of these values. Status: New, Open, Draft, Planned, Completed, Released, Finished, Successful, Deprecated, Obsolete, Withdrawn, Rejected. Priority: Critical, Very high, High, Medium, Normal, Low. DocType: Tutorial, How-to guide, Reference, Explanation. The list is in the <code>quality</code> block of <code>theme.json</code>.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">Status: Released
+Priority: Normal
+DocType: How-to guide
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-summary">Summary</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> A one-sentence Summary says what the document is for. It shows under the title, in search results and in link previews.</p>
+<p><strong>How to meet it.</strong> Add a <code>Summary</code> key with one sentence. Put it in double quotes when it contains a colon.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">Summary: "Renew the Adobe ReaderRights credential before it expires and register it in ADS."
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="dim-structured">Structured (25 points)</h2>
+<div class="kb-section-body uk-container">
+<p>Is it organised like its kind? Points for sections, a first section that gives context, the shape of its type and the sections of its skeleton.</p>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-sections">Two or more sections</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The body is split into <code>##</code> sections, so readers can skim it and the table of contents works.</p>
+<p><strong>How to meet it.</strong> Start each part with a level-2 heading. One section gives 3 of the 5 points.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">## Description
+
+What this is about.
+
+## Steps
+
+1. First step.
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-context">Opens with context</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The first section gives context: Description, Introduction, Overview, Summary, Objective, Context or Problem.</p>
+<p><strong>How to meet it.</strong> Make the first <code>##</code> section one of those names, and say in a few lines what the document is for and when to use it.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">## Introduction
+
+The ReaderRights credential expires every year. This guide renews it.
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-doctype-fit">Fits its DocType</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The body has the shape of its DocType.</p>
+<p><strong>How to meet it.</strong> How-to guide: three or more numbered steps, or a command in a code block. Tutorial: both. Reference: a table, or a list of five or more items. Explanation: three or more sections. Without a DocType, set one first.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">1. Open transaction SU01.
+2. Enter the user name.
+3. Click Change.
+
+```bash
+sapcontrol -nr 00 -function GetProcessList
+```
+
+| Parameter | Value |
+|---|---|
+| login/min_password_lng | 8 |
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-skeleton-section">Skeleton sections</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The document has the sections of its skeleton, the template for its Category or WorkType.</p>
+<p><strong>How to meet it.</strong> Add each missing section as a <code>##</code> heading, with its content. Similar names count: Overview also matches Description, Introduction or Information; Impact matches Scope, Risk or Justification; Rollback matches Fallback or Backout; Verification matches Validation or Check; Resolution matches Solution or Fix. A References section in a skeleton is scored once, under Connected. The skeletons are listed at the end of this page.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">## Timeline
+
+- 09:10 Alert received.
+- 09:25 Service restarted.
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-third-section">Three or more sections</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> Documents without a skeleton for their Category get full points with three or more sections.</p>
+<p><strong>How to meet it.</strong> Split the content into at least three <code>##</code> sections, or set a Category that has a skeleton.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">## Description
+
+## Steps
+
+## References
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-empty-section">No empty sections</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> Every heading has content under it.</p>
+<p><strong>How to meet it.</strong> Write something under the empty heading, or remove the heading. Each empty section costs 3 points, at most 6.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">## Rollback
+
+Restore the previous kernel from /usr/sap/SID/SYS/exe/old.
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-skeleton-text">No skeleton text left</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The example text of the skeleton, such as "Step one" or "List prerequisites here.", has been replaced.</p>
+<p><strong>How to meet it.</strong> Replace every line of example text from the skeleton with your own content.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="dim-complete">Complete (25 points)</h2>
+<div class="kb-section-body uk-container">
+<p>Is there enough of it? Points for words, up to the target of its type.</p>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-words">Long enough for its type</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The body reaches the word target of its type: how-to guide 150, reference 200, explanation 500, tutorial 800, records 60. Code blocks do not count.</p>
+<p><strong>How to meet it.</strong> Explain the why, the prerequisites and the result, not only the commands. A document under 50 words (records: 20) gets at most 3 points. Words beyond the target add nothing.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="dim-connected">Connected (15 points)</h2>
+<div class="kb-section-body uk-container">
+<p>Is it part of the knowledge base? Points for links to and from other documents, sources, references and images.</p>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-backlinks">Other documents link to it</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> At least one other document links to this one, so readers can reach it by following links.</p>
+<p><strong>How to meet it.</strong> In a related document, add a link to this file. The page then lists it under "Linked from".</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">See also [Renew the ReaderRights credential](SAP-BC-ADS-READERRIGHTS.md).
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-internal-link">Links to a related document</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The document links to another document of the knowledge base.</p>
+<p><strong>How to meet it.</strong> Link to the file name with the <code>.md</code> extension. KB4IT turns it into a link to the page. A link to a section adds <code>#</code> and the section id.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">Before you start, [stop the batch jobs](SAP-BC-TSK-SUSPEND-JOBS.md#steps).
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-source">Cites a source</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The document cites an external source: an SAP note, vendor documentation, a ticket.</p>
+<p><strong>How to meet it.</strong> Add a web link. SAP notes named in the text ("note 736902") are also shown in the Details tab.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">See [SAP Note 736902](https://me.sap.com/notes/736902) and the [ADS documentation](https://help.sap.com/docs/).
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-references">References section</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> A section named References, Documentation or Related collects the links.</p>
+<p><strong>How to meet it.</strong> Add a <code>## References</code> section at the end, with one link per line.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">## References
+
+- [SAP Note 736902](https://me.sap.com/notes/736902)
+- [Restore the database](RESTORE-DB.md)
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-image">Image or diagram</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The document has an image or a diagram.</p>
+<p><strong>How to meet it.</strong> Copy the image to <code>source/resources/images/</code> and link it with a descriptive alt text, which becomes the caption. A Mermaid code block also counts.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">![User list in transaction SU01](resources/images/su01-users.png)
+
+```mermaid
+flowchart LR
+  A[Alert] --&gt; B[Restart]
+```
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-broken-link">Working links</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> Every link to another document points to a document that exists.</p>
+<p><strong>How to meet it.</strong> Check the file name and its <code>.md</code> extension, or create the missing document. Each broken link costs 3 points. <code>kb4it verify</code> lists them all.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">[Restore the database](RESTORE-DB.md)
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-missing-image">Images present</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> Every image the document shows exists in the source folder.</p>
+<p><strong>How to meet it.</strong> Copy the file to the path in the link, under <code>source/</code>, or correct the path. Each missing image costs 3 points; the page shows a grey box instead.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">![Transport log](resources/images/stms-log.png)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="dim-current">Current (20 points)</h2>
+<div class="kb-section-body uk-container">
+<p>Can a reader trust it today? Points for a final status and a recent Date.</p>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-final-status">Final status</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The Status is final: Released, Completed, Finished or Successful.</p>
+<p><strong>How to meet it.</strong> When the document is ready, set a final status. A draft or an open item gets fewer points (records: 10 of 20).</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">Status: Released
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-freshness">Recently reviewed</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The Date is recent. The points halve every 3 years for how-to guides and tutorials, 4 for references and 8 for explanations. Records do not lose points with age.</p>
+<p><strong>How to meet it.</strong> Review the content: check commands, versions and screenshots. Then set the Date to the day of the review.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">Date: 2026-10-24
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="check-dated">Dated</h3>
+<div class="kb-section-body uk-container">
+<p><strong>What it checks.</strong> The document has a Date in a format KB4IT reads.</p>
+<p><strong>How to meet it.</strong> Add a <code>Date</code> key as <code>YYYY-MM-DD</code>, <code>YYYY-MM-DD HH:MM</code> or <code>YYYY-MM-DD HH:MM:SS</code>.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">Date: 2026-10-24
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="kb-sect1 uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
+<h2 class="kb-h2" id="skeletons">Skeletons</h2>
+<div class="kb-section-body uk-container">
+<p>A skeleton is the template the Add page starts a document from. The quality score checks that a document has the <code>##</code> sections of its skeleton: records use the skeleton of their <code>WorkType</code>, other documents the skeleton of their first <code>Category</code>.</p>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="skeleton-change">Change</h3>
+<div class="kb-section-body uk-container">
+<p>Sections: Overview, Impact, Rollback.</p>
+<div class="kb-code kb-code-long">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">---
+Author:
+Date: YYYY-MM-DD
+Version: 1.0
+DocType: Reference
+Category: Record
+WorkType: Change
+Priority: Normal
+Status: New
+Summary:
+Tag:
+Topic:
+Scope:
+Product:
+---
+
+# Title of the change
+
+## Overview
+
+Describe the change: what, where, when and why.
+
+## Impact
+
+Describe the systems and users affected, and the downtime.
+
+## Rollback
+
+Describe how to undo the change if it fails.
+
+## References
+
+- [SAP Note 0000000](https://me.sap.com/notes/0000000)
+- Link the documents this one builds on.
+</code></pre>
+<button type="button" class="kb-code-show kb-noprint" data-lines="34">Show all 34 lines</button>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="skeleton-incident">Incident</h3>
+<div class="kb-section-body uk-container">
+<p>Sections: Summary, Timeline, Root cause, Resolution.</p>
+<div class="kb-code kb-code-long">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">---
+Author:
+Date: YYYY-MM-DD
+Version: 1.0
+DocType: Reference
+Category: Record
+WorkType: Incident
+Priority: Normal
+Status: New
+Summary:
+Tag:
+Topic:
+Scope:
+Product:
+---
+
+# Title of the incident
+
+## Summary
+
+Summarise what failed, for whom and for how long.
+
+## Timeline
+
+- HH:MM Describe the first event, such as the alert.
+- HH:MM Describe the next event, up to the recovery.
+
+## Root Cause
+
+Explain why it failed.
+
+## Resolution
+
+Describe what fixed it, and what prevents it from happening again.
+
+## References
+
+- [SAP Note 0000000](https://me.sap.com/notes/0000000)
+- Link the documents this one builds on.
+</code></pre>
+<button type="button" class="kb-code-show kb-noprint" data-lines="39">Show all 39 lines</button>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="skeleton-meeting">Meeting</h3>
+<div class="kb-section-body uk-container">
+<p>Sections: Objective, Attendees, Agenda, Notes, Action items.</p>
+<div class="kb-code kb-code-long">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">---
+Author:
+Date: YYYY-MM-DD
+Version: 1.0
+DocType: Reference
+Category: Minutes
+WorkType: Meeting
+Status: New
+Summary:
+Tag:
+Topic:
+Scope:
+Product:
+---
+
+# Title of the meeting
+
+## Objective
+
+Say why the meeting took place and what it had to decide.
+
+## Attendees
+
+- List each attendee with their role.
+
+## Agenda
+
+- Describe the first agenda item.
+- Describe the next agenda item.
+
+## Notes
+
+Record the discussion and the decisions taken.
+
+## Action Items
+
+- [ ] Describe the action, with its owner and due date.
+
+## References
+
+- [SAP Note 0000000](https://me.sap.com/notes/0000000)
+- Link the documents this one builds on.
+</code></pre>
+<button type="button" class="kb-code-show kb-noprint" data-lines="42">Show all 42 lines</button>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="skeleton-note">Note</h3>
+<div class="kb-section-body uk-container">
+<p>Sections: Overview, Details.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">---
+Author:
+Date: YYYY-MM-DD
+Version: 1.0
+DocType: Explanation
+Category: Note
+Status: Draft
+Summary:
+Tag:
+Topic:
+Scope:
+Product:
+---
+
+# Title of the note
+
+## Overview
+
+Say what this note is about and why it matters.
+
+## Details
+
+Explain the topic: background, how it works, what to keep in mind.
+
+## References
+
+- [SAP Note 0000000](https://me.sap.com/notes/0000000)
+- Link the documents this one builds on.
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="skeleton-post">Post</h3>
+<div class="kb-section-body uk-container">
+<p>Sections: Overview, Details.</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">---
+Author:
+Date: YYYY-MM-DD
+Version: 1.0
+DocType: Explanation
+Category: Post
+Status: Draft
+Summary:
+Tag:
+Topic:
+Scope:
+Product:
+---
+
+# Title of the post
+
+## Overview
+
+Say what this post is about and who should read it.
+
+## Details
+
+Write the body of the post: what happened, what changed, what it means for the reader.
+
+## References
+
+- [SAP Note 0000000](https://me.sap.com/notes/0000000)
+- Link the documents this one builds on.
+</code></pre>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="skeleton-procedure">Procedure</h3>
+<div class="kb-section-body uk-container">
+<p>Sections: Introduction, Prerequisites, Steps, Verification.</p>
+<div class="kb-code kb-code-long">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">---
+Author:
+Date: YYYY-MM-DD
+Version: 1.0
+DocType: How-to guide
+Category: Procedure
+Priority: Normal
+Status: Draft
+Summary:
+Tag:
+Topic:
+Scope:
+Product:
+---
+
+# Title of the procedure
+
+## Introduction
+
+Say what this procedure achieves and when to use it.
+
+## Prerequisites
+
+- Access, role or authorisation needed.
+- Systems, tools or files needed before you start.
+
+## Steps
+
+1. Describe the first step.
+2. Describe the second step.
+3. Describe the third step.
+
+```bash
+replace-with-the-command --and-its-options
+```
+
+## Verification
+
+Explain how to check that the procedure worked.
+
+## References
+
+- [SAP Note 0000000](https://me.sap.com/notes/0000000)
+- Link the documents this one builds on.
+</code></pre>
+<button type="button" class="kb-code-show kb-noprint" data-lines="44">Show all 44 lines</button>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="skeleton-report">Report</h3>
+<div class="kb-section-body uk-container">
+<p>Sections: Executive summary, Findings, Recommendations.</p>
+<div class="kb-code kb-code-long">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">---
+Author:
+Date: YYYY-MM-DD
+Version: 1.0
+DocType: Reference
+Category: Report
+Status: Draft
+Summary:
+Tag:
+Topic:
+Scope:
+Product:
+---
+
+# Title of the report
+
+## Executive Summary
+
+Summarise the main findings and the decision you need, in a few lines.
+
+## Findings
+
+| Area | Finding | Impact |
+|---|---|---|
+| System or process | What you found | High, Medium or Low |
+
+## Recommendations
+
+- Recommend the first action, with an owner and a date.
+- Recommend the next action, with an owner and a date.
+
+## References
+
+- [SAP Note 0000000](https://me.sap.com/notes/0000000)
+- Link the documents this one builds on.
+</code></pre>
+<button type="button" class="kb-code-show kb-noprint" data-lines="35">Show all 35 lines</button>
+</div>
+</div>
+</div>
+<div class="kb-sect2 sect2 uk-border-rounded uk-padding-small">
+<h3 class="kb-h3" id="skeleton-task">Task</h3>
+<div class="kb-section-body uk-container">
+<p>Sections: Objective, Acceptance criteria, Notes.</p>
+<div class="kb-code kb-code-long">
+<div class="kb-code-bar">
+<span class="kb-code-lang">markdown</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
+<pre><code class="language-markdown">---
+Author:
+Date: YYYY-MM-DD
+Version: 1.0
+DocType: Reference
+Category: Record
+WorkType: Task
+Priority: Normal
+Status: New
+Summary:
+Tag:
+Topic:
+Scope:
+Product:
+---
+
+# Title of the task
+
+## Objective
+
+Describe what this task must achieve and why.
+
+## Acceptance Criteria
+
+- [ ] Describe the first condition for done.
+- [ ] Describe the second condition for done.
+
+## Notes
+
+Record decisions, findings and links gathered while working.
+
+## References
+
+- [SAP Note 0000000](https://me.sap.com/notes/0000000)
+- Link the documents this one builds on.
+</code></pre>
+<button type="button" class="kb-code-show kb-noprint" data-lines="35">Show all 35 lines</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <!-- DOCUMENT BODY :: END -->
+    </div>
+</main>
+<!-- MAIN CONTENT :: END -->
+<!-- BACK TO TOP :: START -->
+<a class="kb-totop kb-noprint" href="#" aria-label="Back to top"><span data-uk-icon="icon: arrow-up" aria-hidden="true"></span><span class="uk-hidden-visually">Back to top</span></a>
+<!-- BACK TO TOP :: END -->
+<!-- FOOTER :: START -->
+<footer class="kb-footer">
+    <a class="kb-footer-top" href="#">&#8593; Back to top</a>
+    <span class="kb-footer-meta">Last updated Monday, October 26, 2026 at 21:32</span>
+</footer>
+<!-- FOOTER :: END -->
+</div>
+<!-- CONTENT :: END -->
+</div>
+<!-- PAGE :: END -->
+<!-- PAGE SCRIPTS :: START -->
+<!-- Code highlighting -->
+<script>hljs.highlightAll();</script>
+<!-- Copy the document source to the clipboard (source dialog) -->
+<script>
+function copyToClipboard() {
+  var el = document.getElementById("source-code");
+  el.select();
+  el.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(el.value).catch(function() {
+    document.execCommand("copy");
+  });
+  UIkit.notification({message: "Source copied to clipboard", status: "success", timeout: 2000});
+}
+</script>
+<!-- Section folding -->
+<script>
+// Every section folds when you click its heading. Every section starts folded except the first
+// top-level one and the sections inside it. A link to a section unfolds it and the sections around it.
+(function() {
+    var content = document.querySelector('.kb-content');
+    if (!content) return;
+    var SECT = '.kb-sect1, .kb-sect2, .kb-sect3, .kb-sect4';
+    var sects = Array.from(content.querySelectorAll(SECT)).filter(function(s) {
+        return s.querySelector(':scope > .kb-section-body');
+    });
+    if (!sects.length) return;
+    var top = sects.filter(function(s) { return s.classList.contains('kb-sect1'); });
+    var first = top[0] || sects[0];
+    sects.forEach(function(s) {
+        if (s !== first && !first.contains(s)) s.classList.add('kb-closed');
+    });
+    sects.forEach(function(s) {
+        var heading = s.firstElementChild;
+        if (!heading || !/^H[2-5]$/.test(heading.tagName)) return;
+        heading.classList.add('kb-fold-toggle');
+        heading.setAttribute('role', 'button');
+        heading.setAttribute('tabindex', '0');
+        function sync() { heading.setAttribute('aria-expanded', String(!s.classList.contains('kb-closed'))); }
+        function toggle() { s.classList.toggle('kb-closed'); sync(); }
+        heading.addEventListener('click', toggle);
+        heading.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+        sync();
+    });
+    function reveal(id) {
+        var target = id && document.getElementById(id);
+        if (!target || !content.contains(target)) return;
+        for (var node = target; node && node !== content; node = node.parentElement) {
+            if (node.matches && node.matches(SECT) && node.classList.contains('kb-closed')) {
+                node.classList.remove('kb-closed');
+                var h = node.firstElementChild;
+                if (h) h.setAttribute('aria-expanded', 'true');
+            }
+        }
+        target.scrollIntoView();
+    }
+    function fromHash() { try { reveal(decodeURIComponent(location.hash.slice(1))); } catch (e) {} }
+    window.addEventListener('hashchange', fromHash);
+    document.addEventListener('click', function(e) {
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (a && a.getAttribute('href').length > 1 && !a.hasAttribute('data-uk-toggle')) {
+            // A click on the current hash fires no hashchange, so reveal it here too.
+            setTimeout(function() { reveal(decodeURIComponent(a.getAttribute('href').slice(1))); }, 0);
+        }
+    });
+    fromHash();
+})();
+</script>
+<!-- PAGE SCRIPTS :: END -->
+</body>
+</html>

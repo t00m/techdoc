@@ -1,11 +1,12 @@
 {
-    "core_signature": "cd17463eab6ab11898fb0f05e5e1ddfc17a4b4459cb2c358fe9a4ce2dae80315548eef21cd110f8561f2a96474a0ab8999e4df7300571e239d4c4096d0d29753",
+    "core_signature": "136ab68e1e7d0077b53359c055895acf82de52ad8baa197c615ba662a713f87d82342031ded7f5c21cba748a3be545e95e142ad404ba9db679d67e0203a1ee16",
     "deployed": [
+        "404.html",
         "Author.html",
         "Author_Tom\u00e1s_V\u00edrseda.html",
         "BATCH-RENAME-SED.html",
         "Bookmark.html",
-        "Bookmark_True.html",
+        "Bookmark_Yes.html",
         "COPY-FILES-REMOTE-SERVER-SSH.html",
         "Category.html",
         "Category_Note.html",
@@ -371,9 +372,12 @@
         "help.html",
         "index.html",
         "properties.html",
+        "quality-guide.html",
+        "quality.html",
         "search.html",
         "stats.html"
     ],
+    "deployed_static": [],
     "document": {
         "BATCH-RENAME-SED.md": {
             "Category": [
@@ -415,6 +419,7 @@
             "body_hash": "f30df30d09ef25f91816a34638b5d0e8e88cc47a731314d44d3d852e90b00e4f7cc40e4e7e528f05f64439e5fd6b40c91794d7c32d0cf8f0c6825fc0002d5e81",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/BATCH-RENAME-SED.md",
+            "file_hash": "50e837948e23471b4942168e7a5ff43814e0f7421b3f5e75854957c5fcaa6ab4c06ac3a4646c348a9fd7ae31572a9ea069ca91b8c13fa8380163177abd2311cb",
             "keys": {
                 "Category": [
                     "Procedure"
@@ -453,7 +458,8 @@
                     "Troubleshooting"
                 ]
             },
-            "metadata_hash": "192fc5d766ceaac9094ad6f4f6cdc999cf40dc867877a3a6ce0d70bfe93a75460c98a8620c9a6d956eeccb0959a63b77a79a9082d8aa59600cc09ad5a847bb2c"
+            "metadata_hash": "192fc5d766ceaac9094ad6f4f6cdc999cf40dc867877a3a6ce0d70bfe93a75460c98a8620c9a6d956eeccb0959a63b77a79a9082d8aa59600cc09ad5a847bb2c",
+            "warned": false
         },
         "COPY-FILES-REMOTE-SERVER-SSH.md": {
             "Category": [
@@ -506,6 +512,7 @@
             "body_hash": "c3c65e2f5de52def14852b258654c2f1cbc536c89709e44e3128fd9d7558a2bbce1daff7e2744898c9eb514cc3ce0a7a188891a56f82cd0e0129ab83a56ecd74",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/COPY-FILES-REMOTE-SERVER-SSH.md",
+            "file_hash": "33793804776f7f2cbcd84d9f439a33f4551ccaa3a31a713b8edfedc56cd519868ab8480b4da68416ecc4a184ba1971278238761c7d21f79815eefd12a4bbbbc8",
             "keys": {
                 "Category": [
                     "Procedure"
@@ -555,7 +562,8 @@
                     "Security"
                 ]
             },
-            "metadata_hash": "487cee4f2f3cc9358db995b1baf8d356cc0331c8ee0058604d606704ee48060c987fd6edbf6f0a503ada67af1132b0ffcdc975808e68f4e397d3595b4c185056"
+            "metadata_hash": "487cee4f2f3cc9358db995b1baf8d356cc0331c8ee0058604d606704ee48060c987fd6edbf6f0a503ada67af1132b0ffcdc975808e68f4e397d3595b4c185056",
+            "warned": false
         },
         "DNSIPHOSTNAME-RESOLUTION.md": {
             "Category": [
@@ -604,6 +612,7 @@
             "body_hash": "b7af2092ebbe87888584359c3166ffc182404c1d0741963617c57dc23fbf009a7c7b97474fcdcb7761601d0b025c9bc6cceba74b797919159d62f10e481352c2",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/DNSIPHOSTNAME-RESOLUTION.md",
+            "file_hash": "8626356d93233e1c941a03c83c8360af59fd550ac41dd4cd2d25de526c9421cce467faf0e8c9eec3d88c7bc35a77e9ff597853ccf1a30e30329e26519f092fcb",
             "keys": {
                 "Category": [
                     "Procedure"
@@ -649,7 +658,8 @@
                     "Network"
                 ]
             },
-            "metadata_hash": "293fe83422f671eb7361951dfbf67ed1bdd6ec68bbf01c36ff2431e19580a4dbccda9bbd02b6a1a80460b9e4400a6809b6de69f031434fc6d898c8fb540bc65d"
+            "metadata_hash": "293fe83422f671eb7361951dfbf67ed1bdd6ec68bbf01c36ff2431e19580a4dbccda9bbd02b6a1a80460b9e4400a6809b6de69f031434fc6d898c8fb540bc65d",
+            "warned": false
         },
         "HELLO-WORLD.md": {
             "Author": [
@@ -676,6 +686,7 @@
             "body_hash": "7391b989d7b7b3be236e467f2ff85b9397f1ed11c6989a88e06c07448157086de564a6a6357fd2e8db38bebb1431b8997707189a2d2ac4c30da2aad4788bc267",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/HELLO-WORLD.md",
+            "file_hash": "8ab658cf3ae6ab5052454dcd41c4c843103e4b76a4787d09a1b556bf59b505ecf64dca026fd9e8708de92bcee0098fd715051a4f063530a64b4366c8e95dedf3",
             "keys": {
                 "Author": [
                     "Tom\u00e1s V\u00edrseda"
@@ -699,7 +710,8 @@
                     "Hello world"
                 ]
             },
-            "metadata_hash": "2fb496bacaacd27d6f00645c61a0934927e8a5cd32d1f73396719b68196b00ca42eb9df264a318d4ea5e128f90e947befed468bf1e8397200c94111d6bdc28b9"
+            "metadata_hash": "2fb496bacaacd27d6f00645c61a0934927e8a5cd32d1f73396719b68196b00ca42eb9df264a318d4ea5e128f90e947befed468bf1e8397200c94111d6bdc28b9",
+            "warned": false
         },
         "KB4IT-WEBSITE-AUTOMATED-UPDATE.md": {
             "Author": [
@@ -764,6 +776,7 @@
             "body_hash": "ab51b3d0cdafa3323802a615868888b472d967abe1d1fee1e4dd80124e2910f07d2e883a5b19766cd56db5c52253482b5aac3c78c6b86510ab1db53fc3f614fc",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/KB4IT-WEBSITE-AUTOMATED-UPDATE.md",
+            "file_hash": "929a41575fa6f21623979908c733aac1c92e334b6302d29da6836ac289a039d496455e0d6b2ce33257ebf07df68a4e3342082e8cf9517692742a0a94ebbacd4f",
             "keys": {
                 "Author": [
                     "Tom\u00e1s V\u00edrseda"
@@ -825,7 +838,8 @@
                     "Operation"
                 ]
             },
-            "metadata_hash": "a2f8f14b88a82c65572cf85060c6adaac2b0b1bf4e3da9826103b18b59af09839a1514a444f9982c7d21b08cc2d364fa7141603ce062a47c7c452e503ca0d502"
+            "metadata_hash": "a2f8f14b88a82c65572cf85060c6adaac2b0b1bf4e3da9826103b18b59af09839a1514a444f9982c7d21b08cc2d364fa7141603ce062a47c7c452e503ca0d502",
+            "warned": false
         },
         "LINUX-SYSTEMD-JOURNALCTL.md": {
             "Category": [
@@ -892,6 +906,7 @@
             "body_hash": "0fba35780249f5945e50ce6592321a092e5097d431e724c0d139a3955581bd6561b16d74275f654f4ea37556f8a5a78a3cf25e59287cb6a07e14aded2f83b97e",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/LINUX-SYSTEMD-JOURNALCTL.md",
+            "file_hash": "3e5b4301cf7d8410e7dca84cd0ace1425826be5541848ec63ba0143f7b0bd603e71cfa643122131abe0ccb6b7198e7fea9c570d6fd38e157213c89e66282f515",
             "keys": {
                 "Category": [
                     "Procedure"
@@ -955,7 +970,8 @@
                     "linuxhandbook.com"
                 ]
             },
-            "metadata_hash": "83ea659e5460e07120fcd9f9e540e644506558ca68d5e9ba2dcdc96a3793a90b55fff29a78d4eaec46b07069d97c426d73603389b77e28ca8c10f3643116388e"
+            "metadata_hash": "83ea659e5460e07120fcd9f9e540e644506558ca68d5e9ba2dcdc96a3793a90b55fff29a78d4eaec46b07069d97c426d73603389b77e28ca8c10f3643116388e",
+            "warned": false
         },
         "SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md": {
             "Author": [
@@ -1010,6 +1026,7 @@
             "body_hash": "77fe9837ba570321657a22de289fa2ae1cdc682568173aa12d996b2075c7e5b01edad88451b9baa288f513fb1218719cf95190a313d86f614c0704c066f4b9f1",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md",
+            "file_hash": "cc4a67cf83e06d71748eadc75bf653ad9c2b3a8a4cee5ed37156ea8e3d0cf0ab50947ba40c9594dbc2b3c44cbfaadc85ed1b7001c293c8be73f73aeaf9bdc1d6",
             "keys": {
                 "Author": [
                     "Tom\u00e1s V\u00edrseda"
@@ -1062,7 +1079,8 @@
                     "sapcs"
                 ]
             },
-            "metadata_hash": "de65f70010940eb7cf4512fd858cc650f9f056ad73cbe3defe9cbd4eb81c4ff4d985421e1eb438b980553eeeace4a0b88b6fb892e021f580fcc4c936a1200bed"
+            "metadata_hash": "de65f70010940eb7cf4512fd858cc650f9f056ad73cbe3defe9cbd4eb81c4ff4d985421e1eb438b980553eeeace4a0b88b6fb892e021f580fcc4c936a1200bed",
+            "warned": false
         },
         "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md": {
             "Author": [
@@ -1134,6 +1152,7 @@
             "body_hash": "07252c0f77d444ff3ea8d455633f93d50bcba22d4b65bd46bf124a57e3233b8dcc0c1876c1c925306e4649458ec6c052b17b2f833695ab650764eacc0fc710ce",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md",
+            "file_hash": "29f44c4bf8e0d24f6987c46e88c145ff500e64c3b41c364eacbced76fab410ee8e4451be8764a8d3135b9439bc6b8746954613b45ea04c82cefe5afae755823f",
             "keys": {
                 "Author": [
                     "Tom\u00e1s V\u00edrseda"
@@ -1202,7 +1221,8 @@
                     "ST05"
                 ]
             },
-            "metadata_hash": "4fdd6cc9a777bdbeb6317832ff09867b80880412e833ae34b12a424374ff0e11e47154922533f0b7f17a8ba4ead33fad881e41d886c982015e74f23b00f5e83d"
+            "metadata_hash": "4fdd6cc9a777bdbeb6317832ff09867b80880412e833ae34b12a424374ff0e11e47154922533f0b7f17a8ba4ead33fad881e41d886c982015e74f23b00f5e83d",
+            "warned": false
         },
         "SAP-BC-ORA-SQL-QUERIES.md": {
             "Category": [
@@ -1310,6 +1330,7 @@
             "body_hash": "8d173bab5e05760a127deefc06e22087137a164b058561cd7a499176c42a86d8fd6c4c3e3eea474afa2fd5879402fa3c1f64bac9f971b41e03dc66e57ceb2f13",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-ORA-SQL-QUERIES.md",
+            "file_hash": "e555c58e22e5b5f0cfa1752a09257610e16c8c3771862a908bb38321c42340c855a2569e2b49d96d536e6aa5520280f36c3ad71602ba628e0d4defc16e1cf555",
             "keys": {
                 "Category": [
                     "Note"
@@ -1414,14 +1435,15 @@
                     "oracle"
                 ]
             },
-            "metadata_hash": "b278a7851882e09ca3d92466edd32b35f4538048b6c5d2f1d0dc4c9afc536d4a70c289cd815f23f839a7a22778d3dbaaf2b1d5e1728951fb02b071511af00d8a"
+            "metadata_hash": "b278a7851882e09ca3d92466edd32b35f4538048b6c5d2f1d0dc4c9afc536d4a70c289cd815f23f839a7a22778d3dbaaf2b1d5e1728951fb02b071511af00d8a",
+            "warned": false
         },
         "SAP-BC-OS-LINUX.md": {
             "Author": [
                 "Tom\u00e1s V\u00edrseda"
             ],
             "Bookmark": [
-                "True"
+                "Yes"
             ],
             "Category": [
                 "Note"
@@ -1477,12 +1499,13 @@
             "body_hash": "9b2e06c02da191ed369cb926f5f44aa6031e8dad1c8fc97b886f50cac0a8123ef7cc50751090f37457963a2c7d6dd06cd31e61194035cb554575d0debe77ee13",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-OS-LINUX.md",
+            "file_hash": "a7864c6070cb2b99ba4a0d949af8ab05150deca44b626c217b16cf138a6c73ff865a470d37a7cfd52b02968be7f7c35f08163993b5aa65be8ec1e85453aa2568",
             "keys": {
                 "Author": [
                     "Tom\u00e1s V\u00edrseda"
                 ],
                 "Bookmark": [
-                    "True"
+                    "Yes"
                 ],
                 "Category": [
                     "Note"
@@ -1536,7 +1559,8 @@
                     "Troubleshooting"
                 ]
             },
-            "metadata_hash": "f2322a5fbe4b7cead27bd4789698c0f09d3821343534c161a99dde334a296f49dab782b733e23c8cf86d926e2bb0d04f576c3b8e0cb552bce979c01c5ecaf277"
+            "metadata_hash": "59e9497a436b5aa6bb58add22640f103b6748acd64509b724e2762a7f43f1f70ba2e8cf69cc334004777bd28e384a58860e2b216db17479178c1893095a6fdf8",
+            "warned": false
         },
         "SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md": {
             "Author": [
@@ -1588,6 +1612,7 @@
             "body_hash": "ba2d530a3e9091b662a4fd5d478e1fe745be197478f3537b52e264a6e494c85cfff7cc436bfcc627fa8402619600f4a60bb3f02fc1695a1e93c2bac2011f93e6",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md",
+            "file_hash": "98ec4369026ebc2f35d3576e45f590df9e6353c6f61caf2fbcaee49ba32992284afd9bc7b4a9fd58829e6a42e4b4205bb84e1b13a566786638b2fd5fcf064175",
             "keys": {
                 "Author": [
                     "Tom\u00e1s V\u00edrseda"
@@ -1636,7 +1661,8 @@
                     "Security"
                 ]
             },
-            "metadata_hash": "1835ad81b6f69570c9ee926203be9c8933b6996268c2b665293d15d88467b06e95741050cb3eb9fb8a82a878b399001004eb4f224b250a0ffe639c17a274d058"
+            "metadata_hash": "1835ad81b6f69570c9ee926203be9c8933b6996268c2b665293d15d88467b06e95741050cb3eb9fb8a82a878b399001004eb4f224b250a0ffe639c17a274d058",
+            "warned": false
         },
         "SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md": {
             "Category": [
@@ -1713,6 +1739,7 @@
             "body_hash": "dd1c758981a3167eacd554987539f0602aae1e5f92a7eabfae0323c184b099b68eec968f5b62f08a89b88d2652b4e566de26fcec46ce11b60654ee0b9fe0257b",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md",
+            "file_hash": "4905140278d7ec289eefc808e08407a13462de0715aff0dc4a6985f8cb58740d283cbe72a2363c7dc8d51e0c080e1a568949cd2618feef58de0704cbcb0abaaa",
             "keys": {
                 "Category": [
                     "Procedure"
@@ -1786,7 +1813,8 @@
                     "Troubleshooting"
                 ]
             },
-            "metadata_hash": "2be624686132fec946d53ed73c06e2606fa1531941f2d31fdd0d3420405bb026f7374adf71def29f481943bf4948f60d859668d4920027972ab4db980bed51fb"
+            "metadata_hash": "2be624686132fec946d53ed73c06e2606fa1531941f2d31fdd0d3420405bb026f7374adf71def29f481943bf4948f60d859668d4920027972ab4db980bed51fb",
+            "warned": false
         },
         "SLES11-ZLINUX-DASD-PROVISIONING.md": {
             "Category": [
@@ -1861,6 +1889,7 @@
             "body_hash": "7fbcdc7fa77c60a3d8f28bd1ff7bb0c469fe3f44e76ac2755461163ff89b116bac9c8d0f530905862458bf2cb045f60867bbf21623970018a2f91feec33a9400",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/SLES11-ZLINUX-DASD-PROVISIONING.md",
+            "file_hash": "ed9dfef021969cf8fe8a3d4c6c05dfe9d8c40b22ef6cd18c948be902e0a91163669925c874ea7d2a99af4a51327d5c3f684d068573e42d30bed3f14f6047f0e0",
             "keys": {
                 "Category": [
                     "Procedure"
@@ -1932,7 +1961,8 @@
                     "Configuration"
                 ]
             },
-            "metadata_hash": "477b15af563079336488a4ee318e7de21143da2f3c9c900a8dbcadadf5a8bde756b329c50ebfdaa754ac92646b52a3de1a6d2e50057646dfc3135997478c4754"
+            "metadata_hash": "477b15af563079336488a4ee318e7de21143da2f3c9c900a8dbcadadf5a8bde756b329c50ebfdaa754ac92646b52a3de1a6d2e50057646dfc3135997478c4754",
+            "warned": false
         },
         "X11-SSH-FORWARDING.md": {
             "Category": [
@@ -2011,6 +2041,7 @@
             "body_hash": "d799992cb560399f9fc702e57465dc1e720f923b3cb039a6959d3fa7f0f8920be36a02d92a02c5aa1010275147233c6ebc41a1c96cf012e919990aa27646a487",
             "compile": true,
             "content": "/home/runner/work/techdoc/techdoc/source/X11-SSH-FORWARDING.md",
+            "file_hash": "6da2073eded46cdd59a1aab5a5a5f6ad9b271d342a672cbb5b4b33570ccb12d5e2840e75d04ea282e479da09726bf9708fcf3cc199dd428544ea3c5452b70c57",
             "keys": {
                 "Category": [
                     "Procedure"
@@ -2021,7 +2052,6 @@
                     "xauth",
                     "xterm",
                     "systemctl",
-                    "xterm",
                     "ssh",
                     "dnf"
                 ],
@@ -2087,7 +2117,8 @@
                     "Connectivity"
                 ]
             },
-            "metadata_hash": "c498cd4e50c2b71a863dac6a6a653fd20b3146566e53c39d26efa44bedc2e8041ff39c87399ed1af9c9ad1cac5699addaa747f9fc25e1f656efcacd1b0785a0b"
+            "metadata_hash": "8a6df7f4264f8f8d9a262661138fd8af673d07a5fd894a4bf80c54cf07ee55ea5f1bce3f9ea4e8a21286f72b513f7c0c7da0abf34017059a38b5a5b799e83490",
+            "warned": false
         }
     },
     "events": {
@@ -2194,7 +2225,8 @@
             "SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md"
         ]
     },
-    "kb4it_version": "0.9.0",
+    "kb4it_build": "0.10.0+unknown",
+    "kb4it_version": "0.10.0",
     "links": {
         "BATCH-RENAME-SED.md": [],
         "COPY-FILES-REMOTE-SERVER-SSH.md": [],
@@ -2223,7 +2255,7 @@
             ]
         },
         "Bookmark": {
-            "True": [
+            "Yes": [
                 "SAP-BC-OS-LINUX.md"
             ]
         },
@@ -2438,7 +2470,6 @@
                 "SAP-BC-OS-LINUX.md"
             ],
             "xterm": [
-                "X11-SSH-FORWARDING.md",
                 "X11-SSH-FORWARDING.md"
             ],
             "yum": [
@@ -3336,5 +3367,6 @@
             ]
         }
     },
+    "pyyaml_version": "6.0.3",
     "site_signature": ""
 }

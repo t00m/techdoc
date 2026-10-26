@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>KB4IT - Keeping a KB4IT Website Up-to-Date Automatically</title>
+    <!-- PAGE METADATA :: START -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="KB4IT 0.9.0">
+    <title>KB4IT - Keeping a KB4IT Website Up-to-Date Automatically</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="KB4IT 0.10.0+unknown; techdoc 1.0.0+aa5e0096a0f6">
+    <!-- PAGE METADATA :: END -->
+    <!-- SCRIPT FLAG :: START -->
+    <!-- With JavaScript on, panels that a script switches are hidden until shown. -->
+    <script>document.documentElement.classList.add('kb-js');</script>
+    <!-- SCRIPT FLAG :: END -->
+    <!-- STYLESHEETS :: START -->
     <link rel="stylesheet" href="resources/themes/techdoc/framework/Highlight/styles/github-dark.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/uikit/css/uikit.min.css">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/print.css" type="text/css" media="print">
     <link rel="stylesheet" href="resources/themes/techdoc/framework/kb4it/css/screen.css">
+    <!-- STYLESHEETS :: END -->
+    <!-- LIBRARIES :: START -->
     <script src="resources/themes/techdoc/framework/Highlight/highlight.js"></script>
     <script src="resources/themes/techdoc/framework/uikit/js/uikit.min.js"></script>
     <script src="resources/themes/techdoc/framework/uikit/js/uikit-icons.min.js"></script>
     <script src="resources/themes/techdoc/framework/datatables/js/jquery-3.5.1.js"></script>
     <script src="resources/themes/techdoc/framework/datatables/js/jquery.dataTables.min.js"></script>
     <script src="resources/themes/techdoc/framework/datatables/js/dataTables.uikit.min.js"></script>
-    <script type="text/javascript" class="init">
+    <!-- LIBRARIES :: END -->
+    <script src="resources/themes/techdoc/framework/kb4it/js/page.js" defer></script>
+    <script src="resources/themes/techdoc/framework/kb4it/js/blocks.js" defer></script>
+    <script defer src="quality-index.js"></script>
+    <script defer src="resources/themes/techdoc/framework/kb4it/js/quality.js"></script>
+    <!-- DATATABLES SETUP :: START -->
+    <script class="init">
         $(document).ready(function() {
             $('.kb4it-datatable:not([data-dt-init])').each(function() {
                 $(this).attr('data-dt-init', '1').DataTable({
@@ -27,6 +41,7 @@
                     deferRender:    true,
                     autoWidth:      false,
                     scrollY:        'calc(100vh - 200px)',
+                    scrollX:        true,
                     scrollCollapse: false,
                     scroller:       false,
                     stateSave: false,
@@ -37,6 +52,13 @@
             });
         });
     </script>
+    <!-- DATATABLES SETUP :: END -->
+    <!-- PRINT FOOTER :: START -->
+    
+    <style media="print">
+        @page { @bottom-left { content: "Keeping a KB4IT Website Up-to-Date Automatically"; } }
+    </style>
+    <!-- PRINT FOOTER :: END -->
 <!-- kb4it:meta -->
 <meta name="description" content="This tutorial explains how to set up an automated pipeline that keeps a KB4IT-generated website current without manual intervention. The KB4IT document…">
 <meta name="author" content="Tomás Vírseda">
@@ -45,14 +67,17 @@
 <meta property="og:site_name" content="KB4IT">
 <meta property="og:description" content="This tutorial explains how to set up an automated pipeline that keeps a KB4IT-generated website current without manual intervention. The KB4IT document…">
 <meta name="twitter:card" content="summary">
+<link rel="icon" href="resources/themes/techdoc/images/logo.svg">
 <!-- /kb4it:meta -->
 </head>
 <body>
-<!-- Template version 0.9.0 -->
+<!-- PAGE :: START -->
 <div class="uk-background-muted uk-height-viewport">
+<!-- TOP BAR :: START -->
 <div id="container-1" class="uk-container uk-container-center noprint">
-    <div id="kb4it-menu" style="z-index: 980;" uk-sticky="show-on-up: true">
-        <nav class="uk-navbar-container uk-border-rounded uk-card-hover uk-box-shadow-large" style="background-color: white;" uk-navbar>
+    <div id="kb4it-menu" style="z-index: 980;" data-uk-sticky="show-on-up: true">
+        <nav class="uk-navbar-container uk-border-rounded uk-card-hover uk-box-shadow-large" style="background-color: white;" data-uk-navbar>
+            <!-- LOGO MENU :: START -->
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav noprint">
                     <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
@@ -62,18 +87,21 @@
                         <div class="uk-navbar-dropdown">
                             <ul class="uk-nav uk-navbar-dropdown-nav">
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="add.html"><span uk-icon="plus-circle"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Add document</span></a>
+                                    <a class="uk-link-heading" href="add.html"><span data-uk-icon="plus-circle"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Add document</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="search.html"><span data-uk-icon="search"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Search</span></a>
                                 </li>
                                 <li class="uk-nav-divider">
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="events.html"><span uk-icon="calendar"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Events</span></a>
+                                    <a class="uk-link-heading" href="events.html"><span data-uk-icon="calendar"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Events</span></a>
                                 </li>
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="bookmarks.html"><span uk-icon="bookmark"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Bookmarks</span></a>
+                                    <a class="uk-link-heading" href="bookmarks.html"><span data-uk-icon="bookmark"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Bookmarks</span></a>
                                 </li>
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="properties.html"><span uk-icon="database"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Properties</span></a>
-                                    <div class="uk-navbar-dropdown" uk-dropdown="pos: right-top">
+                                    <a class="uk-link-heading" href="properties.html"><span data-uk-icon="database"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Properties</span></a>
+                                    <div class="uk-navbar-dropdown" data-uk-dropdown="pos: right-top">
                                         <ul class="uk-nav uk-navbar-dropdown-nav uk-padding-small uk-column-1-2">
                                             <li class="uk-link-toggle">
                                                 <a class="uk-link-heading" href="Author.html"><span class="">Author</span></a>
@@ -158,117 +186,60 @@
                                 </li>
                                 <li class="uk-nav-divider">
                                 <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="stats.html"><span uk-icon="list"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Stats</span></a>
+                                    <a class="uk-link-heading" href="stats.html"><span data-uk-icon="list"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Stats</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="quality.html"><span data-uk-icon="star"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Quality</span></a>
+                                </li>
+                                <li class="uk-nav-divider">
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="javascript:location.reload();"><span data-uk-icon="refresh"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Reload page</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="help.html"><span data-uk-icon="question"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">Help</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_app.html"><span data-uk-icon="info"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">About this app</span></a>
+                                </li>
+                                <li class="uk-link-toggle">
+                                    <a class="uk-link-heading" href="about_kb4it.html"><span data-uk-icon="info"></span><span class="uk-padding-small uk-padding-remove-bottom uk-padding-remove-bottom-right uk-padding-remove-top">About KB4IT</span></a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                 </ul>
-                <ul class="uk-navbar-nav noprint">
-                    <!-- MENU CONTENTS :: START -->
-                    <!-- Template SECTION_ACTIONS.tpl :: START -->
-        <!-- Edit Button :: START -->
-        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Edit document">
-            <a class="uk-link-heading" href="https://github.com/t00m/techdoc/edit/main/source/KB4IT-WEBSITE-AUTOMATED-UPDATE.md" target="_blank"><span uk-icon="pencil"></span></a>
-        </li>
-        <!-- Edit Button :: END -->
-        <!-- Metadata Button :: START -->
-        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Document properties">
-            <a class="uk-link-heading" href="#modal-metadata" uk-toggle><span class="uk-link-heading" uk-icon="icon: hashtag; ratio: 1.0;"></span></a>
-            <div id="modal-metadata" class="uk-modal-full" uk-modal>
-                <div class="uk-modal-dialog uk-height-viewport">
-                    <button class="uk-modal-close-full uk-close-large uk-background-muted" type="button" uk-close></button>
-                    <div class="uk-grid-collapse uk-child-width-expand@s uk-flex-middle" uk-grid>
-                        <div class="uk-padding-large uk-background-muted">
-                            <div class="uk-text-lead uk-text-center uk-text-primary">Metadata</div>
-                            <div class="" style="border: 1px solid transparent;">
-<ul class="kb-metadata-list">
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Author.html">Author</a></strong>: <a class="kb-meta-val" href="Author_Tom%C3%A1s_V%C3%ADrseda.html">Tom&#225;s V&#237;rseda</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Category.html">Category</a></strong>: <a class="kb-meta-val" href="Category_Procedure.html">Procedure</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Command.html">Command</a></strong>: <a class="kb-meta-val" href="Command_crontab.html">crontab</a>
-<a class="kb-meta-val" href="Command_git.html">git</a>
-<a class="kb-meta-val" href="Command_kb4it.html">kb4it</a>
-<a class="kb-meta-val" href="Command_nice.html">nice</a>
-<a class="kb-meta-val" href="Command_nohup.html">nohup</a>
-<a class="kb-meta-val" href="Command_python3.html">python3</a>
-<a class="kb-meta-val" href="Command_ssh-add.html">ssh-add</a>
-<a class="kb-meta-val" href="Command_ssh-agent.html">ssh-agent</a>
-<a class="kb-meta-val" href="Command_eval.html">eval</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2026-05-22_000000.html">2026-05-22 00:00:00</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_Tutorial.html">Tutorial</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Filesystem.html">Filesystem</a></strong>: <a class="kb-meta-val" href="Filesystem_home.html">/home</a>
-<a class="kb-meta-val" href="Filesystem_proc.html">/proc</a>
-<a class="kb-meta-val" href="Filesystem_tmp.html">/tmp</a>
-<a class="kb-meta-val" href="Filesystem_varlog.html">/var/log</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="OS.html">OS</a></strong>: <a class="kb-meta-val" href="OS_Linux.html">Linux</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Product.html">Product</a></strong>: <a class="kb-meta-val" href="Product_GitLab.html">GitLab</a>
-<a class="kb-meta-val" href="Product_Markdown.html">Markdown</a>
-<a class="kb-meta-val" href="Product_KB4IT.html">KB4IT</a>
-<a class="kb-meta-val" href="Product_Crontab.html">Crontab</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Protocol.html">Protocol</a></strong>: <a class="kb-meta-val" href="Protocol_SSH.html">SSH</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Scope.html">Scope</a></strong>: <a class="kb-meta-val" href="Scope_Knowledge_Management.html">Knowledge Management</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Tag.html">Tag</a></strong>: <a class="kb-meta-val" href="Tag_automation.html">automation</a>
-<a class="kb-meta-val" href="Tag_daemon.html">daemon</a>
-<a class="kb-meta-val" href="Tag_agent.html">agent</a>
-<a class="kb-meta-val" href="Tag_repository.html">repository</a>
-<a class="kb-meta-val" href="Tag_scripting.html">scripting</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Topic.html">Topic</a></strong>: <a class="kb-meta-val" href="Topic_Documentation.html">Documentation</a>
-<a class="kb-meta-val" href="Topic_Monitoring.html">Monitoring</a>
-<a class="kb-meta-val" href="Topic_Operation.html">Operation</a>
-
-</li>
-</ul>
-</div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </li>
-        <!-- Metadata Button :: END -->
-        <!-- View Markdown Source Button :: START -->
-        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical" uk-tooltip="title: Document source">
-            <a class="uk-link-heading" href="#modal-full-source" uk-toggle><span class="uk-link-heading" uk-icon="icon: code; ratio: 1.0;"></span></a>
-            <div id="modal-full-source" class="uk-modal-full" uk-modal>
+            <!-- LOGO MENU :: END -->
+            <!-- PAGE TITLE :: START -->
+            <!-- The title takes the room the left and right blocks leave, and is cut with an ellipsis. -->
+            <div class="kb4it-navbar-title">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a class="uk-link-toggle uk-text-primary" href="#" title="Keeping a KB4IT Website Up-to-Date Automatically"><span id="kb4it-page-title" class="uk-text-primary uk-text-small">Keeping a KB4IT Website Up-to-Date Automatically</span></a>
+
+                        <!-- TITLE MENU :: START -->
+                        <!-- Shown on hover: the page actions in one row, then the table of contents. -->
+                        <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center kb4it-title-menu">
+                            <!-- PAGE ACTIONS :: START -->
+                            <div class="kb4it-page-actions noprint">
+        <!-- EDIT BUTTON :: START -->
+        <a class="kb4it-page-action" data-uk-tooltip="title: Edit document" aria-label="Edit document" href="https://github.com/t00m/techdoc/edit/main/source/KB4IT-WEBSITE-AUTOMATED-UPDATE.md" target="_blank"><span data-uk-icon="pencil"></span></a>
+        <!-- EDIT BUTTON :: END -->
+        <!-- PROPERTIES BUTTON :: START -->
+        <a class="kb4it-page-action" href="#kb-info-details" data-uk-tooltip="title: Document properties" aria-label="Document properties"><span data-uk-icon="icon: hashtag; ratio: 1.0;"></span></a>
+        <!-- PROPERTIES BUTTON :: END -->
+        <!-- QUALITY BUTTON :: START -->
+        <a class="kb4it-page-action" href="#kb-info-quality" data-uk-tooltip="title: Document quality" aria-label="Document quality"><span data-uk-icon="icon: star; ratio: 1.0;"></span></a>
+        <!-- QUALITY BUTTON :: END -->
+        <!-- SOURCE BUTTON AND DIALOG :: START -->
+        <a class="kb4it-page-action" href="#modal-full-source" data-uk-toggle data-uk-tooltip="title: Document source" aria-label="Document source"><span data-uk-icon="icon: code; ratio: 1.0;"></span></a>
+            <div id="modal-full-source" class="uk-modal-full" data-uk-modal>
                 <div class="uk-modal-dialog uk-height-viewport">
-                    <button class="uk-modal-close-full uk-close-large uk-background-muted" type="button" uk-close></button>
-                    <div class="uk-grid-collapse uk-child-width-expand@s uk-flex-middle" uk-grid>
+                    <button class="uk-modal-close-full uk-close-large uk-background-muted" type="button" data-uk-close></button>
+                    <div class="uk-grid-collapse uk-child-width-expand@s uk-flex-middle" data-uk-grid>
                         <div class="uk-padding-large uk-background-muted">
                             <div class="uk-text-lead uk-text-center uk-text-danger">Source</div>
-                            <div class="uk-text-lead">KB4IT-WEBSITE-AUTOMATED-UPDATE.md&#160;<a onclick="copyToClipboard()" class="uk-icon-link uk-margin-small-right uk-link-toggle" uk-icon="icon: copy; ratio: 1.0" uk-tooltip="title: Copy to clipboard"></a>
+                            <div class="uk-text-lead">KB4IT-WEBSITE-AUTOMATED-UPDATE.md&#160;<a onclick="copyToClipboard()" class="uk-icon-link uk-margin-small-right uk-link-toggle" data-uk-icon="icon: copy; ratio: 1.0" data-uk-tooltip="title: Copy to clipboard"></a>
 </div>
                             <div class=""><textarea id="source-code" class="uk-width-1-1 uk-height-viewport">---
 Author: Tom&#225;s V&#237;rseda
@@ -537,29 +508,17 @@ and release cadence.
                     </div>
                 </div>
             </div>
-        </li>
-        <!-- View Source Button :: END -->
-        <!-- Print Button :: START -->
-        <li class="uk-link-toggle uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
-            <a class="uk-link-heading" href="javascript:window.print()"><span uk-icon="icon: print; ratio: 1.0;"></span></a>
-        </li>
-        <!-- Print Button :: END -->
-<!-- Template SECTION_ACTIONS.tpl :: END -->
+        <!-- SOURCE BUTTON AND DIALOG :: END -->
+        <!-- PRINT BUTTON :: START -->
+        <a class="kb4it-page-action" href="javascript:window.print()" data-uk-tooltip="title: Print document" aria-label="Print document"><span data-uk-icon="icon: print; ratio: 1.0;"></span></a>
+        <!-- PRINT BUTTON :: END -->
 
 
 
-                    <!-- MENU CONTENTS :: END -->
-                </ul>
-            </div>
-            <div class="uk-navbar-center">
-                <!-- DOCUMENT TITLE :: START -->
-                <ul class="uk-navbar-nav">
-                    <li class="uk-card uk-card-small uk-padding-small uk-padding-remove-vertical">
-                        <div class="uk-child-width-expand@s uk-text-center" uk-grid>
-                            <div class="uk-card uk-card-small">
-                                <a class="uk-link-toggle uk-text-primary" href="#"><span id="kb4it-page-title" class="uk-text-primary uk-text-small uk-text-truncate">Keeping a KB4IT Website Up-to-Date Automatically</span></a>
-                                <div class="uk-navbar-dropdown uk-navbar-dropdown-bottom-center">
-                                    <div class="uk-navbar-dropdown-nav">
+                            </div>
+                            <!-- PAGE ACTIONS :: END -->
+                            <!-- TITLE MENU CONTENTS :: START -->
+                            <div class="uk-navbar-dropdown-nav kb4it-title-toc">
 <ul class="uk-nav uk-nav-default">
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#prerequisites">Prerequisites</a></li>
@@ -571,18 +530,29 @@ and release cadence.
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-6-verify-the-setup">Step 6 - Verify the Setup</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#summary">Summary</a></li>
 </ul>
-                                    </div>
-                                </div>
                             </div>
+                            <!-- TITLE MENU CONTENTS :: END -->
                         </div>
+                        <!-- TITLE MENU :: END -->
                     </li>
                 </ul>
-                <!-- DOCUMENT TITLE :: END -->
             </div>
+            <!-- PAGE TITLE :: END -->
+            <!-- SEARCH BUTTON :: START -->
             <div class="uk-navbar-right">
                 <ul class="uk-navbar-nav noprint">
-                    <li class="uk-flex uk-flex-middle uk-padding-small uk-padding-remove-vertical">
-                        <form class="kb4it-search" action="search.html" method="get" role="search">
+                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
+                        <a class="uk-link-heading" href="#kb4it-search-modal" title="Search (/ or Ctrl+K)" aria-label="Search" data-uk-toggle><span data-uk-icon="search"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- SEARCH BUTTON :: END -->
+        </nav>
+    </div>
+    <!-- SEARCH DIALOG :: START -->
+    <div id="kb4it-search-modal" class="kb4it-search-modal" data-uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <form class="kb4it-search" action="search.html" method="get" role="search">
     <input id="kb4it-search-input" class="kb4it-search-input" type="search" name="q" placeholder="Search" autocomplete="off" aria-label="Search the site">
     <div id="kb4it-search-dropdown" class="kb4it-search-dropdown" hidden></div>
 </form>
@@ -591,49 +561,312 @@ and release cadence.
 <script defer src="resources/common/js/kb4it-search.js"></script>
 <script defer src="resources/common/js/kb4it-search-ui.js"></script>
 
-                    </li>
-                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
-                        <a class="uk-link-heading" href="javascript:location.reload();"><span uk-icon="refresh"></span></a>
-                    </li>
-                    <li class="uk-card uk-card-small uk-card-hover uk-padding-small uk-padding-remove-vertical">
-                        <a class="uk-link-heading" href="#"><span uk-icon="info"></span></a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="about_app.html"><span class="uk-padding-none">About this app</span></a>
-                                </li>
-                                <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="help.html"><span class="uk-padding-none">Help</span></a>
-                                </li>
-                                <li class="uk-nav-divider">
-                                <li class="uk-link-toggle">
-                                    <a class="uk-link-heading" href="about_kb4it.html"><span class="uk-padding-none">About KB4IT</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        </div>
     </div>
+    <script>
+        (function () {
+            var modal = document.getElementById("kb4it-search-modal");
+            UIkit.util.on(modal, "shown", function () { document.getElementById("kb4it-search-input").focus(); });
+            document.addEventListener("keydown", function (e) {
+                // Keys typed in a field are left alone: Ctrl+K inserts a link in the Add page editor.
+                var target = e.target, typing = target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName);
+                var slash = e.key === "/" && !e.ctrlKey && !e.metaKey && !e.altKey;
+                var ctrlK = (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k";
+                if (!typing && (slash || ctrlK)) { e.preventDefault(); UIkit.modal(modal).show(); }
+            });
+        })();
+    </script>
+    <!-- SEARCH DIALOG :: END -->
 </div>
+<!-- TOP BAR :: END -->
+<!-- CONTENT :: START -->
 <div class="uk-container uk-container-center">
-    <div id="container-2" class="uk-container uk-container-center uk-flex uk-flex-center uk-hidden">
-        <span class="uk-text-lead">Keeping a KB4IT Website Up-to-Date Automatically</span>
-    </div>
-<!-- Template HTML_BODY_DOC.tpl :: START -->
+<!-- MAIN CONTENT :: START -->
 <main class="kb-main">
+    <div class="kb-main-body">
+    <!-- PRINT HEADER :: START -->
+    <!-- Shown only on paper: the document title above the contents. -->
+    <div class="kb-print-header">
+        <h1 class="kb-print-doc-title">Keeping a KB4IT Website Up-to-Date Automatically</h1>
+    </div>
+    <!-- PRINT HEADER :: END -->
 
-<!-- Print-only document header (hidden on screen) -->
-<div class="kb-print-header">
-    <h1 class="kb-print-doc-title">Keeping a KB4IT Website Up-to-Date Automatically</h1>
+<!-- HEADER STRIP :: START -->
+<div class="kb-doc-strip">
+    <a class="kb-q-emblem-link kb-noprint" href="#kb-info-quality" title="Quality 73 of 100, Complete" aria-label="Quality 73 of 100, Complete"><span class="kb-q-emblem kb-q-complete"><svg viewbox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#eee" stroke-width="3.5"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="3.5" stroke-dasharray="73 100" stroke-linecap="round"></circle></svg><span class="num">73</span></span></a>
+    <a class="uk-label kb-badge kb-label-doctype" href="DocType_Tutorial.html" title="DocType: Tutorial">Tutorial</a>
+    <span class="meta">
+        <span><span class="k">Date</span>
+            <a class="kb-date" href="events_20260522.html" title="2026-05-22 00:00:00"><span class="kb-day">2026-05-22</span><span class="kb-time">00:00</span></a>
+        </span>
+        <span><span class="k">Topic</span>
+            <a href="Topic_Documentation.html">Documentation</a>,
+            <a href="Topic_Monitoring.html">Monitoring</a>,
+            <a href="Topic_Operation.html">Operation</a>
+        </span>
+        <span><span class="k">Product</span>
+            <a href="Product_GitLab.html">GitLab</a>,
+            <a href="Product_Markdown.html">Markdown</a>,
+            <a href="Product_KB4IT.html">KB4IT</a>,
+            <a href="Product_Crontab.html">Crontab</a>
+        </span>
+    </span>
+</div>
+<!-- HEADER STRIP :: END -->
+
+
+<!-- INFO CARD :: START -->
+<section class="kb-info-card kb-open" id="kb-info-card" aria-label="Document information">
+    <div class="kb-info-bar kb-noprint">
+        <ul class="kb-info-tabs" data-uk-tab="connect: #kb-info-panels; animation: uk-animation-fade">
+            <li class="uk-active" data-kb-tab="details"><a href="#kb-info-details">Details</a></li>
+            <li data-kb-tab="quality"><a href="#kb-info-quality">Quality</a></li>
+            <li data-kb-tab="related"><a href="#kb-info-related">Related</a></li>
+            <li data-kb-tab="history"><a href="#kb-info-history">History</a></li>
+        </ul>
+        <button class="kb-info-toggle kb-noprint" type="button" aria-expanded="true" aria-controls="kb-info-panels" title="Show or hide the document information"><span data-uk-icon="icon: chevron-down"></span></button>
+    </div>
+    <div class="kb-info-panels" id="kb-info-panels">
+        <!-- DETAILS PANEL :: START -->
+        <div id="kb-info-details" class="kb-print uk-active">
+            <h2 class="kb-info-heading">Document details</h2>
+            <div class="kb-groups">
+                <div class="kb-group">
+                    <h3>Classification</h3>
+                    <dl>
+                        <dt>DocType</dt>
+                        <dd>
+                            <a href="DocType_Tutorial.html">Tutorial</a>
+                        </dd>
+                        <dt>Category</dt>
+                        <dd>
+                            <a href="Category_Procedure.html">Procedure</a>
+                        </dd>
+                        <dt>Topic</dt>
+                        <dd>
+                            <a href="Topic_Documentation.html">Documentation</a>,
+                            <a href="Topic_Monitoring.html">Monitoring</a>,
+                            <a href="Topic_Operation.html">Operation</a>
+                        </dd>
+                        <dt>Scope</dt>
+                        <dd>
+                            <a href="Scope_Knowledge_Management.html">Knowledge Management</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="kb-group">
+                    <h3>Systems</h3>
+                    <dl>
+                        <dt>Product</dt>
+                        <dd>
+                            <a href="Product_GitLab.html">GitLab</a>,
+                            <a href="Product_Markdown.html">Markdown</a>,
+                            <a href="Product_KB4IT.html">KB4IT</a>,
+                            <a href="Product_Crontab.html">Crontab</a>
+                        </dd>
+                        <dt>OS</dt>
+                        <dd>
+                            <a href="OS_Linux.html">Linux</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="kb-group">
+                    <h3>Technical objects</h3>
+                    <dl>
+                        <dt>Command</dt>
+                        <dd>
+                            <a class="kb-obj" href="Command_crontab.html">crontab</a>
+                            <a class="kb-obj" href="Command_git.html">git</a>
+                            <a class="kb-obj" href="Command_kb4it.html">kb4it</a>
+                            <a class="kb-obj" href="Command_nice.html">nice</a>
+                            <a class="kb-obj" href="Command_nohup.html">nohup</a>
+                            <a class="kb-obj" href="Command_python3.html">python3</a>
+                            <a class="kb-obj" href="Command_ssh-add.html">ssh-add</a>
+                            <a class="kb-obj" href="Command_ssh-agent.html">ssh-agent</a>
+                            <a class="kb-obj" href="Command_eval.html">eval</a>
+                        </dd>
+                        <dt>Filesystem</dt>
+                        <dd>
+                            <a class="kb-obj" href="Filesystem_home.html">/home</a>
+                            <a class="kb-obj" href="Filesystem_proc.html">/proc</a>
+                            <a class="kb-obj" href="Filesystem_tmp.html">/tmp</a>
+                            <a class="kb-obj" href="Filesystem_varlog.html">/var/log</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="kb-group">
+                    <h3>Organisation</h3>
+                    <dl>
+                        <dt>Author</dt>
+                        <dd>
+                            <a href="Author_Tom%C3%A1s_V%C3%ADrseda.html">Tom&#225;s V&#237;rseda</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="kb-group">
+                    <h3>Lifecycle</h3>
+                    <dl>
+                        <dt>Date</dt>
+                        <dd>
+                            <a href="events_20260522.html">2026-05-22 00:00:00</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="kb-group">
+                    <h3>Other</h3>
+                    <dl>
+                        <dt>Protocol</dt>
+                        <dd>
+                            <a href="Protocol_SSH.html">SSH</a>
+                        </dd>
+                        <dt>Tag</dt>
+                        <dd>
+                            <a href="Tag_automation.html">automation</a>,
+                            <a href="Tag_daemon.html">daemon</a>,
+                            <a href="Tag_agent.html">agent</a>,
+                            <a href="Tag_repository.html">repository</a>,
+                            <a href="Tag_scripting.html">scripting</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <!-- DETAILS PANEL :: END -->
+        <!-- QUALITY PANEL :: START -->
+        <div id="kb-info-quality" class="kb-noprint">
+            <h2 class="kb-info-heading">Quality</h2>
+
+<div class="kb-q-panel kb-q-complete">
+    <div>
+        <span class="kb-q-emblem big kb-q-complete"><svg viewbox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15.9" fill="none" stroke="#eee" stroke-width="3"></circle><circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="73 100" stroke-linecap="round"></circle></svg><span class="num">73</span></span>
+        <div class="kb-q-chipline"><a class="kb-q-chip kb-q-complete" href="quality-guide.html#tiers" title="Tiers: Exemplary 75 and up, Complete 60 to 74, Basic 40 to 59, Stub under 40" data-uk-tooltip="pos: top-left">
+            Complete</a></div>
+        <div class="kb-q-rank" data-kb-doc="KB4IT-WEBSITE-AUTOMATED-UPDATE.html"></div>
+    </div>
+    <div>
+        <div class="kb-q-dim" data-kb-dim="findable" title="Can a reader find the document and know what it is? Points for the frontmatter keys, known values and a Summary." data-uk-tooltip="pos: top-left">
+            <span><a href="quality-guide.html#dim-findable">Findable</a></span>
+            <span class="kb-q-bar"><span class="fill" style="width: 73%"></span><span class="kb-q-tick"></span></span>
+            <span>11 / 15</span>
+        </div>
+        <div class="kb-q-dim" data-kb-dim="structured" title="Is it organised like its kind? Points for sections, a first section that gives context, the shape of its type and the sections of its skeleton." data-uk-tooltip="pos: top-left">
+            <span><a href="quality-guide.html#dim-structured">Structured</a></span>
+            <span class="kb-q-bar"><span class="fill" style="width: 92%"></span><span class="kb-q-tick"></span></span>
+            <span>23 / 25</span>
+        </div>
+        <div class="kb-q-dim" data-kb-dim="complete" title="Is there enough of it? Points for words, up to the target of its type." data-uk-tooltip="pos: top-left">
+            <span><a href="quality-guide.html#dim-complete">Complete</a></span>
+            <span class="kb-q-bar"><span class="fill" style="width: 100%"></span><span class="kb-q-tick"></span></span>
+            <span>25 / 25</span>
+        </div>
+        <div class="kb-q-dim" data-kb-dim="connected" title="Is it part of the knowledge base? Points for links to and from other documents, sources, references and images." data-uk-tooltip="pos: top-left">
+            <span><a href="quality-guide.html#dim-connected">Connected</a></span>
+            <span class="kb-q-bar"><span class="fill" style="width: 0%"></span><span class="kb-q-tick"></span></span>
+            <span>0 / 15</span>
+        </div>
+        <div class="kb-q-dim" data-kb-dim="current" title="Can a reader trust it today? Points for a final status and a recent Date." data-uk-tooltip="pos: top-left">
+            <span><a href="quality-guide.html#dim-current">Current</a></span>
+            <span class="kb-q-bar"><span class="fill" style="width: 69%"></span><span class="kb-q-tick"></span></span>
+            <span>14 / 20</span>
+        </div>
+        <ul class="kb-q-checks">
+            <li class="ok" title="The frontmatter has the core keys: Author, Date, DocType, Category, Status, Tag, Topic, Scope and Product." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-core-keys">Author key</a></li>
+            <li class="ok" title="The frontmatter has the core keys: Author, Date, DocType, Category, Status, Tag, Topic, Scope and Product." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-core-keys">Date key</a></li>
+            <li class="ok" title="The frontmatter has the core keys: Author, Date, DocType, Category, Status, Tag, Topic, Scope and Product." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-core-keys">DocType key</a></li>
+            <li class="ok" title="The frontmatter has the core keys: Author, Date, DocType, Category, Status, Tag, Topic, Scope and Product." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-core-keys">Category key</a></li>
+            <li class="ok" title="The frontmatter has the core keys: Author, Date, DocType, Category, Status, Tag, Topic, Scope and Product." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-core-keys">Tag key</a></li>
+            <li class="ok" title="The frontmatter has the core keys: Author, Date, DocType, Category, Status, Tag, Topic, Scope and Product." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-core-keys">Topic key</a></li>
+            <li class="ok" title="The frontmatter has the core keys: Author, Date, DocType, Category, Status, Tag, Topic, Scope and Product." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-core-keys">Scope key</a></li>
+            <li class="ok" title="The frontmatter has the core keys: Author, Date, DocType, Category, Status, Tag, Topic, Scope and Product." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-core-keys">Product key</a></li>
+            <li class="ok" title="Status, Priority and DocType use values the theme knows, so lists, colours and filters work." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-known-values">Known values for Status, Priority and DocType</a></li>
+            <li class="ok" title="The body is split into `##` sections, so readers can skim it and the table of contents works." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-sections">Two or more sections</a></li>
+            <li class="ok" title="The first section gives context: Description, Introduction, Overview, Summary, Objective, Context or Problem." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-context">Opens with context</a></li>
+            <li class="ok" title="The body has the shape of its DocType." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-doctype-fit">Fits a tutorial: numbered steps and a command</a></li>
+            <li class="ok" title="The document has the sections of its skeleton, the template for its Category or WorkType." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-skeleton-section">Introduction section</a></li>
+            <li class="ok" title="The document has the sections of its skeleton, the template for its Category or WorkType." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-skeleton-section">Prerequisites section</a></li>
+            <li class="ok" title="The document has the sections of its skeleton, the template for its Category or WorkType." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-skeleton-section">Verification section</a></li>
+            <li class="ok" title="The body reaches the word target of its type: how-to guide 150, reference 200, explanation 500, tutorial 800, records 60. Code blocks do not count." data-uk-tooltip="pos: top-left"><a href="quality-guide.html#check-words">Long enough for its type</a></li>
+            <li class="todo" title='When the document is ready, set "Status: Released".' data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-final-status">Set a final status</a><span class="gain">+5</span>
+</li>
+            <li class="todo" title="In a related document, add a link to this file: [Title](FILE-NAME.md)." data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-backlinks">Link it from another document</a><span class="gain">+4</span>
+</li>
+            <li class="todo" title='Add "Summary: one sentence on what the document is for" to the frontmatter.' data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-summary">Add a Summary key</a><span class="gain">+3</span>
+</li>
+            <li class="todo" title="Link to another document by its file name: [Restore the database](RESTORE-DB.md)." data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-internal-link">Link to a related document</a><span class="gain">+3</span>
+</li>
+            <li class="todo" title="Add a web link to the source: [SAP Note 736902](https://me.sap.com/notes/736902)." data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-source">Cite a source</a><span class="gain">+3</span>
+</li>
+            <li class="todo" title='Add a "## References" section at the end, with one link per line.' data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-references">Add a References section</a><span class="gain">+3</span>
+</li>
+            <li class="todo" title='Add a "## Steps" section with its content: the procedure skeleton expects it.' data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-skeleton-section">Add the Steps section</a><span class="gain">+2</span>
+</li>
+            <li class="todo" title="Add an image: ![What it shows](resources/images/file.png), or a ```mermaid diagram." data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-image">Add an image or a diagram</a><span class="gain">+2</span>
+</li>
+            <li class="todo" title='Add "Status: ..." to the frontmatter, between the --- lines.' data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-core-keys">Add the Status key</a><span class="gain">+1</span>
+</li>
+            <li class="todo" title="Points halve every 3 years. Review the content, then set the Date to today." data-uk-tooltip="pos: top-left">
+<a href="quality-guide.html#check-freshness">Review it: it is 0 years old</a><span class="gain">+1</span>
+</li>
+        </ul>
+        <p class="kb-q-disclaimer">Quality measures structure, metadata, links and age. It does not check that the content is correct. <a href="quality-guide.html">How the score works</a></p>
+    </div>
 </div>
 
-<!-- Inline collapsible TOC -->
-<details id="kb-toc-inline" open class="kb-toc-panel">
-    <summary class="kb-toc-summary">Table of Contents</summary>
-    <nav class="kb-toc-nav">
-        <ul class="uk-nav uk-nav-default">
+        </div>
+        <!-- QUALITY PANEL :: END -->
+
+        <!-- RELATED PANEL :: START -->
+        <div id="kb-info-related" class="kb-noprint">
+            <h2 class="kb-info-heading">Related</h2>
+            <h3 class="kb-related-title">Related documents</h3>
+            <ul class="kb-related">
+                <li>
+<a href="BATCH-RENAME-SED.html">Batch rename with sed</a>
+                    <span class="kb-q-chip kb-q-complete">Complete</span>
+                    <span class="kb-related-shared">Product: KB4IT</span>
+</li>
+                <li>
+<a href="HELLO-WORLD.html">Hello world</a>
+                    <span class="kb-q-chip kb-q-stub">Stub</span>
+                    <span class="kb-related-shared">Product: KB4IT</span>
+</li>
+            </ul>
+        </div>
+        <!-- RELATED PANEL :: END -->
+        <!-- HISTORY PANEL :: START -->
+        <div id="kb-info-history" class="kb-noprint">
+            <h2 class="kb-info-heading">History</h2>
+            <dl class="kb-history">
+                <dt>Date</dt>
+                <dd>2026-05-22 00:00:00</dd>
+                <dt>Source file</dt>
+                <dd>
+<code>KB4IT-WEBSITE-AUTOMATED-UPDATE.md</code>: <a href="#modal-full-source" data-uk-toggle>View source</a>
+                    , <a href="https://github.com/t00m/techdoc/edit/main/source/KB4IT-WEBSITE-AUTOMATED-UPDATE.md" target="_blank" rel="noopener">Edit</a>
+                </dd>
+                <dt>Built</dt>
+                <dd>Monday, October 26, 2026 at 21:32</dd>
+            </dl>
+        </div>
+        <!-- HISTORY PANEL :: END -->
+    </div>
+</section>
+<!-- INFO CARD :: END -->
+
+    <!-- TABLE OF CONTENTS :: START -->
+    <details id="kb-toc-inline" open class="kb-toc-panel">
+        <summary class="kb-toc-summary">Table of Contents</summary>
+        <nav class="kb-toc-nav">
+            <ul class="uk-nav uk-nav-default">
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#overview">Overview</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#prerequisites">Prerequisites</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-1-create-the-shell-launcher-script">Step 1 - Create the Shell Launcher Script</a></li>
@@ -644,16 +877,11 @@ and release cadence.
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#step-6-verify-the-setup">Step 6 - Verify the Setup</a></li>
 <!-- TOC TOP --><li class="uk-link-toggle"><a class="uk-link-heading" href="#summary">Summary</a></li>
 </ul>
-    </nav>
-</details>
-
-    <!-- This is the nav containing the toggling elements -->
-    <ul class="uk-flex uk-flex-center uk-tab noprint uk-hidden" uk-switcher>
-        <li><a href="#">Document</a></li>
-    </ul>
-    <!-- This is the container of the content items -->
-    <ul class="uk-switcher uk-margin">
-        <li class="uk-active"><div class="kb-content kb-content-md">
+        </nav>
+    </details>
+    <!-- TABLE OF CONTENTS :: END -->
+    <!-- DOCUMENT BODY :: START -->
+    <div class="kb-content kb-content-md uk-margin" data-uk-lightbox="toggle: a.kb-zoom; animation: fade">
 <div hidden>
 <div id="toctitle">Contents</div>
 <ul class="sectlevel1">
@@ -713,6 +941,10 @@ the latest Markdown documents from GitLab, and rebuilds the website with KB4IT.<
 <p>The launcher is the single script that cron calls. It runs each component in order and
 invokes KB4IT at reduced CPU priority to avoid impacting other workloads on the host.</p>
 <p>Create the file <code>~/bin/kb4it_builder.sh</code> and make it executable (<code>chmod +x</code>):</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">bash</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
 <pre><code class="language-bash">#!/usr/bin/env bash
 # kb4it_builder.sh - Main build launcher for the KB4IT pipeline
 
@@ -725,6 +957,7 @@ invokes KB4IT at reduced CPU priority to avoid impacting other workloads on the 
 # 3. Rebuild the website at reduced CPU priority
 nice -n 15 ~/.local/bin/kb4it build ~/kb4it/config/repo.json
 </code></pre>
+</div>
 <blockquote>
 <p><strong>NOTE:</strong> The <code>nice -n 15</code> prefix tells the kernel to schedule the KB4IT build with
 below-normal CPU priority (value 15 out of a maximum of 19). This keeps the server
@@ -741,6 +974,10 @@ responsive during builds.</p>
 background using <code>nohup</code> and also starts an SSH agent so the daemon can access
 key-protected remote repositories.</p>
 <p>Create the file <code>~/bin/kb4it_check_notify.py</code> and make it executable (<code>chmod +x</code>):</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">python</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
 <pre><code class="language-python">#!/usr/bin/env python3
 """
 kb4it_check_notify.py
@@ -764,6 +1001,7 @@ else:
     os.system('eval "$(ssh-agent -s)"')
     print("SSH agent started")
 </code></pre>
+</div>
 <blockquote>
 <p><strong>NOTE:</strong> Scanning <code>/proc</code> is a lightweight, dependency-free way to check for a running
 process on Linux. No external libraries are required.</p>
@@ -787,6 +1025,10 @@ ssh-add ~/.ssh/id_rsa</code>
 The process-check script (Step 2) handles the agent startup for subsequent runs.</p>
 </blockquote>
 <p>Create the file <code>~/bin/kb4it_update_repository.py</code> and make it executable (<code>chmod +x</code>):</p>
+<div class="kb-code kb-code-long">
+<div class="kb-code-bar">
+<span class="kb-code-lang">python</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
 <pre><code class="language-python">#!/usr/bin/env python3
 """
 kb4it_update_repository.py
@@ -821,6 +1063,8 @@ if agent_socket and os.path.exists(agent_socket):
 else:
     print("ERROR: SSH agent not found - repository update skipped")
 </code></pre>
+<button type="button" class="kb-code-show kb-noprint" data-lines="33">Show all 33 lines</button>
+</div>
 <blockquote>
 <p><strong>NOTE:</strong> Replace <code>&lt;ACCESS_TOKEN&gt;</code> with a GitLab personal access token (or equivalent
 for your Git hosting provider) and adjust the repository URL and local path
@@ -835,8 +1079,13 @@ permissions (<code>chmod 600</code>).</p>
 <h2 class="kb-h2" id="step-4-create-the-log-directory">Step 4 - Create the Log Directory</h2>
 <div class="kb-section-body uk-container">
 <p>Ensure the log directory exists so output from the pipeline can be captured:</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">bash</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
 <pre><code class="language-bash">mkdir -p ~/logs
 </code></pre>
+</div>
 <hr>
 </div>
 </div>
@@ -844,16 +1093,29 @@ permissions (<code>chmod 600</code>).</p>
 <h2 class="kb-h2" id="step-5-schedule-the-pipeline-with-cron">Step 5 - Schedule the Pipeline with Cron</h2>
 <div class="kb-section-body uk-container">
 <p>Open the crontab for the dedicated user:</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">bash</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
 <pre><code class="language-bash">crontab -e
 </code></pre>
+</div>
 <p>Add the following line to run the pipeline every five minutes:</p>
+<div class="kb-code">
+<div class="kb-code-bar"><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button></div>
 <pre><code>*/5 * * * * source ~/.bashrc &amp;&amp; ~/bin/kb4it_builder.sh
 </code></pre>
+</div>
 <p>The <code>source ~/.bashrc</code> call is important: it loads environment variables (Python paths,
 KB4IT configuration, etc.) that are not available in the bare cron environment.</p>
 <p>Verify the entry was saved:</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">bash</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
 <pre><code class="language-bash">crontab -l
 </code></pre>
+</div>
 <hr>
 </div>
 </div>
@@ -863,22 +1125,36 @@ KB4IT configuration, etc.) that are not available in the bare cron environment.<
 <p>After saving the crontab, wait a few minutes and then check the output from the scripts.
 Since output goes to stdout/stderr, redirect it from the cron entry if you want a
 persistent log:</p>
+<div class="kb-code">
+<div class="kb-code-bar"><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button></div>
 <pre><code>*/5 * * * * source ~/.bashrc &amp;&amp; ~/bin/kb4it_builder.sh &gt;&gt; ~/logs/kb4it_build.log 2&gt;&amp;1
 </code></pre>
+</div>
 <p>Then tail the file to confirm all three steps are running correctly:</p>
+<div class="kb-code">
+<div class="kb-code-bar">
+<span class="kb-code-lang">bash</span><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button>
+</div>
 <pre><code class="language-bash">tail -f ~/logs/kb4it_build.log
 </code></pre>
+</div>
 <p>Expected output:</p>
+<div class="kb-code">
+<div class="kb-code-bar"><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button></div>
 <pre><code>Notification daemon already running - nothing to do
 Found SSH agent socket: /tmp/ssh-XXXXXXXXXX/agent.XXXX
 GitLab repository updated
 </code></pre>
+</div>
 <p>If the notification daemon was not running at the first execution, you will see:</p>
+<div class="kb-code">
+<div class="kb-code-bar"><button type="button" class="kb-code-copy kb-noprint" aria-label="Copy code"><span data-uk-icon="icon: copy" aria-hidden="true"></span><span class="kb-code-copy-text">Copy</span></button></div>
 <pre><code>Notification daemon started
 SSH agent started
 Found SSH agent socket: /tmp/ssh-XXXXXXXXXX/agent.XXXX
 GitLab repository updated
 </code></pre>
+</div>
 <hr>
 </div>
 </div>
@@ -886,7 +1162,7 @@ GitLab repository updated
 <h2 class="kb-h2" id="summary">Summary</h2>
 <div class="kb-section-body uk-container">
 <p>You now have a four-part automated pipeline:</p>
-<table>
+<div class="kb-table uk-overflow-auto"><table>
 <thead>
 <tr>
 <th>Component</th>
@@ -917,7 +1193,7 @@ GitLab repository updated
 <td>Triggers the launcher every 5 minutes</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Every five minutes, cron wakes up, the process-check script ensures the notification
 daemon is running (starting it if necessary), the latest Markdown documents are pulled
 from GitLab, and KB4IT rebuilds the site. The build runs at reduced CPU priority so
@@ -926,120 +1202,28 @@ the host remains responsive throughout.</p>
 and release cadence.</p>
 </div>
 </div>
-</div></li>
-    </ul>
-
-<!-- Document properties section at bottom (collapsed by default on screen) -->
-<div class="kb-sect1 kb-sect1-collapsed uk-margin-small-bottom uk-card uk-card-small uk-card-body uk-border-rounded">
-    <h2 class="kb-h2">Document Properties</h2>
-    <div class="kb-section-body uk-container">
-        <ul class="kb-metadata-list">
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Author.html">Author</a></strong>: <a class="kb-meta-val" href="Author_Tom%C3%A1s_V%C3%ADrseda.html">Tom&#225;s V&#237;rseda</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Category.html">Category</a></strong>: <a class="kb-meta-val" href="Category_Procedure.html">Procedure</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Command.html">Command</a></strong>: <a class="kb-meta-val" href="Command_crontab.html">crontab</a>
-<a class="kb-meta-val" href="Command_git.html">git</a>
-<a class="kb-meta-val" href="Command_kb4it.html">kb4it</a>
-<a class="kb-meta-val" href="Command_nice.html">nice</a>
-<a class="kb-meta-val" href="Command_nohup.html">nohup</a>
-<a class="kb-meta-val" href="Command_python3.html">python3</a>
-<a class="kb-meta-val" href="Command_ssh-add.html">ssh-add</a>
-<a class="kb-meta-val" href="Command_ssh-agent.html">ssh-agent</a>
-<a class="kb-meta-val" href="Command_eval.html">eval</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Date.html">Date</a></strong>: <a class="kb-meta-val" href="Date_2026-05-22_000000.html">2026-05-22 00:00:00</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="DocType.html">DocType</a></strong>: <a class="kb-meta-val" href="DocType_Tutorial.html">Tutorial</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Filesystem.html">Filesystem</a></strong>: <a class="kb-meta-val" href="Filesystem_home.html">/home</a>
-<a class="kb-meta-val" href="Filesystem_proc.html">/proc</a>
-<a class="kb-meta-val" href="Filesystem_tmp.html">/tmp</a>
-<a class="kb-meta-val" href="Filesystem_varlog.html">/var/log</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="OS.html">OS</a></strong>: <a class="kb-meta-val" href="OS_Linux.html">Linux</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Product.html">Product</a></strong>: <a class="kb-meta-val" href="Product_GitLab.html">GitLab</a>
-<a class="kb-meta-val" href="Product_Markdown.html">Markdown</a>
-<a class="kb-meta-val" href="Product_KB4IT.html">KB4IT</a>
-<a class="kb-meta-val" href="Product_Crontab.html">Crontab</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Protocol.html">Protocol</a></strong>: <a class="kb-meta-val" href="Protocol_SSH.html">SSH</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Scope.html">Scope</a></strong>: <a class="kb-meta-val" href="Scope_Knowledge_Management.html">Knowledge Management</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Tag.html">Tag</a></strong>: <a class="kb-meta-val" href="Tag_automation.html">automation</a>
-<a class="kb-meta-val" href="Tag_daemon.html">daemon</a>
-<a class="kb-meta-val" href="Tag_agent.html">agent</a>
-<a class="kb-meta-val" href="Tag_repository.html">repository</a>
-<a class="kb-meta-val" href="Tag_scripting.html">scripting</a>
-
-</li>
-<li class="kb-metadata-item">
-    <strong><a class="kb-meta-key" href="Topic.html">Topic</a></strong>: <a class="kb-meta-val" href="Topic_Documentation.html">Documentation</a>
-<a class="kb-meta-val" href="Topic_Monitoring.html">Monitoring</a>
-<a class="kb-meta-val" href="Topic_Operation.html">Operation</a>
-
-</li>
-</ul>
-
     </div>
-</div>
-
+    <!-- DOCUMENT BODY :: END -->
+    </div>
 </main>
-<!-- Template HTML_BODY_DOC.tpl :: END -->
+<!-- MAIN CONTENT :: END -->
+<!-- BACK TO TOP :: START -->
+<a class="kb-totop kb-noprint" href="#" aria-label="Back to top"><span data-uk-icon="icon: arrow-up" aria-hidden="true"></span><span class="uk-hidden-visually">Back to top</span></a>
+<!-- BACK TO TOP :: END -->
 <!-- FOOTER :: START -->
-<div class="kb-footer">
+<footer class="kb-footer">
     <a class="kb-footer-top" href="#">&#8593; Back to top</a>
-    <span class="kb-footer-meta">Last updated Wednesday, October 21, 2026 at 19:49</span>
-</div>
+    <span class="kb-footer-meta">Last updated Monday, October 26, 2026 at 21:32</span>
+</footer>
 <!-- FOOTER :: END -->
 </div>
-<!-- /uk-container -->
+<!-- CONTENT :: END -->
 </div>
-<!-- /uk-background-muted -->
-<!-- CONTENTS (Document) :: END -->
+<!-- PAGE :: END -->
+<!-- PAGE SCRIPTS :: START -->
+<!-- Code highlighting -->
 <script>hljs.highlightAll();</script>
-<script>
-var input = document.getElementById("text_filter");
-var filter = document.getElementById("filter");
-
-input.addEventListener( "keyup", function(event)
-{
-    if ( input.value == "" )
-    {
-        filter.setAttribute( "uk-filter-control", "" );
-    }
-
-    else
-    {
-        filter.setAttribute( "uk-filter-control", "filter:[data-title*=" + JSON.stringify(input.value) + "i]" );
-    }
-
-    filter.click();
-});
-</script>
+<!-- Copy the document source to the clipboard (source dialog) -->
 <script>
 function copyToClipboard() {
   var el = document.getElementById("source-code");
@@ -1051,31 +1235,61 @@ function copyToClipboard() {
   UIkit.notification({message: "Source copied to clipboard", status: "success", timeout: 2000});
 }
 </script>
+<!-- Section folding -->
 <script>
+// Every section folds when you click its heading. Every section starts folded except the first
+// top-level one and the sections inside it. A link to a section unfolds it and the sections around it.
 (function() {
     var content = document.querySelector('.kb-content');
     if (!content) return;
-    var sects = Array.from(content.querySelectorAll(':scope > .kb-sect1'));
+    var SECT = '.kb-sect1, .kb-sect2, .kb-sect3, .kb-sect4';
+    var sects = Array.from(content.querySelectorAll(SECT)).filter(function(s) {
+        return s.querySelector(':scope > .kb-section-body');
+    });
     if (!sects.length) return;
-
-    var acc = document.createElement('div');
-    acc.setAttribute('uk-accordion', '');
-    sects[0].parentNode.insertBefore(acc, sects[0]);
+    var top = sects.filter(function(s) { return s.classList.contains('kb-sect1'); });
+    var first = top[0] || sects[0];
     sects.forEach(function(s) {
-        s.classList.add('uk-open');
-        acc.appendChild(s);
+        if (s !== first && !first.contains(s)) s.classList.add('kb-closed');
     });
-
-    UIkit.accordion(acc, {
-        targets: '> .kb-sect1',
-        toggle: '> h2',
-        content: '> .kb-section-body',
-        multiple: true,
-        animation: true,
-        duration: 200
+    sects.forEach(function(s) {
+        var heading = s.firstElementChild;
+        if (!heading || !/^H[2-5]$/.test(heading.tagName)) return;
+        heading.classList.add('kb-fold-toggle');
+        heading.setAttribute('role', 'button');
+        heading.setAttribute('tabindex', '0');
+        function sync() { heading.setAttribute('aria-expanded', String(!s.classList.contains('kb-closed'))); }
+        function toggle() { s.classList.toggle('kb-closed'); sync(); }
+        heading.addEventListener('click', toggle);
+        heading.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+        sync();
     });
+    function reveal(id) {
+        var target = id && document.getElementById(id);
+        if (!target || !content.contains(target)) return;
+        for (var node = target; node && node !== content; node = node.parentElement) {
+            if (node.matches && node.matches(SECT) && node.classList.contains('kb-closed')) {
+                node.classList.remove('kb-closed');
+                var h = node.firstElementChild;
+                if (h) h.setAttribute('aria-expanded', 'true');
+            }
+        }
+        target.scrollIntoView();
+    }
+    function fromHash() { try { reveal(decodeURIComponent(location.hash.slice(1))); } catch (e) {} }
+    window.addEventListener('hashchange', fromHash);
+    document.addEventListener('click', function(e) {
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (a && a.getAttribute('href').length > 1 && !a.hasAttribute('data-uk-toggle')) {
+            // A click on the current hash fires no hashchange, so reveal it here too.
+            setTimeout(function() { reveal(decodeURIComponent(a.getAttribute('href').slice(1))); }, 0);
+        }
+    });
+    fromHash();
 })();
 </script>
-<!-- GRID LAYOUT :: END -->
+<!-- PAGE SCRIPTS :: END -->
 </body>
 </html>
