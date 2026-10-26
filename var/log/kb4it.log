@@ -47,7 +47,7 @@
      DEBUG |  116 | Theme           | [BUILDER] CACHE_RESET
      DEBUG |   59 | Theme           | [SERVICE] STARTED name=Theme
      DEBUG |  210 | Frontend        | [FRONTEND] THEME_LOADED id=techdoc version=1.0.0 fingerprint=aa5e0096a0f6 path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc
-     DEBUG |  337 | Backend         | [BACKEND] KBDICT_ENTRIES n=3
+     DEBUG |  337 | Backend         | [BACKEND] KBDICT_ENTRIES n=4
      DEBUG |   35 | Pipeline        | [PIPELINE] READY services=Processor,Compiler,Deployer
      DEBUG |  458 | Backend         | [BACKEND] CHECKS_END
       INFO |  491 | Workflow        | [WORKFLOW] STAGE n=2 name=get_sources
@@ -3346,12 +3346,7 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_lsdasd.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_lvcreate.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_lvs.md format=md
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=404.md rc=True
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_HEADER_COMMON.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_mailx.md format=md
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Author.md rc=True
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_COMMON.tpl
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_BODY.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_make.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_mkdir.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_mkreiserfs.md format=md
@@ -3365,7 +3360,9 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_rpm.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_rsync.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_scp.md format=md
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Author.md rc=True
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_sed.md format=md
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=404.md rc=True
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_sftp.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_sqlplus.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Command_ssh-add.md format=md
@@ -3391,6 +3388,7 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=DocType.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=DocType_Explanation.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=DocType_How-to_guide.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_HEADER_COMMON.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=DocType_Reference.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=DocType_Tutorial.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=EnvVar.md format=md
@@ -3405,14 +3403,11 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filename_fstab.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filename_journald.conf.back.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filename_journald.conf.md format=md
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_BODY.tpl
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filename_sshd_config.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filesystem.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filesystem_dev.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_FOOTER.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filesystem_etc.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filesystem_etcfstab.md format=md
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_FOOTER.tpl
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filesystem_etcssh.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filesystem_etcsystemd.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Filesystem_home.md format=md
@@ -3479,11 +3474,13 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Protocol_SSH.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Protocol_SSL.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Protocol_X11.md format=md
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_COMMON.tpl
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_BODY.tpl reason=missing
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_BODY.tpl
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=SAP-BC-LINUX-REDHAT-APACHE-COMPILATION.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=SAP-BC-ORA-SQL-QUERIES.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=SAP-BC-OS-LINUX.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_HEADER_MENU_CONTENTS_DISABLED.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=SAP-BC-SEC-BO-GENERATE-KEYSTORE-CERTIFICATE-BI40.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=SLES11-ZLINUX-DASD-PROVISIONING.md format=md
@@ -3517,6 +3514,7 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_DBA_FREE_SPACE.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_DBA_HIST_SEG_STAT.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_DBA_HIST_SNAPSHOT.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_FOOTER.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_DBA_INDEXES.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_DBA_OBJECTS.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_DBA_REGISTRY.md format=md
@@ -3533,8 +3531,6 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_USER_SEGMENTS.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_USR02.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_VDATABASE.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_MENU_CONTENTS_DISABLED.tpl reason=missing
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_HEADER_MENU_CONTENTS_DISABLED.tpl
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_VDATAFILE.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_VINSTANCE.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Table_VLOG.md format=md
@@ -3564,7 +3560,6 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_discovery.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_display.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_ed25519.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_TOC_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_forwarding.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_github-pages.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_graphical.md format=md
@@ -3583,9 +3578,7 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_message.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_migration.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_network.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TOC_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_nsswitch.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_TAG_TOC_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_pkcs12.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_query.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Tag_redolog.md format=md
@@ -3618,22 +3611,25 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Team_Unix.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Administration.md format=md
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_FOOTER.tpl
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Analysis.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Archiving.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Configuration.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Connectivity.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Documentation.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_HEADER_MENU_CONTENTS_DISABLED.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Housekeeping.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Installation.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_HEADER_MENU_CONTENTS_DISABLED.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Knowledge_Management.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Maintenance.md format=md
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_HEADER_MENU_CONTENTS_DISABLED.tpl
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_TOC_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Migration.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Monitoring.md format=md
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_TOC_MD.tpl
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Network.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Operation.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Performance.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_TOC_NEW.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Security.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_Troubleshooting.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Topic_User.md format=md
@@ -3642,12 +3638,17 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_DB04.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_RZ04.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_RZ10.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TOC_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_RZ11.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_SM12.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_TAG_TOC_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_SM13.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_SM50.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_ST02.md format=md
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_TOC_MD.tpl
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_TOC_NEW.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_ST05.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TOC_NEW.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=Transaction_ST06.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=User.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=User_oracle.md format=md
@@ -3657,11 +3658,13 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=X11-SSH-FORWARDING.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=about_app.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=about_kb4it.md format=md
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_TAG_TOC_NEW.tpl
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_SECT1_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=add.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_TOC_NEW.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=all.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=bookmarks.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT1_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_2011.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_201107.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20110714.md format=md
@@ -3671,45 +3674,42 @@
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_2019.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_201910.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20191007.md format=md
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_TAG_TOC_NEW.tpl
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20191008.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_2021.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_SECT1_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_202101.md format=md
-     DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20210122.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT1_MD.tpl reason=missing
-     DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_202102.md format=md
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_TAG_SECT1_MD.tpl reason=missing
+     DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20210122.md format=md
+     DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_202102.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20210208.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_2024.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_202405.md format=md
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_SECT1_MD.tpl
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_SECT1_NEW.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20240514.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_2025.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_202512.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20251215.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_2026.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_202604.md format=md
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_SECT1_MD.tpl
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20260416.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_SECT1_NEW.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20260428.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_202605.md format=md
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT1_NEW.tpl
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_SECT2_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20260506.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT2_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20260520.md format=md
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_TAG_SECT2_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20260522.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=events_20260523.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=help.md format=md
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT1_NEW.tpl
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=index.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=properties.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=quality-guide.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_SECT2_MD.tpl reason=missing
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=quality.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=search.md format=md
      DEBUG |  100 | Compiler        | [COMPILER] QUEUE doc=stats.md format=md
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT2_MD.tpl reason=missing
      DEBUG |  107 | Compiler        | [COMPILER] COMPILATION_START
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_TAG_SECT2_MD.tpl reason=missing
      DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_TAG_SECT2_MD.tpl
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TAG_SECT2_NEW.tpl reason=missing
      DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TAG_SECT2_NEW.tpl
@@ -3773,7 +3773,6 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Bookmark.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=BATCH-RENAME-SED.md rc=True
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TOC_LI.tpl reason=missing
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TOC_LI.tpl reason=missing
@@ -3786,7 +3785,7 @@
      DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_TOC_SECTLEVEL2.tpl
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TOC_SECTLEVEL3.tpl reason=missing
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TOC_SECTLEVEL3.tpl reason=missing
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Bookmark_Yes.md rc=True
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Bookmark.md rc=True
      DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/bases/uikit/templates/HTML_TOC_SECTLEVEL3.tpl
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/HTML_TOC_SECTLEVEL4.tpl reason=missing
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/HTML_TOC_SECTLEVEL4.tpl reason=missing
@@ -3796,6 +3795,10 @@
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/DOC_HEADER.tpl reason=missing
      DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/DOC_HEADER.tpl
      DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/INFO_CARD.tpl reason=missing
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/INFO_CARD.tpl
+     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/QUALITY_PANEL.tpl reason=missing
+     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/QUALITY_PANEL.tpl
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Bookmark_Yes.md rc=True
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
@@ -3809,14 +3812,11 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/INFO_CARD.tpl
-     DEBUG |  219 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_SKIP path=/home/runner/work/techdoc/techdoc/overrides/templates/QUALITY_PANEL.tpl reason=missing
-     DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/themes/techdoc/templates/QUALITY_PANEL.tpl
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=COPY-FILES-REMOTE-SERVER-SSH.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Category.md rc=True
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=COPY-FILES-REMOTE-SERVER-SSH.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Category_Note.md rc=True
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Category_Procedure.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Category_Report.md rc=True
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Category_Procedure.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Command.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Command_apachectl.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Command_cat.md rc=True
@@ -3939,11 +3939,11 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
@@ -4049,27 +4049,27 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-MONITOR-ST03-WORKLOAD-ANALYSIS.md rc=True
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
-     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-ORA-SQL-QUERIES.md rc=True
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
+     DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
@@ -4077,11 +4077,11 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-OS-LINUX.md rc=True
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-OS-LINUX.md rc=True
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.abbr.AbbrExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
@@ -4105,6 +4105,7 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md rc=True
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
@@ -4118,7 +4119,6 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=SAP-BC-SFTP-SSH-KEY-CONNECTIVITY.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=SLES11-ZLINUX-DASD-PROVISIONING.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Scope.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=Scope_Database_Administration.md rc=True
@@ -4295,7 +4295,6 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=X11-SSH-FORWARDING.md rc=True
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.attr_list.AttrListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.def_list.DefListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.tables.TableExtension".
@@ -4307,6 +4306,7 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=X11-SSH-FORWARDING.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=about_app.md rc=True
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.fenced_code.FencedCodeExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.footnotes.FootnoteExtension".
@@ -4317,16 +4317,16 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.md_in_html.MarkdownInHtmlExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.extra.ExtraExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.admonition.AdmonitionExtension".
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=add.md rc=True
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.toc.TocExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=about_kb4it.md rc=True
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=add.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=all.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=bookmarks.md rc=True
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=events.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=events_2011.md rc=True
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=events.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=events_201107.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=events_20110714.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=events_2014.md rc=True
@@ -4385,8 +4385,8 @@
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "markdown.extensions.sane_lists.SaneListExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdrich.RichContentExtension".
      DEBUG |  184 | MARKDOWN        | Successfully loaded extension "kb4it.core.mdlinks.MdLinkExtension".
-      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=quality.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=quality-guide.md rc=True
+      INFO |  220 | Compiler        | [COMPILER] COMPILED doc=quality.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=search.md rc=True
       INFO |  220 | Compiler        | [COMPILER] COMPILED doc=stats.md rc=True
      DEBUG |  110 | Compiler        | [COMPILER] COMPILED n=375
@@ -4402,9 +4402,8 @@
      DEBUG |  238 | Theme           | [BUILDER] TEMPLATE_CANDIDATE_FOUND path=/home/runner/.local/share/uv/tools/kb4it/lib/python3.14/site-packages/kb4it/resources/common/templates/HTML_HEAD_META.tpl
      DEBUG |  111 | Deployer        | [DEPLOYER] HEAD_META pages=375
      DEBUG |  120 | Deployer        | [DEPLOYER] COPIED_ALL_TO_CACHE n=750
-     DEBUG |  160 | Deployer        | [DEPLOYER] STALE_HTML_DELETED file=Bookmark_True.html
-     DEBUG |  164 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=375 unchanged=0 deleted=1
-     DEBUG |  208 | Deployer        | [DEPLOYER] COPIED_GLOBAL_RESOURCES copied=1037 deleted=127
+     DEBUG |  164 | Deployer        | [DEPLOYER] HTML_TO_TARGET copied=375 unchanged=0 deleted=0
+     DEBUG |  208 | Deployer        | [DEPLOYER] COPIED_GLOBAL_RESOURCES copied=1037 deleted=0
      DEBUG |  365 | Deployer        | [DEPLOYER] RENDER_ASSETS deployed=False
      DEBUG |  365 | Deployer        | [DEPLOYER] EDITOR_ASSETS deployed=True
      DEBUG |  337 | Deployer        | [DEPLOYER] STATIC_TO_TARGET files=0 deleted=0
@@ -4418,7 +4417,7 @@
      DEBUG |  347 | Backend         | [BACKEND] KBDICT_SAVED path=/home/runner/work/techdoc/techdoc/var/db/kbdict.json
      DEBUG |  380 | Backend         | [BACKEND] KBDICT_COMMIT
       INFO |  550 | Workflow        | [WORKFLOW] SUMMARY docs_total=14 compiled=14 skipped=0 invalid=0 keys_compiled=26 kv_pages_compiled=291 failed=0 kb4it=0.10.0+unknown theme=techdoc/1.0.0+aa5e0096a0f6
-      INFO |  562 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=1.75s
+      INFO |  562 | Workflow        | [WORKFLOW] TOTAL_TIME elapsed=1.95s
       INFO |  580 | Workflow        | [WORKFLOW] BUILD_COMPLETE
       INFO |  581 | Workflow        | [WORKFLOW] URL /home/runner/work/techdoc/techdoc/docs/index.html
       INFO |  582 | Workflow        | [WORKFLOW] LOG path=/home/runner/work/techdoc/techdoc/var/log/kb4it.log
